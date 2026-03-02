@@ -1,0 +1,24 @@
+/* ==================================================
+   CUSTOM OVERRIDES / NEW FEATURES
+   (Mega Menu, Animations, Fixes, etc.)
+   ================================================== */
+
+/* Example: Mega Menu */
+.has-mega-menu {
+  position: static;
+}
+
+.has-mega-menu .hidden-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background: #fff;
+  display: none;
+  padding: 40px 0;
+  z-index: 999;
+}
+
+.has-mega-menu:hover .hidden-menu {
+  display: block;
+}
