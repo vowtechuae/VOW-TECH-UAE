@@ -1,0 +1,25 @@
+form input, form textarea, form select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover { background-color: #007c6f; }
