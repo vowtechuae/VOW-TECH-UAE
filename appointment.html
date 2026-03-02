@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT Appointment Booking | VOWTECH Dubai & Abu Dhabi</title>
+  <meta name="description"
+    content="Book your IT service appointment with VOWTECH in Dubai & Abu Dhabi. Get expert IT support, networking, and software assistance.">
+
+  <link href="assets/img/VOWTECH.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      background: #0d1b2a;
+      padding: 15px 0;
+    }
+
+    header .logo-glass {
+      width: 200px;
+      filter: none;
+    }
+
+    .hero-bg {
+      background: #0d1b2a;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .hero-bg h1 {
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .hero-bg p {
+      font-size: 1.2rem;
+    }
+
+    .hero-bg .btn {
+      margin-top: 20px;
+    }
+
+    .appointment-form {
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .appointment-form h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0d1b2a;
+    }
+
+    .appointment-form .form-control,
+    .appointment-form .form-select,
+    .appointment-form textarea {
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ced4da;
+    }
+
+    .appointment-form button {
+      width: 100%;
+      background: #0d1b2a;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .status-message {
+      text-align: center;
+      margin-top: 10px;
+      display: none;
+    }
+
+    .loading {
+      color: #0d1b2a;
+    }
+
+    .sent-message {
+      color: green;
+    }
+
+    .error-message {
+      color: red;
+    }
+
+    .footer-bottom {
+      background: #0d1b2a;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .footer-bottom a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="sticky-top">
+    <div class="container d-flex align-items-center">
+      <a href="index.html">
+        <img src="assets/img/FullLogo.png" alt="VOWTECH Logo" class="logo-glass">
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-bg">
+    <div class="container">
+      <h1 class="display-5">Book Your IT Appointment</h1>
+      <p>Schedule a consultation with VOWTECH IT specialists for support, networking, and software services across Dubai
+        & Abu Dhabi.</p>
+      <div class="mt-4">
+        <a href="#appointment" class="btn btn-light btn-lg me-2">Book Now</a>
+        <a href="tel:+971581816887" class="btn btn-outline-light btn-lg">Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPOINTMENT FORM -->
+  <section id="appointment" class="appointment-form">
+    <h3>Make an Appointment</h3>
+    <form class="php-email-form">
+      <div class="row g-3">
+        <div class="col-md-4"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
+        <div class="col-md-4"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
+        <div class="col-md-4"><input type="tel" name="phone" class="form-control" placeholder="Phone Number" required></div>
+      </div>
+      <div class="row g-3 mt-3">
+        <div class="col-md-4"><input type="datetime-local" name="date" class="form-control" required></div>
+        <div class="col-md-4">
+          <select name="department" class="form-select" required>
+            <option value="">Select Department</option>
+            <option value="IT Support">IT Support</option>
+            <option value="Networking">Networking</option>
+            <option value="Software Solutions">Software Solutions</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select name="consultant" class="form-select" required>
+            <option value="">Select Consultant</option>
+            <option value="Consultant 1">Consultant 1</option>
+            <option value="Consultant 2">Consultant 2</option>
+            <option value="Consultant 3">Consultant 3</option>
+          </select>
+        </div>
+      </div>
+      <textarea name="message" class="form-control mt-3" rows="4" placeholder="Additional Message (Optional)"></textarea>
+
+      <div class="status-message loading">Sending...</div>
+      <div class="status-message error-message"></div>
+      <div class="status-message sent-message">Your appointment request has been sent successfully. Thank you!</div>
+
+      <button type="submit" class="mt-3">Submit Appointment</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-bottom">
+    <div class="container text-center">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">VOWTECH</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        Powered by <a href="https://vow-tech.com">VOWTECH IT Solutions</a> | Supporting businesses 24/7 worldwide
+      </div>
+    </div>
+  </footer>
+
+  <!-- Vendor JS & EmailJS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+    emailjs.init("cDrzsn76nRW8yDruG"); // EmailJS User ID
+    const whatsappPhone = "+971581816887";
+    const whatsappApiKey = "9546639";
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const forms = document.querySelectorAll('.php-email-form');
+
+      forms.forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const statusLoading = form.querySelector('.loading');
+          const statusError = form.querySelector('.error-message');
+          const statusSent = form.querySelector('.sent-message');
+
+          statusLoading.style.display = 'block';
+          statusError.style.display = 'none';
+          statusSent.style.display = 'none';
+
+          const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            phone: form.phone.value,
+            date: form.date.value,
+            department: form.department.value,
+            consultant: form.consultant.value,
+            message: form.message.value || "N/A"
+          };
+
+          // Send email to Admin
+          emailjs.send("service_pm0skbn", "template_ef4yl7n", formData)
+            .then(() => {
+              // Send Auto-reply to User
+              emailjs.send("service_pm0skbn", "template_o3rfw09", { name: formData.name, email: formData.email })
+                .then(() => {
+                  const whatsappText = `
+New Appointment Request - VOWTECH
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Date: ${formData.date}
+Department: ${formData.department}
+Consultant: ${formData.consultant}
+Message: ${formData.message}`;
+                  fetch(`https://api.callmebot.com/whatsapp.php?phone=${whatsappPhone}&text=${encodeURIComponent(whatsappText)}&apikey=${whatsappApiKey}`)
+                    .finally(() => {
+                      statusLoading.style.display = 'none';
+                      statusSent.style.display = 'block';
+                      form.reset();
+                    });
+                }).catch(err => {
+                  statusLoading.style.display = 'none';
+                  statusError.textContent = "Appointment sent, but auto-reply failed.";
+                  statusError.style.display = 'block';
+                });
+            }).catch(err => {
+              statusLoading.style.display = 'none';
+              statusError.textContent = "Something went wrong. Please try again.";
+              statusError.style.display = 'block';
+            });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
