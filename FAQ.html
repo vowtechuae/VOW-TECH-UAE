@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart FAQ | VOWTECH IT Solutions</title>
+
+<link href="assets/img/VOWTECH.png" rel="icon">
+
+<style>
+
+/* ===== BASE ===== */
+body{
+  margin:0;
+  font-family:Segoe UI, sans-serif;
+  background:#0b1220;
+  color:#fff;
+}
+
+/* ===== HEADER ===== */
+header{
+  padding:20px;
+  text-align:center;
+  background:#0f172a;
+}
+
+header img{
+  height:55px;
+}
+
+/* ===== HERO ===== */
+.hero{
+  text-align:center;
+  padding:70px 20px;
+  background:linear-gradient(135deg,#0f172a,#111827);
+}
+
+.hero h1{
+  font-size:42px;
+}
+
+.hero p{
+  color:#cbd5e1;
+}
+
+/* ===== SEARCH BOX ===== */
+.search-container{
+  max-width:700px;
+  margin:40px auto;
+  text-align:center;
+}
+
+.search-container input{
+  width:100%;
+  padding:16px;
+  border-radius:12px;
+  border:none;
+  font-size:16px;
+  outline:none;
+}
+
+/* ===== RESULTS ===== */
+.result-box{
+  max-width:800px;
+  margin:30px auto;
+  padding:20px;
+  background:#111827;
+  border-radius:12px;
+  display:none;
+  border-left:4px solid #00c6ff;
+}
+
+.result-box h3{
+  color:#00c6ff;
+}
+
+.result-box p{
+  color:#cbd5e1;
+}
+
+/* ===== FAQ DATABASE (HIDDEN) ===== */
+.faq-data{
+  display:none;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0f172a;
+  margin-top:60px;
+}
+
+footer a{
+  color:#00c6ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <img src="assets/img/logo.jpg" alt="VOWTECH">
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Smart FAQ System</h1>
+  <p>Type your question and get instant IT answers</p>
+</section>
+
+<!-- SEARCH -->
+<div class="search-container">
+  <input type="text" id="faqSearch" placeholder="Ask your question... Example: Do you provide IT support?">
+</div>
+
+<!-- RESULT -->
+<div class="result-box" id="resultBox">
+  <h3 id="resultTitle"></h3>
+  <p id="resultAnswer"></p>
+</div>
+
+<!-- FAQ DATABASE -->
+<div class="faq-data">
+
+  <div data-keywords="it support 24/7 help desk onsite remote">
+    <h3>Do you provide 24/7 IT support?</h3>
+    <p>Yes, VOWTECH provides 24/7 remote and onsite IT support across UAE for all business needs.</p>
+  </div>
+
+  <div data-keywords="infrastructure servers networking vpn data center">
+    <h3>What IT infrastructure services do you provide?</h3>
+    <p>We provide servers, networking, VPN, data centers, virtualization, and disaster recovery solutions.</p>
+  </div>
+
+  <div data-keywords="security firewall antivirus cyber protection">
+    <h3>Do you provide cybersecurity services?</h3>
+    <p>Yes, including firewall systems, antivirus, penetration testing, and full network security solutions.</p>
+  </div>
+
+  <div data-keywords="cloud office365 google workspace backup">
+    <h3>Do you offer cloud solutions?</h3>
+    <p>Yes, we provide Office 365, Google Workspace, cloud backup, VPS and private cloud services.</p>
+  </div>
+
+  <div data-keywords="amc contract maintenance support">
+    <h3>What is AMC IT support?</h3>
+    <p>AMC is Annual Maintenance Contract offering continuous IT monitoring and support services.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © VOWTECH IT Solutions | <a href="https://vow-tech.com">www.vow-tech.com</a>
+</footer>
+
+<script>
+
+const input = document.getElementById("faqSearch");
+const resultBox = document.getElementById("resultBox");
+const title = document.getElementById("resultTitle");
+const answer = document.getElementById("resultAnswer");
+
+input.addEventListener("keyup", function(){
+
+  let value = this.value.toLowerCase();
+  let items = document.querySelectorAll(".faq-data div");
+
+  let found = false;
+
+  items.forEach(item => {
+    let keywords = item.getAttribute("data-keywords");
+
+    if(keywords.toLowerCase().includes(value) && value.length > 2){
+      title.innerText = item.querySelector("h3").innerText;
+      answer.innerText = item.querySelector("p").innerText;
+      resultBox.style.display = "block";
+      found = true;
+    }
+  });
+
+  if(!found){
+    resultBox.style.display = "none";
+  }
+
+});
+
+</script>
+
+</body>
+</html>
