@@ -4,21 +4,25 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>VOWTECH | IT Support & Technology Services in Abu Dhabi</title>
+  <title>IT Support Abu Dhabi | Managed IT Services UAE | VOWTECH</title>
   <meta name="description" content="VOWTECH provides reliable IT support, managed services, networking, security, and cloud solutions in Abu Dhabi, UAE. 24/7 professional IT services.">
   <meta name="keywords" content="IT support Abu Dhabi, managed IT services UAE, network support, cloud solutions, cybersecurity, VOWTECH">
   <meta name="author" content="VOWTECH">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0d6efd">
 
  <!-- Favicons -->
  
  
-  <link rel="shortcut icon" href="assets/img/VOWTECH.png" type="image/png">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="shortcut icon" href="assets/img/VOWTECH.jpeg" type="image/jpeg">
+  <link href="assets/img/apple-touch-icon.jpeg" rel="apple-touch-icon">
+  <link rel="icon" type="image/jpeg" sizes="32x32" href="assets/img/VOWTECH.jpeg">
+<link rel="icon" type="image/jpeg" sizes="16x16" href="assets/img/VOWTECH.jpeg">
 
  <!-- Fonts -->
  
  
-  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,31 +37,95 @@
   <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   
  <!-- Main CSS File -->
+ <link rel="stylesheet" href="css/main.css">
   
   <link rel="preload" href="assets/css/main.css" as="style">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="style.css?v=2" rel="stylesheet">
+     <link href="style.css?v=2" rel="stylesheet">
+	 
+
+
+ <!-- add File -->
+
+<!-- POPUP OVERLAY -->
+<div id="popup" class="popup-overlay">
+
+  <div class="popup-content">
+
+    <!-- CLOSE BUTTON -->
+    <button class="close-btn" onclick="closePopup()">×</button>
+
+    <!-- PROMO SECTION INSIDE POPUP -->
+    <section class="promo-section">
+      <div class="container">
+        <div class="promo-box">
+
+          <!-- LEFT CONTENT -->
+          <div class="promo-left">
+            <div class="badge">🔥 LIMITED TIME OFFER</div>
+
+            <h1>
+              IT AMC + <br>
+              <span>FREE CCTV AMC</span><br>
+              FOR 1 YEAR!
+            </h1>
+
+            <p>
+              Complete IT support & maintenance with
+              <strong>FREE CCTV AMC</strong> for your business.
+            </p>
+
+            <div class="features">
+              <div><i class="fas fa-headset"></i> 24/7 IT Support</div>
+              <div><i class="fas fa-network-wired"></i> Network Maintenance</div>
+              <div><i class="fas fa-shield-alt"></i> Data Security</div>
+              <div><i class="fas fa-video"></i> CCTV AMC</div>
+            </div>
+
+            <div class="buttons">
+              <a href="contact.html" class="btn-quote">Get Free Quote</a>
+              <a href="https://wa.me/971581816887" target="_blank" class="btn-whatsapp">
+                WhatsApp Us
+              </a>
+            </div>
+          </div>
+
+          <!-- RIGHT CONTENT -->
+          <div class="promo-right">
+            <div class="discount">SAVE UP TO <span>30%</span></div>
+            <img src="assets/img/promo-it-.png" alt="IT Support">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
+
   
 <!-- ADD SCHEMA HERE -->
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ITService",
+  "@type": "LocalBusiness",
   "name": "VOWTECH",
   "url": "https://vow-tech.com",
-  "logo": "https://vow-tech.com/assets/img/logo.jpg",
+  "logo": "https://vow-tech.com/assets/img/logo.jpeg",
   "description": "IT Support and Managed Services in Abu Dhabi, UAE",
-  "areaServed": {
-    "@type": "Place",
-    "name": "Abu Dhabi, UAE"
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Ar Reem St - Al Zahiyah",
+    "addressLocality": "Abu Dhabi",
+    "addressCountry": "AE"
   },
+  "areaServed": "UAE",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+971581816887",
     "contactType": "customer service",
-    "areaServed": "AE",
     "availableLanguage": "English"
   }
 }
@@ -67,14 +135,14 @@
 <!-- ADD BELOW -->
 <meta property="og:title" content="VOWTECH | IT Support Abu Dhabi">
 <meta property="og:description" content="24/7 IT Support, Managed Services, Networking & Security in UAE">
-<meta property="og:image" content="https://vow-tech.com/assets/img/logo.jpg">
+<meta property="og:image" content="https://vow-tech.com/assets/img/logo.jpeg">
 <meta property="og:url" content="https://vow-tech.com">
 <meta property="og:type" content="website">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="VOWTECH IT Services UAE">
 <meta name="twitter:description" content="Reliable IT Support & Technology Services in Abu Dhabi">
-<meta name="twitter:image" content="https://vow-tech.com/assets/img/logo.jpg">
+<meta name="twitter:image" content="https://vow-tech.com/assets/img/logo.jpeg">
 
 <link rel="canonical" href="https://vow-tech.com/">
 
@@ -96,163 +164,236 @@
 
 <div id="menu-overlay"></div>
 
-  <header id="header" class="header sticky-top">
+ 
+ <header id="header" class="header sticky-top hero-glass">
 
-    <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="d-none d-md-flex align-items-center">
-          <i class="bi bi-clock me-1"></i> Monday - Sunday, 24/7
-        </div>
-        <div class="d-flex align-items-center">
-      <i class="bi bi-geo-alt me-1"></i> ABU DHABI, UAE.
-      <span class="mx-2">|</span>
-      <i class="bi bi-phone me-1"></i> 
-      <a href="tel:+971581816887" style="color: inherit; text-decoration: none;">
-        +971 58 181 6887
-      </a>
-    </div>
+  <!-- TOP BAR -->
+  <div class="topbar d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      
+      <div class="d-none d-md-flex align-items-center">
+        <i class="bi bi-clock me-1"></i> 24/7 IT Support Available
       </div>
-    </div>
-	
-<!-- End Top Bar -->
 
-
-    <div class="branding d-flex align-items-center">
-
-      <div class="container position-relative d-flex align-items-center justify-content-end">
-        <a href="index.html" class="logo d-flex align-items-center me-auto">
-          <img src="assets/img/logo.jpg" alt="VOWTECH Logo" width= "230" height= "55">
-          <!-- Uncomment the line below if you also wish to use a text logo -->
-          <!-- <h1 class="sitename">Medicio</h1>  -->
+      <div class="d-flex align-items-center">
+        <i class="bi bi-geo-alt me-1"></i> Abu Dhabi, UAE
+        <span class="mx-2">|</span>
+        <i class="bi bi-phone me-1"></i> 
+        <a href="tel:+971581816887" style="color: inherit; text-decoration: none;">
+          +971 58 181 6887
         </a>
-
-        <nav id="navmenu" class="navmenu">
-			<ul>
-				<li><a href="#hero" class="active">Home</a></li>
-				<li><a href="#about">About Us</a></li>
-				 <!-- SERVICES MEGA MENU -->
-  <li class="dropdown mega-dropdown">
-  <a href="#">
-    <span>Services</span>
-    <i class="bi bi-chevron-down toggle-dropdown"></i>
-  </a>
-
-  <div class="mega-menu">
-    <div class="mega-column">
-      <h4>IT Support 24/7</h4>
-      <a href="amc-support.html">IT Annual Maintenance Contract</a>
-      <a href="CCTV-Services.html">CCTV Services</a>
-      <a href="Office-IT-Setup-Relocation.html">Office IT Setup & Relocation</a>
-      <a href="Emergency-IT-Support.html">Emergency IT Support</a>
-      <a href="Remote-Technical-Support.html">Remote Technical Support</a>
-      <a href="On-Site-IT-Support.html">On-Site Support</a>
-      <a href="IT-Outsourcing.html">IT Outsourcing</a>
-      <a href="Helpdesk-Support.html">Helpdesk Support</a>
-      <a href="data-recovery.html">Disaster Recovery</a>
-    </div>
-
-    <div class="mega-column">
-      <h4>Networking</h4>
-      <a href="Structured-Cabling.html">Structured Cabling</a>
-      <a href="Server-Room-Setup.html">Server Room Setup</a>
-      <a href="Network-Server-Migration.html">Network & Server Migration</a>
-      <a href="Network-Security-Services.html">Network Security Services</a>
-      <a href="Network-Planning-Design.html">Network Planning & Design</a>
-      <a href="Network-Installation-Troubleshooting.html">Network Installation & Troubleshooting</a>
-      <a href="Telephone-Systems-Implementation.html">Telephone Systems Implementation</a>
-      <a href="Office-Migration.html">Office Migration</a>
-    </div>
-
-    <div class="mega-column">
-      <h4>Managed Services</h4>
-      <a href="VPN-Network-Monitoring.html">VPN Network Monitoring</a>
-      <a href="Server-Management.html">Server Management</a>
-      <a href="Managed-Security.html">Managed Security</a>
-      <a href="Managed-Storage.html">Managed Storage</a>
-      <a href="Wireless-Equipment-Management.html">Wireless Equipment Management</a>
-      <a href="Application-Support.html">Application Maintenance</a>
-      <a href="Software-Licensing.html">Software Licensing</a>
-      <a href="ITIL-Model.html">ITIL Model</a>
-    </div>
-
-    <div class="mega-column">
-      <h4>IT Consulting</h4>
-      <a href="IT-Audit-Health-Check.html">IT Audit & Health Check</a>
-      <a href="Vulnerability-Assessment.html">Vulnerability Assessment</a>
-      <a href="Security-Risk-Assessment.html">Security Risk Assessment</a>
-      <a href="Information-Security-Consultancy.html">Information Security Consultancy</a>
-      <a href="Quality-Compliance-Consulting.html">Quality Compliance Consulting</a>
-      <a href="Cost-Management.html">Cost Management</a>
-      <a href="Business-Continuity-Strategy.html">Business Continuity Strategy</a>
-      <a href="Requirement-Analysis.html">Requirement Analysis</a>
-      <a href="IT-Trainings-for-Staff.html">IT Trainings for Staff</a>
-    </div>
-  </div>
-</li>
-
-				 <!-- SOLUTIONS MEGA MENU -->
-<li class="dropdown mega-dropdown">
-  <a href="#">
-    <span>Solutions</span>
-    <i class="bi bi-chevron-down toggle-dropdown"></i>
-  </a>
-
-  <div class="mega-menu">
-
-    <!-- IT Infrastructure Solutions -->
-    <div class="mega-column">
-      <h4>IT Infrastructure Solutions</h4>
-      <a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup & Disaster Recovery</a>
-      <a href="Data.Center.html">Data Center</a>
-      <a href="Server-Solutions.html">Server Solutions</a>
-      <a href="Network-Solutions.html">Network Solutions</a>
-      <a href="Data-Storage-Solutions.html">Data Storage Solutions</a>
-      <a href="Backup-Data-Protection.html">Backup & Data Protection</a>
-      <a href="Disaster-Recovery-Solutions.html">Disaster Recovery Solutions</a>
-      <a href="Virtualization.html">Virtualization</a>
-      <a href="VPN-Connectivity-Solutions.html">VPN Connectivity Solutions</a>
-    </div>
-
-    <!-- IT Security Solutions -->
-    <div class="mega-column">
-      <h4>IT Security Solutions</h4>
-      <a href="Firewall-Systems.html">Firewall Systems</a>
-      <a href="Anti-Virus-Anti-SPAM-Solutions.html">Anti-Virus & Anti-SPAM Solutions</a>
-      <a href="Data-Protection-Systems.html">Data Protection Systems</a>
-      <a href="Data-Security-Theft-Prevention.html">Data Security & Theft Prevention</a>
-      <a href="Acronis-Cyber-Protect-Cloud.html">Acronis Cyber Protect Cloud</a>
-      <a href="Wireless-Security.html">Wireless Security</a>
-      <a href="Network-Security-Policy-Setup-Maintenance.html">Network Security Policy Setup & Maintenance</a>
-      <a href="Unified-Threat-Management.html">Unified Threat Management</a>
-      <a href="secure-Internet-Gateway-Assessment.html">Secure Internet Gateway Assessment</a>
-      <a href="Penetration-Testing.html">Penetration Testing</a>
-    </div>
-
-    <!-- Cloud Solutions -->
-    <div class="mega-column">
-      <h4>Cloud Solutions</h4>
-      <a href="Office365-Exchange-Online.html">Office 365 & Exchange Online</a>
-      <a href="Google-Apps-for-Business.html">Google Apps for Business</a>
-      <a href="Private-Cloud-Services.html">Private Cloud Services</a>
-      <a href="Dedicated-VPS-Servers.html">Dedicated & VPS Servers</a>
-      <a href="Cloud-Backup-Disaster-Recovery.html">Cloud Backup & Disaster Recovery</a>
-    </div>
-
-  </div>
-</li>
-	  <li><a href="blog.html">Insights</a></li>
-	  <li><a href="contact.html">Contact</a></li>
-			</ul>
-			<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-		</nav>
-
-        <a class="cta-btn" href="appointment.html">Get Your Free Consultation</a>
-
       </div>
 
     </div>
+  </div>
+  <!-- END TOP BAR -->
 
-  </header>
+  <!-- MAIN HEADER -->
+  <div class="branding d-flex align-items-center">
+    <div class="container position-relative d-flex align-items-center justify-content-end">
+
+      <!-- LOGO -->
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <img src="assets/img/logo.jpeg" alt="VOWTECH IT Services UAE" width="100" height="65">
+      </a>
+
+      <!-- NAV MENU -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+		  
+		  <!-- CYBERSECURITY (SEO BOOST) -->
+          		  
+				
+				<!-- CYBERSECURITY -->
+			<li class="mega-dropdown">
+			<a href="#">
+				<span>Cybersecurity</span>
+					<i class="bi bi-chevron-down toggle-dropdown"></i>
+					</a>
+
+			<div class="mega-menu">
+
+			<div class="mega-column">
+				<h4>Security</h4>
+
+					<a href="sophos-firewall.html">Sophos Firewall</a>
+					<a href="soc-security-operations-center.html">Security Operations Center (SOC)</a>
+					<a href="cloud-network-security.html">Cloud & Network Security</a>
+					<a href="secure-email-s-mime.html">Secure Email (S/MIME)</a>
+					<a href="web-application-firewall.html">Web Application Firewall (WAF)</a>
+					<a href="mobile-device-management.html">Mobile Device Management</a>
+					<a href="pam-pim-solutions.html">PAM / PIM Solutions</a>
+					<a href="sase-solutions.html">SASE Solutions</a>
+					<a href="siem-solution.html">SIEM Solution</a>
+					<a href="soar-solution.html">SOAR Solution</a>
+					<a href="anti-phishing-protection.html">Anti-Phishing Protection</a>
+					<a href="threat-detection-response.html">Threat Detection & Response</a>
+
+			</div>
+
+			</div>
+			</li>
+			
+		
+<!-- IT PRODUCTS (SEO BOOST) -->
+	<!-- IT PRODUCTS -->
+<li class="mega-dropdown">
+  <a href="#">
+    <span>IT Products</span>
+    <i class="bi bi-chevron-down toggle-dropdown"></i>
+  </a>
+
+  <div class="mega-menu">
+
+    <div class="mega-column">
+      <h4>Core IT Products</h4>
+      <a href="firewall-products.html">Firewall Solutions</a>
+      <a href="server-solutions.html">Server Solutions</a>
+      <a href="storage-solutions.html">Storage Solutions</a>
+    </div>
+
+    <div class="mega-column">
+      <h4>Security & Surveillance</h4>
+      <a href="zkteco-access-control.html">Access Control (ZKTeco)</a>
+      <a href="cctv-surveillance.html">CCTV Systems</a>
+    </div>
+
+  </div>
+</li>
+          <!-- SERVICES -->
+          <li class="dropdown mega-dropdown">
+            <a href="#">
+              <span>Services</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+
+            <div class="mega-menu">
+
+              <div class="mega-column">
+                <h4>IT Support 24/7</h4>
+                <a href="amc-support.html">IT Annual Maintenance Contract</a>
+				<a href="CCTV-Services.html">CCTV Services</a>
+				<a href="Office-IT-Setup-Relocation.html">Office IT Setup & Relocation</a>
+				<a href="Emergency-IT-Support.html">Emergency IT Support</a>
+				<a href="Remote-Technical-Support.html">Remote Technical Support</a>
+				<a href="On-Site-IT-Support.html">On-Site Support</a>
+				<a href="IT-Outsourcing.html">IT Outsourcing</a>
+				<a href="Helpdesk-Support.html">Helpdesk Support</a>
+				<a href="data-recovery.html">Disaster Recovery</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Networking</h4>
+                <a href="Structured-Cabling.html">Structured Cabling</a>
+				<a href="Server-Room-Setup.html">Server Room Setup</a>
+				<a href="Network-Server-Migration.html">Network & Server Migration</a>
+				<a href="Network-Security-Services.html">Network Security Services</a>
+				<a href="Network-Planning-Design.html">Network Planning & Design</a>
+				<a href="Network-Installation-Troubleshooting.html">Network Installation & Troubleshooting</a>
+				<a href="Telephone-Systems-Implementation.html">Telephone Systems Implementation</a>
+				<a href="Office-Migration.html">Office Migration</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>Managed Services</h4>
+                <a href="VPN-Network-Monitoring.html">VPN Network Monitoring</a>
+				<a href="Server-Management.html">Server Management</a>
+				<a href="Managed-Security.html">Managed Security</a>
+				<a href="Managed-Storage.html">Managed Storage</a>
+				<a href="Wireless-Equipment-Management.html">Wireless Equipment Management</a>
+				<a href="Application-Support.html">Application Maintenance</a>
+				<a href="Software-Licensing.html">Software Licensing</a>
+				<a href="ITIL-Model.html">ITIL Model</a>
+              </div>
+
+              <div class="mega-column">
+                <h4>IT Consulting</h4>
+                <a href="IT-Audit-Health-Check.html">IT Audit & Health Check</a>
+				<a href="Vulnerability-Assessment.html">Vulnerability Assessment</a>
+				<a href="Security-Risk-Assessment.html">Security Risk Assessment</a>
+				<a href="Information-Security-Consultancy.html">Information Security Consultancy</a>
+				<a href="Quality-Compliance-Consulting.html">Quality Compliance Consulting</a>
+				<a href="Cost-Management.html">Cost Management</a>
+				<a href="Business-Continuity-Strategy.html">Business Continuity Strategy</a>
+				<a href="Requirement-Analysis.html">Requirement Analysis</a>
+				<a href="IT-Trainings-for-Staff.html">IT Trainings for Staff</a>
+              </div>
+
+            </div>
+          </li>
+
+          <!-- SOLUTIONS -->
+          <li class="dropdown mega-dropdown">
+            <a href="#">
+              <span>Solutions</span>
+              <i class="bi bi-chevron-down toggle-dropdown"></i>
+            </a>
+
+            <div class="mega-menu">
+
+              <div class="mega-column">
+				<h4>IT Infrastructure Solutions</h4>
+					<a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup & Disaster Recovery</a>
+					<a href="Data.Center.html">Data Center</a>
+					<a href="Server-Solutions.html">Server Solutions</a>
+					<a href="Network-Solutions.html">Network Solutions</a>
+					<a href="Data-Storage-Solutions.html">Data Storage Solutions</a>
+					<a href="Backup-Data-Protection.html">Backup & Data Protection</a>
+					<a href="Disaster-Recovery-Solutions.html">Disaster Recovery Solutions</a>
+					<a href="Virtualization.html">Virtualization</a>
+					<a href="VPN-Connectivity-Solutions.html">VPN Connectivity Solutions</a>
+				</div>
+
+              <div class="mega-column">
+                <h4>IT Security Solutions</h4>
+					<a href="Firewall-Systems.html">Firewall Systems</a>
+					<a href="Anti-Virus-Anti-SPAM-Solutions.html">Anti-Virus & Anti-SPAM Solutions</a>
+					<a href="Data-Protection-Systems.html">Data Protection Systems</a>
+					<a href="Data-Security-Theft-Prevention.html">Data Security & Theft Prevention</a>
+					<a href="Acronis-Cyber-Protect-Cloud.html">Acronis Cyber Protect Cloud</a>
+					<a href="Wireless-Security.html">Wireless Security</a>
+					<a href="Network-Security-Policy-Setup-Maintenance.html">Network Security Policy Setup & Maintenance</a>
+					<a href="Unified-Threat-Management.html">Unified Threat Management</a>
+					<a href="secure-Internet-Gateway-Assessment.html">Secure Internet Gateway Assessment</a>
+					<a href="Penetration-Testing.html">Penetration Testing</a>
+				</div>
+
+              <div class="mega-column">
+                <h4>Cloud Solutions</h4>
+					<a href="Office365-Exchange-Online.html">Office 365 & Exchange Online</a>
+					<a href="Google-Apps-for-Business.html">Google Apps for Business</a>
+					<a href="Private-Cloud-Services.html">Private Cloud Services</a>
+					<a href="Dedicated-VPS-Servers.html">Dedicated & VPS Servers</a>
+					<a href="Cloud-Backup-Disaster-Recovery.html">Cloud Backup & Disaster Recovery</a>
+				</div>
+			 </div>
+          </li>
+
+          <!-- BLOG -->
+          <li><a href="blog.html">Insights</a></li>
+
+          <!-- CONTACT -->
+          <li><a href="contact.html">Contact</a></li>
+
+        </ul>
+
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <!-- CTA BUTTON -->
+      <a class="cta-btn" href="appointment.html">
+        Get Free Consultation
+      </a>
+
+    </div>
+  </div>
+
+</header>
+
+
 
   <main class="main">
 
@@ -276,7 +417,8 @@
              alt="IT Support Abu Dhabi">
 
         <div class="carousel-caption">
-          <h2>Trusted IT Support & AMC Services in Abu Dhabi</h2>
+		  <h1>IT Support & Managed Services in UAE</h1>
+          <h2>Trusted IT Support & AMC Services in UAE</h2>
           <p>We provide 24/7 IT support, proactive maintenance, and secure infrastructure solutions to ensure your business operates without interruptions.</p>
           <a href="contact.html" class="btn-get-started">Request IT Support</a>
           <a href="#Solutions" class="btn-get-started">Our Solutions</a>
@@ -325,73 +467,117 @@
   </div>
 
 </section>
-<!-- /Hero Section -->
- 
-  <!-- Featured Services Section -->
-	
-	
-    <section id="services" class="featured-services section">
 
-      <div class="container">
+<!-- Featured Services Section -->
+<section id="services" class="featured-services section py-5">
 
-        <div class="row gy-4">
+  <div class="container">
+    <div class="row gy-4">
 
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-headset"></i></div>
-			  <a href="it-support-24-7.html" class="stretched-link">
-				<h4>IT Support & AMC</h4>
-					<p>24/7 IT support and Annual Maintenance Contracts (AMC) with fast issue resolution, proactive monitoring, and reliable on-site and remote assistance across the UAE.</p></a>
-            </div>
-          </div>
-		  
-<!-- End Service Item -->
-
-
-        <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item position-relative">
-				<div class="icon"><i class="fas fa-network-wired"></i></div>
-				<a href="Networking-infrastructure.html" class="stretched-link">
-					<h4>Networking & Infrastructure</h4>
-				<p>Secure and scalable network solutions including structured cabling, server setup, and office IT infrastructure designed for reliable business operations.</p></a>
-			</div>
-		</div>
-		
-		
-<!-- End Service Item -->
-
-<!-- End col -->
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-cloud"></i></div>
-			  <a href="Managed-Services.html" class="stretched-link">
-				<h4>Managed Services</h4>
-              <p>End-to-end IT management including server monitoring, security, software maintenance, and system optimization to ensure maximum performance and uptime.</p></a>
-            </div>
-          </div>
-		  
-<!-- End Service Item -->
-
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item position-relative">
-              <div class="icon"><i class="fas fa-shield-alt"></i></div>
-			  <a href="IT-Consulting.html" class="stretched-link">
-				<h4>IT Consulting</h4>
-              <p>Expert IT consulting services including IT audits, security assessments, compliance support, and strategic planning to improve efficiency and reduce risks.</p></a>
-            </div>
-          </div>
-		  
-<!-- End Service Item -->
-
+      <!-- Service Item -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-headset"></i></div>
+          <a href="it-support-24-7.html" class="stretched-link">
+            <h4>IT Support & AMC</h4>
+            <p>24/7 IT support and Annual Maintenance Contracts (AMC) with fast issue resolution, proactive monitoring, and reliable on-site and remote assistance across the UAE.</p>
+          </a>
         </div>
-
       </div>
 
-    </section>
+      <!-- Service Item -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-network-wired"></i></div>
+          <a href="Networking-infrastructure.html" class="stretched-link">
+            <h4>Networking & Infrastructure</h4>
+            <p>Secure and scalable network solutions including structured cabling, server setup, and office IT infrastructure designed for reliable business operations.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service Item -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-cloud"></i></div>
+          <a href="Managed-Services.html" class="stretched-link">
+            <h4>Managed Services</h4>
+            <p>End-to-end IT management including server monitoring, security, software maintenance, and system optimization to ensure maximum performance and uptime.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Service Item -->
+      <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="400">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
+          <a href="IT-Consulting.html" class="stretched-link">
+            <h4>IT Consulting</h4>
+            <p>Expert IT consulting services including IT audits, security assessments, compliance support, and strategic planning to improve efficiency and reduce risks.</p>
+          </a>
+        </div>
+      </div>
+
+      <!-- Solution Item -->
+      <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="500">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-server"></i></div>
+          <a href="IT-infrastructure-solutions.html" class="stretched-link">
+            <h4>IT Infrastructure Solutions</h4>
+          </a>
+          <p>Comprehensive IT infrastructure management including monitoring, maintenance, and optimization to ensure smooth business operations.</p>
+        </div>
+      </div>
+
+      <!-- Solution Item -->
+      <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="600">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-shield-alt"></i></div>
+          <a href="IT-security-solutions.html" class="stretched-link">
+            <h4>IT Security Solutions</h4>
+          </a>
+          <p>Advanced cybersecurity solutions including threat protection, firewall management, and compliance to keep your business secure.</p>
+        </div>
+      </div>
+
+      <!-- Solution Item -->
+      <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="700">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-cloud"></i></div>
+          <a href="Cloud-Solutions.html" class="stretched-link">
+            <h4>Cloud Solutions</h4>
+          </a>
+          <p>Scalable cloud services including migration, management, and backup solutions to enhance flexibility and business continuity.</p>
+        </div>
+      </div>
+
+      <!-- Cybersecurity Item -->
+      <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="800">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-shield-virus"></i></div>
+          <a href="Cybersecurity.html" class="stretched-link">
+            <h4>Cybersecurity</h4>
+          </a>
+          <p>Advanced cybersecurity services including threat detection, endpoint protection, and risk management to safeguard your business.</p>
+        </div>
+      </div>
 	
+      <!-- IT Products Item -->
+      <div class="col-lg-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="900">
+        <div class="service-item position-relative">
+          <div class="icon"><i class="fas fa-laptop"></i></div>
+          <a href="IT-products.html" class="stretched-link">
+            <h4>IT Products</h4>
+          </a>
+          <p>Wide range of IT hardware and software solutions including laptops, servers, networking devices, and business applications.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 <!-- /Featured Services Section -->
+
 
 <!-- Call To Action Section -->
 	
@@ -515,68 +701,6 @@ Our mission is to simplify IT operations, improve system performance, and delive
 <!-- /Stats Section -->
 
     
- <!-- Services Section -->
-    <section id="Solutions" class="services section">
-
-<!-- Section Title -->
-<div class="container section-title" data-aos="fade-up">
-  <h2>Solutions</h2>
-  <p>We provide reliable, secure, and scalable IT solutions designed to help businesses grow, stay protected, and operate without disruptions.</p>
-</div>
-<!-- End Section Title -->
-
-<div class="container">
-  <div class="row gy-4">
-
-    <!-- Service Item -->
-    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="fas fa-server"></i>
-        </div>
-        <a href="IT-infrastructure-solutions.html" class="stretched-link">
-          <h3>IT Infrastructure Solutions</h3>
-        </a>
-        <p>Comprehensive IT infrastructure management including monitoring, maintenance, and optimization to ensure smooth business operations.</p>
-      </div>
-    </div>
-    <!-- End Service Item -->
-
-    <!-- Service Item -->
-    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="fas fa-shield-alt"></i>
-        </div>
-        <a href="IT-security-solutions.html" class="stretched-link">
-          <h3>IT Security Solutions</h3>
-        </a>
-        <p>Advanced cybersecurity solutions including threat protection, firewall management, and compliance to keep your business secure.</p>
-      </div>
-    </div>
-    <!-- End Service Item -->
-
-    <!-- Service Item -->
-    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-      <div class="service-item position-relative">
-        <div class="icon">
-          <i class="fas fa-cloud"></i>
-        </div>
-        <a href="Cloud-Solutions.html" class="stretched-link">
-          <h3>Cloud Solutions</h3>
-        </a>
-        <p>Scalable cloud services including migration, management, and backup solutions to enhance flexibility and business continuity.</p>
-      </div>
-    </div>
-    <!-- End Service Item -->
-
-  </div>
-</div>
-</section>
-	
-<!-- /Services Section -->
-
- 
 	  
 <!-- End Section Title -->
 
@@ -610,7 +734,7 @@ Our mission is to simplify IT operations, improve system performance, and delive
       <!-- CEO -->
       <div class="col-lg-4 col-md-6">
         <div class="team-member">
-          <img src="assets/img/teamr/MD.jpg" alt="Mohamed Sulaiman - Managing Director of VOWTECH">
+          <img src="assets/img/team/md.png" alt="VOWTECH Managing Director Mohamed Sulaiman">
 		  <div class="social">
                   <a href=""><i class="bi bi-twitter-x"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -633,7 +757,7 @@ Our mission is to simplify IT operations, improve system performance, and delive
                   <a href=""><i class="bi bi-instagram"></i></a>
                   <a href=""><i class="bi bi-linkedin"></i></a>
                 </div>
-				<h4 class="team-name">Mohamed Amer Sohail</h4>
+				<h4 class="team-name">Mohammed Amer Sohail</h4>
 <p class="team-role">IT Manager</p>
 
         </div>
@@ -680,7 +804,7 @@ Our mission is to simplify IT operations, improve system performance, and delive
             <span class="sitename">VOWTECH</span>
           </a>
           <div class="footer-contact pt-3">
-            <p>Ar Reem St - Al Zahiyah - E16 02 - Abu Dhabi</p>
+            <p>Navy Gate - Al Zahiyah - E16 02 - Abu Dhabi</p>
             <p>Abu Dhabi, UAE</p>
             <p class="mt-3"><strong>Phone:</strong> <span>+971 58 181 6887</span></p>
             <p><strong>Email:</strong> <span>info@vow-tech.com</span></p>
@@ -755,31 +879,41 @@ Our mission is to simplify IT operations, improve system performance, and delive
   <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
-  <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <script defer src="assets/js/main.js"></script>
-   
+    
+   <!-- Main JS File -->
   
-
-  <!-- Main JS File -->
-  <script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script defer src="assets/vendor/aos/aos.js"></script>
   <script defer src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script defer src="assets/js/main.js"></script>
+  <link href="assets/css/main.css" rel="stylesheet">
+
+<script defer src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script defer src="assets/js/main.js"></script>
+  
 
 <script>
-  const dropdowns = document.querySelectorAll('.mega-dropdown');
-const overlay = document.getElementById('menu-overlay');
+const dropdowns = document.querySelectorAll('.mega-dropdown');
 
 dropdowns.forEach(dropdown => {
-  dropdown.addEventListener('mouseenter', () => {
-    dropdown.classList.add('active');
-    overlay.classList.add('active');
-  });
+  const link = dropdown.querySelector('a');
 
-  dropdown.addEventListener('mouseleave', () => {
-    dropdown.classList.remove('active');
-    overlay.classList.remove('active');
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    // close others
+    dropdowns.forEach(d => {
+      if (d !== dropdown) d.classList.remove('active');
+    });
+
+    // toggle current
+    dropdown.classList.toggle('active');
   });
+});
+
+// close when clicking outside
+document.addEventListener('click', function(e) {
+  if (!e.target.closest('.mega-dropdown')) {
+    dropdowns.forEach(d => d.classList.remove('active'));
+  }
 });
 </script>
 
@@ -792,18 +926,49 @@ dropdowns.forEach(dropdown => {
 
 	</a>
 	
-	<script>
-  const heroCarousel = document.querySelector('#hero-carousel');
 
-  if (heroCarousel) {
-    heroCarousel.addEventListener('mouseenter', () => {
-      bootstrap.Carousel.getInstance(heroCarousel).pause();
-    });
+<script>
+window.addEventListener("scroll", function () {
+  const header = document.querySelector(".header");
 
-    heroCarousel.addEventListener('mouseleave', () => {
-      bootstrap.Carousel.getInstance(heroCarousel).cycle();
-    });
+  if (window.scrollY < 80) {
+    header.classList.add("hero-glass");
+  } else {
+    header.classList.remove("hero-glass");
   }
+});
+</script>
+
+
+
+<!-- ✅ ADD THIS BELOW -->
+<script>
+const heroCarousel = document.querySelector('#hero-carousel');
+
+if (heroCarousel) {
+  heroCarousel.addEventListener('mouseenter', () => {
+    const instance = bootstrap.Carousel.getOrCreateInstance(heroCarousel);
+    instance.pause();
+  });
+
+  heroCarousel.addEventListener('mouseleave', () => {
+    const instance = bootstrap.Carousel.getOrCreateInstance(heroCarousel);
+    instance.cycle();
+  });
+}
+</script>
+
+<script>
+window.onload = function () {
+  setTimeout(function () {
+    document.getElementById("popup").style.display = "flex";
+  }, 2000);
+};
+
+// CLOSE FUNCTION
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
 </script>
 
 </body>
