@@ -25,6 +25,60 @@
   scroll-behavior: smooth;
 }
 
+/* ================= POPUP ================= */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+.popup-box {
+  width: 90%;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  animation: popIn 0.4s ease;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 26px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.popup-buttons a {
+  display: inline-block;
+  padding: 12px 20px;
+  margin: 5px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-whatsapp { background: #25D366; }
+.btn-email { background: #3fbbc0; }
+
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 /* ===================================================
    FINAL MOBILE OPTIMIZATION - CLEAN CORPORATE STYLE
 =================================================== */
@@ -53,11 +107,6 @@
   }
 }
 
-.carousel-item img {
-  width: 100%;
-  height: 90vh;
-  object-fit: cover;
-}
 @media (max-width: 480px) {
   .carousel-caption .btn-get-started {
     display: block;
@@ -65,6 +114,24 @@
   }
 }
 @media (max-width: 991px) {
+
+/* ==============================
+   GLASS HEADER ONLY ON HERO
+============================== */
+
+.header.hero-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+.header.hero-glass .navmenu a,
+.header.hero-glass .logo h1,
+.header.hero-glass .cta-btn {
+  color: #fff !important;
+}
 
   /* ===== HEADER FIX ===== */
   .header .logo h1 {
@@ -145,18 +212,14 @@
     box-shadow: 0 5px 12px rgba(0,0,0,0.2) !important;
   }
 
-  /* ===== FOOTER CLEANUP ===== */
-  footer {
-    text-align: center;
   }
-
-}
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 body {
-  margin: 0;              /* ✅ ADD THIS */
-  padding: 0;             /* ✅ ADD THIS */
+  margin: 0;
+  padding: 0;
+  padding-top: 110px;
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
@@ -318,13 +381,6 @@ h6 {
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
-.header {
-  color: var(--default-color);
-  background-color: var(--background-color);
-  transition: all 0.5s;
-  z-index: 997;
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
-}
 
 .header .topbar {
   background-color: var(--accent-color);
@@ -905,11 +961,6 @@ section,
 
 /* FORCE HERO FIX */
 
-.carousel-item img {
-will-change: transform;
-  height: 100% !important;
-  object-fit: cover !important;
-}
 /* FORCE HERO FIX */
 .carousel-caption {
   position: absolute;
@@ -931,10 +982,20 @@ will-change: transform;
 # Hero Section - Unique Glow & Center Arrows
 --------------------------------------------------------------*/
 /* ===== REMOVE ALL TOP GAP COMPLETELY ===== */
-.header {
-  position: sticky;
+
+header#header {
+  position: fixed;
   top: 0;
-  z-index: 9999;
+  left: 0;
+  width: 100%;
+  z-index: 99999;
+
+  background: #fff;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+
+  padding: 10px 0;
+  height: auto;
+  transition: all 0.5s ease;
 }
 
 .hero {
@@ -952,7 +1013,9 @@ will-change: transform;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: brightness(0.6);
 }
+
 @media (max-width: 768px) {
   .hero,
   .hero .carousel-item {
@@ -968,14 +1031,6 @@ will-change: transform;
     font-size: 14px;
   }
 }
-html, body {
-  margin: 0;
-  padding: 0;
-}
-.header {
-  height: auto;
-  padding: 10px 0;
-}
 
 .header .branding {
   padding: 0;
@@ -985,11 +1040,6 @@ html, body {
   margin-bottom: 0 !important;
 }
 
-.hero,
-#hero {
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
 
 /* Fix Bootstrap container spacing */
 .container,
@@ -1015,7 +1065,7 @@ body .hero {
 .hero .carousel-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover !important;
+  object-fit: cover;
   filter: brightness(0.6);
   transition: transform 1s ease;
 }
@@ -1038,18 +1088,6 @@ body .hero {
   text-shadow: 0 0 8px rgba(0,0,0,0.4);
 }
 
-.carousel-caption .btn-get-started {
-  display: inline-block;
-  padding: 12px 35px;
-  border-radius: 50px;
-  font-weight: 600;
-  font-size: 16px;
-  text-decoration: none;
-  color: #fff;
-  background-color: var(--accent-color);
-  margin: 5px;
-  transition: all 0.3s ease;
-}
 
 .carousel-caption .btn-get-started:hover {
   color: var(--accent-color);
@@ -1170,13 +1208,15 @@ body .hero {
 # Featured Services Section
 --------------------------------------------------------------*/
 .featured-services .service-item {
-  background-color: var(--surface-color);
-  box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-  padding: 50px 30px;
-  transition: all 0.3s ease-in-out;
-  height: 100%;
-  position: relative;
-  z-index: 1;
+  background: #fff;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.featured-services .service-item:hover {
+  transform: translateY(-5px);
 }
 
 .featured-services .service-item:before {
@@ -1401,13 +1441,13 @@ body .hero {
   color: var(--accent-color);  /* Make number stand out */
   font-size: 42px;
   display: block;
-  font-weight: 700;
+  font-weight: 800;
   margin-bottom: 5px;
 }
 
 .stats .stats-item p {
   font-family: var(--heading-font);
-  font-size: 16px;
+  font-size: 15px;
   color: var(--heading-color);
   margin: 0;
   text-transform: uppercase;   /* Professional look */
@@ -1512,17 +1552,21 @@ body .hero {
 .services .service-item .icon {
   background-color: var(--surface-color);
   color: var(--accent-color);
-  margin: 0 auto;
+
   width: 80px;
   height: 80px;
-  border-radius: 50px;
+  border-radius: 50%;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 20px;
-  transition: 0.3s ease-in-out; /* already defined twice */
+
+  margin: 0 auto 20px;
+
   font-size: 32px;
+
   transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+
   box-shadow: 0px 0 25px rgba(0, 0, 0, 0.1);
 }
 
@@ -1798,25 +1842,7 @@ body .hero {
 /*--------------------------------------------------------------
 # our Team Section
 --------------------------------------------------------------*/
-/* Team Name */
-.team-member .team-name {
-  font-size: 22px;              /* Bigger & confident */
-  font-weight: 700;
-  color: #222;
-  margin-top: 12px;
-  margin-bottom: 4px;
-  letter-spacing: 0.4px;
-}
 
-/* Team Role / Designation */
-.team-member .team-role {
-  font-size: 14px;
-  font-weight: 500;
-  color: #0d6efd;               /* Brand blue */
-  text-transform: uppercase;   /* Professional look */
-  letter-spacing: 1px;
-  margin: 0;
-}
 .team-member .team-name {
   font-size: 21px;
   font-weight: 600;
@@ -1831,6 +1857,15 @@ body .hero {
   position: relative;
   display: inline-block;
   padding-top: 6px;
+}
+
+.team-member .team-role::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #0d6efd;
+  display: block;
+  margin: 0 auto 6px;
 }
 
 .team-member .team-role::before {
@@ -1922,14 +1957,35 @@ body .hero {
   font-size: 14px;
   color: #1f6cb0;
 }
+.cta-btn,
+.btn-get-started {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #3fbbc0, #01d3b7);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
 
+.btn-get-started:hover {
+  background: #fff;
+  color: #3fbbc0;
+  transform: scale(1.05);
+}
+
+.cta-btn:hover,
+.btn-get-started:hover {
+  background: #fff;
+  color: #3fbbc0;
+  transform: translateY(-2px);
+}
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-
-.starter-section {
-  /* Add your styles here */
-}
 
 .whatsapp-float {
   position: fixed;
@@ -1971,17 +2027,6 @@ body .hero {
 .contact-buttons a {
   margin-right: 12px;
 }
-.btn-get-started {
-  display: inline-block;
-  padding: 12px 25px;
-  margin: 10px 5px;
-  background-color: #007bff; /* button color */
-  color: #fff; /* text color */
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  z-index: 10;
-}
 
 .btn-get-started:hover {
   background-color: #0056b3;
@@ -1996,21 +2041,6 @@ body .hero {
   padding: 0;
 }
 
-/* 3D menu item styling */
-.menu-item {
-  display: inline-block;
-  padding: 12px 25px;
-  font-family: 'Arial', sans-serif;
-  font-size: 18px;
-  color: #fff;
-  text-decoration: none;
-  background: linear-gradient(145deg, #ff7f50, #ff6347); /* colorful gradient */
-  border-radius: 12px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3), 0 0 8px rgba(255,255,255,0.2) inset;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-  transform: perspective(500px) rotateX(5deg) rotateY(-5deg);
-  transition: all 0.3s ease;
-}
 
 /* Hover effect to enhance 3D look */
 
@@ -2026,20 +2056,6 @@ body .hero {
   text-decoration: none;
 }
 
-/* Inner Button */
-.cta-btn-3d span {
-  display: block;
-  padding: 18px 40px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(145deg, #6a5acd, #9b59b6);
-  border-radius: 12px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  position: relative;
-}
 
 /* Front and back faces */
 .btn-front {
@@ -2114,21 +2130,10 @@ body .hero {
       margin-bottom: 30px;
     }
 
-    /* Footer styling */
-    footer {
-      background: #222;
-      color: #fff;
-      padding: 25px 0;
-      font-size: 14px;
-    }
-    footer a {
-      color: #6a5acd;
-      text-decoration: none;
-    }
-    footer a:hover {
+     footer a:hover {
       text-decoration: underline;
     }
- 	
+
 footer {
   background: #111;
   color: #fff;
@@ -2136,14 +2141,19 @@ footer {
   font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 footer a {
   color: #6a5acd;
-  text-decoration: none;
   font-weight: 500;
+  text-decoration: none;
 }
-footer a:hover {
-  text-decoration: underline;
-}
+
+.credits {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #aaa;
+} 	
+
 .credits {
   margin-top: 5px;
   font-size: 13px;
@@ -2239,14 +2249,6 @@ footer a:hover {
   color: #01ccb8;   /* Darker accent on hover */
 }
 
-/* Prevent hero overlap */
-#hero {
-  padding: 0 !important;  
-  margin-top: 0 !important;
-  }
-#hero .carousel-item {
-  height: 90vh !important;
-}
 
 .carousel-caption h2,
 .carousel-caption p,
@@ -2284,4 +2286,242 @@ footer a:hover {
 
 .carousel-item.active img {
   transform: scale(1.08);
+}
+
+/* ===============================
+   PREMIUM CTA BUTTON (SEO + UX)
+=============================== */
+.header .cta-btn {
+  background: linear-gradient(135deg, #3fbbc0, #01d3b7);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 10px 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+/* Hover Effect */
+.header .cta-btn:hover {
+  background: #fff;
+  color: #3fbbc0;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Pulse Animation (HIGH CONVERSION) */
+.pulse-btn {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(63, 187, 192, 0.6);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(63, 187, 192, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(63, 187, 192, 0);
+  }
+}
+
+/* ================================
+   FEATURED SERVICES - FINAL FIX
+================================ */
+
+/* H4 always BLACK */
+.featured-services .service-item h4 {
+  color: #000000 !important;
+}
+
+/* Paragraph default color */
+.featured-services .service-item p {
+  color: #3fbbc0;
+  transition: 0.3s ease;
+}
+
+/* Keep links clean */
+.featured-services .service-item a {
+  text-decoration: none;
+}
+
+/* ================================
+   HOVER EFFECT
+================================ */
+
+/* Optional card hover */
+.featured-services .service-item:hover {
+  cursor: pointer;
+}
+
+/* Paragraph turns WHITE on hover */
+.featured-services .service-item:hover p {
+  color: #ffffff !important;
+}
+
+/* H4 stays BLACK even on hover */
+.featured-services .service-item:hover h4 {
+  color: #000000 !important;
+}
+
+/* Custom changes */
+.featured-services {
+  background: linear-gradient(135deg, #f5f9fb, #e8f6f7);
+}
+
+/* ================= POPUP OVERLAY ================= */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+}
+
+/* POPUP BOX */
+.popup-content {
+  width: 95%;
+  max-width: 1100px;
+  position: relative;
+  animation: popIn 0.4s ease;
+}
+
+/* CLOSE BUTTON */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* ================= YOUR PROMO DESIGN ================= */
+.promo-section {
+  padding: 0;
+  background: transparent;
+}
+
+.promo-box {
+  display: flex;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* LEFT */
+.promo-left {
+  flex: 1;
+  padding: 40px;
+}
+
+.promo-left .badge {
+  background: red;
+  color: #fff;
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.promo-left h1 {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.promo-left h1 span {
+  color: #0d6efd;
+}
+
+.promo-left p {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+/* FEATURES */
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.features div {
+  background: #eef3ff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 20px;
+}
+
+.btn-quote {
+  background: #ffc107;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+.btn-whatsapp {
+  background: #25d366;
+  padding: 12px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* RIGHT */
+.promo-right {
+  flex: 1;
+  background: linear-gradient(135deg, #0d6efd, #002f6c);
+  color: #fff;
+  text-align: center;
+  padding: 40px;
+}
+
+.promo-right img {
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.discount {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.discount span {
+  font-size: 40px;
+  color: #ffc107;
+}
+
+/* ANIMATION */
+@keyframes popIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .promo-box {
+    flex-direction: column;
+  }
+
+  .promo-left, .promo-right {
+    text-align: center;
+  }
 }
