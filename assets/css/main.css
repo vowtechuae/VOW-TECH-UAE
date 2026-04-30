@@ -26,18 +26,6 @@
 }
 
 /* ================= POPUP ================= */
-.popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 999999;
-}
 
 .popup-box {
   width: 90%;
@@ -51,15 +39,6 @@
   box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
 
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 26px;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
 
 .popup-buttons a {
   display: inline-block;
@@ -135,12 +114,16 @@
 
   /* ===== HEADER FIX ===== */
   .header .logo h1 {
-    font-size: 26px !important;
-  }
+  font-size: 26px;
+}
 
   .header .logo img {
     max-height: 50px !important;
   }
+
+  .header .branding .logo h1 {
+  font-size: 26px;
+}
 
   .header .cta-btn {
     display: none; /* hide extra button on mobile */
@@ -219,7 +202,7 @@
 body {
   margin: 0;
   padding: 0;
-  padding-top: 110px;
+  padding-top: 80px; /* or match header height exactly */
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
@@ -233,8 +216,7 @@ a {
 
 a:hover {
   color: var(--accent-color);
-  color: color-mix(in srgb, var(--accent-color), transparent 25%);
-  text-decoration: none;
+  opacity: 0.8;
 }
 
 h1,
@@ -1005,17 +987,6 @@ header#header {
   overflow: hidden;
 }
 
-.hero .carousel-item {
-  height: 90vh;
-}
-
-.hero .carousel-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.6);
-}
-
 @media (max-width: 768px) {
   .hero,
   .hero .carousel-item {
@@ -1056,11 +1027,9 @@ body .hero {
   margin-top: 0;
 }
 
-
-.hero .carousel-item {
-  position: relative;
-  height: 90vh;
-}
+header { z-index: 1000; }
+.navmenu { z-index: 1100; }
+.popup { z-index: 2000; }
 
 .hero .carousel-item img {
   width: 100%;
@@ -1868,15 +1837,6 @@ body .hero {
   margin: 0 auto 6px;
 }
 
-.team-member .team-role::before {
-  content: "";
-  width: 40px;
-  height: 2px;
-  background: #0d6efd;
-  display: block;
-  margin: 0 auto 6px;
-}
-
 
 /* Leadership Team Section */
 .team-video-section {
@@ -1971,11 +1931,6 @@ body .hero {
   box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-.btn-get-started:hover {
-  background: #fff;
-  color: #3fbbc0;
-  transform: scale(1.05);
-}
 
 .cta-btn:hover,
 .btn-get-started:hover {
@@ -2028,10 +1983,6 @@ body .hero {
   margin-right: 12px;
 }
 
-.btn-get-started:hover {
-  background-color: #0056b3;
-  color: #fff;
-}
 
 /* Base menu styling */
 .menu {
@@ -2148,11 +2099,6 @@ footer a {
   text-decoration: none;
 }
 
-.credits {
-  margin-top: 5px;
-  font-size: 13px;
-  color: #aaa;
-} 	
 
 .credits {
   margin-top: 5px;
@@ -2378,7 +2324,7 @@ footer a {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 999999;
+  z-index: 2000;
 }
 
 /* POPUP BOX */
@@ -2397,7 +2343,7 @@ footer a {
   font-size: 28px;
   background: none;
   border: none;
-  color: #fff;
+  color: #000; /* change if needed */
   cursor: pointer;
   z-index: 1000;
 }
@@ -2509,11 +2455,6 @@ footer a {
   color: #ffc107;
 }
 
-/* ANIMATION */
-@keyframes popIn {
-  from { transform: scale(0.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
 
 /* MOBILE */
 @media (max-width: 768px) {
@@ -2525,6 +2466,33 @@ footer a {
     text-align: center;
   }
 }
-.close-btn {
-  color: black !important;
+
+.promo-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.promo-features div {
+  background: #eef3ff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Suggested */
+header { z-index: 1000; }
+.popup-overlay { z-index: 2000; }
+.navmenu { z-index: 1500; }
+
+/* ===== GLOBAL UI POLISH ===== */
+body {
+  background: #f8fbfc;
+}
+
+/* Smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
