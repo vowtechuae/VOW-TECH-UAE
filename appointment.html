@@ -1,266 +1,1096 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IT Appointment Booking | VOWTECH Dubai & Abu Dhabi</title>
-  <meta name="description"
-    content="Book your IT service appointment with VOWTECH in Dubai & Abu Dhabi. Get expert IT support, networking, and software assistance.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Book IT Appointment | VOWTECH Abu Dhabi & Dubai UAE</title>
+<meta name="description" content="Book a free IT consultation with VOWTECH — expert IT support, networking, cybersecurity, and software services across Abu Dhabi and Dubai, UAE.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
 
-  <link href="assets/img/VOWTECH.jpeg" rel="icon">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<style>
+:root {
+  --black:    #050810;
+  --navy:     #080f1e;
+  --navy2:    #0a1628;
+  --navy3:    #0e1c35;
+  --navy4:    #14253f;
+  --gold:     #c8a052;
+  --gold2:    #dbb870;
+  --gold3:    #9a7838;
+  --gold-dim: rgba(200,160,82,0.15);
+  --teal:     #00c8e0;
+  --teal2:    #00a0b8;
+  --teal-dim: rgba(0,200,224,0.12);
+  --red:      #e05050;
+  --red-dim:  rgba(224,80,80,0.12);
+  --white:    #f0ece2;
+  --cream:    #e5dfd0;
+  --muted:    rgba(240,236,226,0.5);
+  --border:   rgba(200,160,82,0.18);
+  --border2:  rgba(0,200,224,0.1);
+  --r:        4px;
+  --ease:     cubic-bezier(0.22,1,0.36,1);
+  --fd:       'Orbitron', 'Rajdhani', sans-serif;
+  --fb:       'Rajdhani', system-ui, sans-serif;
+  --fm:       'Share Tech Mono', 'Courier New', monospace;
+  --tb:       42px;
+  --hh:       88px;
+}
 
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #000;
-    }
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
+body { font-family:var(--fb); background:var(--black); color:var(--white); overflow-x:hidden; cursor:none; -webkit-font-smoothing:antialiased; }
+a { color:var(--gold); text-decoration:none; transition:color .25s; }
+a:hover { color:var(--gold2); }
+img { display:block; max-width:100%; }
+body.body-lock { overflow:hidden; }
 
-    header {
-      background: #ffffff;
-      padding: 15px 0;
-    }
+#vt-noise {
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  opacity:.5;
+}
 
-    header .logo-glass {
-      width: 100px;
-      filter: none;
-    }
+/* CURSOR */
+#vt-dot { position:fixed; width:10px; height:10px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); transition:width .18s var(--ease),height .18s var(--ease),background .2s; mix-blend-mode:difference; }
+#vt-ring { position:fixed; width:38px; height:38px; border:1.5px solid var(--gold); border-radius:50%; pointer-events:none; z-index:99998; transform:translate(-50%,-50%); opacity:.55; transition:width .3s var(--ease),height .3s var(--ease),border-color .25s; }
+#vt-dot.hover { width:6px; height:6px; background:var(--teal); }
+#vt-ring.hover { width:56px; height:56px; border-color:var(--teal); opacity:.3; }
+@media(max-width:991px){ #vt-dot,#vt-ring{ display:none; } body{ cursor:auto; } }
 
-    .hero-bg {
-      background: #0d1b2a;
-      color: white;
-      padding: 100px 0;
-      text-align: center;
-    }
+/* BUTTONS */
+.btn-primary { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--gold); color:var(--navy2); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:none; border-radius:var(--r); cursor:pointer; text-decoration:none; position:relative; overflow:hidden; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-primary::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.18),transparent); opacity:0; transition:opacity .3s; }
+.btn-primary:hover { background:var(--gold2); color:var(--navy2); transform:translateY(-3px); box-shadow:0 14px 32px rgba(200,160,82,.38); }
+.btn-primary:hover::before { opacity:1; }
+.btn-primary.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-wa { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:#25D366; color:#fff; font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border-radius:var(--r); text-decoration:none; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-wa:hover { background:#1db954; color:#fff; transform:translateY(-3px); box-shadow:0 14px 32px rgba(37,211,102,.32); }
+.btn-wa.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-dark { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--navy2); color:var(--gold); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:1.5px solid var(--gold); border-radius:var(--r); text-decoration:none; transition:all .3s; }
+.btn-dark:hover { background:var(--gold); color:var(--navy2); transform:translateY(-2px); }
 
-    .hero-bg h1 {
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
+/* TOPBAR */
+#topbar { position:fixed; top:0; left:0; right:0; height:var(--tb); background:var(--gold); z-index:990; display:flex; align-items:center; }
+.tb-inner { width:100%; max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; letter-spacing:.8px; color:var(--navy2); }
+.tb-pulse { display:inline-block; width:7px; height:7px; background:var(--navy2); border-radius:50%; margin-right:10px; animation:tbPulse 1.6s ease infinite; }
+@keyframes tbPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.4} }
+.tb-r { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.tb-r a { color:var(--navy2); font-weight:700; }
+.tb-r a:hover { text-decoration:underline; }
+.tb-r span { opacity:.4; }
 
-    .hero-bg p {
-      font-size: 1.2rem;
-    }
+/* HEADER */
+#vt-header { position:fixed; top:var(--tb); left:0; right:0; height:var(--hh); z-index:980; background:rgba(8,15,30,.88); border-bottom:1px solid var(--border); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); transition:background .4s,box-shadow .4s; }
+#vt-header.scrolled { background:rgba(8,15,30,.98); box-shadow:0 4px 32px rgba(0,0,0,.65); }
+.hdr-inner { max-width:1360px; margin:auto; padding:0 48px; height:100%; display:flex; align-items:center; gap:28px; }
 
-    .hero-bg .btn {
-      margin-top: 20px;
-    }
+/* LOGO CUBE */
+.vt-logo { display:flex; align-items:center; gap:16px; text-decoration:none; flex-shrink:0; }
+.logo-3d-wrap { width:72px; height:72px; perspective:400px; flex-shrink:0; }
+.logo-cube { width:72px; height:72px; position:relative; transform-style:preserve-3d; animation:logoCubeAll4 10s linear infinite; }
+@keyframes logoCubeAll4 { 0%{transform:rotateY(0deg) rotateX(12deg)} 25%{transform:rotateY(90deg) rotateX(12deg)} 50%{transform:rotateY(180deg) rotateX(12deg)} 75%{transform:rotateY(270deg) rotateX(12deg)} 100%{transform:rotateY(360deg) rotateX(12deg)} }
+.lc-f { position:absolute; width:72px; height:72px; display:flex; align-items:center; justify-content:center; overflow:hidden; backface-visibility:hidden; border:1.5px solid rgba(200,160,82,.45); background:var(--navy2); }
+.lc-f img { width:100%; height:100%; object-fit:cover; }
+.lc-front  { transform:translateZ(36px); }
+.lc-back   { transform:translateZ(-36px) rotateY(180deg); }
+.lc-right  { transform:translateX(36px) rotateY(90deg); }
+.lc-left   { transform:translateX(-36px) rotateY(-90deg); }
+.lc-top    { transform:translateY(-36px) rotateX(90deg); background:linear-gradient(135deg,var(--gold-dim),var(--navy3)); }
+.lc-bottom { transform:translateY(36px) rotateX(-90deg); background:linear-gradient(135deg,var(--navy3),var(--gold-dim)); }
+.logo-text-wrap { display:flex; flex-direction:column; line-height:1; }
+.logo-main { font-family:var(--fd); font-size:22px; font-weight:700; letter-spacing:3px; color:var(--white); }
+.logo-main em { color:var(--gold); font-style:normal; }
+.logo-tagline { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); margin-top:5px; }
 
-    .appointment-form {
-      max-width: 800px;
-      margin: 50px auto;
-      background: #fff;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
+/* NAV */
+#vt-nav { margin-left:auto; display:flex; align-items:center; gap:2px; }
+.nav-a { font-family:var(--fm); font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); padding:10px 14px; text-decoration:none; background:none; border:none; cursor:pointer; transition:color .25s; position:relative; }
+.nav-a::after { content:''; position:absolute; bottom:5px; left:14px; right:14px; height:1px; background:var(--gold); transform:scaleX(0); transition:transform .3s var(--ease); }
+.nav-a:hover,.nav-a.active { color:var(--gold); }
+.nav-a:hover::after,.nav-a.active::after { transform:scaleX(1); }
+.nav-drop { position:relative; }
+.mega-panel { position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(12px); width:min(1000px,95vw); background:rgba(8,15,30,.98); border:1px solid var(--border); border-top:2px solid var(--gold); backdrop-filter:blur(28px); padding:34px 38px 40px; opacity:0; visibility:hidden; transition:all .3s var(--ease); z-index:100; box-shadow:0 32px 80px rgba(0,0,0,.7); }
+.mega-panel.open { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.mega-cols { display:grid; grid-template-columns:repeat(5,1fr); gap:28px; }
+.mega-head { font-family:var(--fm); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.mega-col a { display:block; font-size:13px; color:var(--muted); padding:5px 0; transition:color .2s,padding-left .2s; }
+.mega-col a:hover { color:var(--gold2); padding-left:7px; }
+.hdr-cta { margin-left:10px; padding:10px 22px; font-size:11px; flex-shrink:0; }
+#mob-btn { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:8px; }
+#mob-btn span { display:block; width:24px; height:1.5px; background:var(--white); transition:all .3s var(--ease); }
+#mob-btn.open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+#mob-btn.open span:nth-child(2){ opacity:0; }
+#mob-btn.open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
 
-    .appointment-form h3 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #0d1b2a;
-    }
+/* SCROLL REVEAL */
+[data-r] { opacity:0; transform:translateY(32px); transition:opacity .85s var(--ease),transform .85s var(--ease); }
+[data-r="right"] { transform:translateX(-32px); }
+[data-r="left"]  { transform:translateX(32px); }
+.vt-show { opacity:1 !important; transform:none !important; }
 
-    .appointment-form .form-control,
-    .appointment-form .form-select,
-    .appointment-form textarea {
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: 1px solid #ced4da;
-    }
+/* PAGE HERO */
+.page-hero { padding-top:calc(var(--tb) + var(--hh) + 80px); padding-bottom:100px; position:relative; overflow:hidden; background:var(--black); z-index:1; }
+.page-hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.04) 1px,transparent 1px); background-size:60px 60px; animation:gridDrift 20s linear infinite; }
+@keyframes gridDrift { 0%{background-position:0 0} 100%{background-position:60px 60px} }
+.page-hero::after { content:''; position:absolute; top:-200px; right:-100px; width:700px; height:700px; background:radial-gradient(circle,rgba(0,200,224,.05),transparent 60%); pointer-events:none; }
+.page-hero-inner { max-width:1360px; margin:auto; padding:0 48px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; z-index:2; }
+.scanlines-hero { position:absolute; inset:0; z-index:1; pointer-events:none; background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px); }
 
-    .appointment-form button {
-      width: 100%;
-      background: #0d1b2a;
-      color: #fff;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-    }
+.breadcrumb-nav { display:flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+.breadcrumb-nav a { color:var(--muted); transition:color .2s; }
+.breadcrumb-nav a:hover { color:var(--gold); }
+.breadcrumb-nav span { opacity:.4; }
+.breadcrumb-nav .bc-active { color:var(--teal); opacity:1; }
 
-    .status-message {
-      text-align: center;
-      margin-top: 10px;
-      display: none;
-    }
+.page-hero-badge { display:inline-flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:22px; }
+.badge-dot { width:7px; height:7px; background:var(--teal); border-radius:50%; animation:tbPulse 2s ease infinite; }
 
-    .loading {
-      color: #0d1b2a;
-    }
+.page-hero-h1 { font-family:var(--fd); font-size:clamp(40px,5.5vw,72px); font-weight:900; letter-spacing:1.5px; line-height:1.05; color:var(--white); margin-bottom:22px; }
+.page-hero-h1 em { color:var(--gold); font-style:normal; }
+.page-hero-h1 span { color:var(--teal); }
+.page-hero-desc { font-size:16px; color:var(--muted); line-height:1.82; max-width:500px; margin-bottom:36px; }
+.hero-chips { display:flex; gap:10px; flex-wrap:wrap; }
+.h-chip { display:flex; align-items:center; gap:7px; font-family:var(--fm); font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); padding:7px 14px; border:1px solid var(--border); border-radius:40px; }
+.h-chip i { color:var(--gold); font-size:10px; }
 
-    .sent-message {
-      color: green;
-    }
+/* HERO RIGHT — Booking Visual */
+.hero-visual-panel { display:flex; align-items:center; justify-content:center; }
+.calendar-visual { background:rgba(10,22,40,.8); border:1px solid var(--border); border-top:2px solid var(--gold); padding:28px; width:320px; backdrop-filter:blur(14px); position:relative; }
+.cal-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+.cal-month { font-family:var(--fd); font-size:13px; letter-spacing:2px; color:var(--gold); }
+.cal-arrow { width:28px; height:28px; border:1px solid var(--border); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:11px; cursor:pointer; border-radius:3px; }
+.cal-days-head { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; margin-bottom:8px; }
+.cal-days-head span { font-family:var(--fm); font-size:9px; letter-spacing:1px; color:var(--muted); text-align:center; }
+.cal-days { display:grid; grid-template-columns:repeat(7,1fr); gap:4px; }
+.cal-day { height:32px; display:flex; align-items:center; justify-content:center; font-family:var(--fm); font-size:11px; color:var(--muted); border-radius:3px; transition:all .2s; cursor:pointer; }
+.cal-day:hover { background:var(--gold-dim); color:var(--gold); }
+.cal-day.active { background:var(--gold); color:var(--navy2); font-weight:700; }
+.cal-day.teal { background:var(--teal-dim); color:var(--teal); border:1px solid var(--border2); }
+.cal-day.muted { opacity:.25; cursor:default; }
+.cal-slots { margin-top:18px; border-top:1px solid var(--border); padding-top:16px; }
+.cal-slots-h { font-family:var(--fm); font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+.slots-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+.slot { font-family:var(--fm); font-size:10px; color:var(--muted); padding:7px 6px; border:1px solid var(--border); border-radius:3px; text-align:center; cursor:pointer; transition:all .2s; }
+.slot:hover,.slot.sel { background:var(--gold); color:var(--navy2); border-color:var(--gold); font-weight:700; }
+.slot.booked { opacity:.3; cursor:default; text-decoration:line-through; }
+.cal-float { position:absolute; top:-18px; right:-20px; background:rgba(0,200,224,.12); border:1px solid var(--border2); padding:9px 14px; display:flex; align-items:center; gap:8px; border-radius:3px; animation:floatA 4s ease infinite; }
+@keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.cal-float i { color:var(--teal); font-size:12px; }
+.cal-float span { font-family:var(--fm); font-size:9px; color:var(--teal); letter-spacing:1px; }
 
-    .error-message {
-      color: red;
-    }
+/* FORM SECTION */
+.form-sec { padding:110px 0; position:relative; z-index:1; background:var(--navy); }
+.form-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.form-layout { display:grid; grid-template-columns:1fr 380px; gap:64px; align-items:start; max-width:1360px; margin:auto; padding:0 48px; }
 
-    .footer-bottom {
-      background: #0d1b2a;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-    }
+/* FORM CARD */
+.appt-form-card { background:var(--navy2); border:1px solid var(--border); position:relative; overflow:hidden; }
+.appt-form-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); }
+.form-card-head { padding:34px 38px 0; border-bottom:1px solid var(--border); padding-bottom:24px; display:flex; align-items:center; gap:16px; }
+.form-card-head-icon { width:48px; height:48px; background:var(--gold-dim); border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; }
+.form-card-head-icon i { color:var(--gold); font-size:20px; }
+.form-card-head h3 { font-family:var(--fd); font-size:18px; font-weight:700; color:var(--white); letter-spacing:1px; }
+.form-card-head p { font-family:var(--fm); font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-top:4px; }
+.form-body { padding:36px 38px 42px; }
 
-    .footer-bottom a {
-      color: #fff;
-      text-decoration: none;
-    }
+/* FORM FIELDS */
+.field-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:18px; }
+.field-row.three { grid-template-columns:1fr 1fr 1fr; }
+.field-row.one { grid-template-columns:1fr; }
+.field-wrap { display:flex; flex-direction:column; gap:6px; }
+.field-wrap label { font-family:var(--fm); font-size:9px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); }
+.field-wrap input,
+.field-wrap select,
+.field-wrap textarea {
+  background:rgba(8,15,30,.8);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  color:var(--white);
+  font-family:var(--fb);
+  font-size:14px;
+  padding:13px 16px;
+  width:100%;
+  outline:none;
+  transition:border-color .3s,box-shadow .3s,background .3s;
+  -webkit-appearance:none;
+  appearance:none;
+}
+.field-wrap select { cursor:pointer; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23c8a052' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 14px center; background-size:10px; padding-right:38px; }
+.field-wrap select option { background:var(--navy2); color:var(--white); }
+.field-wrap textarea { resize:vertical; min-height:110px; }
+.field-wrap input:focus,
+.field-wrap select:focus,
+.field-wrap textarea:focus { border-color:var(--gold); box-shadow:0 0 0 3px rgba(200,160,82,.1); background:rgba(10,22,40,.95); }
+.field-wrap input::placeholder,
+.field-wrap textarea::placeholder { color:var(--muted); font-size:13px; }
+/* Date/time input color fix */
+.field-wrap input[type="datetime-local"],
+.field-wrap input[type="date"],
+.field-wrap input[type="time"] { color-scheme:dark; }
 
-    .footer-bottom a:hover {
-      text-decoration: underline;
-    }
-  </style>
+/* SECTION DIVIDER */
+.form-section-label { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin:26px 0 18px; display:flex; align-items:center; gap:12px; }
+.form-section-label::after { content:''; flex:1; height:1px; background:var(--border2); }
+
+/* SUBMIT */
+.form-submit-row { margin-top:28px; display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.btn-submit { display:inline-flex; align-items:center; gap:10px; padding:16px 36px; background:var(--gold); color:var(--navy2); font-family:var(--fd); font-size:12px; font-weight:700; letter-spacing:1.5px; border:none; border-radius:var(--r); cursor:pointer; position:relative; overflow:hidden; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-submit::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.18),transparent); opacity:0; transition:opacity .3s; }
+.btn-submit:hover { background:var(--gold2); transform:translateY(-3px); box-shadow:0 14px 32px rgba(200,160,82,.38); }
+.btn-submit:hover::before { opacity:1; }
+.btn-submit:disabled { opacity:.5; cursor:not-allowed; transform:none; }
+.btn-submit-wa { display:inline-flex; align-items:center; gap:10px; padding:16px 28px; background:#25D366; color:#fff; font-family:var(--fd); font-size:12px; font-weight:700; letter-spacing:1px; border:none; border-radius:var(--r); cursor:pointer; text-decoration:none; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-submit-wa:hover { background:#1db954; color:#fff; transform:translateY(-3px); box-shadow:0 14px 32px rgba(37,211,102,.32); }
+
+/* STATUS MESSAGES */
+.status-wrap { margin-top:16px; }
+.status-loading { display:none; align-items:center; gap:10px; font-family:var(--fm); font-size:11px; letter-spacing:1px; color:var(--teal); padding:14px 18px; background:var(--teal-dim); border:1px solid var(--border2); border-radius:var(--r); }
+.status-loading i { animation:spin 1s linear infinite; }
+@keyframes spin { to{transform:rotate(360deg)} }
+.status-success { display:none; align-items:center; gap:10px; font-family:var(--fm); font-size:11px; letter-spacing:1px; color:#4ade80; padding:14px 18px; background:rgba(74,222,128,.08); border:1px solid rgba(74,222,128,.2); border-radius:var(--r); }
+.status-error { display:none; align-items:center; gap:10px; font-family:var(--fm); font-size:11px; letter-spacing:1px; color:var(--red); padding:14px 18px; background:var(--red-dim); border:1px solid rgba(224,80,80,.2); border-radius:var(--r); }
+
+/* SIDEBAR */
+.form-sidebar { display:flex; flex-direction:column; gap:24px; }
+
+.info-card { background:var(--navy2); border:1px solid var(--border); padding:32px 28px; position:relative; overflow:hidden; }
+.info-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:linear-gradient(180deg,var(--gold),var(--teal)); }
+.info-card-h { font-family:var(--fd); font-size:14px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:18px; display:flex; align-items:center; gap:10px; }
+.info-card-h i { color:var(--gold); font-size:15px; }
+.info-item { display:flex; align-items:flex-start; gap:12px; padding:12px 0; border-bottom:1px solid rgba(200,160,82,.06); }
+.info-item:last-child { border-bottom:none; padding-bottom:0; }
+.info-item-icon { width:36px; height:36px; flex-shrink:0; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--gold-dim); }
+.info-item-icon i { color:var(--gold); font-size:14px; }
+.info-item-h { font-family:var(--fb); font-size:14px; font-weight:700; color:var(--white); margin-bottom:2px; }
+.info-item-v { font-family:var(--fm); font-size:11px; color:var(--muted); }
+.info-item-v a { color:var(--muted); transition:color .2s; }
+.info-item-v a:hover { color:var(--gold); }
+
+.why-card { background:var(--navy2); border:1px solid var(--border); padding:28px; }
+.why-card-h { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; }
+.why-list { list-style:none; }
+.why-list li { display:flex; align-items:center; gap:10px; padding:9px 0; border-bottom:1px solid rgba(200,160,82,.05); font-size:14px; color:var(--cream); }
+.why-list li i { color:var(--teal); font-size:11px; flex-shrink:0; }
+.why-list li:last-child { border-bottom:none; }
+
+.stats-mini { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); }
+.smin { background:var(--navy2); padding:22px 18px; text-align:center; }
+.smin-n { font-family:var(--fd); font-size:28px; color:var(--gold); display:block; line-height:1; }
+.smin-n.teal { color:var(--teal); }
+.smin-l { font-family:var(--fm); font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-top:5px; display:block; }
+
+/* PROCESS STRIP */
+.process-strip { padding:80px 0 90px; position:relative; z-index:1; background:var(--black); overflow:hidden; }
+.process-strip::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.03) 1px,transparent 1px); background-size:60px 60px; }
+.ps-inner { max-width:1360px; margin:auto; padding:0 48px; }
+.ps-head { text-align:center; margin-bottom:56px; }
+.sec-tag { display:block; font-family:var(--fm); font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+.sec-h2 { font-family:var(--fd); font-size:clamp(32px,4.5vw,56px); font-weight:700; letter-spacing:1px; line-height:1.05; color:var(--white); margin-bottom:14px; }
+.sec-h2 em { color:var(--gold); font-style:normal; }
+.sec-sub { font-size:15px; color:var(--muted); max-width:480px; margin:0 auto; line-height:1.82; }
+.ps-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+.ps-step { background:var(--navy2); padding:36px 28px; position:relative; transition:background .3s; }
+.ps-step:hover { background:#0c1830; }
+.ps-step::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); transition:width .5s var(--ease); }
+.ps-step:hover::after { width:100%; }
+.ps-num { font-family:var(--fd); font-size:48px; font-weight:700; color:rgba(200,160,82,.08); line-height:1; margin-bottom:16px; }
+.ps-icon { width:48px; height:48px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--gold-dim); margin-bottom:16px; }
+.ps-icon i { color:var(--gold); font-size:20px; }
+.ps-h { font-family:var(--fb); font-size:17px; font-weight:700; color:var(--white); margin-bottom:8px; }
+.ps-p { font-size:13px; color:var(--muted); line-height:1.75; }
+
+/* BIG CTA */
+.big-cta { position:relative; z-index:1; padding:110px 48px; text-align:center; background:var(--navy); overflow:hidden; }
+.big-cta::before { content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(200,160,82,.055),transparent 60%); pointer-events:none; }
+.big-cta-inner { position:relative; z-index:1; max-width:680px; margin:auto; }
+.big-cta-h { font-family:var(--fd); font-size:clamp(36px,5.5vw,72px); font-weight:700; letter-spacing:1.5px; line-height:1.05; margin-bottom:16px; }
+.big-cta-h em { color:var(--gold); font-style:normal; }
+.big-cta-p { font-size:16px; color:var(--muted); line-height:1.82; margin-bottom:36px; }
+.big-cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:24px; }
+.big-cta-tel { display:flex; align-items:center; justify-content:center; gap:10px; font-family:var(--fm); font-size:12px; color:var(--muted); }
+.big-cta-tel i { color:var(--gold); }
+.big-cta-tel a { color:var(--gold2); font-size:15px; }
+
+/* MAP */
+.map-wrap { position:relative; border-top:1px solid var(--border); border-bottom:1px solid var(--border); z-index:1; }
+.map-wrap iframe { width:100%; height:400px; border:none; display:block; }
+.map-info { position:absolute; top:28px; left:60px; z-index:2; background:rgba(8,15,30,.96); border:1px solid var(--border); border-top:2px solid var(--gold); backdrop-filter:blur(18px); padding:28px 30px; min-width:264px; }
+.map-info-head { font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+.map-info p { font-size:13.5px; color:var(--muted); line-height:1.72; margin-bottom:9px; display:flex; align-items:center; gap:9px; }
+.map-info p i { color:var(--gold); font-size:12px; flex-shrink:0; }
+.map-info p a { color:var(--muted); }
+.map-info p a:hover { color:var(--gold); }
+
+/* FOOTER */
+#vt-footer { background:var(--navy); border-top:1px solid var(--border); position:relative; z-index:1; }
+#vt-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.footer-body { padding:80px 0 60px; }
+.footer-grid { display:grid; grid-template-columns:1.7fr repeat(5,1fr); gap:40px; }
+.footer-brand { display:flex; flex-direction:column; }
+.fb-logo-wrap { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.fb-logo-wrap img { width:50px; height:50px; border-radius:8px; object-fit:cover; border:1px solid var(--border); }
+.fb-name { font-family:var(--fd); font-size:20px; font-weight:700; letter-spacing:3px; color:var(--white); display:block; }
+.fb-name em { color:var(--gold); font-style:normal; }
+.fb-sub { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); display:block; margin-top:3px; }
+.footer-brand p { font-size:13.5px; color:var(--muted); line-height:1.82; margin-bottom:20px; max-width:270px; }
+.f-soc { display:flex; gap:8px; margin-bottom:20px; }
+.f-soc a { width:36px; height:36px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; text-decoration:none; transition:all .3s; }
+.f-soc a:hover { border-color:var(--gold); color:var(--gold); }
+.f-contact { display:flex; flex-direction:column; gap:8px; }
+.f-contact a,.f-contact span { display:flex; align-items:center; gap:8px; font-family:var(--fm); font-size:11.5px; color:var(--muted); transition:color .2s; }
+.f-contact i { color:var(--gold); font-size:11px; }
+.f-contact a:hover { color:var(--gold); }
+.footer-col h5 { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:9px; }
+.footer-col ul li a { font-size:13.5px; color:var(--muted); text-decoration:none; display:block; transition:color .2s,padding-left .25s; }
+.footer-col ul li a:hover { color:var(--gold2); padding-left:5px; }
+.footer-base { border-top:1px solid var(--border); padding:18px 0; }
+.footer-base-inner { max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; color:var(--muted); gap:16px; flex-wrap:wrap; }
+.footer-base-inner a { color:var(--muted); transition:color .2s; }
+.footer-base-inner a:hover { color:var(--gold); }
+.footer-base-inner span { margin:0 6px; opacity:.4; }
+.vt-con { max-width:1360px; margin:auto; padding:0 48px; }
+
+/* FIXED */
+#scroll-top { position:fixed; bottom:96px; right:28px; z-index:9990; width:44px; height:44px; background:var(--navy2); border:1px solid var(--border); border-radius:var(--r); color:var(--gold); font-size:17px; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; visibility:hidden; transition:all .3s; backdrop-filter:blur(10px); }
+#scroll-top.show { opacity:1; visibility:visible; }
+#scroll-top:hover { background:var(--gold); color:var(--navy2); border-color:var(--gold); transform:translateY(-3px); }
+#wa-btn { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; align-items:center; gap:8px; padding:13px 22px; background:#25D366; border-radius:50px; color:#fff; font-family:var(--fb); font-size:13px; font-weight:700; text-decoration:none; box-shadow:0 8px 28px rgba(37,211,102,.35); transition:transform .3s var(--ease),box-shadow .3s; }
+#wa-btn i { font-size:20px; }
+#wa-btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 18px 44px rgba(37,211,102,.4); color:#fff; }
+#wa-btn::before { content:''; position:absolute; inset:-2px; border-radius:50px; border:1px solid rgba(37,211,102,.45); animation:tbPulse 2s ease infinite; }
+
+/* RESPONSIVE */
+@media(max-width:1199px){
+  .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px;}
+  .mega-cols{grid-template-columns:repeat(3,1fr);}
+  .form-layout{grid-template-columns:1fr 320px;gap:40px;}
+  .ps-steps{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:991px){
+  #mob-btn{display:flex;}
+  .hdr-cta{display:none;}
+  #vt-nav{position:fixed;top:calc(var(--tb) + var(--hh));left:-100%;width:300px;height:calc(100vh - var(--tb) - var(--hh));background:rgba(8,15,30,.98);flex-direction:column;align-items:flex-start;padding:24px 20px;gap:0;transition:left .35s var(--ease);overflow-y:auto;border-right:1px solid var(--border);backdrop-filter:blur(24px);z-index:970;}
+  #vt-nav.nav-open{left:0;}
+  .nav-a{width:100%;padding:13px 8px;font-size:12px;border-bottom:1px solid rgba(200,160,82,.06);}
+  .nav-drop{width:100%;}
+  .mega-panel{position:static;transform:none;width:100%;max-width:100%;box-shadow:none;border:none;background:transparent;padding:10px 0 10px 14px;}
+  .mega-panel.open{opacity:1;visibility:visible;display:block;}
+  .mega-cols{grid-template-columns:1fr;gap:14px;}
+  .page-hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-visual-panel{display:none;}
+  .form-layout{grid-template-columns:1fr;gap:40px;}
+  .footer-grid{grid-template-columns:repeat(2,1fr);}
+  .map-info{display:none;}
+  .ps-steps{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:767px){
+  :root{--tb:52px;}
+  .tb-r{display:none;}
+  .vt-con,.ps-inner,.form-layout,.footer-base-inner{padding:0 24px;}
+  .form-body,.form-card-head{padding-left:24px;padding-right:24px;}
+  .field-row{grid-template-columns:1fr;}
+  .field-row.three{grid-template-columns:1fr;}
+  .hdr-inner{padding:0 20px;}
+  .tb-inner{padding:0 16px;}
+  .page-hero-inner{padding:0 24px;}
+  .form-layout{padding:0 24px;}
+  .big-cta{padding:80px 24px;}
+  .big-cta-btns{flex-direction:column;align-items:center;}
+  .logo-3d-wrap{width:52px;height:52px;}
+  .logo-cube{width:52px;height:52px;}
+  .lc-f{width:52px;height:52px;}
+  .lc-front{transform:translateZ(26px);}
+  .lc-back{transform:translateZ(-26px) rotateY(180deg);}
+  .lc-right{transform:translateX(26px) rotateY(90deg);}
+  .lc-left{transform:translateX(-26px) rotateY(-90deg);}
+  .lc-top{transform:translateY(-26px) rotateX(90deg);}
+  .lc-bottom{transform:translateY(26px) rotateX(-90deg);}
+  .ps-steps{grid-template-columns:1fr;}
+  .form-submit-row{flex-direction:column;}
+  .btn-submit,.btn-submit-wa{width:100%;justify-content:center;}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;}
+  #wa-btn span{display:none;}
+  #wa-btn{padding:13px;border-radius:50%;}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+</style>
 </head>
-
 <body>
 
-  <!-- HEADER -->
-  <header class="sticky-top">
-    <div class="container d-flex align-items-center">
-      <a href="index.html">
-        <img src="assets/img/logo.jpeg" alt="VOWTECH Logo" class="logo-glass">
+<div id="vt-dot" aria-hidden="true"></div>
+<div id="vt-ring" aria-hidden="true"></div>
+<div id="vt-noise" aria-hidden="true"></div>
+
+<!-- TOPBAR -->
+<div id="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-l"><span class="tb-pulse" aria-hidden="true"></span><span>LIVE SUPPORT — ABU DHABI &amp; UAE — 24/7</span></div>
+    <div class="tb-r">
+      <a href="tel:+971581816887"><i class="bi bi-telephone-fill"></i> +971 58 181 6887</a>
+      <span>|</span>
+      <a href="mailto:info@vow-tech.com"><i class="bi bi-envelope-fill"></i> info@vow-tech.com</a>
+      <span>|</span>
+      <span><i class="bi bi-geo-alt-fill"></i> Abu Dhabi, UAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="vt-header" role="banner">
+  <div class="hdr-inner">
+    <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
+      <div class="logo-3d-wrap" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-top"></div>
+          <div class="lc-f lc-bottom"></div>
+        </div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-main">VOW<em>TECHNOLOGIES</em></span>
+        <span class="logo-tagline">IT SOLUTIONS — ABU DHABI</span>
+      </div>
+    </a>
+
+    <nav id="vt-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="index.html#about" class="nav-a">About</a>
+      <div class="nav-drop" id="navDrop">
+        <button class="nav-a nav-drop-btn" aria-haspopup="true" aria-expanded="false" id="navDropBtn">
+          Services <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-headset"></i> IT Support</div>
+              <a href="amc-support.html">Annual Maintenance Contract</a>
+              <a href="CCTV-Services.html">CCTV Services</a>
+              <a href="Emergency-IT-Support.html">Emergency IT Support</a>
+              <a href="Remote-Technical-Support.html">Remote Technical Support</a>
+              <a href="On-Site-IT-Support.html">On-Site Support</a>
+              <a href="IT-Outsourcing.html">IT Outsourcing</a>
+              <a href="Helpdesk-Support.html">Helpdesk Support</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-network-wired"></i> Networking</div>
+              <a href="Structured-Cabling.html">Structured Cabling</a>
+              <a href="Server-Room-Setup.html">Server Room Setup</a>
+              <a href="Network-Security-Services.html">Network Security Services</a>
+              <a href="Network-Planning-Design.html">Network Planning &amp; Design</a>
+              <a href="Telephone-Systems-Implementation.html">Telephone Systems</a>
+              <a href="Office-Migration.html">Office Migration</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-shield-virus"></i> Cybersecurity</div>
+              <a href="Sophos-firewall.html">Sophos Firewall</a>
+              <a href="soc-security-operations-center.html">SOC</a>
+              <a href="siem-solution.html">SIEM Solution</a>
+              <a href="Penetration-Testing.html">Penetration Testing</a>
+              <a href="anti-phishing-protection.html">Anti-Phishing</a>
+              <a href="web-application-firewall.html">WAF</a>
+              <a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-cloud"></i> Cloud &amp; Managed</div>
+              <a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a>
+              <a href="Private-Cloud-Services.html">Private Cloud Services</a>
+              <a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a>
+              <a href="Cloud-Backup-Disaster-Recovery.html">Cloud Backup</a>
+              <a href="Virtualization.html">Virtualization</a>
+              <a href="VPN-Network-Monitoring.html">VPN Monitoring</a>
+              <a href="Server-Management.html">Server Management</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-server"></i> Infrastructure</div>
+              <a href="IT-infrastructure-solutions.html">IT Infrastructure</a>
+              <a href="data.center.html">Data Center</a>
+              <a href="Server-Solutions.html">Server Solutions</a>
+              <a href="Data-Storage-Solutions.html">Data Storage Solutions</a>
+              <a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a>
+              <a href="firewall-products.html">Firewall Solutions</a>
+              <a href="zkteco-access-control.html">Access Control</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-a">Insights</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </nav>
+
+    <a href="appointment.html" class="btn-primary hdr-cta active" style="background:var(--teal);"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <button id="mob-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="vt-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Book IT Appointment VOWTECH">
+  <div class="scanlines-hero" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+
+    <div class="hero-left">
+      <div class="breadcrumb-nav" data-r>
+        <a href="index.html">Home</a><span>/</span>
+        <span class="bc-active">Book Appointment</span>
+      </div>
+      <div class="page-hero-badge" data-r data-d="60">
+        <span class="badge-dot"></span>
+        Free IT Consultation — Abu Dhabi &amp; UAE
+      </div>
+      <h1 class="page-hero-h1" data-r data-d="100">
+        <em>Book</em> Your<br>
+        Free IT <span>Consultation</span>
+      </h1>
+      <p class="page-hero-desc" data-r data-d="160">
+        Schedule a free consultation with VOWTECH's certified IT specialists. We'll review your infrastructure, understand your challenges, and deliver a tailored IT strategy — with no obligation and no hard sell.
+      </p>
+      <div class="hero-chips" data-r data-d="220">
+        <div class="h-chip"><i class="fas fa-calendar-check"></i><span>Free Consultation</span></div>
+        <div class="h-chip"><i class="fas fa-clock"></i><span>24/7 Availability</span></div>
+        <div class="h-chip"><i class="fas fa-headset"></i><span>Expert Engineers</span></div>
+        <div class="h-chip"><i class="fas fa-map-marker-alt"></i><span>Abu Dhabi &amp; Dubai</span></div>
+      </div>
+    </div>
+
+    <div class="hero-visual-panel" data-r data-d="100" aria-hidden="true">
+      <div class="calendar-visual">
+        <div class="cal-float"><i class="fas fa-check-circle"></i><span>Slot Confirmed</span></div>
+        <div class="cal-head">
+          <div class="cal-arrow"><i class="fas fa-chevron-left"></i></div>
+          <div class="cal-month">May 2026</div>
+          <div class="cal-arrow"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        <div class="cal-days-head">
+          <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+        </div>
+        <div class="cal-days">
+          <div class="cal-day muted">27</div><div class="cal-day muted">28</div><div class="cal-day muted">29</div><div class="cal-day muted">30</div><div class="cal-day">1</div><div class="cal-day">2</div><div class="cal-day">3</div>
+          <div class="cal-day">4</div><div class="cal-day">5</div><div class="cal-day teal">6</div><div class="cal-day">7</div><div class="cal-day">8</div><div class="cal-day">9</div><div class="cal-day">10</div>
+          <div class="cal-day">11</div><div class="cal-day">12</div><div class="cal-day">13</div><div class="cal-day active">14</div><div class="cal-day">15</div><div class="cal-day">16</div><div class="cal-day">17</div>
+          <div class="cal-day">18</div><div class="cal-day">19</div><div class="cal-day teal">20</div><div class="cal-day">21</div><div class="cal-day">22</div><div class="cal-day">23</div><div class="cal-day">24</div>
+          <div class="cal-day">25</div><div class="cal-day">26</div><div class="cal-day">27</div><div class="cal-day">28</div><div class="cal-day">29</div><div class="cal-day">30</div><div class="cal-day">31</div>
+        </div>
+        <div class="cal-slots">
+          <div class="cal-slots-h">Available Time Slots</div>
+          <div class="slots-grid">
+            <div class="slot booked">9:00 AM</div>
+            <div class="slot sel">10:00 AM</div>
+            <div class="slot">11:00 AM</div>
+            <div class="slot">1:00 PM</div>
+            <div class="slot">2:00 PM</div>
+            <div class="slot booked">3:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORM SECTION -->
+<section class="form-sec" id="appointment">
+  <div class="form-layout">
+
+    <!-- FORM CARD -->
+    <div class="appt-form-card" data-r>
+      <div class="form-card-head">
+        <div class="form-card-head-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div>
+          <h3>Make an Appointment</h3>
+          <p>Fill in your details and we'll confirm within 2 hours</p>
+        </div>
+      </div>
+      <div class="form-body">
+        <form id="apptForm" novalidate>
+
+          <div class="form-section-label">Personal Information</div>
+          <div class="field-row three">
+            <div class="field-wrap">
+              <label for="f-name">Full Name *</label>
+              <input type="text" id="f-name" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="field-wrap">
+              <label for="f-email">Email Address *</label>
+              <input type="email" id="f-email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="field-wrap">
+              <label for="f-phone">Phone Number *</label>
+              <input type="tel" id="f-phone" name="phone" placeholder="+971 XX XXX XXXX" required>
+            </div>
+          </div>
+
+          <div class="form-section-label">Company Details</div>
+          <div class="field-row">
+            <div class="field-wrap">
+              <label for="f-company">Company Name</label>
+              <input type="text" id="f-company" name="company" placeholder="Your company name">
+            </div>
+            <div class="field-wrap">
+              <label for="f-city">City / Emirate *</label>
+              <select id="f-city" name="city" required>
+                <option value="">Select City</option>
+                <option value="Abu Dhabi">Abu Dhabi</option>
+                <option value="Dubai">Dubai</option>
+                <option value="Sharjah">Sharjah</option>
+                <option value="Ajman">Ajman</option>
+                <option value="Ras Al Khaimah">Ras Al Khaimah</option>
+                <option value="Fujairah">Fujairah</option>
+                <option value="Al Ain">Al Ain</option>
+                <option value="Other">Other UAE</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-section-label">Appointment Details</div>
+          <div class="field-row three">
+            <div class="field-wrap">
+              <label for="f-date">Preferred Date &amp; Time *</label>
+              <input type="datetime-local" id="f-date" name="date" required>
+            </div>
+            <div class="field-wrap">
+              <label for="f-dept">Service Department *</label>
+              <select id="f-dept" name="department" required>
+                <option value="">Select Department</option>
+                <option value="IT Support &amp; Helpdesk">IT Support &amp; Helpdesk</option>
+                <option value="Networking &amp; Infrastructure">Networking &amp; Infrastructure</option>
+                <option value="Cybersecurity">Cybersecurity</option>
+                <option value="Cloud &amp; Managed Services">Cloud &amp; Managed Services</option>
+                <option value="Software &amp; Application Support">Software &amp; Application Support</option>
+                <option value="CCTV &amp; Access Control">CCTV &amp; Access Control</option>
+                <option value="Server &amp; Data Center">Server &amp; Data Center</option>
+                <option value="General Consultation">General Consultation</option>
+              </select>
+            </div>
+            <div class="field-wrap">
+              <label for="f-consultant">Preferred Consultant</label>
+              <select id="f-consultant" name="consultant">
+                <option value="Any Available">Any Available</option>
+                <option value="Consultant 1">Consultant 1</option>
+                <option value="Consultant 2">Consultant 2</option>
+                <option value="Consultant 3">Consultant 3</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-wrap">
+              <label for="f-type">Meeting Type *</label>
+              <select id="f-type" name="meeting_type" required>
+                <option value="">Select Type</option>
+                <option value="On-Site (Abu Dhabi)">On-Site Visit (Abu Dhabi)</option>
+                <option value="On-Site (Dubai)">On-Site Visit (Dubai)</option>
+                <option value="Remote / Video Call">Remote / Video Call</option>
+                <option value="Phone Call">Phone Call</option>
+                <option value="Office Visit">Visit Our Office</option>
+              </select>
+            </div>
+            <div class="field-wrap">
+              <label for="f-urgency">Urgency Level</label>
+              <select id="f-urgency" name="urgency">
+                <option value="Normal">Normal — within a week</option>
+                <option value="Soon">Soon — within 48 hours</option>
+                <option value="Urgent">Urgent — ASAP</option>
+                <option value="Emergency">Emergency — Critical Issue</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field-row one">
+            <div class="field-wrap">
+              <label for="f-message">Describe Your IT Challenge (Optional)</label>
+              <textarea id="f-message" name="message" placeholder="Tell us about your current IT setup, challenges, or what you'd like to discuss — this helps us send the right specialist..."></textarea>
+            </div>
+          </div>
+
+          <!-- Status -->
+          <div class="status-wrap">
+            <div class="status-loading" id="statusLoading"><i class="fas fa-circle-notch"></i> Sending your appointment request...</div>
+            <div class="status-success" id="statusSuccess"><i class="fas fa-check-circle"></i> Appointment request sent! We'll confirm within 2 hours. Check your email.</div>
+            <div class="status-error" id="statusError"><i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again or call us directly.</div>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <i class="fas fa-paper-plane"></i> Submit Appointment
+            </button>
+            <a href="https://wa.me/971581816887?text=Hi%20I%27d%20like%20to%20book%20a%20free%20IT%20consultation" target="_blank" rel="noopener noreferrer" class="btn-submit-wa">
+              <i class="bi bi-whatsapp"></i> Book via WhatsApp
+            </a>
+          </div>
+
+        </form>
+      </div>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="form-sidebar">
+
+      <div class="stats-mini" data-r data-d="80">
+        <div class="smin"><span class="smin-n">24/7</span><span class="smin-l">Support</span></div>
+        <div class="smin"><span class="smin-n teal">&lt;2h</span><span class="smin-l">Confirmation</span></div>
+        <div class="smin"><span class="smin-n">Free</span><span class="smin-l">Consultation</span></div>
+        <div class="smin"><span class="smin-n teal">4.9★</span><span class="smin-l">Google Rating</span></div>
+      </div>
+
+      <div class="info-card" data-r data-d="100">
+        <div class="info-card-h"><i class="fas fa-map-marker-alt"></i> Contact &amp; Office</div>
+        <div class="info-item">
+          <div class="info-item-icon"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <div class="info-item-h">Phone</div>
+            <div class="info-item-v"><a href="tel:+971581816887">+971 58 181 6887</a></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="info-item-h">Email</div>
+            <div class="info-item-v"><a href="mailto:info@vow-tech.com">info@vow-tech.com</a></div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="info-item-h">Office</div>
+            <div class="info-item-v">Navy Gate – Al Zahiyah<br>Abu Dhabi, UAE</div>
+          </div>
+        </div>
+        <div class="info-item">
+          <div class="info-item-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="info-item-h">Availability</div>
+            <div class="info-item-v">Open 24/7 — Every Day</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="why-card" data-r data-d="140">
+        <div class="why-card-h">// Why Book with VOWTECH</div>
+        <ul class="why-list">
+          <li><i class="fas fa-check-circle"></i> Free, no-obligation consultation</li>
+          <li><i class="fas fa-check-circle"></i> Certified Microsoft, Cisco &amp; Sophos engineers</li>
+          <li><i class="fas fa-check-circle"></i> On-site visits across Abu Dhabi &amp; Dubai</li>
+          <li><i class="fas fa-check-circle"></i> Confirmation within 2 hours</li>
+          <li><i class="fas fa-check-circle"></i> Tailored IT strategy — no generic advice</li>
+          <li><i class="fas fa-check-circle"></i> 9+ years supporting UAE businesses</li>
+          <li><i class="fas fa-check-circle"></i> 4.9★ Google rating — 25 reviews</li>
+        </ul>
+      </div>
+
+      <a href="https://wa.me/971581816887?text=Hi%20I%27d%20like%20to%20book%20a%20free%20IT%20consultation" target="_blank" rel="noopener noreferrer" class="btn-wa" style="justify-content:center;font-size:13px;padding:18px;" data-r data-d="160">
+        <i class="bi bi-whatsapp" style="font-size:18px;"></i> Instant WhatsApp Booking
       </a>
-    </div>
-  </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero-bg">
-    <div class="container">
-      <h1 class="display-5">Book Your IT Appointment</h1>
-      <p>Schedule a consultation with VOWTECH IT specialists for support, networking, and software services across Dubai
-        & Abu Dhabi.</p>
-      <div class="mt-4">
-        <a href="#appointment" class="btn btn-light btn-lg me-2">Book Now</a>
-        <a href="tel:+971581816887" class="btn btn-outline-light btn-lg">Call Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS STRIP -->
+<section class="process-strip">
+  <div class="ps-inner">
+    <div class="ps-head" data-r>
+      <span class="sec-tag">// WHAT HAPPENS NEXT</span>
+      <h2 class="sec-h2">Your Appointment in <em>4 Steps</em></h2>
+      <p class="sec-sub">Simple, fast, and zero obligation — from booking to solution in days.</p>
+    </div>
+    <div class="ps-steps" data-r data-d="60">
+      <div class="ps-step">
+        <div class="ps-num">01</div>
+        <div class="ps-icon"><i class="fas fa-paper-plane"></i></div>
+        <div class="ps-h">Submit Your Request</div>
+        <p class="ps-p">Fill in the form above with your details and IT requirements — takes under 2 minutes.</p>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num">02</div>
+        <div class="ps-icon"><i class="fas fa-headset"></i></div>
+        <div class="ps-h">We Confirm Within 2 Hours</div>
+        <p class="ps-p">Our team reviews your request and confirms your appointment slot with a specialist assigned.</p>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num">03</div>
+        <div class="ps-icon"><i class="fas fa-comments"></i></div>
+        <div class="ps-h">Free Consultation Session</div>
+        <p class="ps-p">Meet our engineer on-site, remotely, or at our Abu Dhabi office — we listen, assess, and advise.</p>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num">04</div>
+        <div class="ps-icon"><i class="fas fa-file-alt"></i></div>
+        <div class="ps-h">Tailored IT Proposal</div>
+        <p class="ps-p">Receive a detailed, no-obligation IT proposal within 24 hours — with clear scope, timeline, and pricing.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- APPOINTMENT FORM -->
-  <section id="appointment" class="appointment-form">
-    <h3>Make an Appointment</h3>
-    <form class="php-email-form">
-      <div class="row g-3">
-        <div class="col-md-4"><input type="text" name="name" class="form-control" placeholder="Your Name" required></div>
-        <div class="col-md-4"><input type="email" name="email" class="form-control" placeholder="Your Email" required></div>
-        <div class="col-md-4"><input type="tel" name="phone" class="form-control" placeholder="Phone Number" required></div>
-      </div>
-      <div class="row g-3 mt-3">
-        <div class="col-md-4"><input type="datetime-local" name="date" class="form-control" required></div>
-        <div class="col-md-4">
-          <select name="department" class="form-select" required>
-            <option value="">Select Department</option>
-            <option value="IT Support">IT Support</option>
-            <option value="Networking">Networking</option>
-            <option value="Software Solutions">Software Solutions</option>
-          </select>
+<!-- BIG CTA -->
+<section class="big-cta" aria-label="Contact VOWTECH">
+  <div class="big-cta-inner" data-r>
+    <span class="sec-tag">// NEED URGENT HELP?</span>
+    <h2 class="big-cta-h">Can't Wait?<br><em>Call Us Now</em></h2>
+    <p class="big-cta-p">For emergency IT support, our engineers are available 24/7. Don't wait — call directly or WhatsApp and we'll respond immediately.</p>
+    <div class="big-cta-btns">
+      <a href="tel:+971581816887" class="btn-primary btn-lg"><i class="fas fa-phone-alt"></i> +971 58 181 6887</a>
+      <a href="https://wa.me/971581816887" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+    </div>
+    <div class="big-cta-tel">
+      <i class="fas fa-envelope"></i>
+      <a href="mailto:info@vow-tech.com">info@vow-tech.com</a>
+      <span>— We reply fast</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-wrap">
+  <div class="map-info">
+    <div class="map-info-head"><i class="fas fa-map-marker-alt"></i> Our Office</div>
+    <p><strong>Navy Gate – Al Zahiyah</strong><br>Abu Dhabi, UAE</p>
+    <p><i class="fas fa-phone"></i> <a href="tel:+971581816887">+971 58 181 6887</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:info@vow-tech.com">info@vow-tech.com</a></p>
+    <p><i class="fas fa-clock"></i> Open 24/7 Every Day</p>
+    <a href="contact.html" class="btn-primary" style="display:inline-flex;margin-top:18px">Contact Us</a>
+  </div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.8793697365027!2d54.379450975139584!3d24.48963617817316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6728e25e3a4f%3A0xeaf394fdc432796f!2sVOW%20Technologies!5e0!3m2!1sen!2sae!4v1777982384576!5m2!1sen!2sae"
+    loading="lazy" title="VOWTECH office location" aria-label="Map showing VOWTECH office in Abu Dhabi UAE"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer id="vt-footer">
+  <div class="footer-body">
+    <div class="vt-con">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="fb-logo-wrap">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52">
+            <div><span class="fb-name">VOW<em>TECH</em></span><span class="fb-sub">Enterprise IT — UAE</span></div>
+          </div>
+          <p>Your reliable IT support partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
+          <div class="f-soc">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="f-contact">
+            <a href="tel:+971581816887"><i class="fas fa-phone-alt"></i> +971 58 181 6887</a>
+            <a href="mailto:info@vow-tech.com"><i class="fas fa-envelope"></i> info@vow-tech.com</a>
+            <span><i class="fas fa-map-marker-alt"></i> Navy Gate, Al Zahiyah, Abu Dhabi</span>
+          </div>
         </div>
-        <div class="col-md-4">
-          <select name="consultant" class="form-select" required>
-            <option value="">Select Consultant</option>
-            <option value="Consultant 1">Consultant 1</option>
-            <option value="Consultant 2">Consultant 2</option>
-            <option value="Consultant 3">Consultant 3</option>
-          </select>
+        <div class="footer-col">
+          <h5>IT Support</h5>
+          <ul>
+            <li><a href="amc-support.html">Annual Maintenance Contract</a></li>
+            <li><a href="Emergency-IT-Support.html">Emergency IT Support</a></li>
+            <li><a href="Remote-Technical-Support.html">Remote Support</a></li>
+            <li><a href="On-Site-IT-Support.html">On-Site Support</a></li>
+            <li><a href="Helpdesk-Support.html">Helpdesk Support</a></li>
+            <li><a href="IT-Outsourcing.html">IT Outsourcing</a></li>
+            <li><a href="CCTV-Services.html">CCTV Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cybersecurity</h5>
+          <ul>
+            <li><a href="Sophos-firewall.html">Sophos Firewall</a></li>
+            <li><a href="soc-security-operations-center.html">SOC</a></li>
+            <li><a href="siem-solution.html">SIEM Solution</a></li>
+            <li><a href="Penetration-Testing.html">Penetration Testing</a></li>
+            <li><a href="anti-phishing-protection.html">Anti-Phishing</a></li>
+            <li><a href="web-application-firewall.html">WAF</a></li>
+            <li><a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cloud &amp; Infrastructure</h5>
+          <ul>
+            <li><a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a></li>
+            <li><a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a></li>
+            <li><a href="Virtualization.html">Virtualization</a></li>
+            <li><a href="data.center.html">Data Center</a></li>
+            <li><a href="Private-Cloud-Services.html">Private Cloud</a></li>
+            <li><a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Networking</h5>
+          <ul>
+            <li><a href="Structured-Cabling.html">Structured Cabling</a></li>
+            <li><a href="Server-Room-Setup.html">Server Room Setup</a></li>
+            <li><a href="Network-Security-Services.html">Network Security</a></li>
+            <li><a href="Network-Planning-Design.html">Network Planning</a></li>
+            <li><a href="Telephone-Systems-Implementation.html">Telephone Systems</a></li>
+            <li><a href="firewall-products.html">Firewall Solutions</a></li>
+            <li><a href="zkteco-access-control.html">Access Control</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About VOWTECH</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="appointment.html">Free Consultation</a></li>
+            <li><a href="IT-Audit-Health-Check.html">IT Audit</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
         </div>
       </div>
-      <textarea name="message" class="form-control mt-3" rows="4" placeholder="Additional Message (Optional)"></textarea>
-
-      <div class="status-message loading">Sending...</div>
-      <div class="status-message error-message"></div>
-      <div class="status-message sent-message">Your appointment request has been sent successfully. Thank you!</div>
-
-      <button type="submit" class="mt-3">Submit Appointment</button>
-    </form>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer-bottom">
-    <div class="container text-center">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">VOWTECH</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        Powered by <a href="https://vow-tech.com">VOWTECH IT Solutions</a> | Supporting businesses 24/7 worldwide
-      </div>
     </div>
-  </footer>
+  </div>
+  <div class="footer-base">
+    <div class="footer-base-inner">
+      <span>© 2025 VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+      <span><a href="#">Privacy Policy</a><span>|</span><a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
 
-  <!-- Vendor JS & EmailJS -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<a href="#" id="scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+<a href="https://wa.me/971581816887?text=Hi%20I%27d%20like%20to%20book%20an%20appointment" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="bi bi-whatsapp"></i><span>Chat</span>
+</a>
 
-  <script>
-    emailjs.init("cDrzsn76nRW8yDruG"); // EmailJS User ID
-    const whatsappPhone = "+971581816887";
-    const whatsappApiKey = "9546639";
+<!-- Vendor JS & EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const forms = document.querySelectorAll('.php-email-form');
+<script>
+'use strict';
+(function(){
 
-      forms.forEach(function (form) {
-        form.addEventListener('submit', function (e) {
-          e.preventDefault();
+/* CURSOR */
+var dot=document.getElementById('vt-dot'),ring=document.getElementById('vt-ring'),cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+(function loop(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){dot.classList.add('hover');ring.classList.add('hover');});
+  el.addEventListener('mouseleave',function(){dot.classList.remove('hover');ring.classList.remove('hover');});
+});
 
-          const statusLoading = form.querySelector('.loading');
-          const statusError = form.querySelector('.error-message');
-          const statusSent = form.querySelector('.sent-message');
+/* SCROLL REVEAL */
+var items=document.querySelectorAll('[data-r]');
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=parseInt(e.target.dataset.d||0);setTimeout(function(){e.target.classList.add('vt-show');},d);io.unobserve(e.target);}});},{threshold:0.1});
+items.forEach(function(el){io.observe(el);});
 
-          statusLoading.style.display = 'block';
-          statusError.style.display = 'none';
-          statusSent.style.display = 'none';
+/* HEADER SCROLL */
+var hdr=document.getElementById('vt-header'),stBtn=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);if(stBtn)stBtn.classList.toggle('show',window.scrollY>400);});
 
-          const formData = {
-            name: form.name.value,
-            email: form.email.value,
-            phone: form.phone.value,
-            date: form.date.value,
-            department: form.department.value,
-            consultant: form.consultant.value,
-            message: form.message.value || "N/A"
-          };
+/* MEGA MENU */
+var dropBtn=document.getElementById('navDropBtn'),megaPanel=document.getElementById('megaPanel');
+if(dropBtn&&megaPanel){
+  dropBtn.addEventListener('click',function(e){e.stopPropagation();var open=megaPanel.classList.toggle('open');dropBtn.setAttribute('aria-expanded',open);});
+  document.addEventListener('click',function(){megaPanel.classList.remove('open');dropBtn.setAttribute('aria-expanded','false');});
+  megaPanel.addEventListener('click',function(e){e.stopPropagation();});
+}
 
-          // Send email to Admin
-          emailjs.send("service_pm0skbn", "template_ef4yl7n", formData)
-            .then(() => {
-              // Send Auto-reply to User
-              emailjs.send("service_pm0skbn", "template_o3rfw09", { name: formData.name, email: formData.email })
-                .then(() => {
-                  const whatsappText = `
-New Appointment Request - VOWTECH
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Date: ${formData.date}
-Department: ${formData.department}
-Consultant: ${formData.consultant}
-Message: ${formData.message}`;
-                  fetch(`https://api.callmebot.com/whatsapp.php?phone=${whatsappPhone}&text=${encodeURIComponent(whatsappText)}&apikey=${whatsappApiKey}`)
-                    .finally(() => {
-                      statusLoading.style.display = 'none';
-                      statusSent.style.display = 'block';
-                      form.reset();
-                    });
-                }).catch(err => {
-                  statusLoading.style.display = 'none';
-                  statusError.textContent = "Appointment sent, but auto-reply failed.";
-                  statusError.style.display = 'block';
-                });
-            }).catch(err => {
-              statusLoading.style.display = 'none';
-              statusError.textContent = "Something went wrong. Please try again.";
-              statusError.style.display = 'block';
-            });
-        });
+/* MOBILE NAV */
+var mobBtn=document.getElementById('mob-btn'),nav=document.getElementById('vt-nav');
+if(mobBtn&&nav){mobBtn.addEventListener('click',function(){var open=nav.classList.toggle('nav-open');mobBtn.classList.toggle('open',open);mobBtn.setAttribute('aria-expanded',open);document.body.classList.toggle('body-lock',open);});}
+
+/* CALENDAR VISUAL — interactive slots */
+document.querySelectorAll('.slot:not(.booked)').forEach(function(s){
+  s.addEventListener('click',function(){
+    document.querySelectorAll('.slot').forEach(function(x){x.classList.remove('sel');});
+    s.classList.add('sel');
+  });
+});
+document.querySelectorAll('.cal-day:not(.muted)').forEach(function(d){
+  d.addEventListener('click',function(){
+    document.querySelectorAll('.cal-day').forEach(function(x){x.classList.remove('active');});
+    d.classList.add('active');
+  });
+});
+
+/* SET MIN DATE */
+var dateInput=document.getElementById('f-date');
+if(dateInput){
+  var now=new Date();
+  now.setMinutes(now.getMinutes()-now.getTimezoneOffset());
+  dateInput.min=now.toISOString().slice(0,16);
+}
+
+/* EMAIL JS FORM */
+emailjs.init("cDrzsn76nRW8yDruG");
+var whatsappPhone="+971581816887";
+var whatsappApiKey="9546639";
+
+var form=document.getElementById('apptForm');
+var submitBtn=document.getElementById('submitBtn');
+var statusLoading=document.getElementById('statusLoading');
+var statusSuccess=document.getElementById('statusSuccess');
+var statusError=document.getElementById('statusError');
+
+function showStatus(el){
+  [statusLoading,statusSuccess,statusError].forEach(function(x){x.style.display='none';});
+  el.style.display='flex';
+}
+
+if(form){
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){form.reportValidity();return;}
+
+    submitBtn.disabled=true;
+    showStatus(statusLoading);
+
+    var formData={
+      name:form.name.value,
+      email:form.email.value,
+      phone:form.phone.value,
+      company:form.company.value||'N/A',
+      city:form.city.value,
+      date:form.date.value,
+      department:form.department.value,
+      consultant:form.consultant.value,
+      meeting_type:form.meeting_type.value,
+      urgency:form.urgency.value,
+      message:form.message.value||'N/A'
+    };
+
+    emailjs.send("service_pm0skbn","template_ef4yl7n",formData)
+      .then(function(){
+        return emailjs.send("service_pm0skbn","template_o3rfw09",{name:formData.name,email:formData.email});
+      })
+      .then(function(){
+        var waText="New Appointment – VOWTECH\n"+
+          "Name: "+formData.name+"\nEmail: "+formData.email+"\nPhone: "+formData.phone+
+          "\nCompany: "+formData.company+"\nCity: "+formData.city+
+          "\nDate: "+formData.date+"\nDepartment: "+formData.department+
+          "\nConsultant: "+formData.consultant+"\nMeeting: "+formData.meeting_type+
+          "\nUrgency: "+formData.urgency+"\nMessage: "+formData.message;
+        return fetch("https://api.callmebot.com/whatsapp.php?phone="+whatsappPhone+"&text="+encodeURIComponent(waText)+"&apikey="+whatsappApiKey);
+      })
+      .then(function(){
+        showStatus(statusSuccess);
+        form.reset();
+        submitBtn.disabled=false;
+      })
+      .catch(function(err){
+        console.error(err);
+        showStatus(statusError);
+        submitBtn.disabled=false;
       });
-    });
-  </script>
+  });
+}
 
+})();
+</script>
 </body>
 </html>
