@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- ═══════════════════════════════════════════════
+     VOWTECH — Backup & Data Protection Page
+═══════════════════════════════════════════════ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Backup & Data Protection Abu Dhabi | Veeam | VOWTECH UAE</title>
+<meta name="description" content="VOWTECH provides enterprise-grade backup & data protection in Abu Dhabi & UAE. Automated backups, encrypted storage, disaster recovery, Veeam solutions & 24/7 monitoring.">
+<meta name="keywords" content="backup data protection Abu Dhabi, Veeam backup UAE, cloud backup Abu Dhabi, disaster recovery UAE, data protection services, VOWTECH">
+<meta name="author" content="VOWTECH">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a1628">
+<meta name="geo.region" content="AE-AZ">
+<meta name="geo.placename" content="Abu Dhabi">
+<meta property="og:title" content="Backup & Data Protection Abu Dhabi | VOWTECH UAE">
+<meta property="og:description" content="Enterprise backup, Veeam solutions & disaster recovery in Abu Dhabi. 24/7 monitoring & rapid recovery.">
+<meta property="og:image" content="https://vow-tech.com/assets/img/logo.jpeg">
+<meta property="og:url" content="https://vow-tech.com/Backup-Data-Protection.html">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://vow-tech.com/Backup-Data-Protection.html">
+<link rel="shortcut icon" href="assets/img/favicon.ico">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.ico">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<!-- Icons -->
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
+<!-- Main CSS (shared with index) -->
+<link rel="stylesheet" href="assets/css/main.css">
+
+<!-- Schema -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Backup & Data Protection","provider":{"@type":"LocalBusiness","name":"VOWTECH","url":"https://vow-tech.com","telephone":"+971581816887"},"areaServed":[{"@type":"City","name":"Abu Dhabi"},{"@type":"Country","name":"United Arab Emirates"}],"description":"Enterprise-grade backup, encrypted storage, Veeam solutions and disaster recovery for businesses in Abu Dhabi and UAE."}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════
+   VOWTECH — BACKUP & DATA PROTECTION PAGE STYLES
+   Mirrors the design language of main site:
+   dark navy bg, gold/teal accents, Orbitron/Rajdhani
+═══════════════════════════════════════════════ */
+
+:root {
+  --clr-bg:       #060e1a;
+  --clr-bg2:      #0a1628;
+  --clr-bg3:      #0d1e35;
+  --clr-gold:     #c8a052;
+  --clr-gold2:    #e8c07a;
+  --clr-teal:     #00c8e0;
+  --clr-white:    #f0f4ff;
+  --clr-muted:    #7a8faa;
+  --clr-border:   rgba(200,160,82,0.18);
+  --clr-card:     rgba(13,30,53,0.85);
+  --ff-head:      'Orbitron', sans-serif;
+  --ff-body:      'Rajdhani', sans-serif;
+  --ff-mono:      'Share Tech Mono', monospace;
+  --radius:       12px;
+  --shadow-gold:  0 0 32px rgba(200,160,82,0.15);
+  --shadow-teal:  0 0 32px rgba(0,200,224,0.1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--ff-body);
+  background: var(--clr-bg);
+  color: var(--clr-white);
+  overflow-x: hidden;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ── NOISE OVERLAY ── */
+#vt-noise {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.4;
+}
+
+/* ── THREE.JS CANVAS ── */
+#vt-three {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  width: 100%; height: 100%;
+}
+
+/* ── TOPBAR ── */
+#topbar {
+  position: relative; z-index: 100;
+  background: rgba(6,14,26,0.95);
+  border-bottom: 1px solid rgba(200,160,82,0.15);
+  padding: 8px 0;
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  color: var(--clr-muted);
+}
+.tb-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 12px; flex-wrap: wrap;
+}
+.tb-l { display: flex; align-items: center; gap: 8px; }
+.tb-pulse {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #00ff88; display: inline-block;
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.5); }
+  50% { box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+}
+.tb-r { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.tb-r a, .tb-r span { color: var(--clr-muted); text-decoration: none; }
+.tb-r a:hover { color: var(--clr-gold); }
+
+/* ── HEADER ── */
+#vt-header {
+  position: sticky; top: 0; z-index: 200;
+  background: rgba(6,14,26,0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--clr-border);
+  transition: all 0.3s;
+}
+#vt-header.scrolled {
+  background: rgba(6,14,26,0.98);
+  box-shadow: 0 4px 40px rgba(200,160,82,0.08);
+}
+.hdr-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; gap: 24px;
+  height: 74px;
+}
+
+/* Logo */
+.vt-logo {
+  display: flex; align-items: center; gap: 12px;
+  text-decoration: none; flex-shrink: 0;
+}
+.logo-3d-wrap { width: 52px; height: 52px; perspective: 140px; }
+.logo-cube {
+  width: 52px; height: 52px;
+  position: relative; transform-style: preserve-3d;
+  animation: cubeRotate 8s linear infinite;
+}
+@keyframes cubeRotate {
+  0%   { transform: rotateY(0deg)   rotateX(8deg); }
+  100% { transform: rotateY(360deg) rotateX(8deg); }
+}
+.lc-f { position: absolute; inset: 0; backface-visibility: hidden; overflow: hidden; border-radius: 6px; }
+.lc-f img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
+.lc-front  { transform: translateZ(26px); }
+.lc-back   { transform: rotateY(180deg) translateZ(26px); }
+.lc-right  { transform: rotateY(90deg)  translateZ(26px); }
+.lc-left   { transform: rotateY(-90deg) translateZ(26px); }
+.lc-top    { transform: rotateX(90deg)  translateZ(26px); background: var(--clr-gold); opacity: 0.4; }
+.lc-bottom { transform: rotateX(-90deg) translateZ(26px); background: var(--clr-bg); opacity: 0.4; }
+
+.logo-text-wrap { display: flex; flex-direction: column; line-height: 1.1; }
+.logo-main {
+  font-family: var(--ff-head); font-size: 18px; font-weight: 700;
+  color: var(--clr-white); letter-spacing: 1px;
+}
+.logo-main em { color: var(--clr-gold); font-style: normal; }
+.logo-tagline {
+  font-family: var(--ff-mono); font-size: 9px;
+  color: var(--clr-muted); letter-spacing: 2px; text-transform: uppercase;
+}
+
+/* Nav */
+#vt-nav { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.nav-a {
+  font-family: var(--ff-body); font-size: 14px; font-weight: 600;
+  color: var(--clr-muted); text-decoration: none;
+  padding: 8px 14px; border-radius: 6px;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  transition: color 0.2s, background 0.2s;
+  position: relative; background: none; border: none; cursor: pointer;
+}
+.nav-a:hover, .nav-a.active { color: var(--clr-gold); }
+.nav-a.active::after {
+  content: ''; position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+  width: 20px; height: 2px; background: var(--clr-gold); border-radius: 2px;
+}
+
+/* Mega dropdown */
+.nav-drop { position: relative; }
+.nav-drop-btn { display: flex; align-items: center; gap: 6px; }
+.mega-panel {
+  position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%);
+  background: rgba(10,22,40,0.98); backdrop-filter: blur(20px);
+  border: 1px solid var(--clr-border); border-radius: 12px;
+  padding: 28px 24px; min-width: 900px;
+  opacity: 0; pointer-events: none; visibility: hidden;
+  transition: opacity 0.25s, transform 0.25s;
+  transform: translateX(-50%) translateY(8px);
+  z-index: 999;
+}
+.mega-panel.open { opacity: 1; pointer-events: auto; visibility: visible; transform: translateX(-50%) translateY(0); }
+.mega-cols { display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; }
+.mega-head {
+  font-family: var(--ff-head); font-size: 11px; font-weight: 700;
+  color: var(--clr-gold); text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  padding-bottom: 8px; border-bottom: 1px solid var(--clr-border);
+}
+.mega-col a {
+  display: block; font-size: 13px; color: var(--clr-muted);
+  text-decoration: none; padding: 4px 0;
+  transition: color 0.2s; font-family: var(--ff-body); font-weight: 500;
+}
+.mega-col a:hover { color: var(--clr-teal); }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, var(--clr-gold), #a07838);
+  color: #060e1a; font-family: var(--ff-head);
+  font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  padding: 12px 22px; border-radius: 8px; text-decoration: none;
+  border: none; cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-transform: uppercase;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-gold); }
+
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #25d366; color: #fff;
+  font-family: var(--ff-head); font-size: 12px; font-weight: 700;
+  padding: 12px 22px; border-radius: 8px; text-decoration: none;
+  letter-spacing: 1px; text-transform: uppercase;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--clr-gold);
+  border: 1.5px solid var(--clr-gold);
+  font-family: var(--ff-head); font-size: 12px; font-weight: 700;
+  padding: 12px 22px; border-radius: 8px; text-decoration: none;
+  letter-spacing: 1px; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.btn-outline:hover { background: var(--clr-gold); color: #060e1a; transform: translateY(-2px); }
+
+.hdr-cta { flex-shrink: 0; }
+
+#mob-btn {
+  display: none; background: none; border: none; cursor: pointer;
+  flex-direction: column; gap: 5px; padding: 8px; flex-shrink: 0;
+}
+#mob-btn span {
+  display: block; width: 24px; height: 2px;
+  background: var(--clr-gold); border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* ── PAGE HERO ── */
+#page-hero {
+  position: relative; z-index: 1;
+  padding: 120px 0 80px;
+  overflow: hidden;
+}
+.hex-grid {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  display: flex; flex-direction: column; gap: 0; opacity: 0.3;
+}
+.hex-row { display: flex; gap: 4px; margin-bottom: -16px; }
+.hex-row.offset { margin-left: 32px; }
+.hex {
+  width: 60px; height: 34px; clip-path: polygon(25% 0%,75% 0%,100% 50%,75% 100%,25% 100%,0% 50%);
+  background: rgba(200,160,82,0.06); animation: hexPulse 4s ease-in-out infinite;
+}
+.hex.h-gold { background: rgba(200,160,82,0.15); animation-delay: 0.5s; }
+.hex.h-teal { background: rgba(0,200,224,0.10); animation-delay: 1s; }
+@keyframes hexPulse { 0%,100%{opacity:0.5} 50%{opacity:1} }
+
+.scanlines {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(200,160,82,0.015) 3px, rgba(200,160,82,0.015) 4px);
+}
+
+.ph-inner {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+  position: relative; z-index: 1;
+}
+.ph-breadcrumb {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--ff-mono); font-size: 12px;
+  color: var(--clr-muted); margin-bottom: 24px;
+}
+.ph-breadcrumb a { color: var(--clr-muted); text-decoration: none; }
+.ph-breadcrumb a:hover { color: var(--clr-gold); }
+.ph-breadcrumb .sep { color: var(--clr-gold); }
+.ph-breadcrumb .cur { color: var(--clr-gold); }
+
+.ph-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--ff-mono); font-size: 12px;
+  color: var(--clr-teal); border: 1px solid rgba(0,200,224,0.3);
+  padding: 6px 14px; border-radius: 40px; margin-bottom: 20px;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.ph-tag::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--clr-teal); animation: pulse-dot 1.4s ease-in-out infinite;
+}
+
+.ph-h1 {
+  font-family: var(--ff-head);
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 900; line-height: 1.05;
+  margin-bottom: 24px; letter-spacing: -1px;
+}
+.ph-h1 em { color: var(--clr-gold); font-style: normal; }
+.ph-h1 .h-teal { color: var(--clr-teal); }
+
+.ph-desc {
+  font-size: 18px; color: var(--clr-muted);
+  max-width: 640px; margin-bottom: 36px; line-height: 1.8;
+}
+
+.ph-btns { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 40px; }
+
+.ph-chips {
+  display: flex; flex-wrap: wrap; gap: 12px;
+}
+.ph-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--ff-mono); font-size: 12px;
+  color: var(--clr-white); letter-spacing: 0.5px;
+  background: rgba(200,160,82,0.08); border: 1px solid var(--clr-border);
+  padding: 8px 16px; border-radius: 40px;
+}
+.ph-chip i { color: var(--clr-gold); }
+
+/* Hero visual side */
+.ph-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 60px; align-items: center;
+}
+.ph-visual { display: flex; justify-content: center; align-items: center; }
+.ph-orbit {
+  position: relative; width: 320px; height: 320px;
+  display: flex; align-items: center; justify-content: center;
+}
+.ph-core {
+  width: 120px; height: 120px; border-radius: 24px;
+  background: linear-gradient(135deg, var(--clr-bg3), var(--clr-bg2));
+  border: 1px solid var(--clr-border);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; z-index: 2;
+  box-shadow: 0 0 40px rgba(200,160,82,0.2), 0 0 80px rgba(200,160,82,0.05);
+}
+.ph-core i { font-size: 52px; color: var(--clr-gold); }
+.ph-ring {
+  position: absolute; border-radius: 50%;
+  border: 1px solid; pointer-events: none;
+}
+.ph-ring-1 { width: 200px; height: 200px; border-color: rgba(200,160,82,0.2); animation: ringRotate 8s linear infinite; }
+.ph-ring-2 { width: 280px; height: 280px; border-color: rgba(0,200,224,0.15); animation: ringRotate 14s linear infinite reverse; }
+.ph-ring-3 { width: 320px; height: 320px; border-color: rgba(200,160,82,0.08); animation: ringRotate 20s linear infinite; }
+@keyframes ringRotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.orbit-node {
+  position: absolute; width: 44px; height: 44px;
+  background: rgba(13,30,53,0.9); border: 1px solid var(--clr-border);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--clr-gold);
+  box-shadow: 0 0 16px rgba(200,160,82,0.15);
+  animation: floatNode 3s ease-in-out infinite;
+}
+.orbit-node:nth-child(2) { top: 10px; left: 50%; transform: translateX(-50%); animation-delay: 0s; }
+.orbit-node:nth-child(3) { top: 50%; right: 10px; transform: translateY(-50%); animation-delay: 0.5s; }
+.orbit-node:nth-child(4) { bottom: 10px; left: 50%; transform: translateX(-50%); animation-delay: 1s; }
+.orbit-node:nth-child(5) { top: 50%; left: 10px; transform: translateY(-50%); animation-delay: 1.5s; }
+@keyframes floatNode { 0%,100%{transform:translateY(-50%) scale(1)} 50%{transform:translateY(calc(-50% - 6px)) scale(1.05)} }
+.orbit-node:nth-child(2) { animation: floatNodeT 3s ease-in-out infinite; }
+.orbit-node:nth-child(4) { animation: floatNodeB 3s ease-in-out infinite; animation-delay:1s; }
+@keyframes floatNodeT { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(-8px)} }
+@keyframes floatNodeB { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+/* ── SECTIONS COMMON ── */
+.vt-sec { position: relative; z-index: 1; padding: 90px 0; }
+.vt-con { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.dark-sec { background: rgba(6,14,26,0.6); }
+.light-sec { background: rgba(10,22,40,0.4); }
+
+.sec-hd { max-width: 680px; margin-bottom: 60px; }
+.sec-hd.center { text-align: center; margin: 0 auto 60px; }
+.sec-tag {
+  display: inline-block; font-family: var(--ff-mono);
+  font-size: 12px; color: var(--clr-teal);
+  letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px;
+}
+.sec-h2 {
+  font-family: var(--ff-head); font-size: clamp(26px, 3.5vw, 44px);
+  font-weight: 900; line-height: 1.1; margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.sec-h2 em { color: var(--clr-gold); font-style: normal; }
+.sec-sub { color: var(--clr-muted); font-size: 17px; line-height: 1.7; }
+
+/* ── CHALLENGE GRID ── */
+.challenge-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+.ch-card {
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: var(--radius); padding: 32px 24px;
+  position: relative; overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.ch-card:hover { transform: translateY(-4px); border-color: rgba(200,160,82,0.4); }
+.ch-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  height: 2px; background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.ch-card:hover::before { opacity: 1; }
+.ch-icon {
+  width: 52px; height: 52px; border-radius: 10px;
+  background: rgba(200,160,82,0.08); border: 1px solid var(--clr-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; color: var(--clr-gold); margin-bottom: 16px;
+}
+.ch-card h4 {
+  font-family: var(--ff-head); font-size: 14px; font-weight: 700;
+  color: var(--clr-white); margin-bottom: 8px; letter-spacing: 0.5px;
+}
+.ch-card p { font-size: 14px; color: var(--clr-muted); line-height: 1.6; }
+
+/* ── SERVICE CARDS ── */
+.svc-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.svc-card {
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: var(--radius); padding: 36px 28px;
+  position: relative; overflow: hidden;
+  text-decoration: none; color: inherit;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+  display: block;
+}
+.svc-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(200,160,82,0.5);
+  box-shadow: var(--shadow-gold);
+}
+.svc-num {
+  font-family: var(--ff-head); font-size: 48px; font-weight: 900;
+  color: rgba(200,160,82,0.07); position: absolute; top: 12px; right: 20px;
+  line-height: 1;
+}
+.svc-icon-box {
+  width: 60px; height: 60px; border-radius: 14px;
+  background: rgba(200,160,82,0.08); border: 1px solid var(--clr-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 26px; color: var(--clr-gold); margin-bottom: 20px;
+  transition: background 0.3s, border-color 0.3s;
+}
+.svc-card:hover .svc-icon-box { background: rgba(200,160,82,0.15); border-color: var(--clr-gold); }
+.svc-h {
+  font-family: var(--ff-head); font-size: 15px; font-weight: 700;
+  color: var(--clr-white); margin-bottom: 12px; letter-spacing: 0.3px;
+  line-height: 1.3;
+}
+.svc-p { font-size: 14px; color: var(--clr-muted); line-height: 1.7; margin-bottom: 20px; }
+.svc-link {
+  font-family: var(--ff-head); font-size: 12px; font-weight: 700;
+  color: var(--clr-gold); text-transform: uppercase; letter-spacing: 1px;
+  display: flex; align-items: center; gap: 8px;
+}
+.svc-link i { transition: transform 0.2s; }
+.svc-card:hover .svc-link i { transform: translateX(4px); }
+.svc-glow {
+  position: absolute; inset: 0; border-radius: var(--radius);
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(200,160,82,0.06) 0%, transparent 60%);
+  pointer-events: none; opacity: 0; transition: opacity 0.3s;
+}
+.svc-card:hover .svc-glow { opacity: 1; }
+
+/* ── PROCESS STEPS ── */
+.process-wrap { position: relative; }
+.process-line {
+  position: absolute; top: 32px; left: 32px; right: 32px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--clr-gold), var(--clr-teal), var(--clr-gold), transparent);
+  z-index: 0;
+}
+.process-steps {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 24px; position: relative; z-index: 1;
+}
+.ps-card {
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: var(--radius); padding: 28px 20px 24px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s;
+}
+.ps-card:hover { transform: translateY(-5px); border-color: rgba(200,160,82,0.4); }
+.ps-num {
+  width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--clr-gold), #a07838);
+  color: #060e1a; font-family: var(--ff-head); font-size: 16px; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px; position: relative;
+}
+.ps-num::after {
+  content: ''; position: absolute; inset: -4px; border-radius: 50%;
+  border: 1px solid rgba(200,160,82,0.3);
+}
+.ps-icon { font-size: 26px; color: var(--clr-teal); margin-bottom: 12px; }
+.ps-card h4 {
+  font-family: var(--ff-head); font-size: 12px; font-weight: 700;
+  color: var(--clr-white); margin-bottom: 8px; letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.ps-card p { font-size: 13px; color: var(--clr-muted); line-height: 1.5; }
+
+/* ── BENEFITS TWO-COL ── */
+.benefits-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 48px; align-items: center;
+}
+.ben-list { display: flex; flex-direction: column; gap: 20px; }
+.ben-item {
+  display: flex; gap: 18px; align-items: flex-start;
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: var(--radius); padding: 22px 24px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.ben-item:hover { border-color: rgba(200,160,82,0.35); transform: translateX(6px); }
+.ben-icon {
+  width: 48px; height: 48px; flex-shrink: 0; border-radius: 10px;
+  background: rgba(200,160,82,0.08); border: 1px solid var(--clr-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; color: var(--clr-gold);
+}
+.ben-body h4 {
+  font-family: var(--ff-head); font-size: 13px; font-weight: 700;
+  color: var(--clr-white); margin-bottom: 6px; letter-spacing: 0.3px;
+}
+.ben-body p { font-size: 14px; color: var(--clr-muted); line-height: 1.6; }
+
+.ben-visual {
+  position: relative; padding: 32px;
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: 20px; overflow: hidden;
+}
+.ben-visual::before {
+  content: ''; position: absolute; top: -40px; right: -40px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,160,82,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+.bv-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.bv-stat {
+  background: rgba(6,14,26,0.6); border: 1px solid var(--clr-border);
+  border-radius: 12px; padding: 24px 20px; text-align: center;
+}
+.bv-stat .num {
+  font-family: var(--ff-head); font-size: 36px; font-weight: 900;
+  color: var(--clr-gold); display: block; line-height: 1;
+}
+.bv-stat .lbl {
+  font-size: 12px; color: var(--clr-muted);
+  font-family: var(--ff-mono); letter-spacing: 1px; margin-top: 6px;
+  display: block; text-transform: uppercase;
+}
+.bv-stat.teal .num { color: var(--clr-teal); }
+.bv-bottom {
+  margin-top: 20px;
+  background: rgba(6,14,26,0.6); border: 1px solid var(--clr-border);
+  border-radius: 12px; padding: 20px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.bv-bottom i { font-size: 28px; color: var(--clr-gold); flex-shrink: 0; }
+.bv-bottom p { font-size: 14px; color: var(--clr-muted); line-height: 1.5; margin: 0; }
+.bv-bottom strong { color: var(--clr-white); }
+
+/* ── TECH STACK ── */
+.tech-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+.tech-card {
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: var(--radius); padding: 28px 20px;
+  text-align: center;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.tech-card:hover {
+  transform: translateY(-4px); border-color: rgba(0,200,224,0.4);
+  box-shadow: var(--shadow-teal);
+}
+.tech-card i { font-size: 36px; color: var(--clr-teal); margin-bottom: 14px; display: block; }
+.tech-card h5 {
+  font-family: var(--ff-head); font-size: 12px; font-weight: 700;
+  color: var(--clr-white); margin-bottom: 6px; letter-spacing: 0.5px; text-transform: uppercase;
+}
+.tech-card p { font-size: 12px; color: var(--clr-muted); }
+
+/* ── COMPARISON TABLE ── */
+.cmp-wrap {
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: 16px; overflow: hidden;
+}
+.cmp-table { width: 100%; border-collapse: collapse; }
+.cmp-table th {
+  background: rgba(200,160,82,0.06); padding: 18px 24px;
+  font-family: var(--ff-head); font-size: 13px; font-weight: 700;
+  color: var(--clr-gold); text-transform: uppercase; letter-spacing: 1px;
+  border-bottom: 1px solid var(--clr-border); text-align: left;
+}
+.cmp-table th:not(:first-child) { text-align: center; }
+.cmp-table td {
+  padding: 16px 24px; font-size: 14px; color: var(--clr-muted);
+  border-bottom: 1px solid rgba(200,160,82,0.06);
+}
+.cmp-table tr:last-child td { border-bottom: none; }
+.cmp-table td:not(:first-child) { text-align: center; }
+.cmp-table tr:hover td { background: rgba(200,160,82,0.03); }
+.cmp-table .feat { color: var(--clr-white); font-weight: 600; }
+.cmp-yes { color: #00ff88; font-size: 18px; }
+.cmp-no  { color: #ff4444; font-size: 18px; }
+.cmp-col-highlight th { color: var(--clr-teal) !important; }
+.cmp-col-highlight td { background: rgba(0,200,224,0.03); }
+
+/* ── OFFER BAND ── */
+.offer-band {
+  position: relative; z-index: 1; overflow: hidden;
+  background: linear-gradient(135deg, rgba(200,160,82,0.12), rgba(0,200,224,0.06));
+  border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border);
+  padding: 48px 0;
+}
+.offer-band::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 20% 50%, rgba(200,160,82,0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+.ob-wrap {
+  max-width: 1280px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 32px; flex-wrap: wrap; position: relative; z-index: 1;
+}
+.ob-tag {
+  display: inline-block; background: var(--clr-gold); color: #060e1a;
+  font-family: var(--ff-head); font-size: 11px; font-weight: 900;
+  padding: 4px 12px; border-radius: 4px; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.ob-h {
+  font-family: var(--ff-head); font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 900; color: var(--clr-white);
+}
+.ob-h em { color: var(--clr-gold); font-style: normal; }
+.ob-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-dark {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--clr-bg); color: var(--clr-gold);
+  border: 1px solid var(--clr-gold);
+  font-family: var(--ff-head); font-size: 12px; font-weight: 700;
+  padding: 12px 22px; border-radius: 8px; text-decoration: none;
+  letter-spacing: 1px; text-transform: uppercase;
+  transition: all 0.2s;
+}
+.btn-dark:hover { background: var(--clr-gold); color: #060e1a; transform: translateY(-2px); }
+
+/* ── FAQ ── */
+.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 840px; margin: 0 auto; }
+.faq-item {
+  background: var(--clr-card); border: 1px solid var(--clr-border);
+  border-radius: var(--radius); overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item.open { border-color: rgba(200,160,82,0.4); }
+.faq-q {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px; cursor: pointer;
+  font-family: var(--ff-body); font-size: 16px; font-weight: 600;
+  color: var(--clr-white); gap: 16px;
+}
+.faq-q i {
+  color: var(--clr-gold); font-size: 18px; flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-q i { transform: rotate(45deg); }
+.faq-a {
+  padding: 0 24px; max-height: 0; overflow: hidden;
+  font-size: 15px; color: var(--clr-muted); line-height: 1.8;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-item.open .faq-a { max-height: 300px; padding: 0 24px 20px; }
+
+/* ── BIG CTA ── */
+.big-cta {
+  position: relative; z-index: 1; overflow: hidden;
+  background: linear-gradient(135deg, #0a1628, #0d1e35);
+  border-top: 1px solid var(--clr-border);
+  padding: 100px 0;
+  text-align: center;
+}
+.big-cta::before {
+  content: ''; position: absolute; top: -100px; left: 50%;
+  transform: translateX(-50%);
+  width: 600px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,160,82,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.big-cta-inner { max-width: 700px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.big-cta-h {
+  font-family: var(--ff-head); font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900; margin-bottom: 20px; letter-spacing: -1px; line-height: 1.05;
+}
+.big-cta-h em { color: var(--clr-gold); font-style: normal; }
+.big-cta-p { font-size: 17px; color: var(--clr-muted); margin-bottom: 36px; line-height: 1.7; }
+.big-cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 28px; }
+.big-cta-tel {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-family: var(--ff-mono); font-size: 14px; color: var(--clr-muted);
+}
+.big-cta-tel a { color: var(--clr-gold); text-decoration: none; }
+.big-cta-tel a:hover { color: var(--clr-gold2); }
+
+/* ── FOOTER ── */
+#vt-footer { position: relative; z-index: 1; }
+.footer-body {
+  background: rgba(6,14,26,0.95);
+  border-top: 1px solid var(--clr-border);
+  padding: 72px 0 48px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.fb-logo-wrap { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.fb-logo-wrap img { border-radius: 8px; }
+.fb-name {
+  font-family: var(--ff-head); font-size: 18px; font-weight: 700;
+  color: var(--clr-white); display: block;
+}
+.fb-name em { color: var(--clr-gold); font-style: normal; }
+.fb-sub { font-family: var(--ff-mono); font-size: 10px; color: var(--clr-muted); letter-spacing: 2px; }
+.footer-brand p { font-size: 14px; color: var(--clr-muted); line-height: 1.7; margin-bottom: 20px; }
+.f-soc { display: flex; gap: 10px; margin-bottom: 20px; }
+.f-soc a {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: rgba(200,160,82,0.08); border: 1px solid var(--clr-border);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--clr-muted); text-decoration: none; font-size: 14px;
+  transition: all 0.2s;
+}
+.f-soc a:hover { background: rgba(200,160,82,0.15); color: var(--clr-gold); border-color: var(--clr-gold); }
+.f-contact { display: flex; flex-direction: column; gap: 8px; }
+.f-contact a, .f-contact span {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--clr-muted); text-decoration: none;
+}
+.f-contact a:hover { color: var(--clr-gold); }
+.f-contact i { color: var(--clr-gold); width: 16px; }
+
+.footer-col h5 {
+  font-family: var(--ff-head); font-size: 13px; font-weight: 700;
+  color: var(--clr-white); text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--clr-border);
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer-col ul li a {
+  font-size: 13px; color: var(--clr-muted); text-decoration: none;
+  transition: color 0.2s; display: flex; align-items: center; gap: 6px;
+}
+.footer-col ul li a::before {
+  content: '›'; color: var(--clr-gold); font-size: 16px; line-height: 1;
+}
+.footer-col ul li a:hover { color: var(--clr-gold); }
+.footer-base {
+  background: rgba(3,8,16,0.98); border-top: 1px solid var(--clr-border);
+  padding: 18px 0;
+}
+.footer-base-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+  font-family: var(--ff-mono); font-size: 12px; color: var(--clr-muted);
+}
+.footer-base-inner a { color: var(--clr-muted); text-decoration: none; }
+.footer-base-inner a:hover { color: var(--clr-gold); }
+.footer-base-inner span { display: flex; align-items: center; gap: 12px; }
+
+/* ── FIXED ELEMENTS ── */
+#scroll-top {
+  position: fixed; bottom: 100px; right: 24px; z-index: 300;
+  width: 44px; height: 44px; border-radius: 10px;
+  background: rgba(200,160,82,0.15); border: 1px solid var(--clr-border);
+  color: var(--clr-gold); text-decoration: none;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; opacity: 0; pointer-events: none; transition: all 0.3s;
+  backdrop-filter: blur(8px);
+}
+#scroll-top.show { opacity: 1; pointer-events: auto; }
+#scroll-top:hover { background: rgba(200,160,82,0.25); transform: translateY(-2px); }
+
+#wa-btn {
+  position: fixed; bottom: 32px; right: 24px; z-index: 300;
+  display: flex; align-items: center; gap: 8px;
+  background: #25d366; color: #fff;
+  font-family: var(--ff-head); font-size: 12px; font-weight: 700;
+  padding: 12px 18px; border-radius: 40px; text-decoration: none;
+  letter-spacing: 1px; text-transform: uppercase;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#wa-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,0.45); }
+#wa-btn i { font-size: 18px; }
+
+/* ── SCROLL REVEAL ── */
+[data-r] { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+[data-r="right"] { transform: translateX(40px); }
+[data-r="left"]  { transform: translateX(-40px); }
+[data-r].vt-show { opacity: 1; transform: none; }
+
+/* ── MAP ── */
+.map-wrap {
+  position: relative; z-index: 1; height: 400px;
+  display: grid; grid-template-columns: 320px 1fr;
+  border-top: 1px solid var(--clr-border);
+}
+.map-info {
+  background: var(--clr-bg2); padding: 36px 28px;
+  border-right: 1px solid var(--clr-border);
+  display: flex; flex-direction: column; gap: 12px;
+}
+.map-info-head {
+  font-family: var(--ff-head); font-size: 14px; font-weight: 700;
+  color: var(--clr-gold); letter-spacing: 1px; margin-bottom: 4px;
+}
+.map-info p { font-size: 14px; color: var(--clr-muted); line-height: 1.6; }
+.map-info p i { color: var(--clr-gold); margin-right: 6px; }
+.map-info a { color: var(--clr-muted); text-decoration: none; }
+.map-info a:hover { color: var(--clr-gold); }
+.map-wrap iframe { width: 100%; height: 100%; border: 0; filter: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(3, 1fr); }
+  .process-line { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .ph-grid { grid-template-columns: 1fr; }
+  .ph-visual { display: none; }
+  .cmp-table { font-size: 13px; }
+}
+
+@media (max-width: 768px) {
+  .svc-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; }
+  .challenge-grid { grid-template-columns: 1fr 1fr; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+  #vt-nav { display: none; }
+  #mob-btn { display: flex; }
+  #vt-nav.nav-open {
+    display: flex; flex-direction: column; position: fixed;
+    inset: 0; background: rgba(6,14,26,0.98); z-index: 999;
+    align-items: center; justify-content: center; gap: 20px;
+  }
+  .nav-a { font-size: 18px; padding: 12px 24px; }
+  .mega-panel { display: none !important; }
+  .hdr-cta { display: none; }
+  .map-wrap { grid-template-columns: 1fr; height: auto; }
+  .map-info { height: auto; }
+  .map-wrap iframe { height: 300px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .ob-wrap { flex-direction: column; }
+  .cmp-wrap { overflow-x: auto; }
+}
+
+@media (max-width: 480px) {
+  .challenge-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: 1fr 1fr; }
+  .bv-stats { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ THREE.JS CANVAS ═══ -->
+<canvas id="vt-three" aria-hidden="true"></canvas>
+<!-- ═══ NOISE OVERLAY ═══ -->
+<div id="vt-noise" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     TOPBAR
+═══════════════════════════════════════════════ -->
+<div id="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-l">
+      <span class="tb-pulse" aria-hidden="true"></span>
+      <span>LIVE SUPPORT — ABU DHABI &amp; UAE — 24/7</span>
+    </div>
+    <div class="tb-r">
+      <a href="tel:+971581816887" aria-label="Call VOWTECH">
+        <i class="bi bi-telephone-fill" aria-hidden="true"></i> +971 58 181 6887
+      </a>
+      <span aria-hidden="true">|</span>
+      <a href="mailto:info@vow-tech.com" aria-label="Email VOWTECH">
+        <i class="bi bi-envelope-fill" aria-hidden="true"></i> info@vow-tech.com
+      </a>
+      <span aria-hidden="true">|</span>
+      <span><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Abu Dhabi, UAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════════ -->
+<header id="vt-header" role="banner">
+  <div class="hdr-inner">
+    <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
+      <div class="logo-3d-wrap" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="52" height="52"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="52" height="52"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="52" height="52"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="52" height="52"></div>
+          <div class="lc-f lc-top"></div>
+          <div class="lc-f lc-bottom"></div>
+        </div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-main">VOW<em>TECHNOLOGIES</em></span>
+        <span class="logo-tagline">IT SOLUTIONS — ABU DHABI</span>
+      </div>
+    </a>
+
+    <nav id="vt-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="index.html#about" class="nav-a">About</a>
+
+      <div class="nav-drop" id="navDrop">
+        <button class="nav-a nav-drop-btn" aria-haspopup="true" aria-expanded="false" id="navDropBtn">
+          Services <i class="bi bi-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-headset" aria-hidden="true"></i> IT Support</div>
+              <a href="amc-support.html" role="menuitem">Annual Maintenance Contract</a>
+              <a href="CCTV-Services.html" role="menuitem">CCTV Services</a>
+              <a href="Office-IT-Setup-Relocation.html" role="menuitem">Office IT Setup &amp; Relocation</a>
+              <a href="Emergency-IT-Support.html" role="menuitem">Emergency IT Support</a>
+              <a href="Remote-Technical-Support.html" role="menuitem">Remote Technical Support</a>
+              <a href="On-Site-IT-Support.html" role="menuitem">On-Site Support</a>
+              <a href="IT-Outsourcing.html" role="menuitem">IT Outsourcing</a>
+              <a href="Helpdesk-Support.html" role="menuitem">Helpdesk Support</a>
+              <a href="data-recovery.html" role="menuitem">Disaster Recovery</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking</div>
+              <a href="Structured-Cabling.html" role="menuitem">Structured Cabling</a>
+              <a href="Server-Room-Setup.html" role="menuitem">Server Room Setup</a>
+              <a href="Network-Server-Migration.html" role="menuitem">Network &amp; Server Migration</a>
+              <a href="Network-Security-Services.html" role="menuitem">Network Security Services</a>
+              <a href="Network-Planning-Design.html" role="menuitem">Network Planning &amp; Design</a>
+              <a href="Network-Installation-Troubleshooting.html" role="menuitem">Network Installation</a>
+              <a href="Telephone-Systems-Implementation.html" role="menuitem">Telephone Systems</a>
+              <a href="Office-Migration.html" role="menuitem">Office Migration</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-shield-virus" aria-hidden="true"></i> Cybersecurity</div>
+              <a href="Sophos-firewall.html" role="menuitem">Sophos Firewall</a>
+              <a href="soc-security-operations-center.html" role="menuitem">SOC</a>
+              <a href="siem-solution.html" role="menuitem">SIEM Solution</a>
+              <a href="soar-solution.html" role="menuitem">SOAR Solution</a>
+              <a href="cloud-network-security.html" role="menuitem">Cloud &amp; Network Security</a>
+              <a href="anti-phishing-protection.html" role="menuitem">Anti-Phishing</a>
+              <a href="Penetration-Testing.html" role="menuitem">Penetration Testing</a>
+              <a href="web-application-firewall.html" role="menuitem">WAF</a>
+              <a href="mobile-device-management.html" role="menuitem">MDM</a>
+              <a href="pam-pim-solutions.html" role="menuitem">PAM / PIM Solutions</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-cloud" aria-hidden="true"></i> Cloud &amp; Managed</div>
+              <a href="Office365-Exchange-Online.html" role="menuitem">Office 365 &amp; Exchange</a>
+              <a href="Google-Apps-for-Business.html" role="menuitem">Google Apps for Business</a>
+              <a href="Private-Cloud-Services.html" role="menuitem">Private Cloud Services</a>
+              <a href="Dedicated-VPS-Servers.html" role="menuitem">Dedicated &amp; VPS Servers</a>
+              <a href="Veeam-Backup-Disaster-Recovery.html" role="menuitem">Veeam Backup</a>
+              <a href="Cloud-Backup-Disaster-Recovery.html" role="menuitem">Cloud Backup</a>
+              <a href="Virtualization.html" role="menuitem">Virtualization</a>
+              <a href="VPN-Network-Monitoring.html" role="menuitem">VPN Monitoring</a>
+              <a href="Server-Management.html" role="menuitem">Server Management</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-server" aria-hidden="true"></i> Infrastructure</div>
+              <a href="IT-infrastructure-solutions.html" role="menuitem">IT Infrastructure</a>
+              <a href="data.center.html" role="menuitem">Data Center</a>
+              <a href="Server-Solutions.html" role="menuitem">Server Solutions</a>
+              <a href="Network-Solutions.html" role="menuitem">Network Solutions</a>
+              <a href="Data-Storage-Solutions.html" role="menuitem">Data Storage Solutions</a>
+              <a href="Backup-Data-Protection.html" role="menuitem">Backup &amp; Data Protection</a>
+              <a href="Disaster-Recovery-Solutions.html" role="menuitem">Disaster Recovery</a>
+              <a href="firewall-products.html" role="menuitem">Firewall Solutions</a>
+              <a href="zkteco-access-control.html" role="menuitem">Access Control</a>
+              <a href="cctv-surveillance.html" role="menuitem">CCTV Systems</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="blog.html" class="nav-a">Insights</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </nav>
+
+    <a href="appointment.html" class="btn-primary hdr-cta">
+      <i class="fas fa-headset" aria-hidden="true"></i> Free Consultation
+    </a>
+    <button id="mob-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="vt-nav">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════ -->
+<section id="page-hero" aria-label="Backup & Data Protection — VOWTECH Abu Dhabi">
+
+  <div class="hex-grid" aria-hidden="true">
+    <div class="hex-row">
+      <span class="hex"></span><span class="hex h-gold"></span><span class="hex"></span>
+      <span class="hex h-teal"></span><span class="hex"></span><span class="hex h-gold"></span>
+      <span class="hex"></span><span class="hex"></span><span class="hex h-teal"></span>
+    </div>
+    <div class="hex-row offset">
+      <span class="hex h-gold"></span><span class="hex"></span><span class="hex"></span>
+      <span class="hex"></span><span class="hex h-gold"></span><span class="hex"></span>
+      <span class="hex h-teal"></span><span class="hex"></span><span class="hex"></span>
+    </div>
+    <div class="hex-row">
+      <span class="hex"></span><span class="hex"></span><span class="hex h-teal"></span>
+      <span class="hex h-gold"></span><span class="hex"></span><span class="hex"></span>
+      <span class="hex"></span><span class="hex h-gold"></span><span class="hex"></span>
+    </div>
+  </div>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <div class="ph-inner">
+    <div class="ph-breadcrumb" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="IT-infrastructure-solutions.html">Infrastructure</a>
+      <span class="sep">›</span>
+      <span class="cur">Backup &amp; Data Protection</span>
+    </div>
+
+    <div class="ph-grid">
+      <div class="ph-left" data-r>
+        <span class="ph-tag">// ENTERPRISE DATA SECURITY</span>
+        <h1 class="ph-h1">
+          <span>Backup &amp;</span><br>
+          <em>Data Protection</em><br>
+          <span class="h-teal">Abu Dhabi UAE</span>
+        </h1>
+        <p class="ph-desc">
+          Enterprise-grade automated backups, encrypted storage, Veeam-powered disaster recovery, and 24/7 monitoring — engineered to keep your critical business data safe and always recoverable.
+        </p>
+        <div class="ph-btns">
+          <a href="contact.html" class="btn-primary btn-lg">
+            <i class="fas fa-rocket" aria-hidden="true"></i> Get Free Quote
+          </a>
+          <a href="https://wa.me/971581816887?text=Hi%20I%20need%20Backup%20%26%20Data%20Protection%20in%20Abu%20Dhabi" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg">
+            <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Now
+          </a>
+        </div>
+        <div class="ph-chips">
+          <div class="ph-chip"><i class="fas fa-shield-alt" aria-hidden="true"></i><span>Enterprise-Grade Backup</span></div>
+          <div class="ph-chip"><i class="fas fa-bolt" aria-hidden="true"></i><span>Disaster Recovery Ready</span></div>
+          <div class="ph-chip"><i class="fas fa-lock" aria-hidden="true"></i><span>AES-256 Encryption</span></div>
+          <div class="ph-chip"><i class="fas fa-clock" aria-hidden="true"></i><span>24/7 Monitoring</span></div>
+        </div>
+      </div>
+
+      <div class="ph-visual" aria-hidden="true" data-r="right" data-d="150">
+        <div class="ph-orbit">
+          <div class="ph-ring ph-ring-1"></div>
+          <div class="ph-ring ph-ring-2"></div>
+          <div class="ph-ring ph-ring-3"></div>
+          <div class="ph-core">
+            <i class="fas fa-database" aria-hidden="true"></i>
+          </div>
+          <div class="orbit-node"><i class="fas fa-cloud-upload-alt"></i></div>
+          <div class="orbit-node"><i class="fas fa-shield-alt"></i></div>
+          <div class="orbit-node"><i class="fas fa-sync-alt"></i></div>
+          <div class="orbit-node"><i class="fas fa-hdd"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CHALLENGES
+═══════════════════════════════════════════════ -->
+<section class="vt-sec dark-sec" aria-label="Common Data Challenges">
+  <div class="vt-con">
+    <div class="sec-hd" data-r>
+      <span class="sec-tag">// THE PROBLEM</span>
+      <h2 class="sec-h2">Common Backup &amp;<br><em>Data Challenges</em></h2>
+      <p class="sec-sub">Unprotected data is a ticking time bomb. Here's what businesses face without a proper backup strategy.</p>
+    </div>
+    <div class="challenge-grid">
+      <div class="ch-card" data-r data-d="0">
+        <div class="ch-icon"><i class="fas fa-exclamation-triangle" aria-hidden="true"></i></div>
+        <h4>Ransomware Attacks</h4>
+        <p>Ransomware can encrypt your entire data set in minutes. Without air-gapped backups, recovery is impossible.</p>
+      </div>
+      <div class="ch-card" data-r data-d="60">
+        <div class="ch-icon"><i class="fas fa-hdd" aria-hidden="true"></i></div>
+        <h4>Hardware Failure</h4>
+        <p>Hard drives and servers fail without warning. No backup means permanent data loss and extended downtime.</p>
+      </div>
+      <div class="ch-card" data-r data-d="120">
+        <div class="ch-icon"><i class="fas fa-user-times" aria-hidden="true"></i></div>
+        <h4>Human Error</h4>
+        <p>Accidental deletions and overwrites are the leading cause of data loss. Versioned backups allow instant rollback.</p>
+      </div>
+      <div class="ch-card" data-r data-d="180">
+        <div class="ch-icon"><i class="fas fa-cloud-rain" aria-hidden="true"></i></div>
+        <h4>Natural Disasters</h4>
+        <p>Fire, flooding, or power surges can destroy on-site servers. Offsite and cloud replication keeps you covered.</p>
+      </div>
+      <div class="ch-card" data-r data-d="240">
+        <div class="ch-icon"><i class="fas fa-balance-scale" aria-hidden="true"></i></div>
+        <h4>Compliance Gaps</h4>
+        <p>UAE regulations require data retention policies. Lack of proper backup puts you at legal and regulatory risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════════════ -->
+<section class="vt-sec light-sec" aria-label="Backup & Data Protection Services">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// WHAT WE OFFER</span>
+      <h2 class="sec-h2">Our Backup &amp; Data<br><em>Protection Services</em></h2>
+      <p class="sec-sub">Comprehensive solutions to secure, replicate, and instantly recover your business data — across on-premises, hybrid, and cloud environments.</p>
+    </div>
+    <div class="svc-grid">
+
+      <a href="Veeam-Backup-Disaster-Recovery.html" class="svc-card" data-r data-d="0">
+        <div class="svc-num" aria-hidden="true">01</div>
+        <div class="svc-icon-box"><i class="fas fa-hdd" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Automated Data Backup</h3>
+        <p class="svc-p">Scheduled, policy-driven backups for all critical servers, endpoints, databases, and applications — so no data is ever left unprotected.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="Cloud-Backup-Disaster-Recovery.html" class="svc-card" data-r data-d="60">
+        <div class="svc-num" aria-hidden="true">02</div>
+        <div class="svc-icon-box"><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Cloud Backup &amp; Replication</h3>
+        <p class="svc-p">Offsite cloud replication to geographically distributed data centres, ensuring your data survives any on-site disaster.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="Disaster-Recovery-Solutions.html" class="svc-card" data-r data-d="120">
+        <div class="svc-num" aria-hidden="true">03</div>
+        <div class="svc-icon-box"><i class="fas fa-sync-alt" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Rapid Disaster Recovery</h3>
+        <p class="svc-p">RTO &amp; RPO-driven recovery strategies with instant VM restore, bare-metal recovery, and full business continuity planning.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="Veeam-Backup-Disaster-Recovery.html" class="svc-card" data-r data-d="0">
+        <div class="svc-num" aria-hidden="true">04</div>
+        <div class="svc-icon-box"><i class="fas fa-lock" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Encrypted Storage</h3>
+        <p class="svc-p">AES-256 encryption at rest and in transit. Air-gapped immutable backups that ransomware and attackers cannot touch or modify.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="Server-Management.html" class="svc-card" data-r data-d="60">
+        <div class="svc-num" aria-hidden="true">05</div>
+        <div class="svc-icon-box"><i class="fas fa-tachometer-alt" aria-hidden="true"></i></div>
+        <h3 class="svc-h">24/7 Backup Monitoring</h3>
+        <p class="svc-p">Proactive monitoring of every backup job — alerts on failure, verification tests, and detailed reporting to prove your data is safe.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="data-recovery.html" class="svc-card" data-r data-d="120">
+        <div class="svc-num" aria-hidden="true">06</div>
+        <div class="svc-icon-box"><i class="fas fa-database" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Database &amp; Application Backup</h3>
+        <p class="svc-p">Application-aware backups for SQL Server, Oracle, Exchange, SharePoint, and Microsoft 365 — with granular item-level recovery.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="Virtualization.html" class="svc-card" data-r data-d="0">
+        <div class="svc-num" aria-hidden="true">07</div>
+        <div class="svc-icon-box"><i class="fas fa-server" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Virtual Machine Backup</h3>
+        <p class="svc-p">Agentless VM backups for VMware vSphere and Microsoft Hyper-V environments with instant recovery and replication.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="Office365-Exchange-Online.html" class="svc-card" data-r data-d="60">
+        <div class="svc-num" aria-hidden="true">08</div>
+        <div class="svc-icon-box"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Microsoft 365 Backup</h3>
+        <p class="svc-p">Automated backup of Exchange Online, SharePoint, Teams, and OneDrive — because Microsoft doesn't guarantee data recovery.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+      <a href="IT-Audit-Health-Check.html" class="svc-card" data-r data-d="120">
+        <div class="svc-num" aria-hidden="true">09</div>
+        <div class="svc-icon-box"><i class="fas fa-clipboard-check" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Backup Audit &amp; Assessment</h3>
+        <p class="svc-p">Comprehensive review of your current backup infrastructure — identifying gaps, testing recoverability, and hardening your data strategy.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     IMPLEMENTATION PROCESS
+═══════════════════════════════════════════════ -->
+<section class="vt-sec dark-sec" aria-label="Implementation Process">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// HOW WE DO IT</span>
+      <h2 class="sec-h2">Our 5-Step Data Protection<br><em>Implementation</em></h2>
+      <p class="sec-sub">A proven, structured approach to deploying enterprise backup — from audit to 24/7 managed operation.</p>
+    </div>
+    <div class="process-wrap">
+      <div class="process-line" aria-hidden="true"></div>
+      <div class="process-steps">
+
+        <div class="ps-card" data-r data-d="0">
+          <div class="ps-num" aria-label="Step 1">01</div>
+          <div class="ps-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+          <h4>Data Audit</h4>
+          <p>Discover and classify all critical data, map dependencies, and define recovery objectives.</p>
+        </div>
+
+        <div class="ps-card" data-r data-d="80">
+          <div class="ps-num" aria-label="Step 2">02</div>
+          <div class="ps-icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+          <h4>Strategy Design</h4>
+          <p>Define backup frequency, retention policies, RTO/RPO targets, and on-site vs cloud architecture.</p>
+        </div>
+
+        <div class="ps-card" data-r data-d="160">
+          <div class="ps-num" aria-label="Step 3">03</div>
+          <div class="ps-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
+          <h4>Deployment</h4>
+          <p>Install and configure backup agents, storage targets, replication jobs, and cloud connectors.</p>
+        </div>
+
+        <div class="ps-card" data-r data-d="240">
+          <div class="ps-num" aria-label="Step 4">04</div>
+          <div class="ps-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+          <h4>Security &amp; Encryption</h4>
+          <p>Apply AES-256 encryption, immutable storage policies, and air-gap configurations to block ransomware.</p>
+        </div>
+
+        <div class="ps-card" data-r data-d="320">
+          <div class="ps-num" aria-label="Step 5">05</div>
+          <div class="ps-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+          <h4>Monitor &amp; Maintain</h4>
+          <p>24/7 automated job monitoring, monthly restore tests, reporting, and continuous optimisation.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     BENEFITS
+═══════════════════════════════════════════════ -->
+<section class="vt-sec light-sec" aria-label="Why Choose VOWTECH Backup">
+  <div class="vt-con">
+    <div class="benefits-grid">
+
+      <div class="ben-left" data-r="left">
+        <div class="sec-hd" style="margin-bottom:32px">
+          <span class="sec-tag">// WHY VOWTECH</span>
+          <h2 class="sec-h2">Why Choose VOWTECH<br><em>Backup &amp; Protection</em></h2>
+          <p class="sec-sub">9+ years protecting critical data for UAE businesses — from SMEs to enterprise environments.</p>
+        </div>
+        <div class="ben-list">
+          <div class="ben-item">
+            <div class="ben-icon"><i class="fas fa-cloud-upload-alt" aria-hidden="true"></i></div>
+            <div class="ben-body">
+              <h4>Cloud &amp; Hybrid Flexibility</h4>
+              <p>We architect solutions that span on-premises, private cloud, and hyperscaler environments — giving you the best of all worlds.</p>
+            </div>
+          </div>
+          <div class="ben-item">
+            <div class="ben-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+            <div class="ben-body">
+              <h4>Ransomware-Proof Backups</h4>
+              <p>Immutable, air-gapped backup copies that cannot be encrypted or deleted by ransomware actors — ever.</p>
+            </div>
+          </div>
+          <div class="ben-item">
+            <div class="ben-icon"><i class="fas fa-tachometer-alt" aria-hidden="true"></i></div>
+            <div class="ben-body">
+              <h4>Industry-Leading Recovery Speed</h4>
+              <p>Instant VM recovery, granular item restore, and bare-metal recovery — measured in minutes, not hours.</p>
+            </div>
+          </div>
+          <div class="ben-item">
+            <div class="ben-icon"><i class="fas fa-headset" aria-hidden="true"></i></div>
+            <div class="ben-body">
+              <h4>24/7 NOC Monitoring</h4>
+              <p>Our Network Operations Centre monitors every backup job around the clock — with proactive alerting and rapid incident response.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ben-visual" data-r="right" data-d="100">
+        <div class="bv-stats">
+          <div class="bv-stat">
+            <span class="num" data-target="99.9">0</span>
+            <span class="lbl">% Uptime SLA</span>
+          </div>
+          <div class="bv-stat teal">
+            <span class="num" data-target="15">0</span>
+            <span class="lbl">Min Response</span>
+          </div>
+          <div class="bv-stat">
+            <span class="num" data-target="3000">0</span>
+            <span class="lbl">+ Users Protected</span>
+          </div>
+          <div class="bv-stat teal">
+            <span class="num" data-target="9">0</span>
+            <span class="lbl">+ Years Experience</span>
+          </div>
+        </div>
+        <div class="bv-bottom">
+          <i class="fas fa-award" aria-hidden="true"></i>
+          <p><strong>Veeam Certified Partner</strong> — Delivering enterprise-grade backup and disaster recovery with Veeam's industry-leading platform across UAE.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     OFFER BAND
+═══════════════════════════════════════════════ -->
+<div class="offer-band" role="complementary" aria-label="Special Offer">
+  <div class="ob-wrap">
+    <div data-r>
+      <span class="ob-tag">🔥 LIMITED TIME OFFER</span>
+      <h2 class="ob-h">IT AMC + <em>FREE CCTV AMC</em> for 1 Year — Save 30%</h2>
+    </div>
+    <div class="ob-btns" data-r data-d="100">
+      <a href="contact.html" class="btn-dark">Get Free Quote</a>
+      <a href="https://wa.me/971581816887" target="_blank" rel="noopener noreferrer" class="btn-wa">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     TECHNOLOGY STACK
+═══════════════════════════════════════════════ -->
+<section class="vt-sec dark-sec" aria-label="Technology Stack">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// TECHNOLOGY</span>
+      <h2 class="sec-h2">Technologies &amp;<br><em>Platforms We Use</em></h2>
+      <p class="sec-sub">Industry-leading backup platforms deployed and managed by certified VOWTECH engineers.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-card" data-r data-d="0">
+        <i class="fas fa-server" aria-hidden="true"></i>
+        <h5>Veeam</h5>
+        <p>Backup &amp; Replication for VMware &amp; Hyper-V</p>
+      </div>
+      <div class="tech-card" data-r data-d="50">
+        <i class="fas fa-cloud" aria-hidden="true"></i>
+        <h5>Azure Backup</h5>
+        <p>Microsoft cloud backup &amp; site recovery</p>
+      </div>
+      <div class="tech-card" data-r data-d="100">
+        <i class="fab fa-aws" aria-hidden="true"></i>
+        <h5>AWS Backup</h5>
+        <p>Centralised backup across AWS services</p>
+      </div>
+      <div class="tech-card" data-r data-d="150">
+        <i class="fas fa-hdd" aria-hidden="true"></i>
+        <h5>Acronis</h5>
+        <p>Cyber backup &amp; endpoint protection</p>
+      </div>
+      <div class="tech-card" data-r data-d="200">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <h5>Veeam M365</h5>
+        <p>Microsoft 365 data protection &amp; restore</p>
+      </div>
+      <div class="tech-card" data-r data-d="250">
+        <i class="fas fa-database" aria-hidden="true"></i>
+        <h5>Commvault</h5>
+        <p>Enterprise data management platform</p>
+      </div>
+      <div class="tech-card" data-r data-d="300">
+        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+        <h5>Veritas NetBackup</h5>
+        <p>Enterprise-class backup &amp; recovery</p>
+      </div>
+      <div class="tech-card" data-r data-d="350">
+        <i class="fas fa-sync-alt" aria-hidden="true"></i>
+        <h5>Zerto</h5>
+        <p>Continuous data protection &amp; DR orchestration</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     COMPARISON TABLE
+═══════════════════════════════════════════════ -->
+<section class="vt-sec light-sec" aria-label="Backup Solutions Comparison">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// SOLUTIONS COMPARED</span>
+      <h2 class="sec-h2">Find the Right Backup<br><em>Plan for Your Business</em></h2>
+      <p class="sec-sub">From growing SMEs to large enterprise environments — we have the right solution for every scale.</p>
+    </div>
+    <div class="cmp-wrap" data-r data-d="100">
+      <table class="cmp-table" role="table" aria-label="Backup solution comparison">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Essential</th>
+            <th>Professional</th>
+            <th class="cmp-col-highlight">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="feat">Automated Daily Backups</td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">Cloud Offsite Replication</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">AES-256 Encryption</td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">Immutable / Air-Gap Backups</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">VM Instant Recovery</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">Microsoft 365 Backup</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">24/7 NOC Monitoring</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">Dedicated DR Site</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">Custom RTO / RPO SLA</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td></tr>
+          <tr><td class="feat">Monthly Recovery Testing</td><td><span class="cmp-no">✘</span></td><td><span class="cmp-yes">✔</span></td><td><span class="cmp-yes">✔</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="text-align:center;margin-top:32px" data-r data-d="200">
+      <a href="contact.html" class="btn-primary">
+        <i class="fas fa-paper-plane" aria-hidden="true"></i> Get a Custom Quote
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════ -->
+<section class="vt-sec dark-sec" aria-label="Frequently Asked Questions">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// FAQ</span>
+      <h2 class="sec-h2">Frequently Asked<br><em>Questions</em></h2>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>What is the difference between backup and disaster recovery?</span>
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="faq-a">Backup is the process of copying data so it can be restored after loss. Disaster recovery (DR) is a broader plan that covers the full restoration of IT systems and business operations after a major event — including failover, failback, and continuity procedures. VOWTECH provides both as part of an integrated strategy.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>How quickly can you restore our data after a failure?</span>
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="faq-a">With Veeam Instant VM Recovery, virtual machines can be restored and running within minutes directly from the backup file. Physical servers and full environments have defined RTOs based on your contract — typically ranging from 15 minutes to 4 hours depending on your chosen tier.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>Are our backups protected against ransomware?</span>
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="faq-a">Yes. VOWTECH implements immutable backup storage and air-gapped offsite copies that cannot be modified or deleted by ransomware. Even if your primary systems are fully compromised, your backup data remains intact and recoverable.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>Do you back up Microsoft 365 data like emails and Teams?</span>
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="faq-a">Absolutely. Microsoft's shared responsibility model means they do not guarantee data recovery for deletions or corruption. VOWTECH uses Veeam Backup for Microsoft 365 to protect Exchange Online, SharePoint, OneDrive, and Teams — with granular item-level restore.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>How often are backups tested for recoverability?</span>
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="faq-a">For Professional and Enterprise clients, VOWTECH conducts monthly restore verification tests — automatically booting backup images in an isolated environment to confirm they are fully recoverable. You receive a monthly report confirming backup integrity.</div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+          <span>Can you support our existing backup infrastructure?</span>
+          <i class="fas fa-plus" aria-hidden="true"></i>
+        </div>
+        <div class="faq-a">Yes. Our engineers support and extend existing backup environments including Veeam, Acronis, Commvault, Veritas, and others. We can manage, optimise, and add cloud replication to your current setup without requiring a full replacement.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     BIG CTA
+═══════════════════════════════════════════════ -->
+<section class="big-cta" aria-label="Contact VOWTECH for Backup Services">
+  <div class="big-cta-inner" data-r>
+    <span class="sec-tag">// START TODAY</span>
+    <h2 class="big-cta-h">Protect Your Critical<br><em>Business Data</em> Today</h2>
+    <p class="big-cta-p">Free backup assessment. No obligation. Our certified engineers will audit your current data protection posture and recommend the right strategy for your UAE business.</p>
+    <div class="big-cta-btns">
+      <a href="contact.html" class="btn-primary btn-lg">
+        <i class="fas fa-paper-plane" aria-hidden="true"></i> Request a Quote
+      </a>
+      <a href="https://wa.me/971581816887?text=Hi%20I%20need%20Backup%20%26%20Data%20Protection%20in%20Abu%20Dhabi" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i> Chat on WhatsApp
+      </a>
+    </div>
+    <div class="big-cta-tel">
+      <i class="fas fa-phone-alt" aria-hidden="true"></i>
+      <a href="tel:+971581816887">+971 58 181 6887</a>
+      <span>— Available 24/7</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     MAP
+═══════════════════════════════════════════════ -->
+<div class="map-wrap" aria-label="Office Location">
+  <div class="map-info">
+    <div class="map-info-head"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Our Office</div>
+    <p><strong>Navy Gate – Al Zahiyah</strong><br>Abu Dhabi, UAE</p>
+    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+971581816887">+971 58 181 6887</a></p>
+    <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:info@vow-tech.com">info@vow-tech.com</a></p>
+    <p><i class="fas fa-clock" aria-hidden="true"></i> Open 24/7 Every Day</p>
+    <a href="contact.html" class="btn-primary" style="display:inline-flex;margin-top:18px">Contact Us</a>
+  </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.8793697365027!2d54.379450975139584!3d24.48963617817316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6728e25e3a4f%3A0xeaf394fdc432796f!2sVOW%20Technologies!5e0!3m2!1sen!2sae!4v1777982384576!5m2!1sen!2sae"
+    loading="lazy"
+    style="filter:none"
+    title="VOWTECH office location on Google Maps"
+    aria-label="Interactive map showing VOWTECH office in Abu Dhabi UAE"></iframe>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════ -->
+<footer id="vt-footer" aria-label="Site Footer">
+  <div class="footer-body">
+    <div class="vt-con">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="fb-logo-wrap">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52">
+            <div>
+              <span class="fb-name">VOW<em>TECH</em></span>
+              <span class="fb-sub">Enterprise IT — UAE</span>
+            </div>
+          </div>
+          <p>Your reliable IT support partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
+          <div class="f-soc">
+            <a href="#" aria-label="VOWTECH on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" aria-label="VOWTECH on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="#" aria-label="VOWTECH on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="VOWTECH on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          </div>
+          <div class="f-contact">
+            <a href="tel:+971581816887"><i class="fas fa-phone-alt" aria-hidden="true"></i> +971 58 181 6887</a>
+            <a href="mailto:info@vow-tech.com"><i class="fas fa-envelope" aria-hidden="true"></i> info@vow-tech.com</a>
+            <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Navy Gate, Al Zahiyah, Abu Dhabi</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>IT Support</h5>
+          <ul>
+            <li><a href="amc-support.html">Annual Maintenance Contract</a></li>
+            <li><a href="Emergency-IT-Support.html">Emergency IT Support</a></li>
+            <li><a href="Remote-Technical-Support.html">Remote Support</a></li>
+            <li><a href="On-Site-IT-Support.html">On-Site Support</a></li>
+            <li><a href="Helpdesk-Support.html">Helpdesk Support</a></li>
+            <li><a href="IT-Outsourcing.html">IT Outsourcing</a></li>
+            <li><a href="CCTV-Services.html">CCTV Services</a></li>
+            <li><a href="data-recovery.html">Disaster Recovery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Cybersecurity</h5>
+          <ul>
+            <li><a href="Sophos-firewall.html">Sophos Firewall</a></li>
+            <li><a href="soc-security-operations-center.html">SOC</a></li>
+            <li><a href="siem-solution.html">SIEM Solution</a></li>
+            <li><a href="Penetration-Testing.html">Penetration Testing</a></li>
+            <li><a href="anti-phishing-protection.html">Anti-Phishing</a></li>
+            <li><a href="web-application-firewall.html">WAF</a></li>
+            <li><a href="mobile-device-management.html">MDM</a></li>
+            <li><a href="threat-detection-response.html">Threat Detection</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Cloud &amp; Infrastructure</h5>
+          <ul>
+            <li><a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a></li>
+            <li><a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a></li>
+            <li><a href="Virtualization.html">Virtualization</a></li>
+            <li><a href="data.center.html">Data Center</a></li>
+            <li><a href="Private-Cloud-Services.html">Private Cloud</a></li>
+            <li><a href="Dedicated-VPS-Servers.html">VPS Servers</a></li>
+            <li><a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a></li>
+            <li><a href="Backup-Data-Protection.html">Backup &amp; Protection</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Networking</h5>
+          <ul>
+            <li><a href="Structured-Cabling.html">Structured Cabling</a></li>
+            <li><a href="Server-Room-Setup.html">Server Room Setup</a></li>
+            <li><a href="Network-Server-Migration.html">Network Migration</a></li>
+            <li><a href="Network-Security-Services.html">Network Security</a></li>
+            <li><a href="Network-Planning-Design.html">Network Planning</a></li>
+            <li><a href="Telephone-Systems-Implementation.html">Telephone Systems</a></li>
+            <li><a href="firewall-products.html">Firewall Solutions</a></li>
+            <li><a href="zkteco-access-control.html">Access Control</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About VOWTECH</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="appointment.html">Free Consultation</a></li>
+            <li><a href="IT-Audit-Health-Check.html">IT Audit</a></li>
+            <li><a href="IT-Trainings-for-Staff.html">IT Training</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div class="vt-con">
+      <div class="footer-base-inner">
+        <span>© 2025 VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+        <span>
+          <a href="#">Privacy Policy</a>
+          <span aria-hidden="true">|</span>
+          <a href="#">Terms &amp; Conditions</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FIXED ELEMENTS -->
+<a href="#" id="scroll-top" aria-label="Back to top" title="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</a>
+<a href="https://wa.me/971581816887?text=Hi%20I%20need%20Backup%20%26%20Data%20Protection%20in%20Abu%20Dhabi"
+   id="wa-btn"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with VOWTECH on WhatsApp">
+  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+  <span>Chat</span>
+</a>
+
+<!-- THREE.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+'use strict';
+(function(){
+
+/* ── THREE.JS BACKGROUND ── */
+var canvas = document.getElementById('vt-three');
+var W = window.innerWidth, H = window.innerHeight;
+if(!window.THREE){ return; }
+var renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:false});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+renderer.setSize(W, H);
+var scene = new THREE.Scene();
+var cam = new THREE.PerspectiveCamera(60, W/H, 0.1, 600);
+cam.position.z = 32;
+
+var N = 2400;
+var geo = new THREE.BufferGeometry();
+var pos = new Float32Array(N*3);
+var col = new Float32Array(N*3);
+for(var i=0; i<N; i++){
+  pos[i*3]   = (Math.random()-0.5)*120;
+  pos[i*3+1] = (Math.random()-0.5)*120;
+  pos[i*3+2] = (Math.random()-0.5)*80;
+  var r = Math.random();
+  if(r < 0.3){      col[i*3]=0.784; col[i*3+1]=0.627; col[i*3+2]=0.322; }
+  else if(r < 0.5){ col[i*3]=0;     col[i*3+1]=0.784; col[i*3+2]=0.878; }
+  else{              col[i*3]=0.08;  col[i*3+1]=0.14;  col[i*3+2]=0.22; }
+}
+geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+geo.setAttribute('color',    new THREE.BufferAttribute(col,3));
+var pts = new THREE.Points(geo, new THREE.PointsMaterial({size:0.17, vertexColors:true, transparent:true, opacity:0.6}));
+scene.add(pts);
+
+var wfShapes = [], wfDefs = [
+  [new THREE.IcosahedronGeometry(2.4,1), 0xc8a052],
+  [new THREE.OctahedronGeometry(2,0),    0x00c8e0],
+  [new THREE.TetrahedronGeometry(1.8,0), 0xc8a052],
+  [new THREE.IcosahedronGeometry(1.6,1), 0x00c8e0],
+  [new THREE.BoxGeometry(2.4,2.4,2.4),   0xc8a052],
+  [new THREE.OctahedronGeometry(1.5,0),  0x00c8e0],
+  [new THREE.IcosahedronGeometry(2,0),   0xc8a052]
+];
+wfDefs.forEach(function(d){
+  var m = new THREE.Mesh(d[0], new THREE.MeshBasicMaterial({color:d[1], wireframe:true, transparent:true, opacity:0.03+Math.random()*0.04}));
+  m.position.set((Math.random()-0.5)*70,(Math.random()-0.5)*70,(Math.random()-0.5)*30);
+  m.userData.rx = (Math.random()-0.5)*0.006;
+  m.userData.ry = (Math.random()-0.5)*0.006;
+  scene.add(m); wfShapes.push(m);
+});
+
+var mkRing = function(r, op, c){ var m = new THREE.Mesh(new THREE.TorusGeometry(r,0.055,6,120), new THREE.MeshBasicMaterial({color:c, transparent:true, opacity:op})); return m; };
+var ring1 = mkRing(16, 0.07, 0xc8a052); ring1.rotation.x = Math.PI/2.4; scene.add(ring1);
+var ring2 = mkRing(26, 0.04, 0x00c8e0); ring2.rotation.x = Math.PI/3.2; ring2.rotation.z = Math.PI/5; scene.add(ring2);
+var ring3 = mkRing(36, 0.02, 0xc8a052); ring3.rotation.x = Math.PI/4;   ring3.rotation.y = Math.PI/6; scene.add(ring3);
+
+var mx=0, my=0;
+document.addEventListener('mousemove', function(e){ mx=(e.clientX/W-0.5)*2; my=(e.clientY/H-0.5)*2; });
+var t=0;
+function render(){
+  requestAnimationFrame(render);
+  t += 0.0015;
+  pts.rotation.y = t*0.04 + mx*0.04;
+  pts.rotation.x = my*0.025;
+  ring1.rotation.z = t*0.06;
+  ring2.rotation.y = t*0.038;
+  ring3.rotation.z = -t*0.025;
+  wfShapes.forEach(function(s){ s.rotation.x += s.userData.rx; s.rotation.y += s.userData.ry; });
+  cam.position.x += (mx*1.8 - cam.position.x)*0.02;
+  cam.position.y += (-my*1.2 - cam.position.y)*0.02;
+  renderer.render(scene, cam);
+}
+render();
+window.addEventListener('resize', function(){
+  W = window.innerWidth; H = window.innerHeight;
+  cam.aspect = W/H; cam.updateProjectionMatrix();
+  renderer.setSize(W,H);
+});
+
+/* ── HEADER SCROLL ── */
+var hdr = document.getElementById('vt-header');
+var stBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', function(){
+  hdr.classList.toggle('scrolled', window.scrollY>60);
+  if(stBtn) stBtn.classList.toggle('show', window.scrollY>400);
+});
+
+/* ── SCROLL REVEAL ── */
+var revItems = document.querySelectorAll('[data-r]');
+var revIO = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var d = parseInt(e.target.dataset.d||0);
+      setTimeout(function(){ e.target.classList.add('vt-show'); }, d);
+      revIO.unobserve(e.target);
+    }
+  });
+},{threshold:0.08});
+revItems.forEach(function(el){ revIO.observe(el); });
+
+/* ── MOUSE GLOW on svc-cards ── */
+document.querySelectorAll('.svc-card').forEach(function(c){
+  c.addEventListener('mousemove', function(e){
+    var r = c.getBoundingClientRect();
+    c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+  });
+});
+
+/* ── COUNTERS ── */
+function animCount(el, target){
+  var isDecimal = (target !== Math.floor(target));
+  var dur=1800, steps=60, cur=0, inc=target/steps;
+  var timer = setInterval(function(){
+    cur = Math.min(cur+inc, target);
+    el.textContent = isDecimal ? cur.toFixed(1) : Math.floor(cur);
+    if(cur>=target) clearInterval(timer);
+  }, dur/steps);
+}
+var benDone = false;
+var benIO = new IntersectionObserver(function(e){
+  if(e[0].isIntersecting && !benDone){
+    benDone=true;
+    document.querySelectorAll('.bv-stat .num[data-target]').forEach(function(el){
+      animCount(el, parseFloat(el.dataset.target));
+    });
+  }
+},{threshold:0.3});
+var bv = document.querySelector('.ben-visual'); if(bv) benIO.observe(bv);
+
+/* ── MEGA MENU ── */
+var dropBtn = document.getElementById('navDropBtn');
+var megaPanel = document.getElementById('megaPanel');
+if(dropBtn && megaPanel){
+  dropBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = megaPanel.classList.toggle('open');
+    dropBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click', function(){
+    megaPanel.classList.remove('open');
+    dropBtn.setAttribute('aria-expanded','false');
+  });
+  megaPanel.addEventListener('click', function(e){ e.stopPropagation(); });
+}
+
+/* ── MOBILE NAV ── */
+var mobBtn = document.getElementById('mob-btn');
+var nav = document.getElementById('vt-nav');
+if(mobBtn && nav){
+  mobBtn.addEventListener('click', function(){
+    var open = nav.classList.toggle('nav-open');
+    mobBtn.classList.toggle('open', open);
+    mobBtn.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+}
+
+/* ── FAQ ACCORDION ── */
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click', function(){
+    var item = q.closest('.faq-item');
+    var wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!wasOpen){
+      item.classList.add('open');
+      q.setAttribute('aria-expanded','true');
+    }
+  });
+  q.addEventListener('keydown', function(e){
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); q.click(); }
+  });
+});
+
+})();
+</script>
+</body>
+</html>
