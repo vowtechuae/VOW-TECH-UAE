@@ -1,264 +1,1213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Cybersecurity Solutions | VOWTECH IT Solutions</title>
-
-<meta name="description" content="VOWTECH Cybersecurity Solutions include Firewall, SOC, SIEM, SOAR, SASE, WAF, Email Security, Endpoint Protection, and Threat Detection services across UAE.">
-
-<link href="assets/img/VOWTECH.jpeg" rel="icon">
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Cybersecurity Solutions | VOWTECH — Abu Dhabi & Dubai UAE</title>
+<meta name="description" content="VOWTECH provides enterprise-grade Cybersecurity Solutions in Dubai, Abu Dhabi & UAE. SOC, SIEM, Firewall, Penetration Testing, WAF, Anti-Phishing and more.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
 
 <style>
-
-/* ===== GENERAL ===== */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #0f172a;
-  color: #fff;
+:root {
+  --black:    #050810;
+  --navy:     #080f1e;
+  --navy2:    #0a1628;
+  --navy3:    #0e1c35;
+  --navy4:    #14253f;
+  --gold:     #c8a052;
+  --gold2:    #dbb870;
+  --gold3:    #9a7838;
+  --gold-dim: rgba(200,160,82,0.15);
+  --teal:     #00c8e0;
+  --teal2:    #00a0b8;
+  --teal-dim: rgba(0,200,224,0.12);
+  --red:      #e05050;
+  --red-dim:  rgba(224,80,80,0.12);
+  --white:    #f0ece2;
+  --cream:    #e5dfd0;
+  --muted:    rgba(240,236,226,0.5);
+  --border:   rgba(200,160,82,0.18);
+  --border2:  rgba(0,200,224,0.1);
+  --r:        4px;
+  --ease:     cubic-bezier(0.22,1,0.36,1);
+  --fd:       'Orbitron', 'Rajdhani', sans-serif;
+  --fb:       'Rajdhani', system-ui, sans-serif;
+  --fm:       'Share Tech Mono', 'Courier New', monospace;
+  --tb:       42px;
+  --hh:       88px;
 }
 
-/* ===== HEADER ===== */
-header {
-  background: #ffffff;
-  padding: 15px 0;
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
+body { font-family:var(--fb); background:var(--black); color:var(--white); overflow-x:hidden; cursor:none; -webkit-font-smoothing:antialiased; }
+a { color:var(--gold); text-decoration:none; transition:color .25s; }
+a:hover { color:var(--gold2); }
+img { display:block; max-width:100%; }
+body.body-lock { overflow:hidden; }
+
+#vt-noise {
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  opacity:.5;
 }
 
-header img {
-  height: 65px;
-}
+/* CURSOR */
+#vt-dot { position:fixed; width:10px; height:10px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); transition:width .18s var(--ease),height .18s var(--ease),background .2s; mix-blend-mode:difference; }
+#vt-ring { position:fixed; width:38px; height:38px; border:1.5px solid var(--gold); border-radius:50%; pointer-events:none; z-index:99998; transform:translate(-50%,-50%); opacity:.55; transition:width .3s var(--ease),height .3s var(--ease),border-color .25s; }
+#vt-dot.hover { width:6px; height:6px; background:var(--teal); }
+#vt-ring.hover { width:56px; height:56px; border-color:var(--teal); opacity:.3; }
+@media(max-width:991px){ #vt-dot,#vt-ring{ display:none; } body{ cursor:auto; } }
 
-/* ===== HERO ===== */
-.hero {
-  background: url('assets/img/services/cybersecurity-banner.jpg') center/cover no-repeat;
-  padding: 120px 20px;
-  text-align: center;
-  position: relative;
-}
+/* BUTTONS */
+.btn-primary { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--gold); color:var(--navy2); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:none; border-radius:var(--r); cursor:pointer; text-decoration:none; position:relative; overflow:hidden; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-primary::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.18),transparent); opacity:0; transition:opacity .3s; }
+.btn-primary:hover { background:var(--gold2); color:var(--navy2); transform:translateY(-3px); box-shadow:0 14px 32px rgba(200,160,82,.38); }
+.btn-primary:hover::before { opacity:1; }
+.btn-primary.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-wa { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:#25D366; color:#fff; font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border-radius:var(--r); text-decoration:none; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-wa:hover { background:#1db954; color:#fff; transform:translateY(-3px); box-shadow:0 14px 32px rgba(37,211,102,.32); }
+.btn-wa.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-dark { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--navy2); color:var(--gold); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:1.5px solid var(--gold); border-radius:var(--r); text-decoration:none; transition:all .3s; }
+.btn-dark:hover { background:var(--gold); color:var(--navy2); transform:translateY(-2px); }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.75);
-}
+/* TOPBAR */
+#topbar { position:fixed; top:0; left:0; right:0; height:var(--tb); background:var(--gold); z-index:990; display:flex; align-items:center; }
+.tb-inner { width:100%; max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; letter-spacing:.8px; color:var(--navy2); }
+.tb-pulse { display:inline-block; width:7px; height:7px; background:var(--navy2); border-radius:50%; margin-right:10px; animation:tbPulse 1.6s ease infinite; }
+@keyframes tbPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.4} }
+.tb-r { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.tb-r a { color:var(--navy2); font-weight:700; }
+.tb-r a:hover { text-decoration:underline; }
+.tb-r span { opacity:.4; }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
+/* HEADER */
+#vt-header { position:fixed; top:var(--tb); left:0; right:0; height:var(--hh); z-index:980; background:rgba(8,15,30,.88); border-bottom:1px solid var(--border); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); transition:background .4s,box-shadow .4s; }
+#vt-header.scrolled { background:rgba(8,15,30,.98); box-shadow:0 4px 32px rgba(0,0,0,.65); }
+.hdr-inner { max-width:1360px; margin:auto; padding:0 48px; height:100%; display:flex; align-items:center; gap:28px; }
 
-.hero h1 {
-  font-size: 42px;
-  font-weight: 700;
-}
+/* LOGO CUBE */
+.vt-logo { display:flex; align-items:center; gap:16px; text-decoration:none; flex-shrink:0; }
+.logo-3d-wrap { width:72px; height:72px; perspective:400px; flex-shrink:0; }
+.logo-cube { width:72px; height:72px; position:relative; transform-style:preserve-3d; animation:logoCubeAll4 10s linear infinite; }
+@keyframes logoCubeAll4 { 0%{transform:rotateY(0deg) rotateX(12deg)} 25%{transform:rotateY(90deg) rotateX(12deg)} 50%{transform:rotateY(180deg) rotateX(12deg)} 75%{transform:rotateY(270deg) rotateX(12deg)} 100%{transform:rotateY(360deg) rotateX(12deg)} }
+.lc-f { position:absolute; width:72px; height:72px; display:flex; align-items:center; justify-content:center; overflow:hidden; backface-visibility:hidden; border:1.5px solid rgba(200,160,82,.45); background:var(--navy2); }
+.lc-f img { width:100%; height:100%; object-fit:cover; }
+.lc-front  { transform:translateZ(36px); }
+.lc-back   { transform:translateZ(-36px) rotateY(180deg); }
+.lc-right  { transform:translateX(36px) rotateY(90deg); }
+.lc-left   { transform:translateX(-36px) rotateY(-90deg); }
+.lc-top    { transform:translateY(-36px) rotateX(90deg); background:linear-gradient(135deg,var(--gold-dim),var(--navy3)); }
+.lc-bottom { transform:translateY(36px) rotateX(-90deg); background:linear-gradient(135deg,var(--navy3),var(--gold-dim)); }
+.logo-text-wrap { display:flex; flex-direction:column; line-height:1; }
+.logo-main { font-family:var(--fd); font-size:22px; font-weight:700; letter-spacing:3px; color:var(--white); }
+.logo-main em { color:var(--gold); font-style:normal; }
+.logo-tagline { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); margin-top:5px; }
 
-.hero p {
-  font-size: 18px;
-  margin-top: 15px;
-  color: #ddd;
-}
+/* NAV */
+#vt-nav { margin-left:auto; display:flex; align-items:center; gap:2px; }
+.nav-a { font-family:var(--fm); font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); padding:10px 14px; text-decoration:none; background:none; border:none; cursor:pointer; transition:color .25s; position:relative; }
+.nav-a::after { content:''; position:absolute; bottom:5px; left:14px; right:14px; height:1px; background:var(--gold); transform:scaleX(0); transition:transform .3s var(--ease); }
+.nav-a:hover,.nav-a.active { color:var(--gold); }
+.nav-a:hover::after,.nav-a.active::after { transform:scaleX(1); }
+.nav-drop { position:relative; }
+.mega-panel { position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(12px); width:min(1000px,95vw); background:rgba(8,15,30,.98); border:1px solid var(--border); border-top:2px solid var(--gold); backdrop-filter:blur(28px); padding:34px 38px 40px; opacity:0; visibility:hidden; transition:all .3s var(--ease); z-index:100; box-shadow:0 32px 80px rgba(0,0,0,.7); }
+.mega-panel.open { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.mega-cols { display:grid; grid-template-columns:repeat(5,1fr); gap:28px; }
+.mega-head { font-family:var(--fm); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.mega-col a { display:block; font-size:13px; color:var(--muted); padding:5px 0; transition:color .2s,padding-left .2s; }
+.mega-col a:hover { color:var(--gold2); padding-left:7px; }
+.hdr-cta { margin-left:10px; padding:10px 22px; font-size:11px; flex-shrink:0; }
+#mob-btn { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:8px; }
+#mob-btn span { display:block; width:24px; height:1.5px; background:var(--white); transition:all .3s var(--ease); }
+#mob-btn.open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+#mob-btn.open span:nth-child(2){ opacity:0; }
+#mob-btn.open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
 
-/* ===== SERVICES GRID ===== */
-.services-section {
-  padding: 80px 0;
-}
+/* SCROLL REVEAL */
+[data-r] { opacity:0; transform:translateY(32px); transition:opacity .85s var(--ease),transform .85s var(--ease); }
+[data-r="right"] { transform:translateX(-32px); }
+[data-r="left"]  { transform:translateX(32px); }
+.vt-show { opacity:1 !important; transform:none !important; }
 
-.section-title {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 50px;
-}
+/* PAGE HERO */
+.page-hero { padding-top:calc(var(--tb) + var(--hh) + 80px); padding-bottom:100px; position:relative; overflow:hidden; background:var(--black); z-index:1; }
+.page-hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(0,200,224,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(0,200,224,.03) 1px,transparent 1px); background-size:60px 60px; animation:gridDrift 20s linear infinite; }
+@keyframes gridDrift { 0%{background-position:0 0} 100%{background-position:60px 60px} }
+.page-hero::after { content:''; position:absolute; top:-200px; right:-100px; width:700px; height:700px; background:radial-gradient(circle,rgba(0,200,224,.06),transparent 60%); pointer-events:none; }
+.page-hero-inner { max-width:1360px; margin:auto; padding:0 48px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; z-index:2; }
+.scanlines-hero { position:absolute; inset:0; z-index:1; pointer-events:none; background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px); }
 
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
+.breadcrumb-nav { display:flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+.breadcrumb-nav a { color:var(--muted); transition:color .2s; }
+.breadcrumb-nav a:hover { color:var(--gold); }
+.breadcrumb-nav span { opacity:.4; }
+.breadcrumb-nav .bc-active { color:var(--teal); opacity:1; }
+.page-hero-badge { display:inline-flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:22px; }
+.badge-dot { width:7px; height:7px; background:var(--teal); border-radius:50%; animation:tbPulse 2s ease infinite; }
+.page-hero-h1 { font-family:var(--fd); font-size:clamp(36px,5vw,66px); font-weight:900; letter-spacing:1.5px; line-height:1.05; color:var(--white); margin-bottom:22px; }
+.page-hero-h1 em { color:var(--gold); font-style:normal; }
+.page-hero-h1 span { color:var(--teal); }
+.page-hero-desc { font-size:16px; color:var(--muted); line-height:1.82; max-width:500px; margin-bottom:36px; }
+.hero-chips { display:flex; gap:10px; flex-wrap:wrap; }
+.h-chip { display:flex; align-items:center; gap:7px; font-family:var(--fm); font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); padding:7px 14px; border:1px solid var(--border); border-radius:40px; }
+.h-chip i { color:var(--gold); font-size:10px; }
 
-.services-item {
-  position: relative;
-  height: 230px;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  overflow: hidden;
-  transition: 0.4s ease;
-}
+/* HERO RIGHT — cyber threat visual panel */
+.hero-visual-panel { display:flex; align-items:center; justify-content:center; }
+.cyber-visual { background:rgba(10,22,40,.8); border:1px solid var(--border2); border-top:2px solid var(--teal); padding:32px 28px; width:340px; backdrop-filter:blur(14px); position:relative; display:flex; flex-direction:column; gap:16px; }
+.cv-head { font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:4px; }
+.cv-badge { position:absolute; top:-18px; right:-18px; background:rgba(224,80,80,.12); border:1px solid rgba(224,80,80,.25); padding:8px 14px; display:flex; align-items:center; gap:8px; border-radius:3px; animation:floatA 4s ease infinite; }
+@keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.cv-badge i { color:var(--red); font-size:12px; }
+.cv-badge span { font-family:var(--fm); font-size:9px; color:var(--red); letter-spacing:1px; }
+.cv-stat-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.cv-stat { background:var(--navy3); border:1px solid var(--border); border-radius:var(--r); padding:16px 14px; text-align:center; }
+.cv-stat-n { font-family:var(--fd); font-size:26px; font-weight:700; color:var(--teal); display:block; line-height:1; }
+.cv-stat-n.g { color:var(--gold); }
+.cv-stat-n.r { color:var(--red); }
+.cv-stat-l { font-family:var(--fm); font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); display:block; margin-top:5px; }
+.cv-threat-list { display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+.cv-threat-row { display:flex; align-items:center; justify-content:space-between; padding:8px 12px; background:var(--navy3); border:1px solid var(--border); border-radius:var(--r); }
+.cv-threat-label { font-family:var(--fm); font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:7px; }
+.cv-threat-label i { font-size:10px; }
+.cv-threat-label i.r { color:var(--red); }
+.cv-threat-label i.t { color:var(--teal); }
+.cv-threat-label i.g { color:var(--gold); }
+.cv-threat-status { font-family:var(--fm); font-size:8px; letter-spacing:1px; padding:3px 8px; border-radius:20px; }
+.cv-threat-status.blocked { background:rgba(0,200,224,.12); color:var(--teal); border:1px solid var(--border2); }
+.cv-threat-status.active { background:rgba(224,80,80,.12); color:var(--red); border:1px solid rgba(224,80,80,.25); animation:tbPulse 1.8s ease infinite; }
+.cv-threat-status.secure { background:rgba(74,222,128,.1); color:#4ade80; border:1px solid rgba(74,222,128,.2); }
 
-.services-item::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  transition: 0.4s ease;
-}
+/* VT-CON */
+.vt-con { max-width:1360px; margin:auto; padding:0 48px; }
+.sec-tag { display:block; font-family:var(--fm); font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+.sec-h2 { font-family:var(--fd); font-size:clamp(28px,4vw,48px); font-weight:700; letter-spacing:1px; color:var(--white); margin-bottom:16px; }
+.sec-h2 em { color:var(--gold); font-style:normal; }
+.sec-desc { font-size:15px; color:var(--muted); line-height:1.82; max-width:620px; }
 
-.services-item span {
-  position: relative;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  color: #fff;
-  padding: 0 15px;
-  z-index: 2;
-}
+/* CHALLENGES SECTION */
+.challenges-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.challenges-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--teal),var(--gold),transparent); }
+.challenges-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
+.challenge-card { background:var(--navy2); border:1px solid var(--border); padding:32px 28px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s; }
+.challenge-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--teal); transition:height .3s; }
+.challenge-card:hover { border-color:var(--teal); transform:translateY(-4px); }
+.challenge-card:nth-child(2)::before { background:var(--gold); }
+.challenge-card:nth-child(3)::before { background:var(--red); }
+.ch-icon { width:54px; height:54px; background:var(--teal-dim); border:1px solid var(--border2); border-radius:var(--r); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+.ch-icon i { color:var(--teal); font-size:22px; }
+.ch-icon.gold { background:var(--gold-dim); border-color:var(--border); }
+.ch-icon.gold i { color:var(--gold); }
+.ch-icon.red { background:var(--red-dim); border-color:rgba(224,80,80,.25); }
+.ch-icon.red i { color:var(--red); }
+.challenge-card h4 { font-family:var(--fd); font-size:14px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:10px; }
+.challenge-card p { font-size:14px; color:var(--muted); line-height:1.75; }
 
-.services-item:hover {
-  transform: translateY(-8px);
-}
+/* SERVICES SECTION */
+.services-sec { padding:110px 0; background:var(--black); position:relative; z-index:1; }
+.services-sec::after { content:''; position:absolute; top:0; left:0; width:500px; height:500px; background:radial-gradient(circle,rgba(0,200,224,.04),transparent 65%); pointer-events:none; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
+.service-card { background:var(--navy2); border:1px solid var(--border); border-top:2px solid var(--teal); padding:36px 30px; position:relative; overflow:hidden; transition:box-shadow .3s,transform .3s; }
+.service-card:nth-child(2) { border-top-color:var(--gold); }
+.service-card:nth-child(3) { border-top-color:var(--red); }
+.service-card:nth-child(4) { border-top-color:var(--gold); }
+.service-card:nth-child(5) { border-top-color:var(--teal); }
+.service-card:nth-child(6) { border-top-color:var(--red); }
+.service-card:nth-child(7) { border-top-color:var(--teal); }
+.service-card:nth-child(8) { border-top-color:var(--gold); }
+.service-card:nth-child(9) { border-top-color:var(--red); }
+.service-card:nth-child(10) { border-top-color:var(--teal); }
+.service-card:nth-child(11) { border-top-color:var(--gold); }
+.service-card:nth-child(12) { border-top-color:var(--red); }
+.service-card:hover { box-shadow:0 20px 60px rgba(0,0,0,.5); transform:translateY(-5px); }
+.sc-icon { width:58px; height:58px; background:var(--teal-dim); border:1px solid var(--border2); border-radius:var(--r); display:flex; align-items:center; justify-content:center; margin-bottom:22px; }
+.sc-icon i { color:var(--teal); font-size:24px; }
+.sc-icon.g { background:var(--gold-dim); border-color:var(--border); }
+.sc-icon.g i { color:var(--gold); }
+.sc-icon.r { background:var(--red-dim); border-color:rgba(224,80,80,.25); }
+.sc-icon.r i { color:var(--red); }
+.service-card h4 { font-family:var(--fd); font-size:13px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:12px; }
+.service-card p { font-size:14px; color:var(--muted); line-height:1.78; }
+.sc-tag { display:inline-flex; align-items:center; gap:6px; font-family:var(--fm); font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-top:18px; }
+.sc-tag.g { color:var(--gold); }
 
-.services-item:hover::before {
-  background: rgba(0, 198, 255, 0.75);
-}
+/* PROCESS SECTION */
+.process-sec { padding:110px 0; background:var(--navy); position:relative; z-index:1; overflow:hidden; }
+.process-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--teal),var(--gold),transparent); }
+.process-sec::after { content:''; position:absolute; bottom:-200px; left:-100px; width:600px; height:600px; background:radial-gradient(circle,rgba(0,200,224,.04),transparent 65%); pointer-events:none; }
+.process-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin-top:64px; position:relative; }
+.process-steps::before { content:''; position:absolute; top:40px; left:10%; right:10%; height:1px; background:linear-gradient(90deg,var(--teal),var(--gold),var(--teal)); opacity:.3; }
+.process-step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 16px; position:relative; z-index:1; }
+.ps-num { width:80px; height:80px; border-radius:50%; background:var(--navy3); border:2px solid var(--teal); display:flex; align-items:center; justify-content:center; margin-bottom:24px; position:relative; }
+.process-step:nth-child(even) .ps-num { border-color:var(--gold); }
+.ps-num span { font-family:var(--fd); font-size:22px; font-weight:700; color:var(--teal); }
+.process-step:nth-child(even) .ps-num span { color:var(--gold); }
+.ps-num::after { content:''; position:absolute; inset:-5px; border-radius:50%; border:1px solid rgba(0,200,224,.15); }
+.process-step:nth-child(even) .ps-num::after { border-color:rgba(200,160,82,.15); }
+.ps-icon { position:absolute; bottom:-10px; right:-10px; width:28px; height:28px; background:var(--teal); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.process-step:nth-child(even) .ps-icon { background:var(--gold); }
+.ps-icon i { font-size:11px; color:var(--navy2); }
+.process-step h4 { font-family:var(--fd); font-size:11px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:10px; }
+.process-step p { font-size:13px; color:var(--muted); line-height:1.72; }
 
-/* ===== CTA ===== */
-.cta {
-  background: #111827;
-  padding: 60px 20px;
-  text-align: center;
-}
+/* BENEFITS SECTION */
+.benefits-sec { padding:110px 0; background:var(--black); position:relative; z-index:1; }
+.benefits-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.benefits-list { list-style:none; margin-top:36px; }
+.benefits-list li { display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-bottom:1px solid rgba(0,200,224,.07); }
+.benefits-list li:last-child { border-bottom:none; }
+.bl-icon { width:42px; height:42px; flex-shrink:0; background:var(--teal-dim); border:1px solid var(--border2); border-radius:var(--r); display:flex; align-items:center; justify-content:center; margin-top:2px; }
+.bl-icon i { color:var(--teal); font-size:16px; }
+.bl-icon.g { background:var(--gold-dim); border-color:var(--border); }
+.bl-icon.g i { color:var(--gold); }
+.bl-text h5 { font-family:var(--fd); font-size:13px; font-weight:700; color:var(--white); letter-spacing:.8px; margin-bottom:5px; }
+.bl-text p { font-size:14px; color:var(--muted); line-height:1.72; }
 
-.cta h3 {
-  font-size: 26px;
-  margin-bottom: 15px;
-}
+/* STATS PANEL RIGHT */
+.benefits-right { display:flex; flex-direction:column; gap:20px; }
+.stat-card { background:var(--navy2); border:1px solid var(--border2); padding:30px; display:flex; align-items:center; gap:20px; transition:border-color .3s; }
+.stat-card:hover { border-color:var(--teal); }
+.stat-card:nth-child(2) { margin-left:32px; border-color:var(--border); }
+.stat-card:nth-child(2):hover { border-color:var(--gold); }
+.stat-card:nth-child(3) { margin-right:32px; }
+.sc-n { font-family:var(--fd); font-size:44px; font-weight:900; color:var(--teal); line-height:1; }
+.stat-card:nth-child(2) .sc-n { color:var(--gold); }
+.sc-info h5 { font-family:var(--fd); font-size:12px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:5px; }
+.sc-info p { font-size:13px; color:var(--muted); }
 
-.cta a {
-  background: #00c6ff;
-  color: #000;
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
+/* INDUSTRIES */
+.industries-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.industries-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--teal),var(--gold),transparent); }
+.industries-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:56px; }
+.industry-card { background:var(--navy2); border:1px solid var(--border); padding:24px 20px; display:flex; align-items:center; gap:14px; transition:border-color .3s,background .3s; }
+.industry-card:hover { border-color:var(--teal); background:var(--teal-dim); }
+.ind-icon { width:44px; height:44px; flex-shrink:0; background:var(--teal-dim); border:1px solid var(--border2); border-radius:var(--r); display:flex; align-items:center; justify-content:center; }
+.ind-icon i { color:var(--teal); font-size:18px; }
+.industry-card h5 { font-family:var(--fd); font-size:11px; font-weight:700; color:var(--white); letter-spacing:.8px; }
+.industry-card p { font-family:var(--fm); font-size:9px; color:var(--muted); letter-spacing:1px; margin-top:3px; }
 
-.cta a:hover {
-  background: #009edb;
-}
+/* TESTIMONIALS */
+.testi-sec { padding:100px 0; background:var(--black); position:relative; z-index:1; }
+.testi-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:56px; }
+.testi-card { background:var(--navy2); border:1px solid var(--border); border-left:3px solid var(--teal); padding:32px 30px; }
+.testi-card:nth-child(2) { border-left-color:var(--gold); }
+.testi-stars { display:flex; gap:4px; margin-bottom:16px; }
+.testi-stars i { color:var(--gold); font-size:13px; }
+.testi-card blockquote { font-size:15px; color:var(--cream); line-height:1.82; font-style:italic; margin-bottom:20px; }
+.testi-author { display:flex; align-items:center; gap:12px; }
+.ta-avatar { width:42px; height:42px; background:var(--teal-dim); border:1px solid var(--border2); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--fd); font-size:14px; color:var(--teal); font-weight:700; }
+.testi-card:nth-child(2) .ta-avatar { background:var(--gold-dim); color:var(--gold); border-color:var(--border); }
+.ta-name { font-family:var(--fb); font-size:14px; font-weight:700; color:var(--white); }
+.ta-role { font-family:var(--fm); font-size:9px; letter-spacing:1.5px; color:var(--muted); margin-top:2px; }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #0b1220;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 14px;
-}
+/* FAQ */
+.faq-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.faq-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--teal),var(--gold),transparent); }
+.faq-list { margin-top:56px; max-width:800px; }
+.faq-item { border:1px solid var(--border); margin-bottom:12px; }
+.faq-q { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; background:var(--navy2); border:none; cursor:pointer; font-family:var(--fd); font-size:13px; font-weight:700; color:var(--white); letter-spacing:.5px; text-align:left; transition:background .3s; }
+.faq-q:hover { background:var(--navy3); }
+.faq-q i { color:var(--teal); font-size:11px; flex-shrink:0; transition:transform .3s; }
+.faq-item.open .faq-q i { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .4s var(--ease); }
+.faq-a-inner { padding:18px 24px 22px; font-size:14px; color:var(--muted); line-height:1.82; border-top:1px solid var(--border); }
+.faq-item.open .faq-a { max-height:400px; }
 
-footer a {
-  color: #00c6ff;
-  text-decoration: none;
-}
+/* CERTIFICATIONS STRIP */
+.cert-sec { padding:60px 0; background:var(--navy2); border-top:1px solid var(--border); border-bottom:1px solid var(--border); position:relative; z-index:1; overflow:hidden; }
+.cert-inner { max-width:1360px; margin:auto; padding:0 48px; }
+.cert-label { font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--muted); text-align:center; margin-bottom:28px; }
+.cert-row { display:flex; align-items:center; justify-content:center; gap:36px; flex-wrap:wrap; }
+.cert-pill { display:flex; align-items:center; gap:10px; padding:10px 20px; background:var(--navy3); border:1px solid var(--border); border-radius:4px; }
+.cert-pill i { color:var(--teal); font-size:16px; }
+.cert-pill span { font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
 
+/* BIG CTA */
+.big-cta { position:relative; z-index:1; padding:110px 48px; text-align:center; background:var(--black); overflow:hidden; }
+.big-cta::before { content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(0,200,224,.055),transparent 60%); pointer-events:none; }
+.big-cta-inner { position:relative; z-index:1; max-width:680px; margin:auto; }
+.big-cta-h { font-family:var(--fd); font-size:clamp(36px,5.5vw,72px); font-weight:700; letter-spacing:1.5px; line-height:1.05; margin-bottom:16px; }
+.big-cta-h em { color:var(--gold); font-style:normal; }
+.big-cta-h span { color:var(--teal); }
+.big-cta-p { font-size:16px; color:var(--muted); line-height:1.82; margin-bottom:36px; }
+.big-cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:24px; }
+
+/* FOOTER */
+#vt-footer { background:var(--navy); border-top:1px solid var(--border); position:relative; z-index:1; }
+#vt-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.footer-body { padding:80px 0 60px; }
+.footer-grid { display:grid; grid-template-columns:1.7fr repeat(5,1fr); gap:40px; }
+.footer-brand { display:flex; flex-direction:column; }
+.fb-logo-wrap { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.fb-logo-wrap img { width:50px; height:50px; border-radius:8px; object-fit:cover; border:1px solid var(--border); }
+.fb-name { font-family:var(--fd); font-size:20px; font-weight:700; letter-spacing:3px; color:var(--white); display:block; }
+.fb-name em { color:var(--gold); font-style:normal; }
+.fb-sub { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); display:block; margin-top:3px; }
+.footer-brand p { font-size:13.5px; color:var(--muted); line-height:1.82; margin-bottom:20px; max-width:270px; }
+.f-soc { display:flex; gap:8px; margin-bottom:20px; }
+.f-soc a { width:36px; height:36px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; text-decoration:none; transition:all .3s; }
+.f-soc a:hover { border-color:var(--gold); color:var(--gold); }
+.f-contact { display:flex; flex-direction:column; gap:8px; }
+.f-contact a,.f-contact span { display:flex; align-items:center; gap:8px; font-family:var(--fm); font-size:11.5px; color:var(--muted); transition:color .2s; }
+.f-contact i { color:var(--gold); font-size:11px; }
+.f-contact a:hover { color:var(--gold); }
+.footer-col h5 { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:9px; }
+.footer-col ul li a { font-size:13.5px; color:var(--muted); text-decoration:none; display:block; transition:color .2s,padding-left .25s; }
+.footer-col ul li a:hover { color:var(--gold2); padding-left:5px; }
+.footer-base { border-top:1px solid var(--border); padding:18px 0; }
+.footer-base-inner { max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; color:var(--muted); gap:16px; flex-wrap:wrap; }
+.footer-base-inner a { color:var(--muted); transition:color .2s; }
+.footer-base-inner a:hover { color:var(--gold); }
+.footer-base-inner span { margin:0 6px; opacity:.4; }
+
+/* FIXED */
+#scroll-top { position:fixed; bottom:96px; right:28px; z-index:9990; width:44px; height:44px; background:var(--navy2); border:1px solid var(--border); border-radius:var(--r); color:var(--gold); font-size:17px; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; visibility:hidden; transition:all .3s; backdrop-filter:blur(10px); }
+#scroll-top.show { opacity:1; visibility:visible; }
+#scroll-top:hover { background:var(--gold); color:var(--navy2); border-color:var(--gold); transform:translateY(-3px); }
+#wa-btn { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; align-items:center; gap:8px; padding:13px 22px; background:#25D366; border-radius:50px; color:#fff; font-family:var(--fb); font-size:13px; font-weight:700; text-decoration:none; box-shadow:0 8px 28px rgba(37,211,102,.35); transition:transform .3s var(--ease),box-shadow .3s; }
+#wa-btn i { font-size:20px; }
+#wa-btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 18px 44px rgba(37,211,102,.4); color:#fff; }
+#wa-btn::before { content:''; position:absolute; inset:-2px; border-radius:50px; border:1px solid rgba(37,211,102,.45); animation:tbPulse 2s ease infinite; }
+
+/* RESPONSIVE */
+@media(max-width:1199px){
+  .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px;}
+  .mega-cols{grid-template-columns:repeat(3,1fr);}
+  .challenges-grid,.services-grid{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:40px;}
+  .process-steps::before{display:none;}
+  .industries-grid{grid-template-columns:repeat(2,1fr);}
+  .cert-row{gap:20px;}
+}
+@media(max-width:991px){
+  #mob-btn{display:flex;}
+  .hdr-cta{display:none;}
+  #vt-nav{position:fixed;top:calc(var(--tb) + var(--hh));left:-100%;width:300px;height:calc(100vh - var(--tb) - var(--hh));background:rgba(8,15,30,.98);flex-direction:column;align-items:flex-start;padding:24px 20px;gap:0;transition:left .35s var(--ease);overflow-y:auto;border-right:1px solid var(--border);backdrop-filter:blur(24px);z-index:970;}
+  #vt-nav.nav-open{left:0;}
+  .nav-a{width:100%;padding:13px 8px;font-size:12px;border-bottom:1px solid rgba(200,160,82,.06);}
+  .nav-drop{width:100%;}
+  .mega-panel{position:static;transform:none;width:100%;max-width:100%;box-shadow:none;border:none;background:transparent;padding:10px 0 10px 14px;}
+  .mega-panel.open{opacity:1;visibility:visible;display:block;}
+  .mega-cols{grid-template-columns:1fr;gap:14px;}
+  .page-hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-visual-panel{display:none;}
+  .benefits-layout{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .stat-card:nth-child(2){margin-left:0;}
+  .stat-card:nth-child(3){margin-right:0;}
+  .footer-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:767px){
+  :root{--tb:52px;}
+  .tb-r{display:none;}
+  .vt-con,.footer-base-inner,.cert-inner{padding:0 24px;}
+  .hdr-inner{padding:0 20px;}
+  .tb-inner{padding:0 16px;}
+  .page-hero-inner{padding:0 24px;}
+  .challenges-grid,.services-grid,.industries-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .big-cta{padding:80px 24px;}
+  .big-cta-btns{flex-direction:column;align-items:center;}
+  .logo-3d-wrap{width:52px;height:52px;}
+  .logo-cube{width:52px;height:52px;}
+  .lc-f{width:52px;height:52px;}
+  .lc-front{transform:translateZ(26px);}
+  .lc-back{transform:translateZ(-26px) rotateY(180deg);}
+  .lc-right{transform:translateX(26px) rotateY(90deg);}
+  .lc-left{transform:translateX(-26px) rotateY(-90deg);}
+  .lc-top{transform:translateY(-26px) rotateX(90deg);}
+  .lc-bottom{transform:translateY(26px) rotateX(-90deg);}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;}
+  #wa-btn span{display:none;}
+  #wa-btn{padding:13px;border-radius:50%;}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
 </style>
 </head>
-
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="sticky-top">
-  <div class="container d-flex align-items-center">
-    <a href="index.html">
-      <img src="assets/img/logo.jpeg" alt="VOWTECH Logo">
+<div id="vt-dot" aria-hidden="true"></div>
+<div id="vt-ring" aria-hidden="true"></div>
+<div id="vt-noise" aria-hidden="true"></div>
+
+<!-- TOPBAR -->
+<div id="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-l"><span class="tb-pulse" aria-hidden="true"></span><span>LIVE SUPPORT — ABU DHABI &amp; UAE — 24/7</span></div>
+    <div class="tb-r">
+      <a href="tel:+971581816887"><i class="bi bi-telephone-fill"></i> +971 58 181 6887</a>
+      <span>|</span>
+      <a href="mailto:info@vow-tech.com"><i class="bi bi-envelope-fill"></i> info@vow-tech.com</a>
+      <span>|</span>
+      <span><i class="bi bi-geo-alt-fill"></i> Abu Dhabi, UAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="vt-header" role="banner">
+  <div class="hdr-inner">
+    <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
+      <div class="logo-3d-wrap" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-top"></div>
+          <div class="lc-f lc-bottom"></div>
+        </div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-main">VOW<em>TECHNOLOGIES</em></span>
+        <span class="logo-tagline">IT SOLUTIONS — ABU DHABI</span>
+      </div>
     </a>
+
+    <nav id="vt-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="index.html#about" class="nav-a">About</a>
+      <div class="nav-drop" id="navDrop">
+        <button class="nav-a nav-drop-btn" aria-haspopup="true" aria-expanded="false" id="navDropBtn">
+          Services <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-headset"></i> IT Support</div>
+              <a href="amc-support.html">Annual Maintenance Contract</a>
+              <a href="CCTV-Services.html">CCTV Services</a>
+              <a href="Emergency-IT-Support.html">Emergency IT Support</a>
+              <a href="Remote-Technical-Support.html">Remote Technical Support</a>
+              <a href="On-Site-IT-Support.html">On-Site Support</a>
+              <a href="IT-Outsourcing.html">IT Outsourcing</a>
+              <a href="Helpdesk-Support.html">Helpdesk Support</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-network-wired"></i> Networking</div>
+              <a href="Structured-Cabling.html">Structured Cabling</a>
+              <a href="Server-Room-Setup.html">Server Room Setup</a>
+              <a href="Network-Security-Services.html">Network Security Services</a>
+              <a href="Network-Planning-Design.html">Network Planning &amp; Design</a>
+              <a href="Telephone-Systems-Implementation.html">Telephone Systems</a>
+              <a href="Office-Migration.html">Office Migration</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-shield-virus"></i> Cybersecurity</div>
+              <a href="Sophos-firewall.html">Sophos Firewall</a>
+              <a href="soc-security-operations-center.html">SOC</a>
+              <a href="siem-solution.html">SIEM Solution</a>
+              <a href="Penetration-Testing.html">Penetration Testing</a>
+              <a href="anti-phishing-protection.html">Anti-Phishing</a>
+              <a href="web-application-firewall.html">WAF</a>
+              <a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-cloud"></i> Cloud &amp; Managed</div>
+              <a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a>
+              <a href="Private-Cloud-Services.html">Private Cloud Services</a>
+              <a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a>
+              <a href="Cloud-Backup-Disaster-Recovery.html">Cloud Backup</a>
+              <a href="Virtualization.html">Virtualization</a>
+              <a href="VPN-Network-Monitoring.html">VPN Monitoring</a>
+              <a href="Server-Management.html">Server Management</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-server"></i> Infrastructure</div>
+              <a href="IT-infrastructure-solutions.html">IT Infrastructure</a>
+              <a href="data.center.html">Data Center</a>
+              <a href="Server-Solutions.html">Server Solutions</a>
+              <a href="Data-Storage-Solutions.html">Data Storage Solutions</a>
+              <a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a>
+              <a href="firewall-products.html">Firewall Solutions</a>
+              <a href="zkteco-access-control.html">Access Control</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-a">Insights</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </nav>
+
+    <a href="appointment.html" class="btn-primary hdr-cta" style="background:var(--teal);color:var(--navy2);"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <button id="mob-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="vt-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Cybersecurity Solutions</h1>
-    <p>Advanced Protection • Threat Detection • Secure Digital Infrastructure</p>
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Cybersecurity Solutions Abu Dhabi UAE">
+  <div class="scanlines-hero" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+
+    <div class="hero-left">
+      <div class="breadcrumb-nav" data-r>
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#services">Services</a><span>/</span>
+        <span class="bc-active">Cybersecurity</span>
+      </div>
+      <div class="page-hero-badge" data-r data-d="60">
+        <span class="badge-dot"></span>
+        Enterprise Protection — Abu Dhabi &amp; UAE
+      </div>
+      <h1 class="page-hero-h1" data-r data-d="100">
+        <em>Cybersecurity</em><br>
+        Solutions &amp; <span>Protection</span>
+      </h1>
+      <p class="page-hero-desc" data-r data-d="160">
+        VOWTECH delivers enterprise-grade cybersecurity across Abu Dhabi, Dubai, and the UAE — from next-generation firewalls and SOC operations to penetration testing and SIEM — protecting your business against every layer of threat.
+      </p>
+      <div class="hero-chips" data-r data-d="220">
+        <div class="h-chip"><i class="fas fa-shield-alt"></i><span>Threat Detection</span></div>
+        <div class="h-chip"><i class="fas fa-lock"></i><span>Zero-Trust Security</span></div>
+        <div class="h-chip"><i class="fas fa-eye"></i><span>24/7 SOC Monitoring</span></div>
+        <div class="h-chip"><i class="fas fa-bug"></i><span>Pen Testing</span></div>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;" data-r data-d="270">
+        <a href="contact.html" class="btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Request Security Audit</a>
+        <a href="tel:+971581816887" class="btn-dark btn-lg"><i class="fas fa-phone-alt"></i> Call Now</a>
+      </div>
+    </div>
+
+    <div class="hero-visual-panel" data-r data-d="100" aria-hidden="true">
+      <div class="cyber-visual">
+        <div class="cv-badge"><i class="fas fa-exclamation-triangle"></i><span>Threats Blocked</span></div>
+        <div class="cv-head">// Threat Intelligence Dashboard</div>
+        <div class="cv-stat-row">
+          <div class="cv-stat">
+            <span class="cv-stat-n">99.9%</span>
+            <span class="cv-stat-l">Uptime SLA</span>
+          </div>
+          <div class="cv-stat">
+            <span class="cv-stat-n g">4.9★</span>
+            <span class="cv-stat-l">Client Rating</span>
+          </div>
+          <div class="cv-stat">
+            <span class="cv-stat-n r">24/7</span>
+            <span class="cv-stat-l">SOC Monitoring</span>
+          </div>
+          <div class="cv-stat">
+            <span class="cv-stat-n">9+</span>
+            <span class="cv-stat-l">Years in UAE</span>
+          </div>
+        </div>
+        <div class="cv-threat-list">
+          <div class="cv-threat-row">
+            <span class="cv-threat-label"><i class="fas fa-bug r"></i> Ransomware Attempt</span>
+            <span class="cv-threat-status blocked">BLOCKED</span>
+          </div>
+          <div class="cv-threat-row">
+            <span class="cv-threat-label"><i class="fas fa-fish r"></i> Phishing Campaign</span>
+            <span class="cv-threat-status blocked">BLOCKED</span>
+          </div>
+          <div class="cv-threat-row">
+            <span class="cv-threat-label"><i class="fas fa-user-secret r"></i> Intrusion Attempt</span>
+            <span class="cv-threat-status active">ACTIVE</span>
+          </div>
+          <div class="cv-threat-row">
+            <span class="cv-threat-label"><i class="fas fa-shield-alt t"></i> Perimeter Firewall</span>
+            <span class="cv-threat-status secure">SECURE</span>
+          </div>
+          <div class="cv-threat-row">
+            <span class="cv-threat-label"><i class="fas fa-server t"></i> Endpoint Protection</span>
+            <span class="cv-threat-status secure">SECURE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="services-section container">
-
-  <h2 class="section-title">Cybersecurity Services</h2>
-
-  <div class="services">
-
-    <a class="services-item" style="background-image:url('assets/img/services/sophos-firewall.png');" href="Sophos.firewall.html">
-      <span>Sophos Firewall</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/soc.png');" href="soc-security-operations-center.html">
-      <span>Security Operations Center (SOC)</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/cloud-network-security.png');" href="cloud-network-security.html">
-      <span>Cloud & Network Security</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/email-security.png');" href="secure-email-s-mime.html">
-      <span>Secure Email (S/MIME)</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/waf.png');" href="web-application-firewall.html">
-      <span>Web Application Firewall (WAF)</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/mdm.png');" href="mobile-device-management.html">
-      <span>Mobile Device Management (MDM)</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/pam.png');" href="pam-pim-solutions.html">
-      <span>PAM / PIM Solutions</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/sase.png');" href="sase-solutions.html">
-      <span>SASE Solutions</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/siem.png');" href="siem-solution.html">
-      <span>SIEM Solution</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/soar.png');" href="soar-solution.html">
-      <span>SOAR Solution</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/anti-phishing.png');" href="anti-phishing-protection.html">
-      <span>Anti-Phishing Protection</span>
-    </a>
-
-    <a class="services-item" style="background-image:url('assets/img/services/threat-detection.png');" href="threat-detection-response.html">
-      <span>Threat Detection & Response</span>
-    </a>
-
+<!-- CHALLENGES -->
+<section class="challenges-sec" id="challenges">
+  <div class="vt-con">
+    <div data-r>
+      <span class="sec-tag">// The Threat Landscape</span>
+      <h2 class="sec-h2">Cybersecurity Challenges Facing <em>UAE Businesses</em></h2>
+      <p class="sec-desc">Cyberattacks in the Middle East are rising fast. Without the right protection, one breach can cost millions — and destroy trust overnight.</p>
+    </div>
+    <div class="challenges-grid">
+      <div class="challenge-card" data-r data-d="60">
+        <div class="ch-icon"><i class="fas fa-virus"></i></div>
+        <h4>Rising Ransomware &amp; Malware</h4>
+        <p>UAE organisations are increasingly targeted by sophisticated ransomware groups. Without next-gen endpoint protection and offline backups, recovery can cost millions in ransom or downtime.</p>
+      </div>
+      <div class="challenge-card" data-r data-d="120">
+        <div class="ch-icon gold"><i class="fas fa-user-secret"></i></div>
+        <h4>Insider Threats &amp; Credential Theft</h4>
+        <p>Compromised accounts and malicious insiders represent one of the most damaging and hardest-to-detect attack vectors — requiring identity-aware access controls and behavioural monitoring.</p>
+      </div>
+      <div class="challenge-card" data-r data-d="180">
+        <div class="ch-icon red"><i class="fas fa-cloud-download-alt"></i></div>
+        <h4>Unprotected Cloud &amp; Remote Environments</h4>
+        <p>The rapid adoption of cloud and remote work has expanded the attack surface. Misconfigured cloud services and unpatched endpoints are the most common entry points for attackers today.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta">
-  <h3>Need Advanced Cybersecurity Protection?</h3>
-  <a href="contact.html">Contact VOWTECH 24/7</a>
+<!-- SERVICES -->
+<section class="services-sec" id="services">
+  <div class="vt-con">
+    <div data-r>
+      <span class="sec-tag">// What We Deliver</span>
+      <h2 class="sec-h2">Our Cybersecurity <em>Solutions</em></h2>
+      <p class="sec-desc">A complete portfolio of enterprise cybersecurity services — from perimeter defence and threat detection to compliance and incident response.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card" data-r data-d="60">
+        <div class="sc-icon"><i class="fas fa-fire-alt"></i></div>
+        <h4>Sophos Firewall &amp; NGFW</h4>
+        <p>Next-generation firewall deployment and management — blocking threats at the perimeter with deep packet inspection, IPS, and application-layer filtering.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Sophos XGS • Unified Threat Management</span>
+      </div>
+
+      <div class="service-card" data-r data-d="100">
+        <div class="sc-icon g"><i class="fas fa-broadcast-tower"></i></div>
+        <h4>Security Operations Center (SOC)</h4>
+        <p>24/7 monitoring, threat hunting, and incident response from our UAE-based SOC — ensuring threats are detected and contained before they impact your business.</p>
+        <span class="sc-tag g"><i class="fas fa-arrow-right"></i> Managed SOC • Threat Hunting • IR</span>
+      </div>
+
+      <div class="service-card" data-r data-d="140">
+        <div class="sc-icon r"><i class="fas fa-chart-network"></i></div>
+        <h4>SIEM Solution</h4>
+        <p>Centralised log collection, correlation, and real-time alerting using leading SIEM platforms — giving your security team full visibility across your entire IT estate.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Log Management • Compliance Reporting</span>
+      </div>
+
+      <div class="service-card" data-r data-d="60">
+        <div class="sc-icon g"><i class="fas fa-robot"></i></div>
+        <h4>SOAR Solution</h4>
+        <p>Security Orchestration, Automation and Response — automating repetitive security tasks and accelerating incident response times from hours to minutes.</p>
+        <span class="sc-tag g"><i class="fas fa-arrow-right"></i> Automated Playbooks • Faster MTTR</span>
+      </div>
+
+      <div class="service-card" data-r data-d="100">
+        <div class="sc-icon"><i class="fas fa-bug"></i></div>
+        <h4>Penetration Testing</h4>
+        <p>Simulated cyberattacks performed by our certified ethical hackers — exposing vulnerabilities in your network, applications, and cloud environments before real attackers do.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Web App • Network • Social Engineering</span>
+      </div>
+
+      <div class="service-card" data-r data-d="140">
+        <div class="sc-icon r"><i class="fas fa-fish"></i></div>
+        <h4>Anti-Phishing Protection</h4>
+        <p>Advanced email security that detects and neutralises phishing, spear-phishing, and BEC attacks — protecting your users from the most common initial access vector.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Email Gateway • URL Filtering • AI Detection</span>
+      </div>
+
+      <div class="service-card" data-r data-d="60">
+        <div class="sc-icon"><i class="fas fa-globe-americas"></i></div>
+        <h4>Web Application Firewall (WAF)</h4>
+        <p>Protect your web applications and APIs from OWASP Top 10 threats, DDoS attacks, and zero-day exploits — without impacting performance or user experience.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> OWASP Protection • API Security • DDoS</span>
+      </div>
+
+      <div class="service-card" data-r data-d="100">
+        <div class="sc-icon g"><i class="fas fa-cloud-shield-alt"></i></div>
+        <h4>Cloud &amp; Network Security</h4>
+        <p>End-to-end security for hybrid and multi-cloud environments — including microsegmentation, cloud-native security controls, and continuous compliance monitoring.</p>
+        <span class="sc-tag g"><i class="fas fa-arrow-right"></i> Azure • AWS • Private Cloud</span>
+      </div>
+
+      <div class="service-card" data-r data-d="140">
+        <div class="sc-icon r"><i class="fas fa-envelope-open-text"></i></div>
+        <h4>Secure Email (S/MIME)</h4>
+        <p>Cryptographic email signing and encryption using S/MIME certificates — ensuring your business communications remain confidential and tamper-proof end-to-end.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Email Encryption • Digital Signing</span>
+      </div>
+
+      <div class="service-card" data-r data-d="60">
+        <div class="sc-icon"><i class="fas fa-mobile-alt"></i></div>
+        <h4>Mobile Device Management (MDM)</h4>
+        <p>Secure, manage, and enforce policies across all corporate mobile devices — ensuring remote workers and BYOD environments don't become a security liability.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Intune • Jamf • Remote Wipe</span>
+      </div>
+
+      <div class="service-card" data-r data-d="100">
+        <div class="sc-icon g"><i class="fas fa-user-shield"></i></div>
+        <h4>PAM / PIM Solutions</h4>
+        <p>Privileged Access Management controls that limit, monitor, and audit every privileged session — eliminating the risk of lateral movement and privilege escalation.</p>
+        <span class="sc-tag g"><i class="fas fa-arrow-right"></i> Just-in-Time Access • Session Recording</span>
+      </div>
+
+      <div class="service-card" data-r data-d="140">
+        <div class="sc-icon r"><i class="fas fa-project-diagram"></i></div>
+        <h4>SASE Solutions</h4>
+        <p>Secure Access Service Edge architecture that delivers network security as a cloud service — combining SD-WAN with Zero Trust Network Access for distributed teams.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> ZTNA • SD-WAN • Cloud-Native Security</span>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="container text-center">
-    <p>© <strong>VOWTECH</strong> All Rights Reserved</p>
-    <div>
-      Powered by <a href="https://vow-tech.com">VOWTECH IT Solutions</a> | Cybersecurity Experts UAE
+<!-- PROCESS -->
+<section class="process-sec" id="process">
+  <div class="vt-con">
+    <div style="text-align:center;" data-r>
+      <span class="sec-tag">// How We Work</span>
+      <h2 class="sec-h2">Our Cybersecurity <em>Methodology</em></h2>
+      <p class="sec-desc" style="margin:0 auto;">A proven five-phase approach that identifies risk, implements controls, and keeps you protected long-term.</p>
+    </div>
+    <div class="process-steps">
+
+      <div class="process-step" data-r data-d="60">
+        <div class="ps-num">
+          <span>01</span>
+          <div class="ps-icon"><i class="fas fa-search"></i></div>
+        </div>
+        <h4>Security Assessment</h4>
+        <p>A comprehensive audit of your current security posture — identifying vulnerabilities, gaps, and compliance exposures across your network, cloud, and endpoints.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="110">
+        <div class="ps-num">
+          <span>02</span>
+          <div class="ps-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        </div>
+        <h4>Threat Modelling</h4>
+        <p>We map your most likely attack vectors and threat actors — prioritising risks by likelihood and potential business impact to focus defences where they matter most.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="160">
+        <div class="ps-num">
+          <span>03</span>
+          <div class="ps-icon"><i class="fas fa-drafting-compass"></i></div>
+        </div>
+        <h4>Solution Design</h4>
+        <p>A layered security architecture tailored to your environment — selecting and configuring the right tools, platforms, and policies for your risk profile and budget.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="210">
+        <div class="ps-num">
+          <span>04</span>
+          <div class="ps-icon"><i class="fas fa-tools"></i></div>
+        </div>
+        <h4>Deployment &amp; Hardening</h4>
+        <p>Professional implementation of all security controls — with system hardening, user training, and full documentation to ensure every component is correctly configured.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="260">
+        <div class="ps-num">
+          <span>05</span>
+          <div class="ps-icon"><i class="fas fa-shield-alt"></i></div>
+        </div>
+        <h4>Continuous Monitoring</h4>
+        <p>Ongoing threat monitoring, periodic penetration testing, and quarterly security reviews — ensuring your defences evolve as the threat landscape changes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-sec" id="benefits">
+  <div class="vt-con">
+    <div class="benefits-layout">
+      <div class="benefits-left" data-r>
+        <span class="sec-tag">// Why Choose VOWTECH</span>
+        <h2 class="sec-h2">Why UAE Businesses Trust Our <em>Cybersecurity</em></h2>
+        <ul class="benefits-list">
+          <li>
+            <div class="bl-icon"><i class="fas fa-certificate"></i></div>
+            <div class="bl-text">
+              <h5>Certified Security Specialists</h5>
+              <p>Our engineers hold certifications from Sophos, Microsoft, Cisco, and EC-Council — with 9+ years of hands-on enterprise security experience across the UAE.</p>
+            </div>
+          </li>
+          <li>
+            <div class="bl-icon g"><i class="fas fa-eye"></i></div>
+            <div class="bl-text">
+              <h5>24/7 Threat Monitoring</h5>
+              <p>Our UAE-based SOC operates around the clock — detecting and responding to threats in real time so your team can focus on business, not security alerts.</p>
+            </div>
+          </li>
+          <li>
+            <div class="bl-icon"><i class="fas fa-layer-group"></i></div>
+            <div class="bl-text">
+              <h5>Defence-in-Depth Approach</h5>
+              <p>We design layered security architectures — combining perimeter controls, endpoint protection, identity security, and detection to eliminate single points of failure.</p>
+            </div>
+          </li>
+          <li>
+            <div class="bl-icon g"><i class="fas fa-balance-scale"></i></div>
+            <div class="bl-text">
+              <h5>Compliance-Ready Solutions</h5>
+              <p>All our deployments are aligned with UAE NESA, ISO 27001, GDPR, and industry-specific frameworks — ensuring you meet regulatory obligations without extra effort.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="benefits-right" data-r data-d="80">
+        <div class="stat-card">
+          <div class="sc-n">99.9%</div>
+          <div class="sc-info">
+            <h5>Threat Detection Rate</h5>
+            <p>Our SOC and SIEM deployments achieve industry-leading threat detection accuracy across client environments.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-n">9+</div>
+          <div class="sc-info">
+            <h5>Years Securing UAE Businesses</h5>
+            <p>Deep local knowledge of UAE cyber regulations, threat actors, and enterprise security requirements.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-n">4.9★</div>
+          <div class="sc-info">
+            <h5>Google Rating</h5>
+            <p>Consistently rated 5 stars by Abu Dhabi and Dubai businesses for expert, reliable cybersecurity services.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS STRIP -->
+<section class="cert-sec">
+  <div class="cert-inner">
+    <p class="cert-label">// Certified &amp; Partnered Technology Vendors</p>
+    <div class="cert-row">
+      <div class="cert-pill"><i class="fas fa-fire-alt"></i><span>Sophos Partner</span></div>
+      <div class="cert-pill"><i class="fab fa-microsoft"></i><span>Microsoft Gold</span></div>
+      <div class="cert-pill"><i class="fas fa-network-wired"></i><span>Cisco Certified</span></div>
+      <div class="cert-pill"><i class="fas fa-shield-alt"></i><span>ISO 27001 Aligned</span></div>
+      <div class="cert-pill"><i class="fas fa-cloud"></i><span>Azure Security</span></div>
+      <div class="cert-pill"><i class="fas fa-user-secret"></i><span>EC-Council CEH</span></div>
+      <div class="cert-pill"><i class="fas fa-check-circle"></i><span>UAE NESA Compliant</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries-sec" id="industries">
+  <div class="vt-con">
+    <div style="text-align:center;" data-r>
+      <span class="sec-tag">// Sectors We Protect</span>
+      <h2 class="sec-h2">Industries We Secure Across <em>UAE</em></h2>
+      <p class="sec-desc" style="margin:0 auto 0;">Our cybersecurity solutions serve every major regulated and critical industry operating in Abu Dhabi and Dubai.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card" data-r data-d="40">
+        <div class="ind-icon"><i class="fas fa-landmark"></i></div>
+        <div><h5>Government &amp; Public Sector</h5><p>NESA-compliant security frameworks</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="70">
+        <div class="ind-icon"><i class="fas fa-university"></i></div>
+        <div><h5>Banking &amp; Finance</h5><p>PCI-DSS &amp; SWIFT CSP aligned</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="100">
+        <div class="ind-icon"><i class="fas fa-hospital"></i></div>
+        <div><h5>Healthcare</h5><p>Patient data &amp; HIPAA protection</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="130">
+        <div class="ind-icon"><i class="fas fa-shopping-bag"></i></div>
+        <div><h5>Retail &amp; E-Commerce</h5><p>PCI-DSS &amp; fraud prevention</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="60">
+        <div class="ind-icon"><i class="fas fa-oil-can"></i></div>
+        <div><h5>Oil, Gas &amp; Energy</h5><p>OT/ICS &amp; critical infra security</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="90">
+        <div class="ind-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div><h5>Education</h5><p>Student data &amp; campus security</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="120">
+        <div class="ind-icon"><i class="fas fa-hard-hat"></i></div>
+        <div><h5>Construction &amp; Real Estate</h5><p>Project data &amp; BIM protection</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="150">
+        <div class="ind-icon"><i class="fas fa-concierge-bell"></i></div>
+        <div><h5>Hospitality &amp; Tourism</h5><p>Guest data &amp; POS security</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <div class="vt-con">
+    <div style="text-align:center;" data-r>
+      <span class="sec-tag">// Client Feedback</span>
+      <h2 class="sec-h2">What Our Clients Say About <em>Our Security</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card" data-r data-d="60">
+        <div class="testi-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <blockquote>"VOWTECH deployed a full SOC and SIEM solution for us within three weeks. Within the first month it detected an active intrusion attempt we never would have caught. Their team responded within minutes — completely contained it."</blockquote>
+        <div class="testi-author">
+          <div class="ta-avatar">MA</div>
+          <div>
+            <div class="ta-name">Mohammed A.</div>
+            <div class="ta-role">CISO — Abu Dhabi Government Entity</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" data-r data-d="110">
+        <div class="testi-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <blockquote>"The penetration test VOWTECH conducted revealed five critical vulnerabilities in our web banking portal. They provided a clear remediation roadmap and stayed hands-on throughout the fix. Our regulators were very impressed with the report."</blockquote>
+        <div class="testi-author">
+          <div class="ta-avatar">LK</div>
+          <div>
+            <div class="ta-name">Layla K.</div>
+            <div class="ta-role">Head of IT Risk — Dubai Financial Institution</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="vt-con">
+    <div data-r>
+      <span class="sec-tag">// Common Questions</span>
+      <h2 class="sec-h2">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list" data-r data-d="60">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What cybersecurity certifications does VOWTECH hold?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Our team holds certifications including Sophos Certified Engineer, Microsoft Certified Security Associate, Cisco CCNA Security, and EC-Council CEH (Certified Ethical Hacker). We are also aligned with UAE NESA, ISO 27001, and PCI-DSS frameworks, and maintain active vendor partnerships with Sophos, Microsoft, and Cisco.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How quickly can VOWTECH respond to a cybersecurity incident?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Our SOC operates 24/7 with a guaranteed response time of under 15 minutes for critical security incidents. For managed clients, we have pre-agreed incident response playbooks and direct escalation paths — ensuring threats are contained as rapidly as possible. On-site emergency response across Abu Dhabi and Dubai is available within 2 hours.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you offer cybersecurity services for SMEs as well as large enterprises?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Absolutely. We serve businesses of all sizes across the UAE — from 10-person SMEs to multi-national enterprises. Our cybersecurity solutions are fully scalable and we offer tiered service packages to ensure every business can access enterprise-grade protection regardless of budget. We'll tailor the right combination of services to match your risk profile and resources.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How does a penetration test work and how long does it take?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">A penetration test involves our certified ethical hackers simulating real-world attacks against your network, web applications, or cloud environments — with your authorisation. A standard network pen test takes 5–10 business days, with a full written report delivered within 3 days of testing completion. The report includes an executive summary, technical findings ranked by severity, proof-of-concept evidence, and a detailed remediation roadmap.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Is VOWTECH's cybersecurity aligned with UAE government regulations?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes. All our security solutions and assessments are designed with UAE regulatory requirements in mind, including NESA (National Electronic Security Authority) Information Assurance Standards, the UAE Cybersecurity Council frameworks, ADGM and DIFC data protection regulations, and international standards such as ISO 27001 and GDPR. We help regulated industries demonstrate compliance through documentation, audit trails, and executive reporting.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BIG CTA -->
+<section class="big-cta" aria-label="Request Cybersecurity Consultation">
+  <div class="big-cta-inner" data-r>
+    <span class="sec-tag">// SECURE YOUR BUSINESS TODAY</span>
+    <h2 class="big-cta-h">Is Your Business<br><em>Truly</em> <span>Protected?</span></h2>
+    <p class="big-cta-p">Book a free cybersecurity assessment with our experts. We'll identify your critical vulnerabilities and recommend the right solutions — at no cost or obligation.</p>
+    <div class="big-cta-btns">
+      <a href="contact.html" class="btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Request Free Security Audit</a>
+      <a href="https://wa.me/971581816887?text=Hi%20I%27d%20like%20to%20discuss%20Cybersecurity%20with%20VOWTECH" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+      <a href="tel:+971581816887" class="btn-dark btn-lg"><i class="fas fa-phone-alt"></i> +971 58 181 6887</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="vt-footer">
+  <div class="footer-body">
+    <div class="vt-con">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="fb-logo-wrap">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52">
+            <div><span class="fb-name">VOW<em>TECH</em></span><span class="fb-sub">Enterprise IT — UAE</span></div>
+          </div>
+          <p>Your reliable IT support partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
+          <div class="f-soc">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="f-contact">
+            <a href="tel:+971581816887"><i class="fas fa-phone-alt"></i> +971 58 181 6887</a>
+            <a href="mailto:info@vow-tech.com"><i class="fas fa-envelope"></i> info@vow-tech.com</a>
+            <span><i class="fas fa-map-marker-alt"></i> Navy Gate, Al Zahiyah, Abu Dhabi</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>IT Support</h5>
+          <ul>
+            <li><a href="amc-support.html">Annual Maintenance Contract</a></li>
+            <li><a href="Emergency-IT-Support.html">Emergency IT Support</a></li>
+            <li><a href="Remote-Technical-Support.html">Remote Support</a></li>
+            <li><a href="On-Site-IT-Support.html">On-Site Support</a></li>
+            <li><a href="Helpdesk-Support.html">Helpdesk Support</a></li>
+            <li><a href="IT-Outsourcing.html">IT Outsourcing</a></li>
+            <li><a href="CCTV-Services.html">CCTV Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cybersecurity</h5>
+          <ul>
+            <li><a href="Sophos-firewall.html">Sophos Firewall</a></li>
+            <li><a href="soc-security-operations-center.html">SOC</a></li>
+            <li><a href="siem-solution.html">SIEM Solution</a></li>
+            <li><a href="Penetration-Testing.html">Penetration Testing</a></li>
+            <li><a href="anti-phishing-protection.html">Anti-Phishing</a></li>
+            <li><a href="web-application-firewall.html">WAF</a></li>
+            <li><a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cloud &amp; Infrastructure</h5>
+          <ul>
+            <li><a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a></li>
+            <li><a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a></li>
+            <li><a href="Virtualization.html">Virtualization</a></li>
+            <li><a href="data.center.html">Data Center</a></li>
+            <li><a href="Private-Cloud-Services.html">Private Cloud</a></li>
+            <li><a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Networking</h5>
+          <ul>
+            <li><a href="Structured-Cabling.html">Structured Cabling</a></li>
+            <li><a href="Server-Room-Setup.html">Server Room Setup</a></li>
+            <li><a href="Network-Security-Services.html">Network Security</a></li>
+            <li><a href="Network-Planning-Design.html">Network Planning</a></li>
+            <li><a href="Telephone-Systems-Implementation.html">Telephone Systems</a></li>
+            <li><a href="firewall-products.html">Firewall Solutions</a></li>
+            <li><a href="zkteco-access-control.html">Access Control</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About VOWTECH</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="appointment.html">Free Consultation</a></li>
+            <li><a href="IT-Audit-Health-Check.html">IT Audit</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div class="footer-base-inner">
+      <span>© 2025 VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+      <span><a href="#">Privacy Policy</a><span>|</span><a href="#">Terms &amp; Conditions</a></span>
     </div>
   </div>
 </footer>
 
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<a href="#" id="scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+<a href="https://wa.me/971581816887?text=Hi%20I%27d%20like%20to%20get%20in%20touch%20with%20VOWTECH" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="bi bi-whatsapp"></i><span>Chat</span>
+</a>
 
+<script>
+'use strict';
+(function(){
+
+/* CURSOR */
+var dot=document.getElementById('vt-dot'),ring=document.getElementById('vt-ring'),cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+(function loop(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){dot.classList.add('hover');ring.classList.add('hover');});
+  el.addEventListener('mouseleave',function(){dot.classList.remove('hover');ring.classList.remove('hover');});
+});
+
+/* SCROLL REVEAL */
+var items=document.querySelectorAll('[data-r]');
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=parseInt(e.target.dataset.d||0);setTimeout(function(){e.target.classList.add('vt-show');},d);io.unobserve(e.target);}});},{threshold:0.1});
+items.forEach(function(el){io.observe(el);});
+
+/* HEADER SCROLL */
+var hdr=document.getElementById('vt-header'),stBtn=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);if(stBtn)stBtn.classList.toggle('show',window.scrollY>400);});
+
+/* MEGA MENU */
+var dropBtn=document.getElementById('navDropBtn'),megaPanel=document.getElementById('megaPanel');
+if(dropBtn&&megaPanel){
+  dropBtn.addEventListener('click',function(e){e.stopPropagation();var open=megaPanel.classList.toggle('open');dropBtn.setAttribute('aria-expanded',open);});
+  document.addEventListener('click',function(){megaPanel.classList.remove('open');dropBtn.setAttribute('aria-expanded','false');});
+  megaPanel.addEventListener('click',function(e){e.stopPropagation();});
+}
+
+/* MOBILE NAV */
+var mobBtn=document.getElementById('mob-btn'),nav=document.getElementById('vt-nav');
+if(mobBtn&&nav){mobBtn.addEventListener('click',function(){var open=nav.classList.toggle('nav-open');mobBtn.classList.toggle('open',open);mobBtn.setAttribute('aria-expanded',open);document.body.classList.toggle('body-lock',open);});}
+
+/* FAQ ACCORDION */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.closest('.faq-item');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+    if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+  });
+});
+
+/* ANIMATED THREAT STATUS — pulse the "ACTIVE" badge */
+(function(){
+  var activeEl=document.querySelector('.cv-threat-status.active');
+  if(!activeEl) return;
+  setInterval(function(){
+    activeEl.textContent = activeEl.textContent === 'ACTIVE' ? 'DETECTING' : 'ACTIVE';
+  }, 2200);
+})();
+
+})();
+</script>
 </body>
 </html>
