@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>IT Cost Management Consultancy | VOWTECH — Abu Dhabi & Dubai UAE</title>
+<meta name="description" content="VOWTECH provides professional IT Cost Management consultancy in Dubai, Abu Dhabi & UAE. Optimize your IT spending, reduce overheads, and achieve maximum ROI.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
+
+<style>
+:root {
+  --black:    #050810;
+  --navy:     #080f1e;
+  --navy2:    #0a1628;
+  --navy3:    #0e1c35;
+  --navy4:    #14253f;
+  --gold:     #c8a052;
+  --gold2:    #dbb870;
+  --gold3:    #9a7838;
+  --gold-dim: rgba(200,160,82,0.15);
+  --teal:     #00c8e0;
+  --teal2:    #00a0b8;
+  --teal-dim: rgba(0,200,224,0.12);
+  --red:      #e05050;
+  --red-dim:  rgba(224,80,80,0.12);
+  --white:    #f0ece2;
+  --cream:    #e5dfd0;
+  --muted:    rgba(240,236,226,0.5);
+  --border:   rgba(200,160,82,0.18);
+  --border2:  rgba(0,200,224,0.1);
+  --r:        4px;
+  --ease:     cubic-bezier(0.22,1,0.36,1);
+  --fd:       'Orbitron', 'Rajdhani', sans-serif;
+  --fb:       'Rajdhani', system-ui, sans-serif;
+  --fm:       'Share Tech Mono', 'Courier New', monospace;
+  --tb:       42px;
+  --hh:       88px;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
+body { font-family:var(--fb); background:var(--black); color:var(--white); overflow-x:hidden; cursor:none; -webkit-font-smoothing:antialiased; }
+a { color:var(--gold); text-decoration:none; transition:color .25s; }
+a:hover { color:var(--gold2); }
+img { display:block; max-width:100%; }
+body.body-lock { overflow:hidden; }
+
+#vt-noise {
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  opacity:.5;
+}
+
+/* CURSOR */
+#vt-dot { position:fixed; width:10px; height:10px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); transition:width .18s var(--ease),height .18s var(--ease),background .2s; mix-blend-mode:difference; }
+#vt-ring { position:fixed; width:38px; height:38px; border:1.5px solid var(--gold); border-radius:50%; pointer-events:none; z-index:99998; transform:translate(-50%,-50%); opacity:.55; transition:width .3s var(--ease),height .3s var(--ease),border-color .25s; }
+#vt-dot.hover { width:6px; height:6px; background:var(--teal); }
+#vt-ring.hover { width:56px; height:56px; border-color:var(--teal); opacity:.3; }
+@media(max-width:991px){ #vt-dot,#vt-ring{ display:none; } body{ cursor:auto; } }
+
+/* BUTTONS */
+.btn-primary { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--gold); color:var(--navy2); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:none; border-radius:var(--r); cursor:pointer; text-decoration:none; position:relative; overflow:hidden; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-primary::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.18),transparent); opacity:0; transition:opacity .3s; }
+.btn-primary:hover { background:var(--gold2); color:var(--navy2); transform:translateY(-3px); box-shadow:0 14px 32px rgba(200,160,82,.38); }
+.btn-primary:hover::before { opacity:1; }
+.btn-primary.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-wa { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:#25D366; color:#fff; font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border-radius:var(--r); text-decoration:none; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-wa:hover { background:#1db954; color:#fff; transform:translateY(-3px); box-shadow:0 14px 32px rgba(37,211,102,.32); }
+.btn-wa.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-dark { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--navy2); color:var(--gold); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:1.5px solid var(--gold); border-radius:var(--r); text-decoration:none; transition:all .3s; }
+.btn-dark:hover { background:var(--gold); color:var(--navy2); transform:translateY(-2px); }
+
+/* TOPBAR */
+#topbar { position:fixed; top:0; left:0; right:0; height:var(--tb); background:var(--gold); z-index:990; display:flex; align-items:center; }
+.tb-inner { width:100%; max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; letter-spacing:.8px; color:var(--navy2); }
+.tb-pulse { display:inline-block; width:7px; height:7px; background:var(--navy2); border-radius:50%; margin-right:10px; animation:tbPulse 1.6s ease infinite; }
+@keyframes tbPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.4} }
+.tb-r { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.tb-r a { color:var(--navy2); font-weight:700; }
+.tb-r a:hover { text-decoration:underline; }
+.tb-r span { opacity:.4; }
+
+/* HEADER */
+#vt-header { position:fixed; top:var(--tb); left:0; right:0; height:var(--hh); z-index:980; background:rgba(8,15,30,.88); border-bottom:1px solid var(--border); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); transition:background .4s,box-shadow .4s; }
+#vt-header.scrolled { background:rgba(8,15,30,.98); box-shadow:0 4px 32px rgba(0,0,0,.65); }
+.hdr-inner { max-width:1360px; margin:auto; padding:0 48px; height:100%; display:flex; align-items:center; gap:28px; }
+
+/* LOGO CUBE */
+.vt-logo { display:flex; align-items:center; gap:16px; text-decoration:none; flex-shrink:0; }
+.logo-3d-wrap { width:72px; height:72px; perspective:400px; flex-shrink:0; }
+.logo-cube { width:72px; height:72px; position:relative; transform-style:preserve-3d; animation:logoCubeAll4 10s linear infinite; }
+@keyframes logoCubeAll4 { 0%{transform:rotateY(0deg) rotateX(12deg)} 25%{transform:rotateY(90deg) rotateX(12deg)} 50%{transform:rotateY(180deg) rotateX(12deg)} 75%{transform:rotateY(270deg) rotateX(12deg)} 100%{transform:rotateY(360deg) rotateX(12deg)} }
+.lc-f { position:absolute; width:72px; height:72px; display:flex; align-items:center; justify-content:center; overflow:hidden; backface-visibility:hidden; border:1.5px solid rgba(200,160,82,.45); background:var(--navy2); }
+.lc-f img { width:100%; height:100%; object-fit:cover; }
+.lc-front  { transform:translateZ(36px); }
+.lc-back   { transform:translateZ(-36px) rotateY(180deg); }
+.lc-right  { transform:translateX(36px) rotateY(90deg); }
+.lc-left   { transform:translateX(-36px) rotateY(-90deg); }
+.lc-top    { transform:translateY(-36px) rotateX(90deg); background:linear-gradient(135deg,var(--gold-dim),var(--navy3)); }
+.lc-bottom { transform:translateY(36px) rotateX(-90deg); background:linear-gradient(135deg,var(--navy3),var(--gold-dim)); }
+.logo-text-wrap { display:flex; flex-direction:column; line-height:1; }
+.logo-main { font-family:var(--fd); font-size:22px; font-weight:700; letter-spacing:3px; color:var(--white); }
+.logo-main em { color:var(--gold); font-style:normal; }
+.logo-tagline { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); margin-top:5px; }
+
+/* NAV */
+#vt-nav { margin-left:auto; display:flex; align-items:center; gap:2px; }
+.nav-a { font-family:var(--fm); font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); padding:10px 14px; text-decoration:none; background:none; border:none; cursor:pointer; transition:color .25s; position:relative; }
+.nav-a::after { content:''; position:absolute; bottom:5px; left:14px; right:14px; height:1px; background:var(--gold); transform:scaleX(0); transition:transform .3s var(--ease); }
+.nav-a:hover,.nav-a.active { color:var(--gold); }
+.nav-a:hover::after,.nav-a.active::after { transform:scaleX(1); }
+.nav-drop { position:relative; }
+.mega-panel { position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(12px); width:min(1000px,95vw); background:rgba(8,15,30,.98); border:1px solid var(--border); border-top:2px solid var(--gold); backdrop-filter:blur(28px); padding:34px 38px 40px; opacity:0; visibility:hidden; transition:all .3s var(--ease); z-index:100; box-shadow:0 32px 80px rgba(0,0,0,.7); }
+.mega-panel.open { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.mega-cols { display:grid; grid-template-columns:repeat(5,1fr); gap:28px; }
+.mega-head { font-family:var(--fm); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.mega-col a { display:block; font-size:13px; color:var(--muted); padding:5px 0; transition:color .2s,padding-left .2s; }
+.mega-col a:hover { color:var(--gold2); padding-left:7px; }
+.hdr-cta { margin-left:10px; padding:10px 22px; font-size:11px; flex-shrink:0; }
+#mob-btn { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:8px; }
+#mob-btn span { display:block; width:24px; height:1.5px; background:var(--white); transition:all .3s var(--ease); }
+#mob-btn.open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+#mob-btn.open span:nth-child(2){ opacity:0; }
+#mob-btn.open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
+
+/* SCROLL REVEAL */
+[data-r] { opacity:0; transform:translateY(32px); transition:opacity .85s var(--ease),transform .85s var(--ease); }
+[data-r="right"] { transform:translateX(-32px); }
+[data-r="left"]  { transform:translateX(32px); }
+.vt-show { opacity:1 !important; transform:none !important; }
+
+/* PAGE HERO */
+.page-hero { padding-top:calc(var(--tb) + var(--hh) + 80px); padding-bottom:100px; position:relative; overflow:hidden; background:var(--black); z-index:1; }
+.page-hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.04) 1px,transparent 1px); background-size:60px 60px; animation:gridDrift 20s linear infinite; }
+@keyframes gridDrift { 0%{background-position:0 0} 100%{background-position:60px 60px} }
+.page-hero::after { content:''; position:absolute; top:-200px; right:-100px; width:700px; height:700px; background:radial-gradient(circle,rgba(200,160,82,.05),transparent 60%); pointer-events:none; }
+.page-hero-inner { max-width:1360px; margin:auto; padding:0 48px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; z-index:2; }
+.scanlines-hero { position:absolute; inset:0; z-index:1; pointer-events:none; background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px); }
+
+.breadcrumb-nav { display:flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+.breadcrumb-nav a { color:var(--muted); transition:color .2s; }
+.breadcrumb-nav a:hover { color:var(--gold); }
+.breadcrumb-nav span { opacity:.4; }
+.breadcrumb-nav .bc-active { color:var(--teal); opacity:1; }
+.page-hero-badge { display:inline-flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:22px; }
+.badge-dot { width:7px; height:7px; background:var(--teal); border-radius:50%; animation:tbPulse 2s ease infinite; }
+.page-hero-h1 { font-family:var(--fd); font-size:clamp(36px,5vw,66px); font-weight:900; letter-spacing:1.5px; line-height:1.05; color:var(--white); margin-bottom:22px; }
+.page-hero-h1 em { color:var(--gold); font-style:normal; }
+.page-hero-h1 span { color:var(--teal); }
+.page-hero-desc { font-size:16px; color:var(--muted); line-height:1.82; max-width:500px; margin-bottom:36px; }
+.hero-chips { display:flex; gap:10px; flex-wrap:wrap; }
+.h-chip { display:flex; align-items:center; gap:7px; font-family:var(--fm); font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); padding:7px 14px; border:1px solid var(--border); border-radius:40px; }
+.h-chip i { color:var(--gold); font-size:10px; }
+
+/* HERO RIGHT — cost visual panel */
+.hero-visual-panel { display:flex; align-items:center; justify-content:center; }
+.cost-visual { background:rgba(10,22,40,.8); border:1px solid var(--border); border-top:2px solid var(--gold); padding:32px 28px; width:340px; backdrop-filter:blur(14px); position:relative; display:flex; flex-direction:column; gap:16px; }
+.cv-head { font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.cv-badge { position:absolute; top:-18px; right:-18px; background:rgba(0,200,224,.12); border:1px solid var(--border2); padding:8px 14px; display:flex; align-items:center; gap:8px; border-radius:3px; animation:floatA 4s ease infinite; }
+@keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.cv-badge i { color:var(--teal); font-size:12px; }
+.cv-badge span { font-family:var(--fm); font-size:9px; color:var(--teal); letter-spacing:1px; }
+.cv-stat-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.cv-stat { background:var(--navy3); border:1px solid var(--border); border-radius:var(--r); padding:16px 14px; text-align:center; }
+.cv-stat-n { font-family:var(--fd); font-size:26px; font-weight:700; color:var(--gold); display:block; line-height:1; }
+.cv-stat-n.t { color:var(--teal); }
+.cv-stat-l { font-family:var(--fm); font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); display:block; margin-top:5px; }
+.cv-bar-wrap { margin-top:4px; }
+.cv-bar-label { display:flex; justify-content:space-between; font-family:var(--fm); font-size:9px; color:var(--muted); letter-spacing:1px; margin-bottom:6px; }
+.cv-bar { height:6px; background:var(--navy3); border-radius:3px; overflow:hidden; margin-bottom:10px; }
+.cv-bar-fill { height:100%; border-radius:3px; }
+.cv-bar-fill.gold { background:linear-gradient(90deg,var(--gold3),var(--gold2)); }
+.cv-bar-fill.teal { background:linear-gradient(90deg,var(--teal2),var(--teal)); }
+.cv-bar-fill.green { background:linear-gradient(90deg,#16a34a,#4ade80); }
+
+/* VT-CON */
+.vt-con { max-width:1360px; margin:auto; padding:0 48px; }
+.sec-tag { display:block; font-family:var(--fm); font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+.sec-h2 { font-family:var(--fd); font-size:clamp(28px,4vw,48px); font-weight:700; letter-spacing:1px; color:var(--white); margin-bottom:16px; }
+.sec-h2 em { color:var(--gold); font-style:normal; }
+.sec-desc { font-size:15px; color:var(--muted); line-height:1.82; max-width:620px; }
+
+/* CHALLENGES SECTION */
+.challenges-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.challenges-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.challenges-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
+.challenge-card { background:var(--navy2); border:1px solid var(--border); padding:32px 28px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s; }
+.challenge-card::before { content:''; position:absolute; top:0; left:0; width:3px; height:100%; background:var(--gold); transition:height .3s; }
+.challenge-card:hover { border-color:var(--gold); transform:translateY(-4px); }
+.challenge-card:nth-child(2)::before { background:var(--teal); }
+.challenge-card:nth-child(3)::before { background:var(--gold2); }
+.ch-icon { width:54px; height:54px; background:var(--gold-dim); border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; margin-bottom:20px; }
+.ch-icon i { color:var(--gold); font-size:22px; }
+.ch-icon.teal { background:var(--teal-dim); border-color:var(--border2); }
+.ch-icon.teal i { color:var(--teal); }
+.challenge-card h4 { font-family:var(--fd); font-size:14px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:10px; }
+.challenge-card p { font-size:14px; color:var(--muted); line-height:1.75; }
+
+/* SERVICES SECTION */
+.services-sec { padding:110px 0; background:var(--black); position:relative; z-index:1; }
+.services-sec::after { content:''; position:absolute; top:0; right:0; width:500px; height:500px; background:radial-gradient(circle,rgba(0,200,224,.04),transparent 65%); pointer-events:none; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
+.service-card { background:var(--navy2); border:1px solid var(--border); border-top:2px solid var(--gold); padding:36px 30px; position:relative; overflow:hidden; transition:box-shadow .3s,transform .3s; }
+.service-card:nth-child(2) { border-top-color:var(--teal); }
+.service-card:nth-child(3) { border-top-color:var(--gold2); }
+.service-card:nth-child(4) { border-top-color:var(--teal); }
+.service-card:nth-child(5) { border-top-color:var(--gold); }
+.service-card:nth-child(6) { border-top-color:var(--gold2); }
+.service-card:hover { box-shadow:0 20px 60px rgba(0,0,0,.5); transform:translateY(-5px); }
+.sc-icon { width:58px; height:58px; background:var(--gold-dim); border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; margin-bottom:22px; }
+.sc-icon i { color:var(--gold); font-size:24px; }
+.sc-icon.t { background:var(--teal-dim); border-color:var(--border2); }
+.sc-icon.t i { color:var(--teal); }
+.service-card h4 { font-family:var(--fd); font-size:13px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:12px; }
+.service-card p { font-size:14px; color:var(--muted); line-height:1.78; }
+.sc-tag { display:inline-flex; align-items:center; gap:6px; font-family:var(--fm); font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin-top:18px; }
+
+/* PROCESS SECTION */
+.process-sec { padding:110px 0; background:var(--navy); position:relative; z-index:1; overflow:hidden; }
+.process-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.process-sec::after { content:''; position:absolute; bottom:-200px; left:-100px; width:600px; height:600px; background:radial-gradient(circle,rgba(200,160,82,.04),transparent 65%); pointer-events:none; }
+.process-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin-top:64px; position:relative; }
+.process-steps::before { content:''; position:absolute; top:40px; left:10%; right:10%; height:1px; background:linear-gradient(90deg,var(--gold),var(--teal),var(--gold)); opacity:.3; }
+.process-step { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 16px; position:relative; z-index:1; }
+.ps-num { width:80px; height:80px; border-radius:50%; background:var(--navy3); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; margin-bottom:24px; position:relative; }
+.process-step:nth-child(even) .ps-num { border-color:var(--teal); }
+.ps-num span { font-family:var(--fd); font-size:22px; font-weight:700; color:var(--gold); }
+.process-step:nth-child(even) .ps-num span { color:var(--teal); }
+.ps-num::after { content:''; position:absolute; inset:-5px; border-radius:50%; border:1px solid rgba(200,160,82,.15); }
+.process-step:nth-child(even) .ps-num::after { border-color:rgba(0,200,224,.15); }
+.ps-icon { position:absolute; bottom:-10px; right:-10px; width:28px; height:28px; background:var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; }
+.process-step:nth-child(even) .ps-icon { background:var(--teal); }
+.ps-icon i { font-size:11px; color:var(--navy2); }
+.process-step h4 { font-family:var(--fd); font-size:11px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:10px; }
+.process-step p { font-size:13px; color:var(--muted); line-height:1.72; }
+
+/* BENEFITS SECTION */
+.benefits-sec { padding:110px 0; background:var(--black); position:relative; z-index:1; }
+.benefits-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; margin-top:0; }
+.benefits-left { }
+.benefits-list { list-style:none; margin-top:36px; }
+.benefits-list li { display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-bottom:1px solid rgba(200,160,82,.07); }
+.benefits-list li:last-child { border-bottom:none; }
+.bl-icon { width:42px; height:42px; flex-shrink:0; background:var(--gold-dim); border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; margin-top:2px; }
+.bl-icon i { color:var(--gold); font-size:16px; }
+.bl-icon.t { background:var(--teal-dim); border-color:var(--border2); }
+.bl-icon.t i { color:var(--teal); }
+.bl-text h5 { font-family:var(--fd); font-size:13px; font-weight:700; color:var(--white); letter-spacing:.8px; margin-bottom:5px; }
+.bl-text p { font-size:14px; color:var(--muted); line-height:1.72; }
+
+/* STATS PANEL RIGHT */
+.benefits-right { display:flex; flex-direction:column; gap:20px; }
+.stat-card { background:var(--navy2); border:1px solid var(--border); padding:30px; display:flex; align-items:center; gap:20px; transition:border-color .3s; }
+.stat-card:hover { border-color:var(--gold); }
+.stat-card:nth-child(2) { margin-left:32px; border-color:rgba(0,200,224,.2); }
+.stat-card:nth-child(2):hover { border-color:var(--teal); }
+.stat-card:nth-child(3) { margin-right:32px; }
+.sc-n { font-family:var(--fd); font-size:44px; font-weight:900; color:var(--gold); line-height:1; }
+.stat-card:nth-child(2) .sc-n { color:var(--teal); }
+.sc-info h5 { font-family:var(--fd); font-size:12px; font-weight:700; color:var(--white); letter-spacing:1px; margin-bottom:5px; }
+.sc-info p { font-size:13px; color:var(--muted); }
+
+/* INDUSTRIES */
+.industries-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.industries-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--teal),var(--gold),transparent); }
+.industries-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:56px; }
+.industry-card { background:var(--navy2); border:1px solid var(--border); padding:24px 20px; display:flex; align-items:center; gap:14px; transition:border-color .3s,background .3s; }
+.industry-card:hover { border-color:var(--gold); background:var(--gold-dim); }
+.ind-icon { width:44px; height:44px; flex-shrink:0; background:var(--gold-dim); border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; }
+.ind-icon i { color:var(--gold); font-size:18px; }
+.industry-card h5 { font-family:var(--fd); font-size:11px; font-weight:700; color:var(--white); letter-spacing:.8px; }
+.industry-card p { font-family:var(--fm); font-size:9px; color:var(--muted); letter-spacing:1px; margin-top:3px; }
+
+/* TESTIMONIAL */
+.testi-sec { padding:100px 0; background:var(--black); position:relative; z-index:1; }
+.testi-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:56px; }
+.testi-card { background:var(--navy2); border:1px solid var(--border); border-left:3px solid var(--gold); padding:32px 30px; }
+.testi-card:nth-child(2) { border-left-color:var(--teal); }
+.testi-stars { display:flex; gap:4px; margin-bottom:16px; }
+.testi-stars i { color:var(--gold); font-size:13px; }
+.testi-card blockquote { font-size:15px; color:var(--cream); line-height:1.82; font-style:italic; margin-bottom:20px; }
+.testi-author { display:flex; align-items:center; gap:12px; }
+.ta-avatar { width:42px; height:42px; background:var(--gold-dim); border:1px solid var(--border); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--fd); font-size:14px; color:var(--gold); font-weight:700; }
+.testi-card:nth-child(2) .ta-avatar { background:var(--teal-dim); color:var(--teal); border-color:var(--border2); }
+.ta-name { font-family:var(--fb); font-size:14px; font-weight:700; color:var(--white); }
+.ta-role { font-family:var(--fm); font-size:9px; letter-spacing:1.5px; color:var(--muted); margin-top:2px; }
+
+/* FAQ */
+.faq-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.faq-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.faq-list { margin-top:56px; max-width:800px; }
+.faq-item { border:1px solid var(--border); margin-bottom:12px; }
+.faq-q { width:100%; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:20px 24px; background:var(--navy2); border:none; cursor:pointer; font-family:var(--fd); font-size:13px; font-weight:700; color:var(--white); letter-spacing:.5px; text-align:left; transition:background .3s; }
+.faq-q:hover { background:var(--navy3); }
+.faq-q i { color:var(--gold); font-size:11px; flex-shrink:0; transition:transform .3s; }
+.faq-item.open .faq-q i { transform:rotate(45deg); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .4s var(--ease); }
+.faq-a-inner { padding:18px 24px 22px; font-size:14px; color:var(--muted); line-height:1.82; border-top:1px solid var(--border); }
+.faq-item.open .faq-a { max-height:400px; }
+
+/* BIG CTA */
+.big-cta { position:relative; z-index:1; padding:110px 48px; text-align:center; background:var(--black); overflow:hidden; }
+.big-cta::before { content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(200,160,82,.055),transparent 60%); pointer-events:none; }
+.big-cta-inner { position:relative; z-index:1; max-width:680px; margin:auto; }
+.big-cta-h { font-family:var(--fd); font-size:clamp(36px,5.5vw,72px); font-weight:700; letter-spacing:1.5px; line-height:1.05; margin-bottom:16px; }
+.big-cta-h em { color:var(--gold); font-style:normal; }
+.big-cta-p { font-size:16px; color:var(--muted); line-height:1.82; margin-bottom:36px; }
+.big-cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:24px; }
+
+/* FOOTER */
+#vt-footer { background:var(--navy); border-top:1px solid var(--border); position:relative; z-index:1; }
+#vt-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.footer-body { padding:80px 0 60px; }
+.footer-grid { display:grid; grid-template-columns:1.7fr repeat(5,1fr); gap:40px; }
+.footer-brand { display:flex; flex-direction:column; }
+.fb-logo-wrap { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.fb-logo-wrap img { width:50px; height:50px; border-radius:8px; object-fit:cover; border:1px solid var(--border); }
+.fb-name { font-family:var(--fd); font-size:20px; font-weight:700; letter-spacing:3px; color:var(--white); display:block; }
+.fb-name em { color:var(--gold); font-style:normal; }
+.fb-sub { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); display:block; margin-top:3px; }
+.footer-brand p { font-size:13.5px; color:var(--muted); line-height:1.82; margin-bottom:20px; max-width:270px; }
+.f-soc { display:flex; gap:8px; margin-bottom:20px; }
+.f-soc a { width:36px; height:36px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; text-decoration:none; transition:all .3s; }
+.f-soc a:hover { border-color:var(--gold); color:var(--gold); }
+.f-contact { display:flex; flex-direction:column; gap:8px; }
+.f-contact a,.f-contact span { display:flex; align-items:center; gap:8px; font-family:var(--fm); font-size:11.5px; color:var(--muted); transition:color .2s; }
+.f-contact i { color:var(--gold); font-size:11px; }
+.f-contact a:hover { color:var(--gold); }
+.footer-col h5 { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:9px; }
+.footer-col ul li a { font-size:13.5px; color:var(--muted); text-decoration:none; display:block; transition:color .2s,padding-left .25s; }
+.footer-col ul li a:hover { color:var(--gold2); padding-left:5px; }
+.footer-base { border-top:1px solid var(--border); padding:18px 0; }
+.footer-base-inner { max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; color:var(--muted); gap:16px; flex-wrap:wrap; }
+.footer-base-inner a { color:var(--muted); transition:color .2s; }
+.footer-base-inner a:hover { color:var(--gold); }
+.footer-base-inner span { margin:0 6px; opacity:.4; }
+
+/* FIXED */
+#scroll-top { position:fixed; bottom:96px; right:28px; z-index:9990; width:44px; height:44px; background:var(--navy2); border:1px solid var(--border); border-radius:var(--r); color:var(--gold); font-size:17px; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; visibility:hidden; transition:all .3s; backdrop-filter:blur(10px); }
+#scroll-top.show { opacity:1; visibility:visible; }
+#scroll-top:hover { background:var(--gold); color:var(--navy2); border-color:var(--gold); transform:translateY(-3px); }
+#wa-btn { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; align-items:center; gap:8px; padding:13px 22px; background:#25D366; border-radius:50px; color:#fff; font-family:var(--fb); font-size:13px; font-weight:700; text-decoration:none; box-shadow:0 8px 28px rgba(37,211,102,.35); transition:transform .3s var(--ease),box-shadow .3s; }
+#wa-btn i { font-size:20px; }
+#wa-btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 18px 44px rgba(37,211,102,.4); color:#fff; }
+#wa-btn::before { content:''; position:absolute; inset:-2px; border-radius:50px; border:1px solid rgba(37,211,102,.45); animation:tbPulse 2s ease infinite; }
+
+/* RESPONSIVE */
+@media(max-width:1199px){
+  .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px;}
+  .mega-cols{grid-template-columns:repeat(3,1fr);}
+  .challenges-grid,.services-grid{grid-template-columns:1fr 1fr;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:40px;}
+  .process-steps::before{display:none;}
+  .industries-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:991px){
+  #mob-btn{display:flex;}
+  .hdr-cta{display:none;}
+  #vt-nav{position:fixed;top:calc(var(--tb) + var(--hh));left:-100%;width:300px;height:calc(100vh - var(--tb) - var(--hh));background:rgba(8,15,30,.98);flex-direction:column;align-items:flex-start;padding:24px 20px;gap:0;transition:left .35s var(--ease);overflow-y:auto;border-right:1px solid var(--border);backdrop-filter:blur(24px);z-index:970;}
+  #vt-nav.nav-open{left:0;}
+  .nav-a{width:100%;padding:13px 8px;font-size:12px;border-bottom:1px solid rgba(200,160,82,.06);}
+  .nav-drop{width:100%;}
+  .mega-panel{position:static;transform:none;width:100%;max-width:100%;box-shadow:none;border:none;background:transparent;padding:10px 0 10px 14px;}
+  .mega-panel.open{opacity:1;visibility:visible;display:block;}
+  .mega-cols{grid-template-columns:1fr;gap:14px;}
+  .page-hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-visual-panel{display:none;}
+  .benefits-layout{grid-template-columns:1fr;}
+  .testi-grid{grid-template-columns:1fr;}
+  .stat-card:nth-child(2){margin-left:0;}
+  .stat-card:nth-child(3){margin-right:0;}
+  .footer-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:767px){
+  :root{--tb:52px;}
+  .tb-r{display:none;}
+  .vt-con,.footer-base-inner{padding:0 24px;}
+  .hdr-inner{padding:0 20px;}
+  .tb-inner{padding:0 16px;}
+  .page-hero-inner{padding:0 24px;}
+  .challenges-grid,.services-grid,.industries-grid{grid-template-columns:1fr;}
+  .process-steps{grid-template-columns:1fr;}
+  .big-cta{padding:80px 24px;}
+  .big-cta-btns{flex-direction:column;align-items:center;}
+  .logo-3d-wrap{width:52px;height:52px;}
+  .logo-cube{width:52px;height:52px;}
+  .lc-f{width:52px;height:52px;}
+  .lc-front{transform:translateZ(26px);}
+  .lc-back{transform:translateZ(-26px) rotateY(180deg);}
+  .lc-right{transform:translateX(26px) rotateY(90deg);}
+  .lc-left{transform:translateX(-26px) rotateY(-90deg);}
+  .lc-top{transform:translateY(-26px) rotateX(90deg);}
+  .lc-bottom{transform:translateY(26px) rotateX(-90deg);}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;}
+  #wa-btn span{display:none;}
+  #wa-btn{padding:13px;border-radius:50%;}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+</style>
+</head>
+<body>
+
+<div id="vt-dot" aria-hidden="true"></div>
+<div id="vt-ring" aria-hidden="true"></div>
+<div id="vt-noise" aria-hidden="true"></div>
+
+<!-- TOPBAR -->
+<div id="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-l"><span class="tb-pulse" aria-hidden="true"></span><span>LIVE SUPPORT — ABU DHABI &amp; UAE — 24/7</span></div>
+    <div class="tb-r">
+      <a href="tel:+971581816887"><i class="bi bi-telephone-fill"></i> +971 58 181 6887</a>
+      <span>|</span>
+      <a href="mailto:info@vow-tech.com"><i class="bi bi-envelope-fill"></i> info@vow-tech.com</a>
+      <span>|</span>
+      <span><i class="bi bi-geo-alt-fill"></i> Abu Dhabi, UAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="vt-header" role="banner">
+  <div class="hdr-inner">
+    <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
+      <div class="logo-3d-wrap" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-top"></div>
+          <div class="lc-f lc-bottom"></div>
+        </div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-main">VOW<em>TECHNOLOGIES</em></span>
+        <span class="logo-tagline">IT SOLUTIONS — ABU DHABI</span>
+      </div>
+    </a>
+
+    <nav id="vt-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="index.html#about" class="nav-a">About</a>
+      <div class="nav-drop" id="navDrop">
+        <button class="nav-a nav-drop-btn" aria-haspopup="true" aria-expanded="false" id="navDropBtn">
+          Services <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-headset"></i> IT Support</div>
+              <a href="amc-support.html">Annual Maintenance Contract</a>
+              <a href="CCTV-Services.html">CCTV Services</a>
+              <a href="Emergency-IT-Support.html">Emergency IT Support</a>
+              <a href="Remote-Technical-Support.html">Remote Technical Support</a>
+              <a href="On-Site-IT-Support.html">On-Site Support</a>
+              <a href="IT-Outsourcing.html">IT Outsourcing</a>
+              <a href="Helpdesk-Support.html">Helpdesk Support</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-network-wired"></i> Networking</div>
+              <a href="Structured-Cabling.html">Structured Cabling</a>
+              <a href="Server-Room-Setup.html">Server Room Setup</a>
+              <a href="Network-Security-Services.html">Network Security Services</a>
+              <a href="Network-Planning-Design.html">Network Planning &amp; Design</a>
+              <a href="Telephone-Systems-Implementation.html">Telephone Systems</a>
+              <a href="Office-Migration.html">Office Migration</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-shield-virus"></i> Cybersecurity</div>
+              <a href="Sophos-firewall.html">Sophos Firewall</a>
+              <a href="soc-security-operations-center.html">SOC</a>
+              <a href="siem-solution.html">SIEM Solution</a>
+              <a href="Penetration-Testing.html">Penetration Testing</a>
+              <a href="anti-phishing-protection.html">Anti-Phishing</a>
+              <a href="web-application-firewall.html">WAF</a>
+              <a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-cloud"></i> Cloud &amp; Managed</div>
+              <a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a>
+              <a href="Private-Cloud-Services.html">Private Cloud Services</a>
+              <a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a>
+              <a href="Cloud-Backup-Disaster-Recovery.html">Cloud Backup</a>
+              <a href="Virtualization.html">Virtualization</a>
+              <a href="VPN-Network-Monitoring.html">VPN Monitoring</a>
+              <a href="Server-Management.html">Server Management</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-server"></i> Infrastructure</div>
+              <a href="IT-infrastructure-solutions.html">IT Infrastructure</a>
+              <a href="data.center.html">Data Center</a>
+              <a href="Server-Solutions.html">Server Solutions</a>
+              <a href="Data-Storage-Solutions.html">Data Storage Solutions</a>
+              <a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a>
+              <a href="firewall-products.html">Firewall Solutions</a>
+              <a href="zkteco-access-control.html">Access Control</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-a">Insights</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </nav>
+
+    <a href="appointment.html" class="btn-primary hdr-cta" style="background:var(--teal);"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <button id="mob-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="vt-nav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="IT Cost Management Consultancy">
+  <div class="scanlines-hero" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+
+    <div class="hero-left">
+      <div class="breadcrumb-nav" data-r>
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#services">Services</a><span>/</span>
+        <span class="bc-active">IT Cost Management</span>
+      </div>
+      <div class="page-hero-badge" data-r data-d="60">
+        <span class="badge-dot"></span>
+        Budget Optimization — Abu Dhabi &amp; UAE
+      </div>
+      <h1 class="page-hero-h1" data-r data-d="100">
+        <em>IT Cost</em><br>
+        Management &amp; <span>Consultancy</span>
+      </h1>
+      <p class="page-hero-desc" data-r data-d="160">
+        VOWTECH helps businesses across Abu Dhabi, Dubai, and the UAE reduce IT overheads, eliminate wasteful spending, and achieve maximum ROI — without compromising performance or security.
+      </p>
+      <div class="hero-chips" data-r data-d="220">
+        <div class="h-chip"><i class="fas fa-chart-pie"></i><span>Budget Planning</span></div>
+        <div class="h-chip"><i class="fas fa-cogs"></i><span>Resource Optimization</span></div>
+        <div class="h-chip"><i class="fas fa-shield-alt"></i><span>Cost Governance</span></div>
+        <div class="h-chip"><i class="fas fa-chart-line"></i><span>ROI Focused</span></div>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;" data-r data-d="270">
+        <a href="contact.html" class="btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Request Consultation</a>
+        <a href="tel:+971581816887" class="btn-dark btn-lg"><i class="fas fa-phone-alt"></i> Call Now</a>
+      </div>
+    </div>
+
+    <div class="hero-visual-panel" data-r data-d="100" aria-hidden="true">
+      <div class="cost-visual">
+        <div class="cv-badge"><i class="fas fa-circle" style="font-size:7px;"></i><span>Savings Achieved</span></div>
+        <div class="cv-head">// IT Budget Overview</div>
+        <div class="cv-stat-row">
+          <div class="cv-stat">
+            <span class="cv-stat-n">35%</span>
+            <span class="cv-stat-l">Cost Reduction</span>
+          </div>
+          <div class="cv-stat">
+            <span class="cv-stat-n t">4.9★</span>
+            <span class="cv-stat-l">Client Rating</span>
+          </div>
+          <div class="cv-stat">
+            <span class="cv-stat-n">9+</span>
+            <span class="cv-stat-l">Years in UAE</span>
+          </div>
+          <div class="cv-stat">
+            <span class="cv-stat-n t">24/7</span>
+            <span class="cv-stat-l">Support</span>
+          </div>
+        </div>
+        <div class="cv-bar-wrap">
+          <div class="cv-bar-label"><span>Hardware &amp; Infra</span><span>optimized ↓28%</span></div>
+          <div class="cv-bar"><div class="cv-bar-fill gold" style="width:72%"></div></div>
+          <div class="cv-bar-label"><span>Cloud Licensing</span><span>optimized ↓41%</span></div>
+          <div class="cv-bar"><div class="cv-bar-fill teal" style="width:59%"></div></div>
+          <div class="cv-bar-label"><span>Support Contracts</span><span>optimized ↓35%</span></div>
+          <div class="cv-bar"><div class="cv-bar-fill green" style="width:65%"></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="challenges-sec" id="challenges">
+  <div class="vt-con">
+    <div data-r>
+      <span class="sec-tag">// Common Pain Points</span>
+      <h2 class="sec-h2">Challenges in <em>IT Cost Management</em></h2>
+      <p class="sec-desc">Most UAE businesses overspend on IT due to lack of visibility, poor vendor management, and unplanned growth. We fix that.</p>
+    </div>
+    <div class="challenges-grid">
+      <div class="challenge-card" data-r data-d="60">
+        <div class="ch-icon"><i class="fas fa-coins"></i></div>
+        <h4>Uncontrolled IT Spending</h4>
+        <p>Budgets spiral out of control due to unplanned purchases, duplicate tools, and shadow IT. Without governance, costs grow silently and unpredictably.</p>
+      </div>
+      <div class="challenge-card" data-r data-d="120">
+        <div class="ch-icon teal"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h4>Lack of Budget Visibility</h4>
+        <p>Many organisations lack a unified view of IT expenditure across departments, making it impossible to identify waste or justify new investments to leadership.</p>
+      </div>
+      <div class="challenge-card" data-r data-d="180">
+        <div class="ch-icon"><i class="fas fa-random"></i></div>
+        <h4>Inefficient Resource Allocation</h4>
+        <p>Over-provisioned servers, unused licences, and redundant vendor contracts consume budget that could be redirected to strategic initiatives and growth.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-sec" id="services">
+  <div class="vt-con">
+    <div data-r>
+      <span class="sec-tag">// What We Deliver</span>
+      <h2 class="sec-h2">Our IT Cost Management <em>Services</em></h2>
+      <p class="sec-desc">End-to-end consultancy designed to identify, reduce, and govern IT expenditure across your entire technology stack.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card" data-r data-d="60">
+        <div class="sc-icon"><i class="fas fa-chart-pie"></i></div>
+        <h4>Budget Planning &amp; Analysis</h4>
+        <p>We evaluate your full IT spend, forecast future costs, and build a structured, data-driven budget plan tailored to your business goals and UAE market conditions.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Forecasting &amp; CapEx / OpEx Modelling</span>
+      </div>
+
+      <div class="service-card" data-r data-d="100">
+        <div class="sc-icon t"><i class="fas fa-cogs"></i></div>
+        <h4>IT Resource Optimization</h4>
+        <p>We audit hardware, software licences, cloud subscriptions, and vendor contracts — eliminating redundancy and right-sizing resources to match actual usage.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Licence Audits &amp; Cloud Right-Sizing</span>
+      </div>
+
+      <div class="service-card" data-r data-d="140">
+        <div class="sc-icon"><i class="fas fa-shield-alt"></i></div>
+        <h4>Strategic Cost Governance</h4>
+        <p>We implement governance frameworks, approval workflows, and spend policies that give your leadership team full control and visibility over all IT expenditure.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Policy &amp; Compliance Frameworks</span>
+      </div>
+
+      <div class="service-card" data-r data-d="60">
+        <div class="sc-icon t"><i class="fas fa-handshake"></i></div>
+        <h4>Vendor Contract Management</h4>
+        <p>We review, renegotiate, and consolidate vendor agreements — ensuring you pay competitive rates and never auto-renew contracts that no longer serve your needs.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Multi-Vendor Consolidation</span>
+      </div>
+
+      <div class="service-card" data-r data-d="100">
+        <div class="sc-icon"><i class="fas fa-cloud"></i></div>
+        <h4>Cloud Cost Management</h4>
+        <p>From Azure to AWS, we identify unused instances, eliminate orphaned resources, and recommend reserved pricing models that dramatically lower monthly cloud bills.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> FinOps &amp; Reserved Instance Planning</span>
+      </div>
+
+      <div class="service-card" data-r data-d="140">
+        <div class="sc-icon t"><i class="fas fa-chart-line"></i></div>
+        <h4>Continuous Monitoring &amp; Reporting</h4>
+        <p>We set up dashboards and monthly reporting cycles so you always know where your IT budget stands — and receive early alerts before costs exceed thresholds.</p>
+        <span class="sc-tag"><i class="fas fa-arrow-right"></i> Real-Time Cost Dashboards</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-sec" id="process">
+  <div class="vt-con">
+    <div style="text-align:center;" data-r>
+      <span class="sec-tag">// How We Work</span>
+      <h2 class="sec-h2">Our IT Cost Management <em>Process</em></h2>
+      <p class="sec-desc" style="margin:0 auto;">A structured five-step methodology that delivers measurable results from day one.</p>
+    </div>
+    <div class="process-steps">
+
+      <div class="process-step" data-r data-d="60">
+        <div class="ps-num">
+          <span>01</span>
+          <div class="ps-icon"><i class="fas fa-search"></i></div>
+        </div>
+        <h4>IT Budget Assessment</h4>
+        <p>A full audit of current IT spending across all departments, tools, and vendors — establishing a clear baseline.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="110">
+        <div class="ps-num">
+          <span>02</span>
+          <div class="ps-icon"><i class="fas fa-chart-bar"></i></div>
+        </div>
+        <h4>Cost Analysis</h4>
+        <p>Deep-dive into expenditure patterns to identify waste, duplication, over-provisioning, and missed optimisation opportunities.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="160">
+        <div class="ps-num">
+          <span>03</span>
+          <div class="ps-icon"><i class="fas fa-sitemap"></i></div>
+        </div>
+        <h4>Resource Evaluation</h4>
+        <p>Assessment of infrastructure, cloud workloads, software licences, and support contracts against actual utilisation metrics.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="210">
+        <div class="ps-num">
+          <span>04</span>
+          <div class="ps-icon"><i class="fas fa-lightbulb"></i></div>
+        </div>
+        <h4>Optimisation Strategy</h4>
+        <p>A prioritised roadmap with quick wins and long-term initiatives — each with a projected cost saving and implementation timeline.</p>
+      </div>
+
+      <div class="process-step" data-r data-d="260">
+        <div class="ps-num">
+          <span>05</span>
+          <div class="ps-icon"><i class="fas fa-sync-alt"></i></div>
+        </div>
+        <h4>Monitoring &amp; Reporting</h4>
+        <p>Ongoing tracking of savings realised, budget adherence, and continuous recommendations to sustain and grow cost efficiency.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits-sec" id="benefits">
+  <div class="vt-con">
+    <div class="benefits-layout">
+      <div class="benefits-left" data-r>
+        <span class="sec-tag">// Why Choose VOWTECH</span>
+        <h2 class="sec-h2">Why Businesses Trust Us for <em>Cost Management</em></h2>
+        <ul class="benefits-list">
+          <li>
+            <div class="bl-icon"><i class="fas fa-dollar-sign"></i></div>
+            <div class="bl-text">
+              <h5>Proven Cost Reductions</h5>
+              <p>Our clients consistently achieve 25–40% reductions in IT spend within the first 6 months — without sacrificing capability or security.</p>
+            </div>
+          </li>
+          <li>
+            <div class="bl-icon t"><i class="fas fa-balance-scale"></i></div>
+            <div class="bl-text">
+              <h5>Complete Budget Transparency</h5>
+              <p>We give leadership full visibility through executive-ready dashboards and monthly reports, making IT spending accountable at every level.</p>
+            </div>
+          </li>
+          <li>
+            <div class="bl-icon"><i class="fas fa-user-check"></i></div>
+            <div class="bl-text">
+              <h5>Certified UAE IT Experts</h5>
+              <p>Our consultants are certified with Microsoft, Cisco, and Sophos — and bring 9+ years of experience across Abu Dhabi and Dubai enterprises.</p>
+            </div>
+          </li>
+          <li>
+            <div class="bl-icon t"><i class="fas fa-headset"></i></div>
+            <div class="bl-text">
+              <h5>Honest, No-Hard-Sell Advice</h5>
+              <p>We act as your trusted advisor. Our recommendations are based on what delivers genuine ROI — not what earns us a higher margin.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="benefits-right" data-r data-d="80">
+        <div class="stat-card">
+          <div class="sc-n">35%</div>
+          <div class="sc-info">
+            <h5>Average Cost Reduction</h5>
+            <p>Achieved across client engagements within the first year of our optimisation programme.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-n">9+</div>
+          <div class="sc-info">
+            <h5>Years in the UAE Market</h5>
+            <p>Deep local knowledge of UAE vendors, licensing models, and enterprise IT procurement.</p>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="sc-n">4.9★</div>
+          <div class="sc-info">
+            <h5>Google Rating</h5>
+            <p>Consistently rated 5 stars by Abu Dhabi and Dubai businesses for expert, honest consultancy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="industries-sec" id="industries">
+  <div class="vt-con">
+    <div style="text-align:center;" data-r>
+      <span class="sec-tag">// Sectors We Serve</span>
+      <h2 class="sec-h2">Industries We Support Across <em>UAE</em></h2>
+      <p class="sec-desc" style="margin:0 auto 0;">Our cost management consultancy covers every major sector operating in Abu Dhabi and Dubai.</p>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-card" data-r data-d="40">
+        <div class="ind-icon"><i class="fas fa-landmark"></i></div>
+        <div><h5>Government &amp; Public Sector</h5><p>Smart IT governance solutions</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="70">
+        <div class="ind-icon"><i class="fas fa-university"></i></div>
+        <div><h5>Banking &amp; Finance</h5><p>Cost-compliant IT frameworks</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="100">
+        <div class="ind-icon"><i class="fas fa-hospital"></i></div>
+        <div><h5>Healthcare</h5><p>HIPAA-aware budget management</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="130">
+        <div class="ind-icon"><i class="fas fa-shopping-bag"></i></div>
+        <div><h5>Retail &amp; E-Commerce</h5><p>Scalable seasonal IT planning</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="60">
+        <div class="ind-icon"><i class="fas fa-oil-can"></i></div>
+        <div><h5>Oil, Gas &amp; Energy</h5><p>Large-scale infrastructure audits</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="90">
+        <div class="ind-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div><h5>Education</h5><p>Student-per-head cost modelling</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="120">
+        <div class="ind-icon"><i class="fas fa-hard-hat"></i></div>
+        <div><h5>Construction &amp; Real Estate</h5><p>Project-based IT cost tracking</p></div>
+      </div>
+      <div class="industry-card" data-r data-d="150">
+        <div class="ind-icon"><i class="fas fa-concierge-bell"></i></div>
+        <div><h5>Hospitality &amp; Tourism</h5><p>Peak-demand cost optimisation</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <div class="vt-con">
+    <div style="text-align:center;" data-r>
+      <span class="sec-tag">// Client Feedback</span>
+      <h2 class="sec-h2">What Our Clients Say About <em>Cost Management</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card" data-r data-d="60">
+        <div class="testi-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <blockquote>"VOWTECH audited our entire IT estate within two weeks and identified AED 180,000 in annual savings — mostly from unused cloud licences and over-specified support contracts we didn't even know we had."</blockquote>
+        <div class="testi-author">
+          <div class="ta-avatar">AK</div>
+          <div>
+            <div class="ta-name">Ahmed K.</div>
+            <div class="ta-role">IT Director — Abu Dhabi Financial Group</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card" data-r data-d="110">
+        <div class="testi-stars">
+          <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+        </div>
+        <blockquote>"Their approach is completely transparent — no hidden agenda, no upselling. They gave us a clear dashboard and a 12-month roadmap. We reduced IT operating costs by over 30% in the first year."</blockquote>
+        <div class="testi-author">
+          <div class="ta-avatar">SR</div>
+          <div>
+            <div class="ta-name">Sarah R.</div>
+            <div class="ta-role">CFO — Dubai Retail Group</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec">
+  <div class="vt-con">
+    <div data-r>
+      <span class="sec-tag">// Common Questions</span>
+      <h2 class="sec-h2">Frequently Asked <em>Questions</em></h2>
+    </div>
+    <div class="faq-list" data-r data-d="60">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          How quickly can VOWTECH identify IT cost savings?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Most clients see a preliminary savings report within 10–14 business days of our initial audit. Quick wins — such as unused licences, idle cloud instances, and redundant contracts — are typically actioned within the first 30 days, generating immediate measurable returns.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Will optimising costs impact our IT performance or security?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">No. Our methodology is performance-first. We only recommend changes that maintain or improve service levels. Every optimisation is assessed for its security impact before implementation, and we never compromise your cybersecurity posture to achieve a saving.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you work with businesses of all sizes in the UAE?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Yes. We support SMEs, mid-market companies, and large enterprises across Abu Dhabi, Dubai, and all UAE emirates. Our cost management programmes are fully scalable — we tailor scope, depth, and reporting to match your organisation's size and complexity.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What does IT Cost Management consultancy cost?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Engagement costs vary based on organisation size, scope, and complexity. However, our fee structure is designed so that identified savings always significantly exceed the consultancy cost. We offer a free initial discovery call to assess fit and provide an indicative fee. Contact us to get started.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can VOWTECH manage our vendor negotiations on our behalf?
+          <i class="fas fa-plus"></i>
+        </button>
+        <div class="faq-a">
+          <div class="faq-a-inner">Absolutely. Vendor negotiation is one of our strongest areas. We leverage our 9+ years of UAE market knowledge, existing vendor relationships, and bulk purchasing intelligence to negotiate significantly better rates and terms on your behalf — often achieving savings of 20–35% on renewal contracts.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BIG CTA -->
+<section class="big-cta" aria-label="Request IT Cost Management Consultation">
+  <div class="big-cta-inner" data-r>
+    <span class="sec-tag">// START SAVING TODAY</span>
+    <h2 class="big-cta-h">Ready to Cut Your<br><em>IT Costs?</em></h2>
+    <p class="big-cta-p">Book a free discovery call with our consultants. We'll review your current IT spend and identify your top savings opportunities — at no cost or obligation.</p>
+    <div class="big-cta-btns">
+      <a href="contact.html" class="btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Request Free Consultation</a>
+      <a href="https://wa.me/971581816887?text=Hi%20I%27d%20like%20to%20discuss%20IT%20Cost%20Management%20with%20VOWTECH" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg"><i class="bi bi-whatsapp"></i> Chat on WhatsApp</a>
+      <a href="tel:+971581816887" class="btn-dark btn-lg"><i class="fas fa-phone-alt"></i> +971 58 181 6887</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="vt-footer">
+  <div class="footer-body">
+    <div class="vt-con">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="fb-logo-wrap">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52">
+            <div><span class="fb-name">VOW<em>TECH</em></span><span class="fb-sub">Enterprise IT — UAE</span></div>
+          </div>
+          <p>Your reliable IT support partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
+          <div class="f-soc">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="f-contact">
+            <a href="tel:+971581816887"><i class="fas fa-phone-alt"></i> +971 58 181 6887</a>
+            <a href="mailto:info@vow-tech.com"><i class="fas fa-envelope"></i> info@vow-tech.com</a>
+            <span><i class="fas fa-map-marker-alt"></i> Navy Gate, Al Zahiyah, Abu Dhabi</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>IT Support</h5>
+          <ul>
+            <li><a href="amc-support.html">Annual Maintenance Contract</a></li>
+            <li><a href="Emergency-IT-Support.html">Emergency IT Support</a></li>
+            <li><a href="Remote-Technical-Support.html">Remote Support</a></li>
+            <li><a href="On-Site-IT-Support.html">On-Site Support</a></li>
+            <li><a href="Helpdesk-Support.html">Helpdesk Support</a></li>
+            <li><a href="IT-Outsourcing.html">IT Outsourcing</a></li>
+            <li><a href="CCTV-Services.html">CCTV Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cybersecurity</h5>
+          <ul>
+            <li><a href="Sophos-firewall.html">Sophos Firewall</a></li>
+            <li><a href="soc-security-operations-center.html">SOC</a></li>
+            <li><a href="siem-solution.html">SIEM Solution</a></li>
+            <li><a href="Penetration-Testing.html">Penetration Testing</a></li>
+            <li><a href="anti-phishing-protection.html">Anti-Phishing</a></li>
+            <li><a href="web-application-firewall.html">WAF</a></li>
+            <li><a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cloud &amp; Infrastructure</h5>
+          <ul>
+            <li><a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a></li>
+            <li><a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a></li>
+            <li><a href="Virtualization.html">Virtualization</a></li>
+            <li><a href="data.center.html">Data Center</a></li>
+            <li><a href="Private-Cloud-Services.html">Private Cloud</a></li>
+            <li><a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Networking</h5>
+          <ul>
+            <li><a href="Structured-Cabling.html">Structured Cabling</a></li>
+            <li><a href="Server-Room-Setup.html">Server Room Setup</a></li>
+            <li><a href="Network-Security-Services.html">Network Security</a></li>
+            <li><a href="Network-Planning-Design.html">Network Planning</a></li>
+            <li><a href="Telephone-Systems-Implementation.html">Telephone Systems</a></li>
+            <li><a href="firewall-products.html">Firewall Solutions</a></li>
+            <li><a href="zkteco-access-control.html">Access Control</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About VOWTECH</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="appointment.html">Free Consultation</a></li>
+            <li><a href="IT-Audit-Health-Check.html">IT Audit</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div class="footer-base-inner">
+      <span>© 2025 VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+      <span><a href="#">Privacy Policy</a><span>|</span><a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+<a href="https://wa.me/971581816887?text=Hi%20I%27d%20like%20to%20get%20in%20touch%20with%20VOWTECH" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="bi bi-whatsapp"></i><span>Chat</span>
+</a>
+
+<script>
+'use strict';
+(function(){
+
+/* CURSOR */
+var dot=document.getElementById('vt-dot'),ring=document.getElementById('vt-ring'),cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+(function loop(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){dot.classList.add('hover');ring.classList.add('hover');});
+  el.addEventListener('mouseleave',function(){dot.classList.remove('hover');ring.classList.remove('hover');});
+});
+
+/* SCROLL REVEAL */
+var items=document.querySelectorAll('[data-r]');
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=parseInt(e.target.dataset.d||0);setTimeout(function(){e.target.classList.add('vt-show');},d);io.unobserve(e.target);}});},{threshold:0.1});
+items.forEach(function(el){io.observe(el);});
+
+/* HEADER SCROLL */
+var hdr=document.getElementById('vt-header'),stBtn=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);if(stBtn)stBtn.classList.toggle('show',window.scrollY>400);});
+
+/* MEGA MENU */
+var dropBtn=document.getElementById('navDropBtn'),megaPanel=document.getElementById('megaPanel');
+if(dropBtn&&megaPanel){
+  dropBtn.addEventListener('click',function(e){e.stopPropagation();var open=megaPanel.classList.toggle('open');dropBtn.setAttribute('aria-expanded',open);});
+  document.addEventListener('click',function(){megaPanel.classList.remove('open');dropBtn.setAttribute('aria-expanded','false');});
+  megaPanel.addEventListener('click',function(e){e.stopPropagation();});
+}
+
+/* MOBILE NAV */
+var mobBtn=document.getElementById('mob-btn'),nav=document.getElementById('vt-nav');
+if(mobBtn&&nav){mobBtn.addEventListener('click',function(){var open=nav.classList.toggle('nav-open');mobBtn.classList.toggle('open',open);mobBtn.setAttribute('aria-expanded',open);document.body.classList.toggle('body-lock',open);});}
+
+/* FAQ ACCORDION */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=btn.closest('.faq-item');
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+    if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+  });
+});
+
+/* ANIMATED BARS */
+var barsFired=false;
+var barsSection=document.querySelector('.cost-visual');
+if(barsSection){
+  var barIo=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting && !barsFired){
+      barsFired=true;
+      document.querySelectorAll('.cv-bar-fill').forEach(function(bar){
+        var w=bar.style.width;
+        bar.style.width='0';
+        bar.style.transition='width 1.4s cubic-bezier(0.22,1,0.36,1)';
+        setTimeout(function(){bar.style.width=w;},300);
+      });
+    }
+  },{threshold:0.3});
+  barIo.observe(barsSection);
+}
+
+})();
+</script>
+</body>
+</html>
