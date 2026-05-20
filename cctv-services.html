@@ -1403,7 +1403,7 @@ var dot=document.getElementById('vt-dot'),ring=document.getElementById('vt-ring'
 document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
 (function loop(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
 document.querySelectorAll('a,button,.svc-card,.ch-card,.why-item,.ind-tile,.ps-step,.cam-type,.amc-col').forEach(function(el){
-  el.addEventListener('mouseenter',function(){dot.classList.add('hover');ring.classList.add('hover');});
+  el.addEventListener('mouseenter',funcstion(){dot.classList.add('hover');ring.classList.add('hover');});
   el.addEventListener('mouseleave',function(){dot.classList.remove('hover');ring.classList.remove('hover');});
 });
 

@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<!-- ═══════════════════════════════════════════════
+     VOWTECH — SMART FAQ PAGE
+═══════════════════════════════════════════════ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Smart FAQ | AI-Powered IT Help | VOWTECH Abu Dhabi UAE</title>
+<meta name="description" content="Get instant answers to your IT questions. VOWTECH's AI-powered Smart FAQ covers IT support, cybersecurity, networking, cloud, biometrics, and more — Abu Dhabi & UAE.">
+<meta name="author" content="VOWTECH">
+<meta name="theme-color" content="#0a1628">
+<meta name="geo.region" content="AE-AZ">
+<meta name="geo.placename" content="Abu Dhabi">
+<link rel="canonical" href="https://vow-tech.com/FAQ.html">
+<meta property="og:title" content="Smart FAQ | VOWTECH Abu Dhabi UAE">
+<meta property="og:description" content="AI-powered IT FAQ — instant answers on IT support, cybersecurity, networking, cloud and biometrics from VOWTECH.">
+<meta property="og:image" content="https://vow-tech.com/assets/img/logo.jpeg">
+<meta property="og:url" content="https://vow-tech.com/FAQ.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VOWTECH">
+
+<link rel="shortcut icon" href="assets/img/favicon.ico">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.ico">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="assets/css/main.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TCD7199Q60"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TCD7199Q60');</script>
+
+<style>
+/* ══════════════════════════════════════════════════════
+   VOWTECH FAQ PAGE — DESIGN SYSTEM
+══════════════════════════════════════════════════════ */
+:root {
+  --black:    #050810;
+  --navy:     #080f1e;
+  --navy2:    #0a1628;
+  --navy3:    #0e1c35;
+  --navy4:    #14253f;
+  --gold:     #c8a052;
+  --gold2:    #dbb870;
+  --gold3:    #9a7838;
+  --gold-dim: rgba(200,160,82,0.15);
+  --teal:     #00c8e0;
+  --teal2:    #00a0b8;
+  --teal-dim: rgba(0,200,224,0.12);
+  --red:      #e05050;
+  --red2:     #ff6b6b;
+  --green:    #4ade80;
+  --white:    #f0ece2;
+  --cream:    #e5dfd0;
+  --muted:    rgba(240,236,226,0.5);
+  --border:   rgba(200,160,82,0.18);
+  --border2:  rgba(0,200,224,0.1);
+  --r:        4px;
+  --ease:     cubic-bezier(0.22,1,0.36,1);
+  --fd:       'Orbitron', 'Rajdhani', sans-serif;
+  --fb:       'Rajdhani', system-ui, sans-serif;
+  --fm:       'Share Tech Mono', 'Courier New', monospace;
+  --tb:       42px;
+  --hh:       88px;
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
+body { font-family:var(--fb); background:var(--black); color:var(--white); overflow-x:hidden; cursor:none; -webkit-font-smoothing:antialiased; }
+a { color:var(--gold); text-decoration:none; transition:color .25s; }
+a:hover { color:var(--gold2); }
+img { display:block; max-width:100%; }
+body.body-lock { overflow:hidden; }
+
+/* NOISE OVERLAY */
+#vt-noise { position:fixed; inset:0; z-index:1; pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E"); opacity:.5; }
+
+/* CUSTOM CURSOR */
+#vt-dot  { position:fixed; width:10px; height:10px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); transition:width .18s var(--ease),height .18s var(--ease),background .2s; mix-blend-mode:difference; }
+#vt-ring { position:fixed; width:38px; height:38px; border:1.5px solid var(--gold); border-radius:50%; pointer-events:none; z-index:99998; transform:translate(-50%,-50%); opacity:.55; transition:width .3s var(--ease),height .3s var(--ease),border-color .25s; }
+#vt-dot.hover  { width:6px; height:6px; background:var(--teal); }
+#vt-ring.hover { width:56px; height:56px; border-color:var(--teal); opacity:.3; }
+@media(max-width:991px){ #vt-dot,#vt-ring{ display:none; } body{ cursor:auto; } }
+
+/* BUTTONS */
+.btn-primary { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--gold); color:var(--navy2); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:none; border-radius:var(--r); cursor:pointer; text-decoration:none; position:relative; overflow:hidden; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-primary:hover { background:var(--gold2); color:var(--navy2); transform:translateY(-3px); box-shadow:0 14px 32px rgba(200,160,82,.38); }
+.btn-wa { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:#25D366; color:#fff; font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border-radius:var(--r); text-decoration:none; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-wa:hover { background:#1db954; color:#fff; transform:translateY(-3px); box-shadow:0 14px 32px rgba(37,211,102,.32); }
+.btn-dark { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--navy2); color:var(--gold); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:1.5px solid var(--gold); border-radius:var(--r); text-decoration:none; transition:all .3s; }
+.btn-dark:hover { background:var(--gold); color:var(--navy2); transform:translateY(-2px); }
+.btn-teal { display:inline-flex; align-items:center; gap:9px; padding:17px 38px; background:var(--teal); color:var(--navy2); font-family:var(--fd); font-size:12px; font-weight:700; letter-spacing:1px; border-radius:var(--r); text-decoration:none; transition:background .3s,transform .22s,box-shadow .3s; border:none; cursor:pointer; }
+.btn-teal:hover { background:var(--teal2); color:var(--navy2); transform:translateY(-3px); box-shadow:0 14px 32px rgba(0,200,224,.38); }
+
+/* TOPBAR */
+#topbar { position:fixed; top:0; left:0; right:0; height:var(--tb); background:var(--gold); z-index:990; display:flex; align-items:center; }
+.tb-inner { width:100%; max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; letter-spacing:.8px; color:var(--navy2); }
+.tb-pulse { display:inline-block; width:7px; height:7px; background:var(--navy2); border-radius:50%; margin-right:10px; animation:tbPulse 1.6s ease infinite; }
+@keyframes tbPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.4} }
+.tb-r { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.tb-r a { color:var(--navy2); font-weight:700; }
+.tb-r a:hover { text-decoration:underline; }
+.tb-r span { opacity:.4; }
+
+/* HEADER */
+#vt-header { position:fixed; top:var(--tb); left:0; right:0; height:var(--hh); z-index:980; background:rgba(8,15,30,.88); border-bottom:1px solid var(--border); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); transition:background .4s,box-shadow .4s; }
+#vt-header.scrolled { background:rgba(8,15,30,.98); box-shadow:0 4px 32px rgba(0,0,0,.65); }
+.hdr-inner { max-width:1360px; margin:auto; padding:0 48px; height:100%; display:flex; align-items:center; gap:28px; }
+
+/* LOGO CUBE */
+.vt-logo { display:flex; align-items:center; gap:16px; text-decoration:none; flex-shrink:0; }
+.logo-3d-wrap { width:72px; height:72px; perspective:400px; flex-shrink:0; }
+.logo-cube { width:72px; height:72px; position:relative; transform-style:preserve-3d; animation:logoCubeAll4 10s linear infinite; }
+@keyframes logoCubeAll4 { 0%{transform:rotateY(0deg) rotateX(12deg)} 25%{transform:rotateY(90deg) rotateX(12deg)} 50%{transform:rotateY(180deg) rotateX(12deg)} 75%{transform:rotateY(270deg) rotateX(12deg)} 100%{transform:rotateY(360deg) rotateX(12deg)} }
+.lc-f { position:absolute; width:72px; height:72px; display:flex; align-items:center; justify-content:center; overflow:hidden; backface-visibility:hidden; border:1.5px solid rgba(200,160,82,.45); background:var(--navy2); }
+.lc-f img { width:100%; height:100%; object-fit:cover; }
+.lc-front  { transform:translateZ(36px); }
+.lc-back   { transform:translateZ(-36px) rotateY(180deg); }
+.lc-right  { transform:translateX(36px) rotateY(90deg); }
+.lc-left   { transform:translateX(-36px) rotateY(-90deg); }
+.lc-top    { transform:translateY(-36px) rotateX(90deg); background:linear-gradient(135deg,var(--gold-dim),var(--navy3)); }
+.lc-bottom { transform:translateY(36px) rotateX(-90deg); background:linear-gradient(135deg,var(--navy3),var(--gold-dim)); }
+.logo-text-wrap { display:flex; flex-direction:column; line-height:1; }
+.logo-main { font-family:var(--fd); font-size:22px; font-weight:700; letter-spacing:3px; color:var(--white); }
+.logo-main em { color:var(--gold); font-style:normal; }
+.logo-tagline { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); margin-top:5px; }
+
+/* NAV */
+#vt-nav { margin-left:auto; display:flex; align-items:center; gap:2px; }
+.nav-a { font-family:var(--fm); font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); padding:10px 14px; text-decoration:none; background:none; border:none; cursor:pointer; transition:color .25s; position:relative; }
+.nav-a::after { content:''; position:absolute; bottom:5px; left:14px; right:14px; height:1px; background:var(--gold); transform:scaleX(0); transition:transform .3s var(--ease); }
+.nav-a:hover,.nav-a.active { color:var(--gold); }
+.nav-a:hover::after,.nav-a.active::after { transform:scaleX(1); }
+.nav-drop { position:relative; }
+.nav-drop-btn { display:flex; align-items:center; gap:6px; }
+.mega-panel { position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(12px); width:min(1100px,95vw); background:rgba(8,15,30,.98); border:1px solid var(--border); border-top:2px solid var(--gold); backdrop-filter:blur(28px); padding:34px 38px 40px; opacity:0; visibility:hidden; transition:all .3s var(--ease); z-index:100; box-shadow:0 32px 80px rgba(0,0,0,.7); }
+.mega-panel.open { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.mega-cols { display:grid; grid-template-columns:repeat(5,1fr); gap:28px; }
+.mega-head { font-family:var(--fm); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.mega-col a { display:block; font-size:13px; color:var(--muted); padding:5px 0; transition:color .2s,padding-left .2s; }
+.mega-col a:hover { color:var(--gold2); padding-left:7px; }
+.hdr-cta { margin-left:10px; padding:10px 22px; font-size:11px; flex-shrink:0; }
+#mob-btn { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:8px; }
+#mob-btn span { display:block; width:24px; height:1.5px; background:var(--white); transition:all .3s var(--ease); }
+#mob-btn.open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+#mob-btn.open span:nth-child(2){ opacity:0; }
+#mob-btn.open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
+
+/* VT CONTAINER */
+.vt-con { max-width:1360px; margin:auto; padding:0 48px; }
+
+/* SCROLL REVEAL */
+[data-r] { opacity:0; transform:translateY(32px); transition:opacity .85s var(--ease),transform .85s var(--ease); }
+[data-r="right"] { transform:translateX(-32px); }
+[data-r="left"]  { transform:translateX(32px); }
+.vt-show { opacity:1 !important; transform:none !important; }
+
+/* SECTION LABELS */
+.sec-tag { display:block; font-family:var(--fm); font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+.sec-h2 { font-family:var(--fd); font-size:clamp(32px,4.5vw,56px); font-weight:700; letter-spacing:1px; line-height:1.05; color:var(--white); margin-bottom:14px; }
+.sec-h2 em { color:var(--gold); font-style:normal; }
+.sec-sub { font-size:15px; color:var(--muted); max-width:560px; margin:0 auto; line-height:1.82; }
+
+/* ═══ PAGE HERO ═══ */
+.page-hero { padding-top:calc(var(--tb) + var(--hh) + 80px); padding-bottom:80px; position:relative; overflow:hidden; background:var(--black); z-index:1; }
+.page-hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.04) 1px,transparent 1px); background-size:60px 60px; animation:gridDrift 22s linear infinite; }
+@keyframes gridDrift { 0%{background-position:0 0} 100%{background-position:60px 60px} }
+.page-hero::after { content:''; position:absolute; top:-200px; right:-100px; width:700px; height:700px; background:radial-gradient(circle,rgba(0,200,224,.06),transparent 60%); pointer-events:none; }
+.scanlines-hero { position:absolute; inset:0; z-index:1; pointer-events:none; background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px); }
+.hero-inner { text-align:center; position:relative; z-index:2; }
+
+.breadcrumb-nav { display:flex; align-items:center; justify-content:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+.breadcrumb-nav a { color:var(--muted); transition:color .2s; }
+.breadcrumb-nav a:hover { color:var(--gold); }
+.breadcrumb-nav .bc-sep { opacity:.4; }
+.breadcrumb-nav .bc-active { color:var(--teal); opacity:1; }
+
+.page-hero-badge { display:inline-flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:22px; }
+.badge-dot { width:7px; height:7px; background:var(--teal); border-radius:50%; animation:tbPulse 0.9s ease infinite; }
+.page-hero-h1 { font-family:var(--fd); font-size:clamp(36px,5.5vw,72px); font-weight:900; letter-spacing:1.5px; line-height:1.05; color:var(--white); margin-bottom:18px; }
+.page-hero-h1 em { color:var(--gold); font-style:normal; }
+.page-hero-desc { font-size:16px; color:var(--muted); line-height:1.82; max-width:620px; margin:0 auto 40px; }
+
+/* ═══ FAQ MAIN SECTION ═══ */
+.faq-sec { padding:0 0 100px; position:relative; z-index:1; background:var(--black); overflow:hidden; }
+.faq-sec::after { content:''; position:absolute; bottom:-200px; left:-100px; width:600px; height:600px; background:radial-gradient(circle,rgba(0,200,224,.04),transparent 60%); pointer-events:none; }
+
+/* ── Search Panel ── */
+.faq-search-wrap { max-width:860px; margin:0 auto 60px; position:relative; }
+.faq-search-box { display:flex; align-items:stretch; background:var(--navy2); border:1px solid var(--border); border-top:2px solid var(--teal); border-radius:var(--r); overflow:hidden; transition:box-shadow .3s,border-color .3s; }
+.faq-search-box:focus-within { border-color:rgba(0,200,224,.5); box-shadow:0 0 0 3px rgba(0,200,224,.08),0 18px 50px rgba(0,0,0,.4); }
+.faq-search-icon { display:flex; align-items:center; justify-content:center; width:60px; color:var(--teal); font-size:18px; flex-shrink:0; }
+.faq-search-input { flex:1; background:transparent; border:none; outline:none; font-family:var(--fb); font-size:17px; color:var(--white); padding:20px 16px 20px 0; }
+.faq-search-input::placeholder { color:var(--muted); font-family:var(--fb); }
+.faq-ask-btn { display:flex; align-items:center; gap:8px; padding:0 26px; background:var(--teal); color:var(--navy2); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:none; cursor:pointer; transition:background .3s; flex-shrink:0; }
+.faq-ask-btn:hover { background:var(--teal2); }
+.faq-search-hint { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; justify-content:center; }
+.faq-hint-chip { font-family:var(--fm); font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); padding:5px 12px; border:1px solid var(--border); border-radius:30px; cursor:pointer; transition:color .2s,border-color .2s; }
+.faq-hint-chip:hover { color:var(--teal); border-color:rgba(0,200,224,.35); }
+
+/* ── AI Answer Box ── */
+.faq-answer-wrap { max-width:860px; margin:0 auto 60px; display:none; }
+.faq-answer-box { background:var(--navy2); border:1px solid var(--border); border-left:3px solid var(--teal); border-radius:var(--r); overflow:hidden; }
+.faq-answer-header { display:flex; align-items:center; gap:12px; padding:16px 24px; background:rgba(0,200,224,.05); border-bottom:1px solid var(--border2); }
+.faq-answer-dot { width:9px; height:9px; background:var(--teal); border-radius:50%; box-shadow:0 0 8px rgba(0,200,224,.6); animation:tbPulse 0.9s ease infinite; flex-shrink:0; }
+.faq-answer-label { font-family:var(--fm); font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--teal); }
+.faq-answer-q { font-family:var(--fm); font-size:10px; color:var(--muted); margin-left:auto; letter-spacing:.8px; max-width:400px; text-align:right; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.faq-answer-body { padding:28px 28px 24px; }
+.faq-answer-text { font-size:15px; color:var(--white); line-height:1.85; white-space:pre-wrap; }
+.faq-answer-footer { display:flex; align-items:center; justify-content:space-between; padding:14px 24px; border-top:1px solid var(--border); background:rgba(8,15,30,.5); flex-wrap:wrap; gap:10px; }
+.faq-answer-meta { font-family:var(--fm); font-size:9px; letter-spacing:1px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+.faq-answer-meta i { color:var(--gold); }
+.faq-answer-cta-row { display:flex; gap:10px; }
+
+/* Thinking animation */
+.faq-thinking { display:none; max-width:860px; margin:0 auto 40px; }
+.faq-thinking-inner { background:var(--navy2); border:1px solid var(--border2); border-left:3px solid var(--teal); padding:18px 24px; display:flex; align-items:center; gap:16px; border-radius:var(--r); }
+.faq-thinking-dots { display:flex; gap:5px; }
+.faq-thinking-dot { width:8px; height:8px; background:var(--teal); border-radius:50%; animation:thinkDot 1.2s ease infinite; }
+.faq-thinking-dot:nth-child(2) { animation-delay:.2s; }
+.faq-thinking-dot:nth-child(3) { animation-delay:.4s; }
+@keyframes thinkDot { 0%,80%,100%{transform:scale(.6);opacity:.3} 40%{transform:scale(1);opacity:1} }
+.faq-thinking-label { font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--teal); }
+
+/* ── Accordion FAQs ── */
+.faq-cats { max-width:860px; margin:0 auto; }
+.faq-cat-label { font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; display:flex; align-items:center; gap:10px; }
+.faq-cat-label::after { content:''; flex:1; height:1px; background:var(--border); }
+.faq-list { border:1px solid var(--border); border-radius:var(--r); overflow:hidden; margin-bottom:40px; }
+.faq-item { border-bottom:1px solid var(--border); position:relative; overflow:hidden; }
+.faq-item:last-child { border-bottom:none; }
+.faq-item::before { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); transition:width .4s var(--ease); }
+.faq-item:hover::before, .faq-item.open::before { width:100%; }
+.faq-q { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 24px; cursor:pointer; background:var(--navy2); transition:background .2s; user-select:none; }
+.faq-q:hover { background:#0c1830; }
+.faq-item.open .faq-q { background:#0c1830; }
+.faq-q-text { font-family:var(--fb); font-size:16px; font-weight:600; color:var(--white); line-height:1.4; }
+.faq-q-icon { color:var(--gold); font-size:14px; flex-shrink:0; transition:transform .35s var(--ease); }
+.faq-item.open .faq-q-icon { transform:rotate(45deg); color:var(--teal); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .5s var(--ease); }
+.faq-item.open .faq-a { max-height:600px; }
+.faq-a-inner { padding:0 24px 22px; font-size:14.5px; color:var(--muted); line-height:1.85; border-top:1px solid var(--border2); padding-top:18px; }
+.faq-a-inner strong { color:var(--white); }
+
+/* ── Category filter tabs ── */
+.faq-filter-bar { display:flex; gap:8px; flex-wrap:wrap; max-width:860px; margin:0 auto 36px; }
+.faq-filter-btn { font-family:var(--fm); font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); padding:8px 16px; border:1px solid var(--border); border-radius:30px; background:none; cursor:pointer; transition:all .2s; }
+.faq-filter-btn:hover { color:var(--gold); border-color:var(--gold); }
+.faq-filter-btn.active { color:var(--teal); border-color:var(--teal); background:var(--teal-dim); }
+
+/* ═══ CONTACT STRIP ═══ */
+.contact-strip { background:var(--navy3); border-top:1px solid var(--border); border-bottom:1px solid var(--border); padding:60px 0; position:relative; z-index:1; overflow:hidden; }
+.contact-strip::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+.contact-strip::after  { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:linear-gradient(90deg,transparent,var(--teal),transparent); }
+.contact-strip-inner { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:28px; }
+.cs-text .sec-tag { margin-bottom:8px; }
+.cs-h { font-family:var(--fd); font-size:clamp(22px,3vw,36px); font-weight:700; color:var(--white); }
+.cs-h em { color:var(--gold); font-style:normal; }
+.cs-btns { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* ═══ BIG CTA ═══ */
+.big-cta { position:relative; z-index:1; padding:110px 48px; text-align:center; background:var(--navy); overflow:hidden; }
+.big-cta::before { content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(0,200,224,.04),transparent 60%); pointer-events:none; }
+.big-cta::after { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--teal),var(--gold),transparent); }
+.big-cta-inner { position:relative; z-index:1; max-width:680px; margin:auto; }
+.big-cta-h { font-family:var(--fd); font-size:clamp(36px,5.5vw,72px); font-weight:700; letter-spacing:1.5px; line-height:1.05; margin-bottom:16px; }
+.big-cta-h em { color:var(--gold); font-style:normal; }
+.big-cta-p { font-size:16px; color:var(--muted); line-height:1.82; margin-bottom:36px; }
+.big-cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:24px; }
+.big-cta-tel { display:flex; align-items:center; justify-content:center; gap:10px; font-family:var(--fm); font-size:12px; color:var(--muted); }
+.big-cta-tel i { color:var(--gold); }
+.big-cta-tel a { color:var(--gold2); font-size:15px; }
+
+/* FOOTER */
+#vt-footer { background:var(--navy); border-top:1px solid var(--border); position:relative; z-index:1; }
+#vt-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.footer-body { padding:80px 0 60px; }
+.footer-grid { display:grid; grid-template-columns:1.7fr repeat(5,1fr); gap:40px; }
+.footer-brand { display:flex; flex-direction:column; }
+.fb-logo-wrap { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.fb-logo-wrap img { width:50px; height:50px; border-radius:8px; object-fit:cover; border:1px solid var(--border); }
+.fb-name { font-family:var(--fd); font-size:20px; font-weight:700; letter-spacing:3px; color:var(--white); display:block; }
+.fb-name em { color:var(--gold); font-style:normal; }
+.fb-sub { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); display:block; margin-top:3px; }
+.footer-brand p { font-size:13.5px; color:var(--muted); line-height:1.82; margin-bottom:20px; max-width:270px; }
+.f-soc { display:flex; gap:8px; margin-bottom:20px; }
+.f-soc a { width:36px; height:36px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; transition:all .3s; }
+.f-soc a:hover { border-color:var(--gold); color:var(--gold); }
+.f-contact { display:flex; flex-direction:column; gap:8px; }
+.f-contact a,.f-contact span { display:flex; align-items:center; gap:8px; font-family:var(--fm); font-size:11.5px; color:var(--muted); transition:color .2s; }
+.f-contact i { color:var(--gold); font-size:11px; }
+.f-contact a:hover { color:var(--gold); }
+.footer-col h5 { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:9px; }
+.footer-col ul li a { font-size:13.5px; color:var(--muted); display:block; transition:color .2s,padding-left .25s; }
+.footer-col ul li a:hover { color:var(--gold2); padding-left:5px; }
+.footer-base { border-top:1px solid var(--border); padding:18px 0; }
+.footer-base-inner { max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; color:var(--muted); gap:16px; flex-wrap:wrap; }
+.footer-base-inner a { color:var(--muted); transition:color .2s; }
+.footer-base-inner a:hover { color:var(--gold); }
+.footer-base-inner span { margin:0 6px; opacity:.4; }
+
+/* FIXED BUTTONS */
+#scroll-top { position:fixed; bottom:96px; right:28px; z-index:9990; width:44px; height:44px; background:var(--navy2); border:1px solid var(--border); border-radius:var(--r); color:var(--gold); font-size:17px; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; visibility:hidden; transition:all .3s; backdrop-filter:blur(10px); }
+#scroll-top.show { opacity:1; visibility:visible; }
+#scroll-top:hover { background:var(--gold); color:var(--navy2); border-color:var(--gold); transform:translateY(-3px); }
+#wa-btn { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; align-items:center; gap:8px; padding:13px 22px; background:#25D366; border-radius:50px; color:#fff; font-family:var(--fb); font-size:13px; font-weight:700; text-decoration:none; box-shadow:0 8px 28px rgba(37,211,102,.35); transition:transform .3s var(--ease),box-shadow .3s; }
+#wa-btn i { font-size:20px; }
+#wa-btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 18px 44px rgba(37,211,102,.4); color:#fff; }
+#wa-btn::before { content:''; position:absolute; inset:-2px; border-radius:50px; border:1px solid rgba(37,211,102,.45); animation:tbPulse 2s ease infinite; }
+
+/* RESPONSIVE */
+@media(max-width:1199px){ .footer-grid { grid-template-columns:repeat(3,1fr); gap:28px; } .mega-cols { grid-template-columns:repeat(3,1fr); } }
+@media(max-width:991px){
+  #mob-btn { display:flex; } .hdr-cta { display:none; }
+  #vt-nav { position:fixed; top:calc(var(--tb) + var(--hh)); left:-100%; width:300px; height:calc(100vh - var(--tb) - var(--hh)); background:rgba(8,15,30,.98); flex-direction:column; align-items:flex-start; padding:24px 20px; gap:0; transition:left .35s var(--ease); overflow-y:auto; border-right:1px solid var(--border); backdrop-filter:blur(24px); z-index:970; }
+  #vt-nav.nav-open { left:0; }
+  .nav-a { width:100%; padding:13px 8px; font-size:12px; border-bottom:1px solid rgba(200,160,82,.06); }
+  .nav-drop { width:100%; }
+  .mega-panel { position:static; transform:none; width:100%; max-width:100%; box-shadow:none; border:none; background:transparent; padding:10px 0 10px 14px; }
+  .mega-panel.open { opacity:1; visibility:visible; display:block; }
+  .mega-cols { grid-template-columns:1fr; gap:14px; }
+  .footer-grid { grid-template-columns:repeat(2,1fr); }
+  .contact-strip-inner { flex-direction:column; align-items:flex-start; }
+}
+@media(max-width:767px){
+  :root { --tb:52px; }
+  .tb-r { display:none; }
+  .vt-con { padding:0 24px; }
+  .hdr-inner { padding:0 20px; }
+  .tb-inner { padding:0 16px; }
+  .big-cta { padding:80px 24px; }
+  .big-cta-btns { flex-direction:column; align-items:center; }
+  .logo-3d-wrap { width:52px; height:52px; }
+  .logo-cube { width:52px; height:52px; }
+  .lc-f { width:52px; height:52px; }
+  .lc-front  { transform:translateZ(26px); }
+  .lc-back   { transform:translateZ(-26px) rotateY(180deg); }
+  .lc-right  { transform:translateX(26px) rotateY(90deg); }
+  .lc-left   { transform:translateX(-26px) rotateY(-90deg); }
+  .lc-top    { transform:translateY(-26px) rotateX(90deg); }
+  .lc-bottom { transform:translateY(26px) rotateX(-90deg); }
+  .faq-ask-btn span { display:none; }
+  .faq-answer-q { display:none; }
+}
+@media(max-width:480px){ .footer-grid { grid-template-columns:1fr; } #wa-btn span { display:none; } #wa-btn { padding:13px; border-radius:50%; } }
+@media(prefers-reduced-motion:reduce){ *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+</style>
+</head>
+<body>
+
+<div id="vt-dot" aria-hidden="true"></div>
+<div id="vt-ring" aria-hidden="true"></div>
+<div id="vt-noise" aria-hidden="true"></div>
+
+<!-- TOPBAR -->
+<div id="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-l"><span class="tb-pulse" aria-hidden="true"></span><span>SMART FAQ — IT SUPPORT &amp; CYBERSECURITY — ABU DHABI &amp; UAE</span></div>
+    <div class="tb-r">
+      <a href="tel:+971581816887" aria-label="Call VOWTECH"><i class="bi bi-telephone-fill" aria-hidden="true"></i> +971 58 181 6887</a>
+      <span aria-hidden="true">|</span>
+      <a href="mailto:info@vow-tech.com" aria-label="Email VOWTECH"><i class="bi bi-envelope-fill" aria-hidden="true"></i> info@vow-tech.com</a>
+      <span aria-hidden="true">|</span>
+      <span><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Abu Dhabi, UAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header id="vt-header" role="banner">
+  <div class="hdr-inner">
+    <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
+      <div class="logo-3d-wrap" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-top"></div>
+          <div class="lc-f lc-bottom"></div>
+        </div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-main">VOW<em>TECHNOLOGIES</em></span>
+        <span class="logo-tagline">IT SOLUTIONS — ABU DHABI</span>
+      </div>
+    </a>
+
+    <nav id="vt-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="index.html#about" class="nav-a">About</a>
+      <div class="nav-drop" id="navDrop">
+        <button class="nav-a nav-drop-btn" aria-haspopup="true" aria-expanded="false" id="navDropBtn">
+          Services <i class="bi bi-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-headset" aria-hidden="true"></i> IT Support</div>
+              <a href="amc-support.html" role="menuitem">Annual Maintenance Contract</a>
+              <a href="CCTV-Services.html" role="menuitem">CCTV Services</a>
+              <a href="Office-IT-Setup-Relocation.html" role="menuitem">Office IT Setup &amp; Relocation</a>
+              <a href="Emergency-IT-Support.html" role="menuitem">Emergency IT Support</a>
+              <a href="Remote-Technical-Support.html" role="menuitem">Remote Technical Support</a>
+              <a href="On-Site-IT-Support.html" role="menuitem">On-Site Support</a>
+              <a href="IT-Outsourcing.html" role="menuitem">IT Outsourcing</a>
+              <a href="Helpdesk-Support.html" role="menuitem">Helpdesk Support</a>
+              <a href="application-support.html" role="menuitem">Application Support</a>
+              <a href="data-recovery.html" role="menuitem">Disaster Recovery</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking</div>
+              <a href="Structured-Cabling.html" role="menuitem">Structured Cabling</a>
+              <a href="Server-Room-Setup.html" role="menuitem">Server Room Setup</a>
+              <a href="Network-Server-Migration.html" role="menuitem">Network &amp; Server Migration</a>
+              <a href="Network-Security-Services.html" role="menuitem">Network Security Services</a>
+              <a href="Network-Planning-Design.html" role="menuitem">Network Planning &amp; Design</a>
+              <a href="Network-Installation-Troubleshooting.html" role="menuitem">Network Installation</a>
+              <a href="Telephone-Systems-Implementation.html" role="menuitem">Telephone Systems</a>
+              <a href="Office-Migration.html" role="menuitem">Office Migration</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-shield-virus" aria-hidden="true"></i> Cybersecurity</div>
+              <a href="Sophos-firewall.html" role="menuitem">Sophos Firewall</a>
+              <a href="soc-security-operations-center.html" role="menuitem">SOC</a>
+              <a href="siem-solution.html" role="menuitem">SIEM Solution</a>
+              <a href="soar-solution.html" role="menuitem">SOAR Solution</a>
+              <a href="cloud-network-security.html" role="menuitem">Cloud &amp; Network Security</a>
+              <a href="anti-virus-anti-spam-solutions.html" role="menuitem">Anti Virus Anti SPAM</a>
+              <a href="anti-phishing-protection.html" role="menuitem">Anti-Phishing</a>
+              <a href="Penetration-Testing.html" role="menuitem">Penetration Testing</a>
+              <a href="web-application-firewall.html" role="menuitem">WAF</a>
+              <a href="mobile-device-management.html" role="menuitem">MDM</a>
+              <a href="pam-pim-solutions.html" role="menuitem">PAM / PIM Solutions</a>
+              <a href="endpoint-security.html" role="menuitem">Endpoint Security</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-cloud" aria-hidden="true"></i> Cloud &amp; Managed</div>
+              <a href="Office365-Exchange-Online.html" role="menuitem">Office 365 &amp; Exchange</a>
+              <a href="Google-Apps-for-Business.html" role="menuitem">Google Apps for Business</a>
+              <a href="Private-Cloud-Services.html" role="menuitem">Private Cloud Services</a>
+              <a href="Dedicated-VPS-Servers.html" role="menuitem">Dedicated &amp; VPS Servers</a>
+              <a href="Veeam-Backup-Disaster-Recovery.html" role="menuitem">Veeam Backup</a>
+              <a href="Cloud-Backup-Disaster-Recovery.html" role="menuitem">Cloud Backup</a>
+              <a href="backup-system.html" role="menuitem">Backup System</a>
+              <a href="Virtualization.html" role="menuitem">Virtualization</a>
+              <a href="VPN-Network-Monitoring.html" role="menuitem">VPN Monitoring</a>
+              <a href="Server-Management.html" role="menuitem">Server Management</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-server" aria-hidden="true"></i> Infrastructure</div>
+              <a href="IT-infrastructure-solutions.html" role="menuitem">IT Infrastructure</a>
+              <a href="data.center.html" role="menuitem">Data Center</a>
+              <a href="Server-Solutions.html" role="menuitem">Server Solutions</a>
+              <a href="Network-Solutions.html" role="menuitem">Network Solutions</a>
+              <a href="Data-Storage-Solutions.html" role="menuitem">Data Storage Solutions</a>
+              <a href="Backup-Data-Protection.html" role="menuitem">Backup &amp; Data Protection</a>
+              <a href="Disaster-Recovery-Solutions.html" role="menuitem">Disaster Recovery</a>
+              <a href="firewall-products.html" role="menuitem">Firewall Solutions</a>
+              <a href="zkteco-access-control.html" role="menuitem">Access Control</a>
+              <a href="cctv-surveillance.html" role="menuitem">CCTV Systems</a>
+              <a href="biometric-devices.html" role="menuitem">Biometric Devices</a>
+              <a href="blade-servers.html" role="menuitem">Blade Servers</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="FAQ.html" class="nav-a active">FAQ</a>
+      <a href="blog.html" class="nav-a">Insights</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </nav>
+
+    <a href="appointment.html" class="btn-primary hdr-cta">
+      <i class="fas fa-headset" aria-hidden="true"></i> Free Consultation
+    </a>
+    <button id="mob-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="vt-nav">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
+  </div>
+</header>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero" aria-label="VOWTECH Smart FAQ">
+  <div class="scanlines-hero" aria-hidden="true"></div>
+  <div class="vt-con">
+    <div class="hero-inner">
+      <div class="breadcrumb-nav" data-r>
+        <a href="index.html">Home</a>
+        <span class="bc-sep">/</span>
+        <span class="bc-active">Smart FAQ</span>
+      </div>
+      <div class="page-hero-badge" data-r data-d="60">
+        <span class="badge-dot" aria-hidden="true"></span>
+        AI-Powered — Instant IT Answers
+      </div>
+      <h1 class="page-hero-h1" data-r data-d="100">
+        <em>Smart FAQ</em> System
+      </h1>
+      <p class="page-hero-desc" data-r data-d="160">
+        Ask anything about IT support, cybersecurity, networking, cloud solutions, biometrics, or any VOWTECH service — and get an instant AI-powered answer tailored to UAE businesses.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ MAIN SECTION ═══ -->
+<section class="faq-sec">
+  <div class="vt-con">
+
+    <!-- Search -->
+    <div class="faq-search-wrap" data-r data-d="0">
+      <div class="faq-search-box" role="search">
+        <div class="faq-search-icon" aria-hidden="true"><i class="fas fa-search"></i></div>
+        <input
+          type="text"
+          id="faqInput"
+          class="faq-search-input"
+          placeholder="Ask your IT question… e.g. Do you provide 24/7 support?"
+          autocomplete="off"
+          aria-label="Ask your IT question"
+        >
+        <button class="faq-ask-btn" id="faqAskBtn" aria-label="Get AI Answer">
+          <i class="fas fa-brain" aria-hidden="true"></i>
+          <span>Ask AI</span>
+        </button>
+      </div>
+      <div class="faq-search-hint" aria-label="Suggested questions">
+        <span class="faq-hint-chip" tabindex="0">24/7 IT Support</span>
+        <span class="faq-hint-chip" tabindex="0">AMC Contract</span>
+        <span class="faq-hint-chip" tabindex="0">Cybersecurity</span>
+        <span class="faq-hint-chip" tabindex="0">Cloud Solutions</span>
+        <span class="faq-hint-chip" tabindex="0">Face Recognition</span>
+        <span class="faq-hint-chip" tabindex="0">Networking UAE</span>
+        <span class="faq-hint-chip" tabindex="0">Firewall Setup</span>
+        <span class="faq-hint-chip" tabindex="0">Data Backup</span>
+      </div>
+    </div>
+
+    <!-- Thinking indicator -->
+    <div class="faq-thinking" id="faqThinking" aria-live="polite" aria-label="AI is thinking">
+      <div class="faq-thinking-inner">
+        <div class="faq-thinking-dots" aria-hidden="true">
+          <div class="faq-thinking-dot"></div>
+          <div class="faq-thinking-dot"></div>
+          <div class="faq-thinking-dot"></div>
+        </div>
+        <span class="faq-thinking-label">AI Processing Your Question…</span>
+      </div>
+    </div>
+
+    <!-- AI Answer -->
+    <div class="faq-answer-wrap" id="faqAnswerWrap" aria-live="polite">
+      <div class="faq-answer-box">
+        <div class="faq-answer-header">
+          <div class="faq-answer-dot" aria-hidden="true"></div>
+          <span class="faq-answer-label">AI Answer — VOWTECH Knowledge Base</span>
+          <span class="faq-answer-q" id="faqAnswerQ"></span>
+        </div>
+        <div class="faq-answer-body">
+          <div class="faq-answer-text" id="faqAnswerText"></div>
+        </div>
+        <div class="faq-answer-footer">
+          <span class="faq-answer-meta"><i class="fas fa-robot" aria-hidden="true"></i> Powered by Claude AI · VOWTECH Knowledge Base</span>
+          <div class="faq-answer-cta-row">
+            <a href="contact.html" class="btn-primary" style="padding:9px 18px;font-size:10px;">
+              <i class="fas fa-headset" aria-hidden="true"></i> Talk to an Expert
+            </a>
+            <a href="https://wa.me/971581816887" target="_blank" rel="noopener noreferrer" class="btn-wa" style="padding:9px 18px;font-size:10px;">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Category filter -->
+    <div class="faq-filter-bar" data-r data-d="80" role="tablist" aria-label="Filter FAQ by category">
+      <button class="faq-filter-btn active" data-cat="all" role="tab" aria-selected="true">All</button>
+      <button class="faq-filter-btn" data-cat="support" role="tab" aria-selected="false">IT Support</button>
+      <button class="faq-filter-btn" data-cat="security" role="tab" aria-selected="false">Cybersecurity</button>
+      <button class="faq-filter-btn" data-cat="cloud" role="tab" aria-selected="false">Cloud</button>
+      <button class="faq-filter-btn" data-cat="network" role="tab" aria-selected="false">Networking</button>
+      <button class="faq-filter-btn" data-cat="biometric" role="tab" aria-selected="false">Biometrics</button>
+      <button class="faq-filter-btn" data-cat="general" role="tab" aria-selected="false">General</button>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="faq-cats" id="faqAccordion" data-r data-d="120">
+
+      <!-- IT Support -->
+      <div class="faq-cat-section" data-cat="support">
+        <div class="faq-cat-label"><i class="fas fa-headset" style="color:var(--gold);margin-right:6px;" aria-hidden="true"></i> IT Support</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Do you provide 24/7 IT support in Abu Dhabi and UAE?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — VOWTECH provides <strong>24/7 IT support</strong> across Abu Dhabi, Dubai, and the wider UAE. Our support covers remote assistance, on-site emergency response, and helpdesk services for businesses of all sizes. Whether it's a server down at 2 AM or a network outage during business hours, our certified engineers are always available to respond quickly and resolve issues before they impact your operations.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">What is an Annual Maintenance Contract (AMC) and what does it include?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">An <strong>Annual Maintenance Contract (AMC)</strong> from VOWTECH is a comprehensive IT support agreement that covers your entire IT infrastructure for a fixed annual fee. It typically includes: unlimited helpdesk support, scheduled preventive maintenance visits, priority response times for emergencies, hardware and software troubleshooting, network monitoring, and regular health-check reports. AMC removes the unpredictability of ad-hoc IT costs and ensures your IT environment is proactively maintained rather than reactively fixed.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">What is your response time for on-site IT support in Abu Dhabi?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">For <strong>AMC clients</strong>, our standard on-site response time in Abu Dhabi is <strong>2–4 hours</strong> for critical issues and same-day for non-critical. For emergency IT support requests, we target a 1-hour response. Remote support is available immediately via phone, TeamViewer, or secure remote access tools. Response times for Dubai and other UAE emirates are agreed in each contract based on location.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Can you help with office IT setup and relocation in the UAE?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Absolutely. VOWTECH handles <strong>complete office IT setup and relocation</strong> across the UAE — from structured cabling and network design through server room installation, workstation setup, VoIP telephone systems, and internet connectivity commissioning. For relocations, we plan the move to minimise downtime, handle equipment decommissioning at the old site, and ensure all systems are fully operational at the new location before your team arrives.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cybersecurity -->
+      <div class="faq-cat-section" data-cat="security">
+        <div class="faq-cat-label"><i class="fas fa-shield-virus" style="color:var(--gold);margin-right:6px;" aria-hidden="true"></i> Cybersecurity</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">What cybersecurity services does VOWTECH provide?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">VOWTECH provides a <strong>full-spectrum cybersecurity portfolio</strong> including: Sophos firewall deployment and management, Security Operations Centre (SOC), SIEM and SOAR solutions, penetration testing, anti-phishing protection, web application firewalls (WAF), mobile device management (MDM), endpoint security, PAM/PIM solutions, anti-virus/anti-spam, and cloud network security. We protect businesses ranging from single-office SMEs to enterprise organisations across Abu Dhabi and Dubai.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Do you offer Sophos firewall installation and management in UAE?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — VOWTECH is a <strong>certified Sophos partner</strong> in the UAE. We design, supply, install, configure, and manage Sophos firewall solutions for businesses of all sizes. Our services include initial network security assessment, firewall policy design, deployment and commissioning, ongoing management, firmware updates, and 24/7 monitoring. Sophos XGS firewalls provide unified threat management, SSL inspection, and integrated endpoint-firewall communication through Sophos Synchronized Security.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">What is penetration testing and does my UAE business need it?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner"><strong>Penetration testing</strong> (pen testing) is a controlled, authorised simulated cyberattack on your IT systems — designed to identify vulnerabilities before real attackers do. If your business handles sensitive customer data, processes payments, operates in a regulated sector, or holds government contracts in the UAE, penetration testing is increasingly required for compliance. VOWTECH conducts external network pen tests, internal network assessments, web application security testing, and social engineering assessments — providing a detailed report of findings and prioritised remediation guidance.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cloud -->
+      <div class="faq-cat-section" data-cat="cloud">
+        <div class="faq-cat-label"><i class="fas fa-cloud" style="color:var(--gold);margin-right:6px;" aria-hidden="true"></i> Cloud &amp; Backup</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">What cloud solutions does VOWTECH offer for UAE businesses?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">VOWTECH provides a comprehensive range of <strong>cloud solutions</strong> including Microsoft Office 365 and Exchange Online, Google Apps for Business, private cloud infrastructure, dedicated and VPS servers, Veeam backup and disaster recovery, cloud backup, virtualization (VMware, Hyper-V), VPN and network monitoring, and server management. We help businesses migrate to cloud platforms, configure and optimise cloud environments, and ensure data security and compliance with UAE data residency requirements.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">How does Veeam backup work and what does VOWTECH offer?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner"><strong>Veeam</strong> is an enterprise backup and disaster recovery platform that protects virtual machines, physical servers, and cloud workloads. VOWTECH designs, deploys, and manages Veeam backup solutions — including backup job configuration, offsite replication, regular recovery testing, and monitoring. In the event of a server failure, ransomware attack, or data loss incident, Veeam enables rapid recovery to minimise business downtime. We also configure immutable backup copies that ransomware cannot encrypt.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Can you migrate our business to Office 365 in the UAE?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — VOWTECH handles <strong>complete Office 365 migrations</strong> for UAE businesses, including domain configuration, email migration from on-premise Exchange or other providers, Teams and SharePoint setup, licence management, and user training. Migrations are planned to ensure zero data loss and minimal disruption — with options for staged migration, cutover migration, or hybrid deployments depending on your organisation's size and requirements.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Networking -->
+      <div class="faq-cat-section" data-cat="network">
+        <div class="faq-cat-label"><i class="fas fa-network-wired" style="color:var(--gold);margin-right:6px;" aria-hidden="true"></i> Networking</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Do you provide structured cabling services in Abu Dhabi?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — VOWTECH designs and installs <strong>structured cabling systems</strong> for offices, warehouses, and commercial buildings across Abu Dhabi and the UAE. Our cabling services include Cat6/Cat6A/Cat7 data cabling, fibre optic backbone installation, patch panel and cabinet installation, cable testing and certification, and documentation. All installations comply with TIA/EIA-568 standards and UAE building regulations — providing a clean, organised, high-performance network foundation for your business.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Can you set up a server room for our new office in UAE?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">VOWTECH provides <strong>complete server room design and installation</strong> — from rack and cabinet supply through structured cabling, power distribution, cooling systems, environmental monitoring, physical security (access control and CCTV), and UPS power protection. We handle all aspects of the project from initial space planning and cooling load calculation through to commissioning and handover with as-built documentation. Our server room setups comply with UAE electrical standards and best practices for data centre infrastructure.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Biometrics -->
+      <div class="faq-cat-section" data-cat="biometric">
+        <div class="faq-cat-label"><i class="fas fa-fingerprint" style="color:var(--gold);margin-right:6px;" aria-hidden="true"></i> Biometrics &amp; Access Control</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">What face recognition attendance systems do you install in UAE?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">VOWTECH deploys <strong>AI-powered face recognition attendance systems</strong> from ZKTeco, Suprema, and Hikvision across the UAE. These systems provide contactless biometric attendance recording, liveness detection to prevent spoofing, mask-wearing compatibility, and cloud-based management. We integrate attendance data directly with HR and payroll systems (SAP, Oracle, MS Dynamics) to eliminate manual processing. Systems achieve 99.5% recognition accuracy with sub-0.5-second identification speed.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Can face recognition prevent buddy punching in my business?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — <strong>buddy punching</strong> (one employee clocking in for an absent colleague) is completely eliminated by face recognition attendance systems. Because the system verifies the physical biometric identity of the individual at the terminal, it is impossible to clock in on behalf of someone else regardless of any collusion between employees. For organisations with more than 20 staff, the cost savings from eliminated buddy punching alone typically recover the full system cost within 12 months of deployment.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Do you install ZKTeco access control systems in Abu Dhabi?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — VOWTECH is an <strong>authorised ZKTeco partner</strong> in Abu Dhabi and the UAE. We supply, install, configure, and support the full ZKTeco product range including face recognition terminals, fingerprint readers, card access control, turnstiles, barrier gates, and the ZKTeco BioTime attendance management platform. We handle everything from site survey and hardware specification through cabling, installation, enrolment, HR integration, and ongoing support.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- General -->
+      <div class="faq-cat-section" data-cat="general">
+        <div class="faq-cat-label"><i class="fas fa-info-circle" style="color:var(--gold);margin-right:6px;" aria-hidden="true"></i> General</div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Where is VOWTECH located and which areas do you serve?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">VOWTECH is headquartered at <strong>Navy Gate – Al Zahiyah, Abu Dhabi, UAE</strong>. We serve clients across Abu Dhabi, Dubai, Sharjah, and all UAE emirates. Our engineers are field-based across Abu Dhabi and Dubai — enabling rapid on-site response across the UAE without the mobilisation delays of a centrally-located team. We also serve Gulf region clients in Saudi Arabia, Qatar, Bahrain, and Oman for project-based engagements.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">How do I get a quote or book a free IT consultation?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Getting a quote or booking a free consultation is simple. You can <strong>call us directly</strong> on +971 58 181 6887, <strong>email</strong> info@vow-tech.com, use the <strong>WhatsApp button</strong> on this page for an instant conversation, or complete the <strong>contact form</strong> on our website and we will respond within 2 hours during business hours. For complex IT requirements, we offer a complimentary on-site consultation where our engineers assess your current environment and provide a tailored solution proposal.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Do you support small businesses as well as large enterprises?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — VOWTECH works with <strong>businesses of all sizes</strong> across the UAE, from startups and SMEs through to large enterprises and government entities. Our service models and pricing are scaled appropriately for each organisation — a 10-person SME gets the same quality of engineering expertise as a 1,000-employee enterprise, with service packages sized and priced to match their requirements and budget. We do not have a minimum contract size for most services.</div>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+              <span class="faq-q-text">Do you provide CCTV installation and maintenance?</span>
+              <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+            </div>
+            <div class="faq-a" role="region">
+              <div class="faq-a-inner">Yes — VOWTECH provides <strong>complete CCTV design, supply, installation, and maintenance</strong> services across the UAE. We deploy IP camera systems from Hikvision, Dahua, and Axis — including indoor and outdoor cameras, PTZ units, thermal cameras, and AI-powered analytics cameras. Systems are integrated with NVRs or cloud VMS platforms, with remote viewing apps for smartphones and tablets. We also provide CCTV AMC (maintenance contracts) ensuring your cameras and recording systems remain operational and up to date.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- /faq-accordion -->
+
+  </div>
+</section>
+
+<!-- ═══ CONTACT STRIP ═══ -->
+<div class="contact-strip" role="complementary">
+  <div class="vt-con">
+    <div class="contact-strip-inner">
+      <div class="cs-text" data-r>
+        <span class="sec-tag">// STILL HAVE QUESTIONS?</span>
+        <div class="cs-h">Talk to a <em>VOWTECH Engineer</em> — Free Consultation</div>
+      </div>
+      <div class="cs-btns" data-r data-d="100">
+        <a href="contact.html" class="btn-primary"><i class="fas fa-headset" aria-hidden="true"></i> Contact Us</a>
+        <a href="https://wa.me/971581816887?text=Hi%20I%20have%20a%20question%20about%20your%20IT%20services" target="_blank" rel="noopener noreferrer" class="btn-wa"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Now</a>
+        <a href="appointment.html" class="btn-dark"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Meeting</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ BIG CTA ═══ -->
+<section class="big-cta" aria-label="Contact VOWTECH">
+  <div class="big-cta-inner" data-r>
+    <span class="sec-tag">// YOUR IT PARTNER IN THE UAE</span>
+    <h2 class="big-cta-h">Ready to <em>Secure &amp; Optimise</em><br>Your IT?</h2>
+    <p class="big-cta-p">From a single support call to a full managed IT service — VOWTECH engineers are standing by. Speak with a specialist today for a free, no-obligation consultation and site assessment.</p>
+    <div class="big-cta-btns">
+      <a href="contact.html" class="btn-teal"><i class="fas fa-headset" aria-hidden="true"></i> Get Free Consultation</a>
+      <a href="https://wa.me/971581816887" target="_blank" rel="noopener noreferrer" class="btn-wa" style="padding:17px 38px;font-size:12px;"><i class="bi bi-whatsapp" aria-hidden="true"></i> Chat on WhatsApp</a>
+    </div>
+    <div class="big-cta-tel">
+      <i class="fas fa-phone-alt" aria-hidden="true"></i>
+      <a href="tel:+971581816887">+971 58 181 6887</a>
+      <span>— Engineers Available 24/7</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="vt-footer" aria-label="Site Footer">
+  <div class="footer-body">
+    <div class="vt-con">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="fb-logo-wrap">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52">
+            <div>
+              <span class="fb-name">VOW<em>TECH</em></span>
+              <span class="fb-sub">Enterprise IT — UAE</span>
+            </div>
+          </div>
+          <p>Your reliable IT support and cybersecurity partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
+          <div class="f-soc">
+            <a href="#" aria-label="VOWTECH on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="#" aria-label="VOWTECH on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="#" aria-label="VOWTECH on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="VOWTECH on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          </div>
+          <div class="f-contact">
+            <a href="tel:+971581816887"><i class="fas fa-phone-alt" aria-hidden="true"></i> +971 58 181 6887</a>
+            <a href="mailto:info@vow-tech.com"><i class="fas fa-envelope" aria-hidden="true"></i> info@vow-tech.com</a>
+            <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Navy Gate, Al Zahiyah, Abu Dhabi</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>IT Support</h5>
+          <ul>
+            <li><a href="amc-support.html">Annual Maintenance Contract</a></li>
+            <li><a href="Emergency-IT-Support.html">Emergency IT Support</a></li>
+            <li><a href="Remote-Technical-Support.html">Remote Support</a></li>
+            <li><a href="On-Site-IT-Support.html">On-Site Support</a></li>
+            <li><a href="Helpdesk-Support.html">Helpdesk Support</a></li>
+            <li><a href="IT-Outsourcing.html">IT Outsourcing</a></li>
+            <li><a href="CCTV-Services.html">CCTV Services</a></li>
+            <li><a href="data-recovery.html">Data Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cybersecurity</h5>
+          <ul>
+            <li><a href="Sophos-firewall.html">Sophos Firewall</a></li>
+            <li><a href="soc-security-operations-center.html">SOC</a></li>
+            <li><a href="siem-solution.html">SIEM Solution</a></li>
+            <li><a href="Penetration-Testing.html">Penetration Testing</a></li>
+            <li><a href="anti-phishing-protection.html">Anti-Phishing</a></li>
+            <li><a href="web-application-firewall.html">WAF</a></li>
+            <li><a href="mobile-device-management.html">MDM</a></li>
+            <li><a href="endpoint-security.html">Endpoint Security</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cloud &amp; Infrastructure</h5>
+          <ul>
+            <li><a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a></li>
+            <li><a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a></li>
+            <li><a href="Virtualization.html">Virtualization</a></li>
+            <li><a href="data.center.html">Data Center</a></li>
+            <li><a href="Private-Cloud-Services.html">Private Cloud</a></li>
+            <li><a href="Dedicated-VPS-Servers.html">Dedicated &amp; VPS Servers</a></li>
+            <li><a href="Server-Management.html">Server Management</a></li>
+            <li><a href="Disaster-Recovery-Solutions.html">Disaster Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Networking</h5>
+          <ul>
+            <li><a href="Structured-Cabling.html">Structured Cabling</a></li>
+            <li><a href="Server-Room-Setup.html">Server Room Setup</a></li>
+            <li><a href="Network-Server-Migration.html">Network Migration</a></li>
+            <li><a href="Network-Security-Services.html">Network Security</a></li>
+            <li><a href="Network-Planning-Design.html">Network Planning</a></li>
+            <li><a href="Telephone-Systems-Implementation.html">Telephone Systems</a></li>
+            <li><a href="firewall-products.html">Firewall Solutions</a></li>
+            <li><a href="zkteco-access-control.html">Access Control</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About VOWTECH</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="appointment.html">Free Consultation</a></li>
+            <li><a href="FAQ.html">Smart FAQ</a></li>
+            <li><a href="IT-Audit-Health-Check.html">IT Audit</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div class="vt-con">
+      <div class="footer-base-inner">
+        <span>© 2025 VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+        <span><a href="#">Privacy Policy</a><span aria-hidden="true">|</span><a href="#">Terms &amp; Conditions</a></span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+<a href="https://wa.me/971581816887?text=Hi%20I%20need%20IT%20support" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat with VOWTECH on WhatsApp">
+  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+  <span>Chat</span>
+</a>
+
+<script>
+'use strict';
+(function(){
+
+/* ── CUSTOM CURSOR ── */
+var dot=document.getElementById('vt-dot'),ring=document.getElementById('vt-ring'),cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+(function loop(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button,.faq-item,.faq-hint-chip').forEach(function(el){
+  el.addEventListener('mouseenter',function(){dot.classList.add('hover');ring.classList.add('hover');});
+  el.addEventListener('mouseleave',function(){dot.classList.remove('hover');ring.classList.remove('hover');});
+});
+
+/* ── SCROLL REVEAL ── */
+var revIO=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=parseInt(e.target.dataset.d||0);setTimeout(function(){e.target.classList.add('vt-show');},d);revIO.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('[data-r]').forEach(function(el){revIO.observe(el);});
+
+/* ── HEADER SCROLL ── */
+var hdr=document.getElementById('vt-header'),stBtn=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){var s=window.scrollY;hdr.classList.toggle('scrolled',s>60);if(stBtn)stBtn.classList.toggle('show',s>400);});
+
+/* ── MEGA MENU ── */
+var dropBtn=document.getElementById('navDropBtn'),megaPanel=document.getElementById('megaPanel');
+if(dropBtn&&megaPanel){
+  dropBtn.addEventListener('click',function(e){e.stopPropagation();var o=megaPanel.classList.toggle('open');dropBtn.setAttribute('aria-expanded',o);});
+  document.addEventListener('click',function(){megaPanel.classList.remove('open');dropBtn.setAttribute('aria-expanded','false');});
+  megaPanel.addEventListener('click',function(e){e.stopPropagation();});
+}
+
+/* ── MOBILE NAV ── */
+var mobBtn=document.getElementById('mob-btn'),nav=document.getElementById('vt-nav');
+if(mobBtn&&nav){
+  mobBtn.addEventListener('click',function(){var o=nav.classList.toggle('nav-open');mobBtn.classList.toggle('open',o);mobBtn.setAttribute('aria-expanded',o);document.body.classList.toggle('body-lock',o);});
+}
+
+/* ── FAQ ACCORDION ── */
+document.querySelectorAll('.faq-q').forEach(function(q){
+  q.addEventListener('click',function(){
+    var item=this.closest('.faq-item');
+    var isOpen=item.classList.contains('open');
+    // close all in same list
+    var list=item.closest('.faq-list');
+    list.querySelectorAll('.faq-item.open').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      q.setAttribute('aria-expanded','true');
+    }
+  });
+  q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}});
+});
+
+/* ── FAQ CATEGORY FILTER ── */
+document.querySelectorAll('.faq-filter-btn').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    document.querySelectorAll('.faq-filter-btn').forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false');});
+    this.classList.add('active');
+    this.setAttribute('aria-selected','true');
+    var cat=this.dataset.cat;
+    document.querySelectorAll('.faq-cat-section').forEach(function(sec){
+      sec.style.display=(cat==='all'||sec.dataset.cat===cat)?'':'none';
+    });
+  });
+});
+
+/* ── HINT CHIPS ── */
+document.querySelectorAll('.faq-hint-chip').forEach(function(chip){
+  chip.addEventListener('click',function(){
+    var inp=document.getElementById('faqInput');
+    inp.value=this.textContent;
+    inp.focus();
+    askAI(this.textContent);
+  });
+  chip.addEventListener('keydown',function(e){if(e.key==='Enter'){this.click();}});
+});
+
+/* ── AI ASK ── */
+var faqInput=document.getElementById('faqInput');
+var faqAskBtn=document.getElementById('faqAskBtn');
+var faqThinking=document.getElementById('faqThinking');
+var faqAnswerWrap=document.getElementById('faqAnswerWrap');
+var faqAnswerText=document.getElementById('faqAnswerText');
+var faqAnswerQ=document.getElementById('faqAnswerQ');
+
+faqAskBtn.addEventListener('click',function(){
+  var q=faqInput.value.trim();
+  if(q.length>2) askAI(q);
+});
+
+faqInput.addEventListener('keydown',function(e){
+  if(e.key==='Enter'){
+    var q=this.value.trim();
+    if(q.length>2) askAI(q);
+  }
+});
+
+async function askAI(question){
+  faqAnswerWrap.style.display='none';
+  faqThinking.style.display='block';
+  faqThinking.scrollIntoView({behavior:'smooth',block:'nearest'});
+
+  var systemPrompt = `You are the VOWTECH Smart FAQ assistant. VOWTECH is an IT solutions company based in Abu Dhabi, UAE, offering IT support, cybersecurity, networking, cloud solutions, biometric systems (face recognition, fingerprint, access control), CCTV, structured cabling, and managed services across Abu Dhabi, Dubai, and the wider UAE.
+
+Answer the user's question helpfully and concisely — 3 to 6 sentences. Focus on VOWTECH's services. Be professional, clear, and specific to the UAE business context. Do not use markdown formatting. Write in plain paragraphs only. End by mentioning that VOWTECH can be contacted on +971 58 181 6887 or via WhatsApp for a free consultation if the question is about purchasing or getting a service.`;
+
+  try {
+    var response = await fetch('https://api.anthropic.com/v1/messages',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({
+        model:'claude-sonnet-4-20250514',
+        max_tokens:1000,
+        system:systemPrompt,
+        messages:[{role:'user',content:question}]
+      })
+    });
+
+    var data = await response.json();
+    var answer = data.content && data.content[0] && data.content[0].text
+      ? data.content[0].text
+      : 'Sorry, we could not retrieve an answer right now. Please call us on +971 58 181 6887 or send a WhatsApp message and our engineers will assist you directly.';
+
+    faqThinking.style.display='none';
+    faqAnswerQ.textContent='"'+question+'"';
+    faqAnswerText.textContent=answer;
+    faqAnswerWrap.style.display='block';
+    faqAnswerWrap.scrollIntoView({behavior:'smooth',block:'nearest'});
+
+  } catch(err) {
+    faqThinking.style.display='none';
+    faqAnswerQ.textContent='"'+question+'"';
+    faqAnswerText.textContent='Our AI assistant is temporarily unavailable. Please call us on +971 58 181 6887 or WhatsApp for immediate assistance from our IT engineers.';
+    faqAnswerWrap.style.display='block';
+  }
+}
+
+})();
+</script>
+</body>
+</html>
