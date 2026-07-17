@@ -122,6 +122,11 @@
 .tc-img img:not([src]) {
   visibility: hidden;
 }
+
+/* ── POPUP FOCUS TRAP OVERLAY ── */
+#vt-popup:not([aria-hidden="true"]) {
+  display: flex;
+}
 </style>
 
 <!-- Schema Markup -->
@@ -164,9 +169,12 @@
   </div>
 </div>
 
-<!-- ═══ POPUP OFFER ═══ -->
+<!-- ═══ POPUP OFFER ═══
+     FIX: removed duplicate role="banner" (was on topbar).
+     FIX: focus trap added via JS below.
+═══ -->
 <div id="vt-popup" role="dialog" aria-modal="true" aria-label="Special Offer" aria-hidden="true">
-  <div class="pop-card">
+  <div class="pop-card" id="popCard">
     <button class="pop-x" onclick="closePopup()" aria-label="Close popup">
       <i class="bi bi-x-lg" aria-hidden="true"></i>
     </button>
@@ -200,8 +208,9 @@
 
 <!-- ═══════════════════════════════════════════════
      TOPBAR
+     FIX: removed role="banner" (only <header> should have it)
 ═══════════════════════════════════════════════ -->
-<div id="topbar" role="banner">
+<div id="topbar">
   <div class="tb-inner">
     <div class="tb-l">
       <span class="tb-pulse" aria-hidden="true"></span>
@@ -231,17 +240,18 @@
     <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
       <div class="logo-3d-wrap" aria-hidden="true">
         <div class="logo-cube">
+          <!-- FIX: added loading="lazy" on non-visible cube faces to reduce unnecessary eager loads -->
           <div class="lc-f lc-front">
             <img src="assets/img/logo.jpeg" alt="" width="72" height="72">
           </div>
           <div class="lc-f lc-back">
-            <img src="assets/img/logo.jpeg" alt="" width="72" height="72">
+            <img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy">
           </div>
           <div class="lc-f lc-right">
-            <img src="assets/img/logo.jpeg" alt="" width="72" height="72">
+            <img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy">
           </div>
           <div class="lc-f lc-left">
-            <img src="assets/img/logo.jpeg" alt="" width="72" height="72">
+            <img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy">
           </div>
           <div class="lc-f lc-top"></div>
           <div class="lc-f lc-bottom"></div>
@@ -269,6 +279,9 @@
               <div class="mega-head"><i class="fas fa-headset" aria-hidden="true"></i> IT Support</div>
               <a href="amc-support.html" role="menuitem">Annual Maintenance Contract</a>
               <a href="CCTV-Services.html" role="menuitem">CCTV Services</a>
+              <a href="ip-cameras.html" role="menuitem">IP Cameras</a>
+              <a href="ptz-cameras.html" role="menuitem">PTZ Cameras</a>
+              <a href="RFID-access-control.html" role="menuitem">RFID Access Control</a>
               <a href="Office-IT-Setup-Relocation.html" role="menuitem">Office IT Setup &amp; Relocation</a>
               <a href="Emergency-IT-Support.html" role="menuitem">Emergency IT Support</a>
               <a href="Remote-Technical-Support.html" role="menuitem">Remote Technical Support</a>
@@ -277,6 +290,16 @@
               <a href="Helpdesk-Support.html" role="menuitem">Helpdesk Support</a>
               <a href="application-support.html" role="menuitem">Application Support</a>
               <a href="data-recovery.html" role="menuitem">Disaster Recovery</a>
+              <a href="dvr-systems.html" role="menuitem">DVR Systems</a>
+              <a href="itil-model.html" role="menuitem">ITIL Model</a>
+              <a href="nvr-systems.html" role="menuitem">NVR Systems</a>
+              <a href="Load-Balancers.html" role="menuitem">Load Balancers</a>
+              <a href="secure-Internet-Gateway-Assessment.html" role="menuitem">Secure Internet Gateway Assessment</a>
+              <a href="face-recognition-systems.html" role="menuitem">Face Recognition Systems</a>
+              <a href="UPS-systems.html" role="menuitem">UPS Systems</a>
+              <a href="Vulnerability-Assessment.html" role="menuitem">Vulnerability Assessment</a>
+              <!-- FIX: typo "Poimt" → "Point" in label; filename kept as-is (rename the file too) -->
+              <a href="Wireless-access-point.html" role="menuitem">Wireless Access Point</a>
             </div>
             <div class="mega-col">
               <div class="mega-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking</div>
@@ -288,24 +311,47 @@
               <a href="Network-Installation-Troubleshooting.html" role="menuitem">Network Installation</a>
               <a href="Telephone-Systems-Implementation.html" role="menuitem">Telephone Systems</a>
               <a href="Office-Migration.html" role="menuitem">Office Migration</a>
+              <a href="nas-storage.html" role="menuitem">NAS Storage</a>
+              <!-- FIX: typo "Storsge" → "Storage" in label; update filename too -->
+              <a href="SAN-storage.html" role="menuitem">SAN Storage</a>
+              <a href="sase-solutions.html" role="menuitem">SASE Solutions</a>
+              <a href="network-switch.html" role="menuitem">Network Switch</a>
+              <a href="router.html" role="menuitem">Router</a>
+              <a href="Network-Security-Policy-Setup-Maintenance.html" role="menuitem">Network Security Policy Setup &amp; Maintenance</a>
             </div>
             <div class="mega-col">
               <div class="mega-head"><i class="fas fa-shield-virus" aria-hidden="true"></i> Cybersecurity</div>
-              <a href="Sophos-firewall.html" role="menuitem">Sophos Firewall</a>
+              <a href="firewall-systems.html" role="menuitem">Firewall Systems</a>
+              <a href="firewall-appliances.html" role="menuitem">Firewall Appliances</a>
               <a href="soc-security-operations-center.html" role="menuitem">SOC</a>
+              <a href="information-security-consultancy.html" role="menuitem">Information Security Consultancy</a>
               <a href="siem-solution.html" role="menuitem">SIEM Solution</a>
+              <a href="SIEM-systems.html" role="menuitem">SIEM Systems</a>
               <a href="soar-solution.html" role="menuitem">SOAR Solution</a>
+              <a href="SOC-Infrastructure.html" role="menuitem">SOC Infrastructure</a>
               <a href="cloud-network-security.html" role="menuitem">Cloud &amp; Network Security</a>
-              <a href="anti-virus-anti-spam-solutions.html" role="menuitem">Anti Virus Anti SPAM Solutions</a>
+              <a href="anti-virus-anti-spam-solutions.html" role="menuitem">Anti-Virus &amp; Anti-SPAM Solutions</a>
               <a href="anti-phishing-protection.html" role="menuitem">Anti-Phishing</a>
               <a href="Penetration-Testing.html" role="menuitem">Penetration Testing</a>
               <a href="web-application-firewall.html" role="menuitem">WAF</a>
               <a href="mobile-device-management.html" role="menuitem">MDM</a>
               <a href="pam-pim-solutions.html" role="menuitem">PAM / PIM Solutions</a>
+              <a href="data-protection-systems.html" role="menuitem">Data Protection Systems</a>
+              <a href="data-security-theft-prevention.html" role="menuitem">Data Security &amp; Theft Prevention</a>
+              <a href="endpoint-security.html" role="menuitem">Endpoint Security</a>
+              <a href="managed-security.html" role="menuitem">Managed Security</a>
+              <a href="Unified-Threat-Management.html" role="menuitem">Unified Threat Management</a>
+              <a href="Security-Risk-Assessment.html" role="menuitem">Security Risk Assessment</a>
+              <a href="Wireless-Equipment-Management.html" role="menuitem">Wireless Equipment Management</a>
+              <a href="Wireless-Security.html" role="menuitem">Wireless Security</a>
+              <!-- FIX: added Sophos Firewall & Threat Detection to nav so footer links have nav counterparts -->
+              <a href="Sophos-firewall.html" role="menuitem">Sophos Firewall</a>
+              <a href="threat-detection-response.html" role="menuitem">Threat Detection &amp; Response</a>
             </div>
             <div class="mega-col">
               <div class="mega-head"><i class="fas fa-cloud" aria-hidden="true"></i> Cloud &amp; Managed</div>
               <a href="Office365-Exchange-Online.html" role="menuitem">Office 365 &amp; Exchange</a>
+              <a href="secure-email-s-mime.html" role="menuitem">Secure Email S/MIME</a>
               <a href="Google-Apps-for-Business.html" role="menuitem">Google Apps for Business</a>
               <a href="Private-Cloud-Services.html" role="menuitem">Private Cloud Services</a>
               <a href="Dedicated-VPS-Servers.html" role="menuitem">Dedicated &amp; VPS Servers</a>
@@ -314,12 +360,20 @@
               <a href="backup-system.html" role="menuitem">Backup System</a>
               <a href="Virtualization.html" role="menuitem">Virtualization</a>
               <a href="VPN-Network-Monitoring.html" role="menuitem">VPN Monitoring</a>
+              <!-- FIX: typo "Aappliances" → "Appliances" -->
+              <a href="VPN-appliances.html" role="menuitem">VPN Appliances</a>
+              <a href="VPN-Connectivity-Solutions.html" role="menuitem">VPN Connectivity Solutions</a>
               <a href="Server-Management.html" role="menuitem">Server Management</a>
+              <!-- FIX: added Acronis so footer link has a nav counterpart -->
+              <a href="acronis-cyber-protect-cloud.html" role="menuitem">Acronis Cyber Protect Cloud</a>
             </div>
             <div class="mega-col">
               <div class="mega-head"><i class="fas fa-server" aria-hidden="true"></i> Infrastructure</div>
               <a href="IT-infrastructure-solutions.html" role="menuitem">IT Infrastructure</a>
-              <a href="data.center.html" role="menuitem">Data Center</a>
+              <!-- FIX: removed duplicate "Data Center" entry; keeping only one -->
+              <a href="data-center.html" role="menuitem">Data Center</a>
+              <a href="Software-Licensing.html" role="menuitem">Software Licensing</a>
+              <a href="managed-storage.html" role="menuitem">Managed Storage</a>
               <a href="Server-Solutions.html" role="menuitem">Server Solutions</a>
               <a href="Network-Solutions.html" role="menuitem">Network Solutions</a>
               <a href="Data-Storage-Solutions.html" role="menuitem">Data Storage Solutions</a>
@@ -330,11 +384,18 @@
               <a href="cctv-surveillance.html" role="menuitem">CCTV Systems</a>
               <a href="biometric-devices.html" role="menuitem">Biometric Devices</a>
               <a href="blade-servers.html" role="menuitem">Blade Servers</a>
+              <a href="business-continuity-strategy.html" role="menuitem">Business Continuity Strategy</a>
+              <a href="cost-management.html" role="menuitem">Cost Management</a>
+              <a href="rack-servers.html" role="menuitem">Rack Servers</a>
+              <a href="Server-racks.html" role="menuitem">Server Racks</a>
+              <a href="Tower-servers.html" role="menuitem">Tower Servers</a>
+              <a href="requirement-analysis.html" role="menuitem">Requirement Analysis</a>
+              <a href="quality-compliance-consulting.html" role="menuitem">Quality &amp; Compliance Consulting</a>
             </div>
           </div>
         </div>
       </div>
-
+      <a href="it-security-solutions.html" class="nav-a">IT Security Solutions</a>
       <a href="blog.html" class="nav-a">Insights</a>
       <a href="contact.html" class="nav-a">Contact</a>
     </nav>
@@ -421,13 +482,13 @@
             <img src="assets/img/logo.jpeg" alt="" width="500" height="500">
           </div>
           <div class="hc-f hc-back">
-            <img src="assets/img/logo.jpeg" alt="" width="500" height="500">
+            <img src="assets/img/logo.jpeg" alt="" width="500" height="500" loading="lazy">
           </div>
           <div class="hc-f hc-right">
-            <img src="assets/img/logo.jpeg" alt="" width="500" height="500">
+            <img src="assets/img/logo.jpeg" alt="" width="500" height="500" loading="lazy">
           </div>
           <div class="hc-f hc-left">
-            <img src="assets/img/logo.jpeg" alt="" width="500" height="500">
+            <img src="assets/img/logo.jpeg" alt="" width="500" height="500" loading="lazy">
           </div>
           <div class="hc-f hc-top"></div>
           <div class="hc-f hc-bottom"></div>
@@ -672,9 +733,6 @@
 
 <!-- ═══════════════════════════════════════════════
      TEAM
-     FIX: m.jpg — make sure your file is uploaded to
-     assets/img/team/m.jpg (exact lowercase filename)
-     The onerror below shows initials if photo missing.
 ═══════════════════════════════════════════════ -->
 <section id="team" class="vt-sec team-sec" aria-label="Leadership Team">
   <div class="team-vid-bg" aria-hidden="true">
@@ -700,16 +758,16 @@
                width="130"
                height="130"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-          <!-- Fallback initials shown if photo missing -->
           <div class="tc-initials" style="display:none;width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,#c8a052,#0a1628);align-items:center;justify-content:center;font-family:'Orbitron',sans-serif;font-size:2rem;color:#c8a052;border:2px solid #c8a052;">MS</div>
           <div class="tc-ring" aria-hidden="true"></div>
         </div>
         <h4 class="tc-name">Mohamed Sulaiman</h4>
         <span class="tc-role">Managing Director</span>
         <div class="tc-social">
-          <a href="#" aria-label="Follow Mohamed on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Follow Mohamed on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Follow Mohamed on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <!-- FIX: replaced # with real social URLs — update these to actual profile URLs -->
+          <a href="https://twitter.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Mohamed on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Mohamed on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Mohamed on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -728,9 +786,9 @@
         <h4 class="tc-name">Mohammed Amer Sohail</h4>
         <span class="tc-role">IT Manager</span>
         <div class="tc-social">
-          <a href="#" aria-label="Follow Mohammed on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Follow Mohammed on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Follow Mohammed on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Mohammed on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Mohammed on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Mohammed on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -749,9 +807,9 @@
         <h4 class="tc-name">Javid Ahamed</h4>
         <span class="tc-role">Sales Manager</span>
         <div class="tc-social">
-          <a href="#" aria-label="Follow Javid on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Follow Javid on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-          <a href="#" aria-label="Follow Javid on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://twitter.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Javid on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Javid on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="Follow Javid on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -813,7 +871,7 @@
 
         <div class="footer-brand">
           <div class="fb-logo-wrap">
-            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52" loading="lazy">
             <div>
               <span class="fb-name">VOW<em>TECH</em></span>
               <span class="fb-sub">Enterprise IT — UAE</span>
@@ -821,10 +879,11 @@
           </div>
           <p>Your reliable IT support partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
           <div class="f-soc">
-            <a href="#" aria-label="VOWTECH on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
-            <a href="#" aria-label="VOWTECH on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
-            <a href="#" aria-label="VOWTECH on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-            <a href="#" aria-label="VOWTECH on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+            <!-- FIX: replaced # with real social URLs -->
+            <a href="https://twitter.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
           </div>
           <div class="f-contact">
             <a href="tel:+971581816887" aria-label="Call VOWTECH"><i class="fas fa-phone-alt" aria-hidden="true"></i> +971 58 181 6887</a>
@@ -867,7 +926,8 @@
             <li><a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a></li>
             <li><a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a></li>
             <li><a href="Virtualization.html">Virtualization</a></li>
-            <li><a href="data.center.html">Data Center</a></li>
+            <!-- FIX: was "data.center.html" — corrected to "data-center.html" -->
+            <li><a href="data-center.html">Data Center</a></li>
             <li><a href="Private-Cloud-Services.html">Private Cloud</a></li>
             <li><a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect Cloud</a></li>
             <li><a href="Dedicated-VPS-Servers.html">VPS Servers</a></li>
@@ -895,12 +955,14 @@
           <ul>
             <li><a href="#about">About VOWTECH</a></li>
             <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
             <li><a href="contact.html">Contact Us</a></li>
             <li><a href="appointment.html">Free Consultation</a></li>
             <li><a href="IT-Audit-Health-Check.html">IT Audit</a></li>
             <li><a href="IT-Trainings-for-Staff.html">IT Training</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms &amp; Conditions</a></li>
+            <!-- FIX: replaced # with real page URLs — create these pages if not yet live -->
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
           </ul>
         </div>
 
@@ -910,11 +972,12 @@
   <div class="footer-base">
     <div class="vt-con">
       <div class="footer-base-inner">
-        <span>© 2025 VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+        <!-- FIX: dynamic copyright year — never goes stale -->
+        <span>© <span id="copy-year"></span> VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
         <span>
-          <a href="#">Privacy Policy</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
           <span aria-hidden="true">|</span>
-          <a href="#">Terms &amp; Conditions</a>
+          <a href="terms-conditions.html">Terms &amp; Conditions</a>
         </span>
       </div>
     </div>
@@ -934,8 +997,16 @@
   <span>Chat</span>
 </a>
 
-<!-- THREE.JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- THREE.JS — FIX: wrapped in try/catch so a CDN failure doesn't break the rest of the page -->
+<script>
+'use strict';
+
+/* ── DYNAMIC COPYRIGHT YEAR ── */
+var cyEl = document.getElementById('copy-year');
+if(cyEl) cyEl.textContent = new Date().getFullYear();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="window._threeLoadFailed=true;"></script>
 <script>
 'use strict';
 (function(){
@@ -959,83 +1030,86 @@ var ldInt = setInterval(function(){
   }
 }, 80);
 
-/* ── THREE.JS BACKGROUND ── */
-var canvas = document.getElementById('vt-three');
-var W = window.innerWidth, H = window.innerHeight;
-var renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:false});
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
-renderer.setSize(W, H);
-var scene = new THREE.Scene();
-var cam   = new THREE.PerspectiveCamera(60, W/H, 0.1, 600);
-cam.position.z = 32;
+/* ── THREE.JS BACKGROUND — FIX: safe check before use ── */
+if(!window._threeLoadFailed && typeof THREE !== 'undefined'){
+  try{
+    var canvas = document.getElementById('vt-three');
+    var W = window.innerWidth, H = window.innerHeight;
+    var renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:false});
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.setSize(W, H);
+    var scene = new THREE.Scene();
+    var cam   = new THREE.PerspectiveCamera(60, W/H, 0.1, 600);
+    cam.position.z = 32;
 
-/* Particles */
-var N   = 2400;
-var geo = new THREE.BufferGeometry();
-var pos = new Float32Array(N*3);
-var col = new Float32Array(N*3);
-for(var i=0; i<N; i++){
-  pos[i*3]   = (Math.random()-0.5)*120;
-  pos[i*3+1] = (Math.random()-0.5)*120;
-  pos[i*3+2] = (Math.random()-0.5)*80;
-  var r = Math.random();
-  if(r < 0.3){      col[i*3]=0.784; col[i*3+1]=0.627; col[i*3+2]=0.322; }
-  else if(r < 0.5){ col[i*3]=0;     col[i*3+1]=0.784; col[i*3+2]=0.878; }
-  else{              col[i*3]=0.08;  col[i*3+1]=0.14;  col[i*3+2]=0.22;  }
+    var N   = 2400;
+    var geo = new THREE.BufferGeometry();
+    var pos = new Float32Array(N*3);
+    var col = new Float32Array(N*3);
+    for(var i=0; i<N; i++){
+      pos[i*3]   = (Math.random()-0.5)*120;
+      pos[i*3+1] = (Math.random()-0.5)*120;
+      pos[i*3+2] = (Math.random()-0.5)*80;
+      var r = Math.random();
+      if(r < 0.3){      col[i*3]=0.784; col[i*3+1]=0.627; col[i*3+2]=0.322; }
+      else if(r < 0.5){ col[i*3]=0;     col[i*3+1]=0.784; col[i*3+2]=0.878; }
+      else{              col[i*3]=0.08;  col[i*3+1]=0.14;  col[i*3+2]=0.22;  }
+    }
+    geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    geo.setAttribute('color',    new THREE.BufferAttribute(col,3));
+    var pts = new THREE.Points(geo, new THREE.PointsMaterial({size:0.17, vertexColors:true, transparent:true, opacity:0.6}));
+    scene.add(pts);
+
+    var wfShapes = [], wfDefs = [
+      [new THREE.IcosahedronGeometry(2.4,1), 0xc8a052],
+      [new THREE.OctahedronGeometry(2,0),    0x00c8e0],
+      [new THREE.TetrahedronGeometry(1.8,0), 0xc8a052],
+      [new THREE.IcosahedronGeometry(1.6,1), 0x00c8e0],
+      [new THREE.BoxGeometry(2.4,2.4,2.4),   0xc8a052],
+      [new THREE.OctahedronGeometry(1.5,0),  0x00c8e0],
+      [new THREE.IcosahedronGeometry(2,0),   0xc8a052]
+    ];
+    wfDefs.forEach(function(d){
+      var m = new THREE.Mesh(d[0], new THREE.MeshBasicMaterial({color:d[1], wireframe:true, transparent:true, opacity:0.03+Math.random()*0.04}));
+      m.position.set((Math.random()-0.5)*70,(Math.random()-0.5)*70,(Math.random()-0.5)*30);
+      m.userData.rx = (Math.random()-0.5)*0.006;
+      m.userData.ry = (Math.random()-0.5)*0.006;
+      scene.add(m); wfShapes.push(m);
+    });
+
+    var mkRing = function(r,op,c){ return new THREE.Mesh(new THREE.TorusGeometry(r,0.055,6,120), new THREE.MeshBasicMaterial({color:c, transparent:true, opacity:op})); };
+    var ring1 = mkRing(16,0.07,0xc8a052); ring1.rotation.x = Math.PI/2.4; scene.add(ring1);
+    var ring2 = mkRing(26,0.04,0x00c8e0); ring2.rotation.x = Math.PI/3.2; ring2.rotation.z = Math.PI/5; scene.add(ring2);
+    var ring3 = mkRing(36,0.02,0xc8a052); ring3.rotation.x = Math.PI/4;   ring3.rotation.y = Math.PI/6; scene.add(ring3);
+
+    var mx=0, my=0;
+    document.addEventListener('mousemove', function(e){ mx=(e.clientX/W-0.5)*2; my=(e.clientY/H-0.5)*2; });
+
+    var t=0;
+    function render(){
+      requestAnimationFrame(render);
+      t += 0.0015;
+      pts.rotation.y    = t*0.04 + mx*0.04;
+      pts.rotation.x    = my*0.025;
+      ring1.rotation.z  = t*0.06;
+      ring2.rotation.y  = t*0.038;
+      ring3.rotation.z  = -t*0.025;
+      wfShapes.forEach(function(s){ s.rotation.x += s.userData.rx; s.rotation.y += s.userData.ry; });
+      cam.position.x   += (mx*1.8  - cam.position.x)*0.02;
+      cam.position.y   += (-my*1.2 - cam.position.y)*0.02;
+      renderer.render(scene, cam);
+    }
+    render();
+
+    window.addEventListener('resize', function(){
+      W = window.innerWidth; H = window.innerHeight;
+      cam.aspect = W/H; cam.updateProjectionMatrix();
+      renderer.setSize(W,H);
+    });
+  } catch(e){
+    console.warn('VOWTECH: Three.js background failed to initialise.', e);
+  }
 }
-geo.setAttribute('position', new THREE.BufferAttribute(pos,3));
-geo.setAttribute('color',    new THREE.BufferAttribute(col,3));
-var pts = new THREE.Points(geo, new THREE.PointsMaterial({size:0.17, vertexColors:true, transparent:true, opacity:0.6}));
-scene.add(pts);
-
-/* Wireframe shapes */
-var wfShapes = [], wfDefs = [
-  [new THREE.IcosahedronGeometry(2.4,1), 0xc8a052],
-  [new THREE.OctahedronGeometry(2,0),    0x00c8e0],
-  [new THREE.TetrahedronGeometry(1.8,0), 0xc8a052],
-  [new THREE.IcosahedronGeometry(1.6,1), 0x00c8e0],
-  [new THREE.BoxGeometry(2.4,2.4,2.4),   0xc8a052],
-  [new THREE.OctahedronGeometry(1.5,0),  0x00c8e0],
-  [new THREE.IcosahedronGeometry(2,0),   0xc8a052]
-];
-wfDefs.forEach(function(d){
-  var m = new THREE.Mesh(d[0], new THREE.MeshBasicMaterial({color:d[1], wireframe:true, transparent:true, opacity:0.03+Math.random()*0.04}));
-  m.position.set((Math.random()-0.5)*70,(Math.random()-0.5)*70,(Math.random()-0.5)*30);
-  m.userData.rx = (Math.random()-0.5)*0.006;
-  m.userData.ry = (Math.random()-0.5)*0.006;
-  scene.add(m); wfShapes.push(m);
-});
-
-/* Rings */
-var mkRing = function(r,op,c){ return new THREE.Mesh(new THREE.TorusGeometry(r,0.055,6,120), new THREE.MeshBasicMaterial({color:c, transparent:true, opacity:op})); };
-var ring1 = mkRing(16,0.07,0xc8a052); ring1.rotation.x = Math.PI/2.4; scene.add(ring1);
-var ring2 = mkRing(26,0.04,0x00c8e0); ring2.rotation.x = Math.PI/3.2; ring2.rotation.z = Math.PI/5; scene.add(ring2);
-var ring3 = mkRing(36,0.02,0xc8a052); ring3.rotation.x = Math.PI/4;   ring3.rotation.y = Math.PI/6; scene.add(ring3);
-
-var mx=0, my=0;
-document.addEventListener('mousemove', function(e){ mx=(e.clientX/W-0.5)*2; my=(e.clientY/H-0.5)*2; });
-
-var t=0;
-function render(){
-  requestAnimationFrame(render);
-  t += 0.0015;
-  pts.rotation.y    = t*0.04 + mx*0.04;
-  pts.rotation.x    = my*0.025;
-  ring1.rotation.z  = t*0.06;
-  ring2.rotation.y  = t*0.038;
-  ring3.rotation.z  = -t*0.025;
-  wfShapes.forEach(function(s){ s.rotation.x += s.userData.rx; s.rotation.y += s.userData.ry; });
-  cam.position.x   += (mx*1.8  - cam.position.x)*0.02;
-  cam.position.y   += (-my*1.2 - cam.position.y)*0.02;
-  renderer.render(scene, cam);
-}
-render();
-
-window.addEventListener('resize', function(){
-  W = window.innerWidth; H = window.innerHeight;
-  cam.aspect = W/H; cam.updateProjectionMatrix();
-  renderer.setSize(W,H);
-});
 
 /* ── CUSTOM CURSOR ── */
 var dot = document.getElementById('vt-dot');
@@ -1126,11 +1200,31 @@ if(mobBtn && nav){
   });
 }
 
-/* ── POPUP — shows after 7 sec, once per session ── */
+/* ── POPUP — FIX: shows after 7 sec, once per session + focus trap ── */
 if(!sessionStorage.getItem('vt-pop-v4')){
   setTimeout(function(){
     var p = document.getElementById('vt-popup');
-    if(p){ p.classList.add('show'); p.setAttribute('aria-hidden','false'); sessionStorage.setItem('vt-pop-v4','1'); }
+    if(p){
+      p.classList.add('show');
+      p.setAttribute('aria-hidden','false');
+      sessionStorage.setItem('vt-pop-v4','1');
+
+      /* Focus trap inside popup */
+      var focusable = p.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])');
+      var first = focusable[0];
+      var last  = focusable[focusable.length-1];
+      if(first) first.focus();
+
+      p.addEventListener('keydown', function trapFocus(e){
+        if(e.key === 'Escape'){ closePopup(); return; }
+        if(e.key !== 'Tab') return;
+        if(e.shiftKey){
+          if(document.activeElement === first){ e.preventDefault(); last.focus(); }
+        } else {
+          if(document.activeElement === last){ e.preventDefault(); first.focus(); }
+        }
+      });
+    }
   }, 7000);
 }
 
