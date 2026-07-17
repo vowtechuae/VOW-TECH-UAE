@@ -1,241 +1,1151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Networking Services | VOWTECH IT Solutions</title>
-<meta name="description" content="VOWTECH provides professional Networking Services including Structured Cabling, Server Room Setup, Network Migration, Security Services, and Office IT Relocation across UAE.">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Networking Infrastructure Abu Dhabi | VOWTECH Structured Cabling, Server Rooms & Network Design UAE</title>
+<meta name="description" content="VOWTECH delivers end-to-end Networking Infrastructure across Abu Dhabi & UAE — structured cabling, server room setup, network migration, security, planning & design.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://vow-tech.com/Networking-Infrastructure.html">
 
-<link href="assets/img/VOWTECH.jpeg" rel="icon">
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
+
+<!-- YOUR MAIN SITE CSS — everything inherits from here -->
+<link rel="stylesheet" href="assets/css/main.css">
 
 <style>
-/* ===== GENERAL ===== */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #0f172a;
-  color: #fff;
-}
+/* ═══════════════════════════════════════════════
+   INNER PAGE STYLES — Networking-Infrastructure.html
+   Uses the same tokens as main.css
+═══════════════════════════════════════════════ */
 
-/* ===== HEADER ===== */
-header {
-  background: #ffffff;
-  padding: 15px 0;
+/* ── BREADCRUMB ── */
+.pg-breadcrumb {
+  background: rgba(255,255,255,.03);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  padding: 12px 0;
 }
-
-header img {
-  height: 65px;
-}
-
-/* ===== HERO SECTION ===== */
-.hero {
-  background: url('assets/img/services/networking-banner.jpg') center/cover no-repeat;
-  padding: 120px 20px;
-  text-align: center;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 42px;
-  font-weight: 700;
-}
-
-.hero p {
-  font-size: 18px;
-  margin-top: 15px;
-  color: #ddd;
-}
-
-/* ===== SERVICES GRID ===== */
-.services-section {
-  padding: 80px 0;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 50px;
-}
-
-.services {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 25px;
-}
-
-.services-item {
-  position: relative;
-  height: 230px;
-  border-radius: 10px;
-  background-size: cover;
-  background-position: center;
+.bc-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  overflow: hidden;
-  transition: 0.4s ease;
+  gap: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: .88rem;
+  color: rgba(255,255,255,.45);
 }
+.bc-inner a { color: rgba(255,255,255,.45); text-decoration: none; transition: .2s; }
+.bc-inner a:hover { color: #c8a052; }
+.bc-sep { color: rgba(255,255,255,.2); }
+.bc-cur { color: #c8a052; }
 
-.services-item::before {
-  content: "";
+/* ── PAGE HERO ── */
+.pg-hero {
+  position: relative;
+  min-height: 68vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0a1628;
+  padding: 100px 0 80px;
+}
+.pg-hero-bg {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.20);
-  transition: 0.4s ease;
+  background:
+    radial-gradient(ellipse 60% 50% at 70% 50%, rgba(200,160,82,.13) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 20% 30%, rgba(0,200,224,.08) 0%, transparent 60%);
+  pointer-events: none;
 }
+.pg-scanlines {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,200,224,.03) 3px, rgba(0,200,224,.03) 4px);
+  pointer-events: none;
+}
+.pg-hex {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .5;
+}
+.pg-hex .hex-row { display: flex; gap: 8px; margin-bottom: -10px; }
+.pg-hex .hex-row.offset { margin-left: 28px; }
+.pg-hex .hex {
+  width: 48px; height: 56px;
+  background: rgba(200,160,82,.04);
+  clip-path: polygon(50% 0%,100% 25%,100% 75%,50% 100%,0% 75%,0% 25%);
+}
+.pg-hex .hex.h-gold { background: rgba(200,160,82,.09); }
+.pg-hex .hex.h-teal { background: rgba(0,200,224,.06); }
 
-.services-item span {
+.pg-hero-wrap {
   position: relative;
-  font-size: 18px;
-  font-weight: 600;
-  text-align: center;
-  color: #fff;
-  padding: 0 15px;
   z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
 }
 
-.services-item:hover {
-  transform: translateY(-8px);
+/* ── HERO LEFT ── */
+.pg-hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: .75rem;
+  color: #c8a052;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  background: rgba(200,160,82,.08);
+  border: 1px solid rgba(200,160,82,.2);
+  border-radius: 40px;
+  padding: 6px 16px;
 }
-
-.services-item:hover::before {
-  background: rgba(0, 198, 255, 0.75);
+.tag-dot2 {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #c8a052;
+  box-shadow: 0 0 8px #c8a052;
+  animation: pdot 1.6s infinite;
 }
+@keyframes pdot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
 
-/* ===== CTA SECTION ===== */
-.cta {
-  background: #111827;
-  padding: 60px 20px;
+.pg-h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.pg-h1 em {
+  font-style: normal;
+  background: linear-gradient(90deg, #c8a052, #e8c87a, #c8a052);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pg-h1 .h1-t {
+  font-style: normal;
+  background: linear-gradient(90deg, #00c8e0, #00e8ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.pg-desc {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 1.12rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.7;
+  margin-bottom: 34px;
+  max-width: 520px;
+}
+.pg-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 36px; }
+.pg-trust { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ── HERO RIGHT: stats card ── */
+.rc-card {
+  background: linear-gradient(135deg, rgba(200,160,82,.12), rgba(0,200,224,.07));
+  border: 1px solid rgba(200,160,82,.25);
+  border-radius: 16px;
+  padding: 36px 40px;
+  text-align: center;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto 16px;
+  position: relative;
+  overflow: hidden;
+}
+.rc-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(200,160,82,.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.rc-icon {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8a052, #e8c87a);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.7rem; color: #0a1628;
+  margin: 0 auto 16px;
+}
+.rc-num {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3rem; font-weight: 900; color: #c8a052; line-height: 1;
+}
+.rc-unit { font-family: 'Rajdhani', sans-serif; font-size: 1rem; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 6px; }
+.rc-label { font-family: 'Orbitron', sans-serif; font-size: .68rem; color: #00c8e0; letter-spacing: .12em; text-transform: uppercase; }
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.ms-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 16px;
   text-align: center;
 }
+.ms-n { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 700; color: #fff; display: block; }
+.ms-l { font-family: 'Rajdhani', sans-serif; font-size: .8rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .08em; }
 
-.cta h3 {
-  font-size: 26px;
-  margin-bottom: 15px;
+/* ── INNER SECTIONS ── */
+.vt-sec { padding: 100px 0; }
+.dark-sec { background: #07101f; }
+.vt-con { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+
+.sec-hd { margin-bottom: 60px; }
+.sec-hd.center { text-align: center; }
+.sec-tag { font-family: 'Share Tech Mono', monospace; font-size: .74rem; color: #00c8e0; letter-spacing: .18em; text-transform: uppercase; display: block; margin-bottom: 12px; }
+.sec-h2 { font-family: 'Orbitron', sans-serif; font-size: clamp(1.8rem,3.5vw,2.8rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 16px; }
+.sec-h2 em { font-style: normal; background: linear-gradient(90deg,#c8a052,#e8c87a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.sec-sub { font-family: 'Rajdhani', sans-serif; font-size: 1.05rem; color: rgba(255,255,255,.6); max-width: 560px; }
+.sec-hd.center .sec-sub { margin: 0 auto; }
+
+/* ── SERVICE CARDS ── */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
-
-.cta a {
-  background: #00c6ff;
-  color: #000;
-  padding: 12px 25px;
-  border-radius: 5px;
+.svc-card {
+  position: relative;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: 36px 28px 32px;
   text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+  overflow: hidden;
+  transition: transform .35s, border-color .35s, box-shadow .35s;
+  display: block;
 }
-
-.cta a:hover {
-  background: #009edb;
+.svc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(200,160,82,.12) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity .35s;
+  pointer-events: none;
 }
-
-/* ===== FOOTER ===== */
-footer {
-  background: #0b1220;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 14px;
+.svc-card:hover { transform: translateY(-6px); border-color: rgba(200,160,82,.35); box-shadow: 0 20px 50px rgba(0,0,0,.4); }
+.svc-card:hover::before { opacity: 1; }
+.svc-num { font-family: 'Orbitron', sans-serif; font-size: 2.8rem; font-weight: 900; color: rgba(255,255,255,.04); position: absolute; top: 16px; right: 20px; line-height: 1; pointer-events: none; }
+.svc-icon-box {
+  width: 56px; height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(200,160,82,.15), rgba(0,200,224,.08));
+  border: 1px solid rgba(200,160,82,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: #c8a052;
+  margin-bottom: 20px;
+  transition: background .3s, border-color .3s;
 }
+.svc-card:hover .svc-icon-box { background: linear-gradient(135deg, rgba(200,160,82,.28), rgba(0,200,224,.15)); border-color: rgba(200,160,82,.45); }
+.svc-h { font-family: 'Orbitron', sans-serif; font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 12px; line-height: 1.3; }
+.svc-p { font-family: 'Rajdhani', sans-serif; font-size: .97rem; color: rgba(255,255,255,.57); line-height: 1.6; margin-bottom: 20px; }
+.svc-link { font-family: 'Orbitron', sans-serif; font-size: .7rem; font-weight: 600; color: #c8a052; letter-spacing: .1em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 6px; transition: gap .2s; }
+.svc-card:hover .svc-link { gap: 10px; }
+.svc-glow { position: absolute; bottom: -40px; right: -40px; width: 120px; height: 120px; background: radial-gradient(circle, rgba(200,160,82,.15), transparent 70%); pointer-events: none; opacity: 0; transition: opacity .35s; }
+.svc-card:hover .svc-glow { opacity: 1; }
 
-footer a {
-  color: #00c6ff;
-  text-decoration: none;
+/* ── OFFER BAND ── */
+.offer-band {
+  background: linear-gradient(135deg, rgba(200,160,82,.12) 0%, rgba(0,200,224,.07) 50%, rgba(200,160,82,.12) 100%);
+  border-top: 1px solid rgba(200,160,82,.2);
+  border-bottom: 1px solid rgba(200,160,82,.2);
+  padding: 48px 0;
+}
+.ob-wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+.ob-tag { font-family: 'Share Tech Mono', monospace; font-size: .72rem; color: #c8a052; letter-spacing: .15em; display: block; margin-bottom: 8px; }
+.ob-h { font-family: 'Orbitron', sans-serif; font-size: clamp(1.2rem,2.5vw,1.8rem); font-weight: 700; color: #fff; margin: 0; }
+.ob-h em { font-style: normal; background: linear-gradient(90deg,#c8a052,#e8c87a); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.ob-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+/* ── WHY VOWTECH ── */
+.why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.why-frame { border: 1px solid rgba(200,160,82,.2); border-radius: 16px; overflow: hidden; position: relative; }
+.why-frame video { width: 100%; display: block; }
+.wc { position: absolute; width: 20px; height: 20px; border-color: #c8a052; border-style: solid; }
+.wc-tl { top:10px;left:10px;border-width:2px 0 0 2px; }
+.wc-tr { top:10px;right:10px;border-width:2px 2px 0 0; }
+.wc-bl { bottom:10px;left:10px;border-width:0 0 2px 2px; }
+.wc-br { bottom:10px;right:10px;border-width:0 2px 2px 0; }
+.why-hud { position: absolute; bottom: 16px; left: 16px; background: rgba(10,22,40,.85); border: 1px solid rgba(200,160,82,.25); border-radius: 8px; padding: 10px 16px; font-family: 'Share Tech Mono', monospace; font-size: .7rem; color: #00c8e0; display: flex; gap: 14px; }
+.hud-dot { width: 7px; height: 7px; border-radius: 50%; background: #00c8e0; display: inline-block; animation: pdot 1.6s infinite; margin-right: 5px; }
+.why-badges { display: flex; gap: 14px; margin-top: 16px; }
+.why-badge { flex: 1; background: rgba(200,160,82,.08); border: 1px solid rgba(200,160,82,.18); border-radius: 10px; padding: 16px; text-align: center; }
+.wb-n { font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 700; color: #c8a052; display: block; }
+.wb-l { font-family: 'Rajdhani', sans-serif; font-size: .8rem; color: rgba(255,255,255,.55); text-transform: uppercase; }
+.why-list { list-style: none; margin: 28px 0 32px; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.why-list li { display: flex; align-items: flex-start; gap: 12px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; color: rgba(255,255,255,.75); line-height: 1.5; }
+.why-list li i { color: #c8a052; font-size: 1rem; margin-top: 3px; flex-shrink: 0; }
+
+/* ── PROCESS ── */
+.process-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; position: relative; }
+.process-grid::before { content:''; position:absolute; top:40px; left:12.5%; right:12.5%; height:1px; background:linear-gradient(90deg,transparent,rgba(200,160,82,.35),rgba(0,200,224,.35),rgba(200,160,82,.35),transparent); }
+.process-step { padding: 0 20px; text-align: center; }
+.ps-circle { width:80px;height:80px;border-radius:50%;background:#07101f;border:2px solid rgba(200,160,82,.35);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;position:relative;z-index:1;transition:border-color .3s,box-shadow .3s; }
+.process-step:hover .ps-circle { border-color:#c8a052;box-shadow:0 0 24px rgba(200,160,82,.3); }
+.ps-circle i { font-size:1.5rem;color:#c8a052; }
+.ps-n { position:absolute;top:-8px;right:-8px;width:24px;height:24px;background:#c8a052;border-radius:50%;font-family:'Orbitron',sans-serif;font-size:.65rem;font-weight:700;color:#0a1628;display:flex;align-items:center;justify-content:center; }
+.ps-h { font-family:'Orbitron',sans-serif;font-size:.85rem;font-weight:600;color:#fff;margin-bottom:10px; }
+.ps-p { font-family:'Rajdhani',sans-serif;font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.5; }
+
+/* ── FAQ ── */
+.faq-list { max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:12px; }
+.faq-item { background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;overflow:hidden; }
+.faq-q { width:100%;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;background:none;border:none;color:#fff;font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:600;cursor:pointer;text-align:left;transition:color .2s;gap:16px; }
+.faq-q:hover { color:#c8a052; }
+.faq-icon { font-size:.8rem;color:#c8a052;flex-shrink:0;transition:transform .3s; }
+.faq-item.open .faq-icon { transform:rotate(45deg); }
+.faq-a { max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 24px;font-family:'Rajdhani',sans-serif;font-size:.97rem;color:rgba(255,255,255,.6);line-height:1.7; }
+.faq-item.open .faq-a { max-height:300px;padding-bottom:20px; }
+
+/* ── BIG CTA ── */
+.big-cta { background:linear-gradient(135deg,#0a1628 0%,#0d2040 50%,#0a1628 100%);border-top:1px solid rgba(200,160,82,.15);padding:100px 0;text-align:center;position:relative;overflow:hidden; }
+.big-cta::before { content:'';position:absolute;top:-80px;left:50%;transform:translateX(-50%);width:600px;height:300px;background:radial-gradient(ellipse,rgba(200,160,82,.1) 0%,transparent 70%);pointer-events:none; }
+.big-cta-inner { position:relative;z-index:2;max-width:700px;margin:0 auto;padding:0 24px; }
+.big-cta-h { font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;line-height:1.15;margin-bottom:20px; }
+.big-cta-h em { font-style:normal;background:linear-gradient(90deg,#c8a052,#e8c87a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text; }
+.big-cta-p { font-family:'Rajdhani',sans-serif;font-size:1.1rem;color:rgba(255,255,255,.62);margin-bottom:36px;line-height:1.6; }
+.big-cta-btns { display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-bottom:28px; }
+.big-cta-tel { font-family:'Rajdhani',sans-serif;font-size:1rem;color:rgba(255,255,255,.45);display:flex;align-items:center;justify-content:center;gap:10px; }
+.big-cta-tel i { color:#00c8e0; }
+.big-cta-tel a { color:#fff;text-decoration:none;font-weight:600; }
+.big-cta-tel a:hover { color:#c8a052; }
+
+/* ── SCROLL REVEAL ── */
+[data-r] { opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease; }
+[data-r="right"] { transform:translateX(28px); }
+[data-r="left"] { transform:translateX(-28px); }
+.vt-show { opacity:1!important;transform:none!important; }
+
+/* ── RESPONSIVE ── */
+@media (max-width:1024px) {
+  .svc-grid { grid-template-columns:repeat(2,1fr); }
+  .process-grid { grid-template-columns:repeat(2,1fr);gap:40px; }
+  .process-grid::before { display:none; }
+}
+@media (max-width:768px) {
+  .pg-hero-wrap { grid-template-columns:1fr; }
+  .pg-hero-right { display:none; }
+  .why-grid { grid-template-columns:1fr; }
+  .svc-grid { grid-template-columns:1fr; }
+  .process-grid { grid-template-columns:1fr; }
+  .ob-wrap { flex-direction:column;text-align:center; }
+  .ob-btns { justify-content:center; }
 }
 </style>
-</head>
 
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Networking Infrastructure Abu Dhabi","provider":{"@type":"LocalBusiness","name":"VOWTECH","telephone":"+971581816887","address":{"@type":"PostalAddress","addressLocality":"Abu Dhabi","addressCountry":"AE"}},"serviceType":"Networking & Infrastructure Services","areaServed":[{"@type":"City","name":"Abu Dhabi"},{"@type":"Country","name":"United Arab Emirates"}],"description":"Structured cabling, server room setup, network migration, network security, planning & design, installation, and telephone systems across UAE"}
+</script>
+</head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="sticky-top">
-  <div class="container d-flex align-items-center">
-    <a href="index.html">
-      <img src="assets/img/logo.jpeg" alt="VOWTECH Logo">
+<!-- ═══ CUSTOM CURSOR ═══ -->
+<div id="vt-dot" aria-hidden="true"></div>
+<div id="vt-ring" aria-hidden="true"></div>
+
+<!-- ═══ NOISE OVERLAY ═══ -->
+<div id="vt-noise" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════════════════════
+     TOPBAR  (identical to index.html)
+═══════════════════════════════════════════════ -->
+<div id="topbar">
+  <div class="tb-inner">
+    <div class="tb-l">
+      <span class="tb-pulse" aria-hidden="true"></span>
+      <span>LIVE SUPPORT — ABU DHABI &amp; UAE — 24/7</span>
+    </div>
+    <div class="tb-r">
+      <a href="tel:+971581816887" aria-label="Call VOWTECH">
+        <i class="bi bi-telephone-fill" aria-hidden="true"></i> +971 58 181 6887
+      </a>
+      <span aria-hidden="true">|</span>
+      <a href="mailto:info@vow-tech.com" aria-label="Email VOWTECH">
+        <i class="bi bi-envelope-fill" aria-hidden="true"></i> info@vow-tech.com
+      </a>
+      <span aria-hidden="true">|</span>
+      <span><i class="bi bi-geo-alt-fill" aria-hidden="true"></i> Abu Dhabi, UAE</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     HEADER  (identical to index.html)
+═══════════════════════════════════════════════ -->
+<header id="vt-header" role="banner">
+  <div class="hdr-inner">
+
+    <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
+      <div class="logo-3d-wrap" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy"></div>
+          <div class="lc-f lc-top"></div>
+          <div class="lc-f lc-bottom"></div>
+        </div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-main">VOW<em>TECHNOLOGIES</em></span>
+        <span class="logo-tagline">IT SOLUTIONS — ABU DHABI</span>
+      </div>
     </a>
+
+    <nav id="vt-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="index.html#about" class="nav-a">About</a>
+
+      <div class="nav-drop" id="navDrop">
+        <button class="nav-a nav-drop-btn" aria-haspopup="true" aria-expanded="false" id="navDropBtn">
+          Services <i class="bi bi-chevron-down" aria-hidden="true"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-headset" aria-hidden="true"></i> IT Support</div>
+              <a href="amc-support.html" role="menuitem">Annual Maintenance Contract</a>
+              <a href="CCTV-Services.html" role="menuitem">CCTV Services</a>
+              <a href="ip-cameras.html" role="menuitem">IP Cameras</a>
+              <a href="ptz-cameras.html" role="menuitem">PTZ Cameras</a>
+              <a href="RFID-access-control.html" role="menuitem">RFID Access Control</a>
+              <a href="Office-IT-Setup-Relocation.html" role="menuitem">Office IT Setup &amp; Relocation</a>
+              <a href="Emergency-IT-Support.html" role="menuitem">Emergency IT Support</a>
+              <a href="Remote-Technical-Support.html" role="menuitem">Remote Technical Support</a>
+              <a href="On-Site-IT-Support.html" role="menuitem">On-Site Support</a>
+              <a href="IT-Outsourcing.html" role="menuitem">IT Outsourcing</a>
+              <a href="Helpdesk-Support.html" role="menuitem">Helpdesk Support</a>
+              <a href="application-support.html" role="menuitem">Application Support</a>
+              <a href="data-recovery.html" role="menuitem">Disaster Recovery</a>
+              <a href="dvr-systems.html" role="menuitem">DVR Systems</a>
+              <a href="itil-model.html" role="menuitem">ITIL Model</a>
+              <a href="nvr-systems.html" role="menuitem">NVR Systems</a>
+              <a href="Load-Balancers.html" role="menuitem">Load Balancers</a>
+              <a href="secure-Internet-Gateway-Assessment.html" role="menuitem">Secure Internet Gateway Assessment</a>
+              <a href="face-recognition-systems.html" role="menuitem">Face Recognition Systems</a>
+              <a href="UPS-systems.html" role="menuitem">UPS Systems</a>
+              <a href="Vulnerability-Assessment.html" role="menuitem">Vulnerability Assessment</a>
+              <a href="Wireless-access-point.html" role="menuitem">Wireless Access Point</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking</div>
+              <a href="Structured-Cabling.html" role="menuitem">Structured Cabling</a>
+              <a href="Server-Room-Setup.html" role="menuitem">Server Room Setup</a>
+              <a href="Network-Server-Migration.html" role="menuitem">Network &amp; Server Migration</a>
+              <a href="Network-Security-Services.html" role="menuitem">Network Security Services</a>
+              <a href="Network-Planning-Design.html" role="menuitem">Network Planning &amp; Design</a>
+              <a href="Network-Installation-Troubleshooting.html" role="menuitem">Network Installation</a>
+              <a href="Telephone-Systems-Implementation.html" role="menuitem">Telephone Systems</a>
+              <a href="Office-Migration.html" role="menuitem">Office Migration</a>
+              <a href="nas-storage.html" role="menuitem">NAS Storage</a>
+              <a href="SAN-storage.html" role="menuitem">SAN Storage</a>
+              <a href="sase-solutions.html" role="menuitem">SASE Solutions</a>
+              <a href="network-switch.html" role="menuitem">Network Switch</a>
+              <a href="router.html" role="menuitem">Router</a>
+              <a href="Network-Security-Policy-Setup-Maintenance.html" role="menuitem">Network Security Policy Setup &amp; Maintenance</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-shield-virus" aria-hidden="true"></i> Cybersecurity</div>
+              <a href="firewall-systems.html" role="menuitem">Firewall Systems</a>
+              <a href="firewall-appliances.html" role="menuitem">Firewall Appliances</a>
+              <a href="soc-security-operations-center.html" role="menuitem">SOC</a>
+              <a href="information-security-consultancy.html" role="menuitem">Information Security Consultancy</a>
+              <a href="siem-solution.html" role="menuitem">SIEM Solution</a>
+              <a href="SIEM-systems.html" role="menuitem">SIEM Systems</a>
+              <a href="soar-solution.html" role="menuitem">SOAR Solution</a>
+              <a href="SOC-Infrastructure.html" role="menuitem">SOC Infrastructure</a>
+              <a href="cloud-network-security.html" role="menuitem">Cloud &amp; Network Security</a>
+              <a href="anti-virus-anti-spam-solutions.html" role="menuitem">Anti-Virus &amp; Anti-SPAM Solutions</a>
+              <a href="anti-phishing-protection.html" role="menuitem">Anti-Phishing</a>
+              <a href="Penetration-Testing.html" role="menuitem">Penetration Testing</a>
+              <a href="web-application-firewall.html" role="menuitem">WAF</a>
+              <a href="mobile-device-management.html" role="menuitem">MDM</a>
+              <a href="pam-pim-solutions.html" role="menuitem">PAM / PIM Solutions</a>
+              <a href="data-protection-systems.html" role="menuitem">Data Protection Systems</a>
+              <a href="data-security-theft-prevention.html" role="menuitem">Data Security &amp; Theft Prevention</a>
+              <a href="endpoint-security.html" role="menuitem">Endpoint Security</a>
+              <a href="managed-security.html" role="menuitem">Managed Security</a>
+              <a href="Unified-Threat-Management.html" role="menuitem">Unified Threat Management</a>
+              <a href="Security-Risk-Assessment.html" role="menuitem">Security Risk Assessment</a>
+              <a href="Wireless-Equipment-Management.html" role="menuitem">Wireless Equipment Management</a>
+              <a href="Wireless-Security.html" role="menuitem">Wireless Security</a>
+              <a href="Sophos-firewall.html" role="menuitem">Sophos Firewall</a>
+              <a href="threat-detection-response.html" role="menuitem">Threat Detection &amp; Response</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-cloud" aria-hidden="true"></i> Cloud &amp; Managed</div>
+              <a href="Office365-Exchange-Online.html" role="menuitem">Office 365 &amp; Exchange</a>
+              <a href="secure-email-s-mime.html" role="menuitem">Secure Email S/MIME</a>
+              <a href="Google-Apps-for-Business.html" role="menuitem">Google Apps for Business</a>
+              <a href="Private-Cloud-Services.html" role="menuitem">Private Cloud Services</a>
+              <a href="Dedicated-VPS-Servers.html" role="menuitem">Dedicated &amp; VPS Servers</a>
+              <a href="Veeam-Backup-Disaster-Recovery.html" role="menuitem">Veeam Backup</a>
+              <a href="Cloud-Backup-Disaster-Recovery.html" role="menuitem">Cloud Backup</a>
+              <a href="backup-system.html" role="menuitem">Backup System</a>
+              <a href="Virtualization.html" role="menuitem">Virtualization</a>
+              <a href="VPN-Network-Monitoring.html" role="menuitem">VPN Monitoring</a>
+              <a href="VPN-appliances.html" role="menuitem">VPN Appliances</a>
+              <a href="VPN-Connectivity-Solutions.html" role="menuitem">VPN Connectivity Solutions</a>
+              <a href="Server-Management.html" role="menuitem">Server Management</a>
+              <a href="acronis-cyber-protect-cloud.html" role="menuitem">Acronis Cyber Protect Cloud</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-server" aria-hidden="true"></i> Infrastructure</div>
+              <a href="IT-infrastructure-solutions.html" role="menuitem">IT Infrastructure</a>
+              <a href="data-center.html" role="menuitem">Data Center</a>
+              <a href="Software-Licensing.html" role="menuitem">Software Licensing</a>
+              <a href="managed-storage.html" role="menuitem">Managed Storage</a>
+              <a href="Server-Solutions.html" role="menuitem">Server Solutions</a>
+              <a href="Network-Solutions.html" role="menuitem">Network Solutions</a>
+              <a href="Data-Storage-Solutions.html" role="menuitem">Data Storage Solutions</a>
+              <a href="Backup-Data-Protection.html" role="menuitem">Backup &amp; Data Protection</a>
+              <a href="Disaster-Recovery-Solutions.html" role="menuitem">Disaster Recovery</a>
+              <a href="firewall-products.html" role="menuitem">Firewall Solutions</a>
+              <a href="zkteco-access-control.html" role="menuitem">Access Control</a>
+              <a href="cctv-surveillance.html" role="menuitem">CCTV Systems</a>
+              <a href="biometric-devices.html" role="menuitem">Biometric Devices</a>
+              <a href="blade-servers.html" role="menuitem">Blade Servers</a>
+              <a href="business-continuity-strategy.html" role="menuitem">Business Continuity Strategy</a>
+              <a href="cost-management.html" role="menuitem">Cost Management</a>
+              <a href="rack-servers.html" role="menuitem">Rack Servers</a>
+              <a href="Server-racks.html" role="menuitem">Server Racks</a>
+              <a href="Tower-servers.html" role="menuitem">Tower Servers</a>
+              <a href="requirement-analysis.html" role="menuitem">Requirement Analysis</a>
+              <a href="quality-compliance-consulting.html" role="menuitem">Quality &amp; Compliance Consulting</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="it-security-solutions.html" class="nav-a">IT Security Solutions</a>
+      <a href="blog.html" class="nav-a">Insights</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </nav>
+
+    <a href="appointment.html" class="btn-primary hdr-cta">
+      <i class="fas fa-headset" aria-hidden="true"></i> Free Consultation
+    </a>
+    <button id="mob-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="vt-nav">
+      <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
+    </button>
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Networking Services</h1>
-    <p>Structured, Secure, and Scalable Networking Solutions Across UAE</p>
+<!-- ═══ BREADCRUMB ═══ -->
+<div class="pg-breadcrumb">
+  <div class="bc-inner">
+    <a href="index.html"><i class="fas fa-home" style="font-size:.8rem"></i> Home</a>
+    <span class="bc-sep">/</span>
+    <a href="index.html#services">Services</a>
+    <span class="bc-sep">/</span>
+    <span class="bc-cur">Networking Infrastructure</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     PAGE HERO
+═══════════════════════════════════════════════ -->
+<section class="pg-hero" aria-label="Networking Infrastructure Abu Dhabi">
+  <div class="pg-hero-bg" aria-hidden="true"></div>
+  <div class="pg-scanlines" aria-hidden="true"></div>
+  <div class="pg-hex" aria-hidden="true">
+    <div class="hex-row"><span class="hex"></span><span class="hex h-gold"></span><span class="hex"></span><span class="hex h-teal"></span><span class="hex"></span><span class="hex h-gold"></span></div>
+    <div class="hex-row offset"><span class="hex h-gold"></span><span class="hex"></span><span class="hex h-teal"></span><span class="hex"></span><span class="hex h-gold"></span><span class="hex"></span></div>
+    <div class="hex-row"><span class="hex"></span><span class="hex h-teal"></span><span class="hex"></span><span class="hex h-gold"></span><span class="hex"></span><span class="hex h-teal"></span></div>
+  </div>
+
+  <div class="pg-hero-wrap">
+    <div class="pg-hero-left">
+      <div class="pg-hero-tag" data-r>
+        <span class="tag-dot2" aria-hidden="true"></span>
+        <span>Abu Dhabi's #1 Networking Partner — Est. 2015</span>
+      </div>
+      <h1 class="pg-h1" data-r data-d="80">
+        <span style="display:block">NETWORKING</span>
+        <em>INFRASTRUCTURE</em> <span class="h1-t">UAE</span>
+      </h1>
+      <p class="pg-desc" data-r data-d="160">
+        From structured cabling to enterprise server rooms — VOWTECH designs, builds, and secures the network backbone your business runs on, across Abu Dhabi and the UAE.
+      </p>
+      <div class="pg-btns" data-r data-d="220">
+        <a href="contact.html" class="btn-primary btn-lg">
+          <i class="fas fa-rocket" aria-hidden="true"></i> Request a Network Audit
+        </a>
+        <a href="https://wa.me/971581816887?text=Hi%20I%20need%20networking%20infrastructure%20support%20in%20Abu%20Dhabi" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg">
+          <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Now
+        </a>
+      </div>
+      <div class="pg-trust" data-r data-d="300">
+        <div class="trust-chip"><i class="fas fa-shield-alt" aria-hidden="true"></i><span>Enterprise Grade</span></div>
+        <div class="trust-chip"><i class="fas fa-bolt" aria-hidden="true"></i><span>15 Min Response</span></div>
+        <div class="trust-chip"><i class="fas fa-star" aria-hidden="true"></i><span>4.9★ Google</span></div>
+        <div class="trust-chip"><i class="fas fa-award" aria-hidden="true"></i><span>150+ Projects</span></div>
+      </div>
+    </div>
+
+    <div class="pg-hero-right" data-r="right" data-d="100" aria-hidden="true">
+      <div class="rc-card">
+        <div class="rc-icon"><i class="fas fa-network-wired"></i></div>
+        <div class="rc-num">99.9</div>
+        <div class="rc-unit">% Uptime</div>
+        <div class="rc-label">// Network SLA Commitment</div>
+      </div>
+      <div class="mini-stats">
+        <div class="ms-card"><span class="ms-n">20+</span><span class="ms-l">Network Engineers</span></div>
+        <div class="ms-card"><span class="ms-n">150+</span><span class="ms-l">Networks Deployed</span></div>
+        <div class="ms-card"><span class="ms-n">3,000+</span><span class="ms-l">Nodes Managed</span></div>
+        <div class="ms-card"><span class="ms-n">9+ Yrs</span><span class="ms-l">In Business</span></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
-<section class="services-section container">
-  <h2 class="section-title">Our Networking Services</h2>
+<!-- ═══════════════════════════════════════════════
+     SERVICES GRID
+═══════════════════════════════════════════════ -->
+<section id="services" class="vt-sec dark-sec" aria-label="Networking Infrastructure Services">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// WHAT WE OFFER</span>
+      <h2 class="sec-h2">Our Networking <em>Infrastructure Services</em></h2>
+      <p class="sec-sub">Complete networking solutions — from the cabling in your walls to the servers in your rack — built to be fast, secure, and future-ready.</p>
+    </div>
+    <div class="svc-grid">
 
-  <div class="services">
-    <a class="services-item" style="background-image:url('assets/img/services/structured-cabling.jpg');" href="Structured-Cabling.html">
-      <span>Structured Cabling</span>
-    </a>
+      <a href="Structured-Cabling.html" class="svc-card" data-r data-d="0">
+        <div class="svc-num" aria-hidden="true">01</div>
+        <div class="svc-icon-box"><i class="fas fa-ethernet" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Structured Cabling</h3>
+        <p class="svc-p">Certified Cat6/Cat6A and fiber optic cabling design and installation — the reliable physical backbone every network depends on.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
-    <a class="services-item" style="background-image:url('assets/img/services/server-room.webp');" href="Server-Room-Setup.html">
-      <span>Server Room Setup</span>
-    </a>
+      <a href="Server-Room-Setup.html" class="svc-card" data-r data-d="60">
+        <div class="svc-num" aria-hidden="true">02</div>
+        <div class="svc-icon-box"><i class="fas fa-server" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Server Room Setup</h3>
+        <p class="svc-p">End-to-end server room design — racks, cooling, power redundancy, and cable management built to enterprise standards.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
-    <a class="services-item" style="background-image:url('assets/img/services/network-migration.png');" href="Network-Server-Migration.html">
-      <span>Network & Server Migration</span>
-    </a>
+      <a href="Network-Server-Migration.html" class="svc-card" data-r data-d="120">
+        <div class="svc-num" aria-hidden="true">03</div>
+        <div class="svc-icon-box"><i class="fas fa-exchange-alt" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Network &amp; Server Migration</h3>
+        <p class="svc-p">Seamless migration of networks, servers, and workloads to new infrastructure or the cloud — with zero data loss and minimal downtime.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
-    <a class="services-item" style="background-image:url('assets/img/services/network-security.jpg');" href="Network-Security-Services.html">
-      <span>Network Security Services</span>
-    </a>
+      <a href="Network-Security-Services.html" class="svc-card" data-r data-d="0">
+        <div class="svc-num" aria-hidden="true">04</div>
+        <div class="svc-icon-box"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Network Security Services</h3>
+        <p class="svc-p">Firewalls, segmentation, intrusion detection, and continuous monitoring to keep your network perimeter locked down 24/7.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
-    <a class="services-item" style="background-image:url('assets/img/services/network-planning.jpg');" href="Network-Planning-Design.html">
-      <span>Network Planning & Design</span>
-    </a>
+      <a href="Network-Planning-Design.html" class="svc-card" data-r data-d="60">
+        <div class="svc-num" aria-hidden="true">05</div>
+        <div class="svc-icon-box"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Network Planning &amp; Design</h3>
+        <p class="svc-p">Scalable network architecture designed around your business growth — topology planning, IP schemas, and capacity forecasting.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
-    <a class="services-item" style="background-image:url('assets/img/services/network-installation.jpg');" href="Network-Installation-Troubleshooting.html">
-      <span>Network Installation & Troubleshooting</span>
-    </a>
+      <a href="Network-Installation-Troubleshooting.html" class="svc-card" data-r data-d="120">
+        <div class="svc-num" aria-hidden="true">06</div>
+        <div class="svc-icon-box"><i class="fas fa-tools" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Network Installation &amp; Troubleshooting</h3>
+        <p class="svc-p">Expert installation and rapid diagnosis of network faults — from switch configuration to end-to-end connectivity testing.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
-    <a class="services-item" style="background-image:url('assets/img/services/telephone-systems.jpg');" href="Telephone-Systems-Implementation.html">
-      <span>Telephone Systems Implementation</span>
-    </a>
+      <a href="Telephone-Systems-Implementation.html" class="svc-card" data-r data-d="0">
+        <div class="svc-num" aria-hidden="true">07</div>
+        <div class="svc-icon-box"><i class="fas fa-phone-volume" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Telephone Systems Implementation</h3>
+        <p class="svc-p">VoIP and PBX telephone system design, installation, and integration for seamless internal and external communication.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
-    <a class="services-item" style="background-image:url('assets/img/services/office-migration.jpg');" href="Office-Migration.html">
-      <span>Office Migration</span>
-    </a>
+      <a href="nas-storage.html" class="svc-card" data-r data-d="60">
+        <div class="svc-num" aria-hidden="true">08</div>
+        <div class="svc-icon-box"><i class="fas fa-hdd" aria-hidden="true"></i></div>
+        <h3 class="svc-h">NAS Storage</h3>
+        <p class="svc-p">Network-attached storage solutions for centralized, redundant, and easily accessible file storage across your organization.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
 
+      <a href="SAN-storage.html" class="svc-card" data-r data-d="120">
+        <div class="svc-num" aria-hidden="true">09</div>
+        <div class="svc-icon-box"><i class="fas fa-database" aria-hidden="true"></i></div>
+        <h3 class="svc-h">SAN Storage</h3>
+        <p class="svc-p">High-performance storage area networks for mission-critical workloads that demand speed, scalability, and resilience.</p>
+        <span class="svc-link">Explore <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+        <div class="svc-glow" aria-hidden="true"></div>
+      </a>
+
+    </div>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta">
-  <h3>Need Expert Networking Assistance?</h3>
-  <a href="contact.html">Contact VOWTECH 24/7</a>
+<!-- ═══════════════════════════════════════════════
+     OFFER BAND
+═══════════════════════════════════════════════ -->
+<div class="offer-band" role="complementary" aria-label="Special Offer">
+  <div class="ob-wrap">
+    <div data-r>
+      <span class="ob-tag">🔥 LIMITED TIME OFFER</span>
+      <h2 class="ob-h">Free Network Health <em>Assessment</em> With Every AMC Sign-Up</h2>
+    </div>
+    <div class="ob-btns" data-r data-d="100">
+      <a href="contact.html" class="btn-dark">Get Free Quote</a>
+      <a href="https://wa.me/971581816887" target="_blank" rel="noopener noreferrer" class="btn-wa">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     WHY VOWTECH
+═══════════════════════════════════════════════ -->
+<section class="vt-sec" aria-label="Why Choose VOWTECH for Networking">
+  <div class="vt-con">
+    <div class="why-grid">
+
+      <div data-r="right">
+        <div class="why-frame">
+          <video autoplay muted loop playsinline aria-hidden="true">
+            <source src="assets/video/about.mp4" type="video/mp4">
+          </video>
+          <span class="wc wc-tl" aria-hidden="true"></span>
+          <span class="wc wc-tr" aria-hidden="true"></span>
+          <span class="wc wc-bl" aria-hidden="true"></span>
+          <span class="wc wc-br" aria-hidden="true"></span>
+          <div class="why-hud" aria-hidden="true">
+            <span><span class="hud-dot"></span>NETWORK ONLINE</span>
+            <span>UPTIME: 99.9%</span>
+          </div>
+        </div>
+        <div class="why-badges">
+          <div class="why-badge"><span class="wb-n">150+</span><span class="wb-l">Networks Built</span></div>
+          <div class="why-badge"><span class="wb-n">9+ Yrs</span><span class="wb-l">In Business</span></div>
+          <div class="why-badge"><span class="wb-n">4.9★</span><span class="wb-l">Google Rating</span></div>
+        </div>
+      </div>
+
+      <div data-r="left" data-d="100">
+        <span class="sec-tag">// WHY VOWTECH</span>
+        <h2 class="sec-h2">Infrastructure Built to <em>Last &amp; Scale</em></h2>
+        <p style="font-family:'Rajdhani',sans-serif;font-size:1rem;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:8px;">
+          Since 2015, VOWTECH has designed and delivered networking infrastructure for businesses across Abu Dhabi — from single-office cabling jobs to multi-site enterprise deployments, backed by 20+ certified engineers.
+        </p>
+        <ul class="why-list">
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Certified structured cabling &amp; fiber installation teams</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Vendor-neutral network design — Cisco, Fortinet, Ubiquiti &amp; more</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> 24/7/365 monitoring and proactive fault detection</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Structured project delivery with as-built documentation</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Security-first design — segmentation, firewalls &amp; access control</li>
+          <li><i class="fas fa-check-circle" aria-hidden="true"></i> Flexible AMC plans covering ongoing network maintenance</li>
+        </ul>
+        <a href="contact.html" class="btn-primary">
+          Get in Touch <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="container text-center">
-    <p>© <strong>VOWTECH</strong> All Rights Reserved</p>
-    <div>
-      Powered by <a href="https://vow-tech.com">VOWTECH IT Solutions</a> | Supporting businesses 24/7 worldwide
+<!-- ═══════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════ -->
+<section class="vt-sec dark-sec" aria-label="How VOWTECH Networking Projects Work">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// HOW IT WORKS</span>
+      <h2 class="sec-h2">From Site Survey to <em>Go-Live</em></h2>
+      <p class="sec-sub">Our proven 4-step delivery process ensures every network we build is reliable, secure, and documented.</p>
+    </div>
+    <div class="process-grid" data-r data-d="80">
+      <div class="process-step">
+        <div class="ps-circle"><i class="fas fa-map-marked-alt" aria-hidden="true"></i><span class="ps-n">1</span></div>
+        <h4 class="ps-h">Site Survey</h4>
+        <p class="ps-p">We assess your premises, existing infrastructure, and business requirements to scope the project accurately.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-circle"><i class="fas fa-drafting-compass" aria-hidden="true"></i><span class="ps-n">2</span></div>
+        <h4 class="ps-h">Design</h4>
+        <p class="ps-p">Our engineers produce a detailed network topology, cabling schematic, and equipment plan for your sign-off.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-circle"><i class="fas fa-tools" aria-hidden="true"></i><span class="ps-n">3</span></div>
+        <h4 class="ps-h">Build &amp; Test</h4>
+        <p class="ps-p">Certified technicians install cabling, hardware, and systems, then rigorously test every connection point.</p>
+      </div>
+      <div class="process-step">
+        <div class="ps-circle"><i class="fas fa-chart-line" aria-hidden="true"></i><span class="ps-n">4</span></div>
+        <h4 class="ps-h">Handover &amp; Support</h4>
+        <p class="ps-p">You receive full as-built documentation, plus optional AMC coverage for ongoing monitoring and maintenance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════ -->
+<section class="vt-sec" aria-label="Networking Infrastructure FAQ">
+  <div class="vt-con">
+    <div class="sec-hd center" data-r>
+      <span class="sec-tag">// FAQ</span>
+      <h2 class="sec-h2">Common <em>Questions</em></h2>
+      <p class="sec-sub">Everything you need to know about VOWTECH Networking Infrastructure services in Abu Dhabi.</p>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you handle structured cabling for new office fit-outs?
+          <i class="fas fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-a">Yes. We design and install Cat6/Cat6A copper and fiber optic cabling for new fit-outs, relocations, and expansions, fully certified and tested to industry standards.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can you migrate our network without downtime?
+          <i class="fas fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-a">We plan migrations around your operating hours and use redundant paths wherever possible, so most migrations happen with minimal or zero business disruption.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Do you support multi-vendor network environments?
+          <i class="fas fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-a">Yes, our engineers are vendor-neutral and experienced across Cisco, Fortinet, Ubiquiti, HPE Aruba, and other major networking platforms.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What's included in ongoing network maintenance?
+          <i class="fas fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-a">Our network AMC includes 24/7 monitoring, firmware and security patching, performance reporting, and priority on-site or remote response for any faults.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can VOWTECH design a network for a multi-site business?
+          <i class="fas fa-plus faq-icon" aria-hidden="true"></i>
+        </button>
+        <div class="faq-a">Absolutely. We design site-to-site connectivity including VPN, SD-WAN, and SASE-based architectures to keep multiple locations securely connected.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     BIG CTA
+═══════════════════════════════════════════════ -->
+<section class="big-cta" aria-label="Contact VOWTECH">
+  <div class="big-cta-inner" data-r>
+    <span class="sec-tag">// START TODAY</span>
+    <h2 class="big-cta-h">Ready to Build a <em>Better Network</em><br>for Your Business?</h2>
+    <p class="big-cta-p">Free site survey. No obligation. No hidden costs. Networking infrastructure designed around your business — supported 24/7, every day of the year.</p>
+    <div class="big-cta-btns">
+      <a href="contact.html" class="btn-primary btn-lg">
+        <i class="fas fa-paper-plane" aria-hidden="true"></i> Request a Quote
+      </a>
+      <a href="https://wa.me/971581816887?text=Hi%20I%20need%20networking%20infrastructure%20support%20in%20Abu%20Dhabi" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg">
+        <i class="bi bi-whatsapp" aria-hidden="true"></i> Chat on WhatsApp
+      </a>
+    </div>
+    <div class="big-cta-tel">
+      <i class="fas fa-phone-alt" aria-hidden="true"></i>
+      <a href="tel:+971581816887">+971 58 181 6887</a>
+      <span>— Available 24/7</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     FOOTER  (identical to index.html)
+═══════════════════════════════════════════════ -->
+<footer id="vt-footer" aria-label="Site Footer">
+  <div class="footer-body">
+    <div class="vt-con" style="max-width:1240px;margin:0 auto;padding:0 24px;">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="fb-logo-wrap">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52" loading="lazy">
+            <div>
+              <span class="fb-name">VOW<em>TECH</em></span>
+              <span class="fb-sub">Enterprise IT — UAE</span>
+            </div>
+          </div>
+          <p>Your reliable IT support partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
+          <div class="f-soc">
+            <a href="https://twitter.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on Twitter"><i class="bi bi-twitter-x" aria-hidden="true"></i></a>
+            <a href="https://www.facebook.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+            <a href="https://www.instagram.com/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/company/vowtech" target="_blank" rel="noopener noreferrer" aria-label="VOWTECH on LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
+          </div>
+          <div class="f-contact">
+            <a href="tel:+971581816887"><i class="fas fa-phone-alt" aria-hidden="true"></i> +971 58 181 6887</a>
+            <a href="mailto:info@vow-tech.com"><i class="fas fa-envelope" aria-hidden="true"></i> info@vow-tech.com</a>
+            <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Navy Gate, Al Zahiyah, Abu Dhabi</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Networking</h5>
+          <ul>
+            <li><a href="Structured-Cabling.html">Structured Cabling</a></li>
+            <li><a href="Server-Room-Setup.html">Server Room Setup</a></li>
+            <li><a href="Network-Server-Migration.html">Network Migration</a></li>
+            <li><a href="Network-Security-Services.html">Network Security</a></li>
+            <li><a href="Network-Planning-Design.html">Network Planning</a></li>
+            <li><a href="Network-Installation-Troubleshooting.html">Network Installation</a></li>
+            <li><a href="Telephone-Systems-Implementation.html">Telephone Systems</a></li>
+            <li><a href="Office-Migration.html">Office Migration</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>IT Support</h5>
+          <ul>
+            <li><a href="amc-support.html">Annual Maintenance Contract</a></li>
+            <li><a href="Emergency-IT-Support.html">Emergency IT Support</a></li>
+            <li><a href="Remote-Technical-Support.html">Remote Support</a></li>
+            <li><a href="On-Site-IT-Support.html">On-Site Support</a></li>
+            <li><a href="Helpdesk-Support.html">Helpdesk Support</a></li>
+            <li><a href="IT-Outsourcing.html">IT Outsourcing</a></li>
+            <li><a href="CCTV-Services.html">CCTV Services</a></li>
+            <li><a href="data-recovery.html">Disaster Recovery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Cybersecurity</h5>
+          <ul>
+            <li><a href="Sophos-firewall.html">Sophos Firewall</a></li>
+            <li><a href="soc-security-operations-center.html">SOC</a></li>
+            <li><a href="siem-solution.html">SIEM Solution</a></li>
+            <li><a href="Penetration-Testing.html">Penetration Testing</a></li>
+            <li><a href="anti-phishing-protection.html">Anti-Phishing</a></li>
+            <li><a href="web-application-firewall.html">WAF</a></li>
+            <li><a href="mobile-device-management.html">MDM</a></li>
+            <li><a href="threat-detection-response.html">Threat Detection</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Cloud &amp; Infrastructure</h5>
+          <ul>
+            <li><a href="Office365-Exchange-Online.html">Office 365 &amp; Exchange</a></li>
+            <li><a href="Veeam-Backup-Disaster-Recovery.html">Veeam Backup</a></li>
+            <li><a href="Virtualization.html">Virtualization</a></li>
+            <li><a href="data-center.html">Data Center</a></li>
+            <li><a href="Private-Cloud-Services.html">Private Cloud</a></li>
+            <li><a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a></li>
+            <li><a href="Dedicated-VPS-Servers.html">VPS Servers</a></li>
+            <li><a href="Backup-Data-Protection.html">Backup &amp; Protection</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About VOWTECH</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="appointment.html">Free Consultation</a></li>
+            <li><a href="IT-Audit-Health-Check.html">IT Audit</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div style="max-width:1240px;margin:0 auto;padding:0 24px;">
+      <div class="footer-base-inner">
+        <span>© <span id="copy-year"></span> VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+        <span>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <span aria-hidden="true">|</span>
+          <a href="terms-conditions.html">Terms &amp; Conditions</a>
+        </span>
+      </div>
     </div>
   </div>
 </footer>
 
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- FIXED ELEMENTS -->
+<a href="#" id="scroll-top" aria-label="Back to top" title="Back to top">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</a>
+<a href="https://wa.me/971581816887?text=Hi%20I%20need%20networking%20infrastructure%20support%20in%20Abu%20Dhabi"
+   id="wa-btn"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Chat with VOWTECH on WhatsApp">
+  <i class="bi bi-whatsapp" aria-hidden="true"></i>
+  <span>Chat</span>
+</a>
+
+<!-- ═══════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ── DYNAMIC YEAR ── */
+var cyEl = document.getElementById('copy-year');
+if (cyEl) cyEl.textContent = new Date().getFullYear();
+
+(function(){
+
+/* ── CUSTOM CURSOR ── */
+var dot = document.getElementById('vt-dot');
+var ring = document.getElementById('vt-ring');
+if (dot && ring) {
+  var cx=0,cy=0,rx=0,ry=0;
+  document.addEventListener('mousemove', function(e){ cx=e.clientX; cy=e.clientY; dot.style.left=cx+'px'; dot.style.top=cy+'px'; });
+  (function cursorLoop(){
+    rx+=(cx-rx)*.1; ry+=(cy-ry)*.1;
+    ring.style.left=rx+'px'; ring.style.top=ry+'px';
+    requestAnimationFrame(cursorLoop);
+  })();
+  document.querySelectorAll('a,button,.svc-card').forEach(function(el){
+    el.addEventListener('mouseenter',function(){ dot.classList.add('hover'); ring.classList.add('hover'); });
+    el.addEventListener('mouseleave',function(){ dot.classList.remove('hover'); ring.classList.remove('hover'); });
+  });
+}
+
+/* ── SCROLL REVEAL ── */
+var revItems = document.querySelectorAll('[data-r]');
+var revIO = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var d = parseInt(e.target.dataset.d||0);
+      setTimeout(function(){ e.target.classList.add('vt-show'); }, d);
+      revIO.unobserve(e.target);
+    }
+  });
+},{threshold:0.12});
+revItems.forEach(function(el){ revIO.observe(el); });
+
+/* ── SERVICE CARD GLOW ── */
+document.querySelectorAll('.svc-card').forEach(function(c){
+  c.addEventListener('mousemove',function(e){
+    var r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    c.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+  });
+});
+
+/* ── HEADER SCROLL ── */
+var hdr = document.getElementById('vt-header');
+var stBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){
+  var s = window.scrollY;
+  if(hdr) hdr.classList.toggle('scrolled', s>60);
+  if(stBtn) stBtn.classList.toggle('show', s>400);
+});
+
+/* ── MEGA MENU ── */
+var dropBtn = document.getElementById('navDropBtn');
+var megaPanel = document.getElementById('megaPanel');
+if(dropBtn && megaPanel){
+  dropBtn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open = megaPanel.classList.toggle('open');
+    dropBtn.setAttribute('aria-expanded', open);
+  });
+  document.addEventListener('click',function(){
+    megaPanel.classList.remove('open');
+    dropBtn.setAttribute('aria-expanded','false');
+  });
+  megaPanel.addEventListener('click',function(e){ e.stopPropagation(); });
+}
+
+/* ── MOBILE NAV ── */
+var mobBtn = document.getElementById('mob-btn');
+var nav = document.getElementById('vt-nav');
+if(mobBtn && nav){
+  mobBtn.addEventListener('click',function(){
+    var open = nav.classList.toggle('nav-open');
+    mobBtn.classList.toggle('open', open);
+    mobBtn.setAttribute('aria-expanded', open);
+    document.body.classList.toggle('body-lock', open);
+  });
+}
+
+/* ── FAQ ACCORDION ── */
+document.querySelectorAll('.faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item = btn.closest('.faq-item');
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){
+      i.classList.remove('open');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+});
+
+})();
+</script>
 
 </body>
 </html>
