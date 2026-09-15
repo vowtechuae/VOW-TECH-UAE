@@ -22,31 +22,29 @@
   document.addEventListener('scroll', toggleScrolled);
   window.addEventListener('load', toggleScrolled);
 
-/**
- * Mobile nav toggle
- */
-const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
+  /**
+   * Mobile nav toggle
+   */
+  const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-function mobileNavToggle() {
-  document.body.classList.toggle('mobile-nav-active');
-  mobileNavToggleBtn.classList.toggle('bi-list');
-  mobileNavToggleBtn.classList.toggle('bi-x');
-}
+  function mobileNavToogle() {
+    document.querySelector('body').classList.toggle('mobile-nav-active');
+    mobileNavToggleBtn.classList.toggle('bi-list');
+    mobileNavToggleBtn.classList.toggle('bi-x');
+  }
+  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
 
-if (mobileNavToggleBtn) {
-  mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
-}
+  /**
+   * Hide mobile nav on same-page/hash links
+   */
+  document.querySelectorAll('#navmenu a').forEach(navmenu => {
+    navmenu.addEventListener('click', () => {
+      if (document.querySelector('.mobile-nav-active')) {
+        mobileNavToogle();
+      }
+    });
 
-/**
- * Hide mobile nav on same-page/hash links
- */
-document.querySelectorAll('#navmenu a').forEach(navmenu => {
-  navmenu.addEventListener('click', () => {
-    if (document.querySelector('.mobile-nav-active')) {
-      mobileNavToggle(); // ✅ fixed
-    }
   });
-});
 
   /**
    * Toggle mobile nav dropdowns
@@ -70,20 +68,16 @@ document.querySelectorAll('#navmenu a').forEach(navmenu => {
     });
   }
 
- /**
- * Scroll top button
- */
-let scrollTop = document.querySelector('.scroll-top');
+  /**
+   * Scroll top button
+   */
+  let scrollTop = document.querySelector('.scroll-top');
 
-function toggleScrollTop() {
-  if (scrollTop) {
-    window.scrollY > 100
-      ? scrollTop.classList.add('active')
-      : scrollTop.classList.remove('active');
+  function toggleScrollTop() {
+    if (scrollTop) {
+      window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
+    }
   }
-}
-
-if (scrollTop) {
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -91,16 +85,14 @@ if (scrollTop) {
       behavior: 'smooth'
     });
   });
-}
 
-window.addEventListener('load', toggleScrollTop);
-document.addEventListener('scroll', toggleScrollTop);
+  window.addEventListener('load', toggleScrollTop);
+  document.addEventListener('scroll', toggleScrollTop);
 
-/**
- * Animation on scroll (AOS)
- */
-window.addEventListener('load', () => {
-  if (typeof AOS !== 'undefined') {
+  /**
+   * Animation on scroll function and init
+   */
+  function aosInit() {
     AOS.init({
       duration: 600,
       easing: 'ease-in-out',
@@ -108,77 +100,51 @@ window.addEventListener('load', () => {
       mirror: false
     });
   }
-});
-  
+  window.addEventListener('load', aosInit);
+
   /**
- * Auto generate the carousel indicators (Bootstrap 5 fixed)
- */
-document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
-
-  const carousel = carouselIndicator.closest('.carousel');
-  const carouselId = carousel.id;
-
-  carousel.querySelectorAll('.carousel-item').forEach((carouselItem, index) => {
-
-    carouselIndicator.innerHTML += `
-      <button 
-        type="button"
-        data-bs-target="#${carouselId}"
-        data-bs-slide-to="${index}"
-        ${index === 0 ? 'class="active" aria-current="true"' : ''}
-        aria-label="Slide ${index + 1}">
-      </button>
-    `;
-
+   * Auto generate the carousel indicators
+   */
+  document.querySelectorAll('.carousel-indicators').forEach((carouselIndicator) => {
+    carouselIndicator.closest('.carousel').querySelectorAll('.carousel-item').forEach((carouselItem, index) => {
+      if (index === 0) {
+        carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}" class="active"></li>`;
+      } else {
+        carouselIndicator.innerHTML += `<li data-bs-target="#${carouselIndicator.closest('.carousel').id}" data-bs-slide-to="${index}"></li>`;
+      }
+    });
   });
 
-});
-
- /**
- * Initiate GLightbox (Safe)
- */
-if (typeof GLightbox !== 'undefined') {
-  GLightbox({
+  /**
+   * Initiate glightbox
+   */
+  const glightbox = GLightbox({
     selector: '.glightbox'
   });
-}
 
- 
-/**
- * Init swiper sliders (Safe Version)
- */
-function initSwiper() {
-  document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+  /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
 
-    let configElement = swiperElement.querySelector(".swiper-config");
+  /**
+   * Init swiper sliders
+   */
+  function initSwiper() {
+    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+      let config = JSON.parse(
+        swiperElement.querySelector(".swiper-config").innerHTML.trim()
+      );
 
-    // Stop if config element doesn't exist
-    if (!configElement) return;
-
-    let config;
-
-    // Safe JSON parsing
-    try {
-      config = JSON.parse(configElement.innerHTML.trim());
-    } catch (error) {
-      console.error("Invalid Swiper config JSON:", error);
-      return;
-    }
-
-    if (swiperElement.classList.contains("swiper-tab")) {
-      initSwiperWithCustomPagination(swiperElement, config);
-    } else {
-      new Swiper(swiperElement, config);
-    }
-
-  });
-}
-
-  window.addEventListener("load", () => {
-  if (typeof Swiper !== 'undefined') {
-    initSwiper();
+      if (swiperElement.classList.contains("swiper-tab")) {
+        initSwiperWithCustomPagination(swiperElement, config);
+      } else {
+        new Swiper(swiperElement, config);
+      }
+    });
   }
-});
+
+  window.addEventListener("load", initSwiper);
 
   /**
    * Frequently Asked Questions Toggle
