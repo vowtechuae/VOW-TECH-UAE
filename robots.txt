@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /froms/
+Disallow: /csstest/
 
 Sitemap: https://vow-tech.com/sitemap.xml

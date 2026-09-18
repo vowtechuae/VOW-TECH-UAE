@@ -10,7 +10,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>IT Security Solutions UAE | Firewall, Cyber Security, Data Protection | VOWTECH</title>
 <meta name="description" content="Advanced IT Security Solutions across UAE — Firewall, Anti-Virus, Data Protection, Penetration Testing, UTM, and Cyber Security Services by VOWTECH Abu Dhabi.">
-<meta name="keywords" content="IT security UAE, cyber security Abu Dhabi, firewall UAE, penetration testing Dubai, data protection UAE, VOWTECH security">
 <meta name="author" content="VOWTECH">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0a1628">
@@ -22,7 +21,7 @@
 <meta property="og:title" content="IT Security Solutions UAE | VOWTECH Abu Dhabi">
 <meta property="og:description" content="Advanced IT security solutions — firewall, cyber security, data protection, and penetration testing across Abu Dhabi, Dubai, and the UAE by VOWTECH.">
 <meta property="og:image" content="https://vow-tech.com/assets/img/logo.jpeg">
-<meta property="og:url" content="https://vow-tech.com/it-security-solutions.html">
+<meta property="og:url" content="https://vow-tech.com/it-security-solutions">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VOWTECH">
 <meta property="og:locale" content="en_AE">
@@ -31,10 +30,10 @@
 <meta name="twitter:title" content="IT Security Solutions | VOWTECH Abu Dhabi UAE">
 <meta name="twitter:description" content="Firewall, cyber security, data protection, and penetration testing across the UAE by VOWTECH.">
 <meta name="twitter:image" content="https://vow-tech.com/assets/img/logo.jpeg">
-<link rel="canonical" href="https://vow-tech.com/it-security-solutions.html">
+<link rel="canonical" href="https://vow-tech.com/it-security-solutions">
 <!-- Favicons -->
 <link rel="shortcut icon" href="assets/img/favicon.ico">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.ico">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -435,7 +434,27 @@ body.body-lock { overflow:hidden; }
   .svc-grid { grid-template-columns:1fr; }
 }
 @media(prefers-reduced-motion:reduce){ *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+
+/* RELATED SERVICES (internal links) */
+.rel-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.rel-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.rel-head { text-align:center; margin-bottom:56px; }
+.rel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+a.rel-card { display:block; background:var(--navy2); border:1px solid var(--border); padding:32px 28px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s,box-shadow .3s; }
+a.rel-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease); }
+a.rel-card:hover { border-color:rgba(200,160,82,.35); transform:translateY(-5px); box-shadow:0 20px 48px rgba(0,0,0,.4); }
+a.rel-card:hover::before { transform:scaleX(1); }
+.rel-icon { width:56px; height:56px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--gold-dim); margin-bottom:16px; }
+.rel-icon i { color:var(--gold); font-size:22px; }
+.rel-h { font-family:var(--fb); font-size:18px; font-weight:700; color:var(--white); margin-bottom:8px; }
+.rel-p { font-size:13.5px; color:var(--muted); line-height:1.75; margin-bottom:14px; }
+.rel-link { font-family:var(--fm); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:7px; }
+@media(max-width:1199px){ .rel-grid{grid-template-columns:repeat(2,1fr);} }
+@media(max-width:767px){ .rel-grid{grid-template-columns:1fr;} .rel-sec{padding:80px 0;} }
 </style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://vow-tech.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://vow-tech.com/#services"},{"@type":"ListItem","position":3,"name":"IT Security Solutions","item":"https://vow-tech.com/it-security-solutions"}]}
+</script>
 </head>
 <body>
 
@@ -464,9 +483,9 @@ body.body-lock { overflow:hidden; }
       <div class="logo-3d-wrap" aria-hidden="true">
         <div class="logo-cube">
           <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
-          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
-          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
-          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy" decoding="async"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy" decoding="async"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy" decoding="async"></div>
           <div class="lc-f lc-top"></div>
           <div class="lc-f lc-bottom"></div>
         </div>
@@ -490,6 +509,9 @@ body.body-lock { overflow:hidden; }
               <div class="mega-head"><i class="fas fa-headset" aria-hidden="true"></i> IT Support</div>
               <a href="amc-support.html" role="menuitem">Annual Maintenance Contract</a>
               <a href="cctv-services.html" role="menuitem">CCTV Services</a>
+              <a href="cctv-amc-abu-dhabi.html" role="menuitem">CCTV AMC &amp; Maintenance</a>
+              <a href="attendance-system-installation-abu-dhabi.html" role="menuitem">Attendance System Installation</a>
+              <a href="punch-in-punch-out-machine-abu-dhabi.html" role="menuitem">Punch-In / Punch-Out Machines</a>
               <a href="office-it-setup-relocation.html" role="menuitem">Office IT Setup &amp; Relocation</a>
               <a href="emergency-it-support.html" role="menuitem">Emergency IT Support</a>
               <a href="remote-technical-support.html" role="menuitem">Remote Technical Support</a>
@@ -700,7 +722,7 @@ body.body-lock { overflow:hidden; }
       </a>
 
       <a class="svc-card" href="data-protection-systems.html" aria-label="Data Protection Systems">
-        <div class="svc-img" style="background-image:url('assets/img/services/dataprotection.png'); background-color:var(--navy3);"></div>
+        <div class="svc-img" style="background-image:url('assets/img/seo/data-protection-backup-system.webp'); background-color:var(--navy3);"></div>
         <div class="svc-overlay"></div>
         <div class="svc-badge">Data</div>
         <div class="svc-content">
@@ -711,7 +733,7 @@ body.body-lock { overflow:hidden; }
       </a>
 
       <a class="svc-card" href="data-security-theft-prevention.html" aria-label="Data Security & Theft Prevention">
-        <div class="svc-img" style="background-image:url('assets/img/services/datasecurity.png'); background-color:var(--navy3);"></div>
+        <div class="svc-img" style="background-image:url('assets/img/seo/data-security-encryption.webp'); background-color:var(--navy3);"></div>
         <div class="svc-overlay"></div>
         <div class="svc-badge">DLP</div>
         <div class="svc-content">
@@ -777,7 +799,7 @@ body.body-lock { overflow:hidden; }
       </a>
 
       <a class="svc-card" href="penetration-testing.html" aria-label="Penetration Testing">
-        <div class="svc-img" style="background-image:url('assets/img/services/pentest.png'); background-color:var(--navy3);"></div>
+        <div class="svc-img" style="background-image:url('assets/img/seo/penetration-testing-security-assessment.webp'); background-color:var(--navy3);"></div>
         <div class="svc-overlay"></div>
         <div class="svc-badge">Pen Test</div>
         <div class="svc-content">
@@ -944,6 +966,36 @@ body.body-lock { overflow:hidden; }
   </div>
 </div>
 
+<!-- RELATED SERVICES -->
+<section class="rel-sec" aria-label="Related services">
+  <div class="vt-con">
+    <div class="rel-head" data-r>
+      <span class="sec-tag">// RELATED SERVICES</span>
+      <h2 class="sec-h2">Related <em>Services &amp; Guides</em></h2>
+    </div>
+    <div class="rel-grid" data-r data-d="60">
+      <a class="rel-card" href="cybersecurity-services-uae.html">
+        <div class="rel-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Cybersecurity Services in the UAE</h3>
+        <p class="rel-p">Layered protection: firewall, endpoint, email, backup and monitoring.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="rel-card" href="managed-it-services-uae.html">
+        <div class="rel-icon"><i class="fas fa-project-diagram" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Managed IT Services Across the UAE</h3>
+        <p class="rel-p">Fully managed or co-managed IT for multi-site organisations.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="rel-card" href="it-security-best-practices-uae-businesses.html">
+        <div class="rel-icon"><i class="fas fa-book-open" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Guide: IT Security Best Practices</h3>
+        <p class="rel-p">A practical security baseline for UAE businesses.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ BIG CTA ═══ -->
 <section class="big-cta" aria-label="Contact VOWTECH for IT Security">
   <div class="big-cta-inner" data-r>
@@ -986,7 +1038,7 @@ body.body-lock { overflow:hidden; }
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="fb-logo-wrap">
-            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52" loading="lazy" decoding="async">
             <div>
               <span class="fb-name">VOW<em>TECH</em></span>
               <span class="fb-sub">Enterprise IT — UAE</span>
