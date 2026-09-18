@@ -1,305 +1,1239 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Load Balancer Solutions | VOWTECH UAE</title>
-
-<meta name="description" content="VOWTECH provides enterprise Load Balancer solutions in UAE to ensure high availability, traffic distribution, server optimization, and zero downtime for business applications.">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Load Balancer Solutions in the UAE | VOWTECH</title>
+<meta name="description" content="Load balancer solutions for UAE businesses: traffic distribution across servers, health checks, automatic failover and TLS offload deployed by VOWTECH.">
 <meta name="author" content="VOWTECH">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0a1628">
 <meta name="geo.region" content="AE-AZ">
 <meta name="geo.placename" content="Abu Dhabi">
-<meta name="geo.position" content="24.495;54.370">
-<meta name="ICBM" content="24.495, 54.370">
-<!-- Open Graph -->
-<meta property="og:title" content="Load Balancer Solutions | VOWTECH UAE">
-<meta property="og:description" content="VOWTECH provides enterprise Load Balancer solutions in UAE to ensure high availability, traffic distribution, server optimization, and zero downtime for business applications.">
-<meta property="og:image" content="https://vow-tech.com/assets/img/logo.jpeg">
+<meta property="og:title" content="Load Balancer Solutions in the UAE | VOWTECH">
+<meta property="og:description" content="Load balancer solutions for UAE businesses: traffic distribution across servers, health checks, automatic failover and TLS offload deployed by VOWTECH.">
+<meta property="og:image" content="https://vow-tech.com/assets/img/seo/load-balancer-network-uae.webp">
 <meta property="og:url" content="https://vow-tech.com/load-balancers">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="VOWTECH">
 <meta property="og:locale" content="en_AE">
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Load Balancer Solutions | VOWTECH UAE">
-<meta name="twitter:description" content="VOWTECH provides enterprise Load Balancer solutions in UAE to ensure high availability, traffic distribution, server optimization, and zero downtime for business applications.">
-<meta name="twitter:image" content="https://vow-tech.com/assets/img/logo.jpeg">
+<meta name="twitter:title" content="Load Balancer Solutions in the UAE | VOWTECH">
+<meta name="twitter:description" content="Load balancer solutions for UAE businesses: traffic distribution across servers, health checks, automatic failover and TLS offload deployed by VOWTECH.">
+<meta name="twitter:image" content="https://vow-tech.com/assets/img/seo/load-balancer-network-uae.webp">
 <link rel="canonical" href="https://vow-tech.com/load-balancers">
-<!-- Schema -->
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "Service", "name": "Load Balancer Solutions", "provider": {"@type": "LocalBusiness", "name": "VOWTECH", "url": "https://vow-tech.com", "telephone": "+971581816887", "address": {"@type": "PostalAddress", "streetAddress": "Navy Gate - Al Zahiyah - E16 02", "addressLocality": "Abu Dhabi", "addressCountry": "AE"}}, "description": "VOWTECH provides enterprise Load Balancer solutions in UAE to ensure high availability, traffic distribution, server optimization, and zero downtime for business applications.", "areaServed": ["Abu Dhabi", "Dubai", "Sharjah", "Ajman", "Al Ain", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain"]}
-</script>
-<script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://vow-tech.com/"}, {"@type": "ListItem", "position": 2, "name": "Services", "item": "https://vow-tech.com/#services"}, {"@type": "ListItem", "position": 3, "name": "Load Balancer Solutions", "item": "https://vow-tech.com/load-balancers"}]}
-</script>
-
-
-<link href="assets/img/VOWTECH.jpeg" rel="icon">
-<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-
+<link rel="shortcut icon" href="assets/img/favicon.ico">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/vendor/fontawesome-free/css/all.min.css">
 <style>
-
-/* ===== GENERAL ===== */
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f5f7fb;
+:root {
+  --black:    #050810;
+  --navy:     #080f1e;
+  --navy2:    #0a1628;
+  --navy3:    #0e1c35;
+  --navy4:    #14253f;
+  --gold:     #c8a052;
+  --gold2:    #dbb870;
+  --gold3:    #9a7838;
+  --gold-dim: rgba(200,160,82,0.15);
+  --teal:     #00c8e0;
+  --teal2:    #00a0b8;
+  --teal-dim: rgba(0,200,224,0.12);
+  --red:      #e05050;
+  --red-dim:  rgba(224,80,80,0.12);
+  --white:    #f0ece2;
+  --cream:    #e5dfd0;
+  --muted:    rgba(240,236,226,0.5);
+  --border:   rgba(200,160,82,0.18);
+  --border2:  rgba(0,200,224,0.1);
+  --r:        4px;
+  --ease:     cubic-bezier(0.22,1,0.36,1);
+  --fd:       'Orbitron', 'Rajdhani', sans-serif;
+  --fb:       'Rajdhani', system-ui, sans-serif;
+  --fm:       'Share Tech Mono', 'Courier New', monospace;
+  --tb:       42px;
+  --hh:       88px;
 }
 
-/* ===== HEADER ===== */
-header {
-  background: #ffffff;
-  padding: 15px 0;
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; overflow-x:hidden; }
+body { font-family:var(--fb); background:var(--black); color:var(--white); overflow-x:hidden; cursor:none; -webkit-font-smoothing:antialiased; }
+a { color:var(--gold); text-decoration:none; transition:color .25s; }
+a:hover { color:var(--gold2); }
+img { display:block; max-width:100%; }
+body.body-lock { overflow:hidden; }
+
+#vt-noise {
+  position:fixed; inset:0; z-index:1; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  opacity:.5;
 }
 
-/* ===== HERO ===== */
-.hero {
-  background: linear-gradient(135deg, #0d1b2a, #1b263b);
-  color: white;
-  padding: 100px 0;
-  text-align: center;
-}
+/* CURSOR */
+#vt-dot { position:fixed; width:10px; height:10px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); transition:width .18s var(--ease),height .18s var(--ease),background .2s; mix-blend-mode:difference; }
+#vt-ring { position:fixed; width:38px; height:38px; border:1.5px solid var(--gold); border-radius:50%; pointer-events:none; z-index:99998; transform:translate(-50%,-50%); opacity:.55; transition:width .3s var(--ease),height .3s var(--ease),border-color .25s; }
+#vt-dot.hover { width:6px; height:6px; background:var(--teal); }
+#vt-ring.hover { width:56px; height:56px; border-color:var(--teal); opacity:.3; }
+@media(max-width:991px){ #vt-dot,#vt-ring{ display:none; } body{ cursor:auto; } }
 
-.hero h1 {
-  font-size: 42px;
-  font-weight: 700;
-}
+/* BUTTONS */
+.btn-primary { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--gold); color:var(--navy2); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:none; border-radius:var(--r); cursor:pointer; text-decoration:none; position:relative; overflow:hidden; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-primary::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(255,255,255,.18),transparent); opacity:0; transition:opacity .3s; }
+.btn-primary:hover { background:var(--gold2); color:var(--navy2); transform:translateY(-3px); box-shadow:0 14px 32px rgba(200,160,82,.38); }
+.btn-primary:hover::before { opacity:1; }
+.btn-primary.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-wa { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:#25D366; color:#fff; font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border-radius:var(--r); text-decoration:none; transition:background .3s,transform .22s,box-shadow .3s; }
+.btn-wa:hover { background:#1db954; color:#fff; transform:translateY(-3px); box-shadow:0 14px 32px rgba(37,211,102,.32); }
+.btn-wa.btn-lg { padding:17px 38px; font-size:12px; }
+.btn-dark { display:inline-flex; align-items:center; gap:9px; padding:14px 30px; background:var(--navy2); color:var(--gold); font-family:var(--fd); font-size:11px; font-weight:700; letter-spacing:1px; border:1.5px solid var(--gold); border-radius:var(--r); text-decoration:none; transition:all .3s; }
+.btn-dark:hover { background:var(--gold); color:var(--navy2); transform:translateY(-2px); }
 
-.hero p {
-  font-size: 18px;
-  margin-top: 15px;
-  opacity: 0.9;
-}
+/* TOPBAR */
+#topbar { position:fixed; top:0; left:0; right:0; height:var(--tb); background:var(--gold); z-index:990; display:flex; align-items:center; }
+.tb-inner { width:100%; max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; letter-spacing:.8px; color:var(--navy2); }
+.tb-pulse { display:inline-block; width:7px; height:7px; background:var(--navy2); border-radius:50%; margin-right:10px; animation:tbPulse 1.6s ease infinite; }
+@keyframes tbPulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.5);opacity:.4} }
+.tb-r { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.tb-r a { color:var(--navy2); font-weight:700; }
+.tb-r a:hover { text-decoration:underline; }
+.tb-r span { opacity:.4; }
 
-/* ===== SECTION TITLE ===== */
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-  font-weight: 700;
-}
+/* HEADER */
+#vt-header { position:fixed; top:var(--tb); left:0; right:0; height:var(--hh); z-index:980; background:rgba(8,15,30,.88); border-bottom:1px solid var(--border); backdrop-filter:blur(24px); -webkit-backdrop-filter:blur(24px); transition:background .4s,box-shadow .4s; }
+#vt-header.scrolled { background:rgba(8,15,30,.98); box-shadow:0 4px 32px rgba(0,0,0,.65); }
+.hdr-inner { max-width:1360px; margin:auto; padding:0 48px; height:100%; display:flex; align-items:center; gap:28px; }
 
-/* ===== BOX ===== */
-.box {
-  background: #fff;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  height: 100%;
-  transition: 0.3s;
-}
+/* LOGO CUBE */
+.vt-logo { display:flex; align-items:center; gap:16px; text-decoration:none; flex-shrink:0; }
+.logo-3d-wrap { width:72px; height:72px; perspective:400px; flex-shrink:0; }
+.logo-cube { width:72px; height:72px; position:relative; transform-style:preserve-3d; animation:logoCubeAll4 10s linear infinite; }
+@keyframes logoCubeAll4 { 0%{transform:rotateY(0deg) rotateX(12deg)} 25%{transform:rotateY(90deg) rotateX(12deg)} 50%{transform:rotateY(180deg) rotateX(12deg)} 75%{transform:rotateY(270deg) rotateX(12deg)} 100%{transform:rotateY(360deg) rotateX(12deg)} }
+.lc-f { position:absolute; width:72px; height:72px; display:flex; align-items:center; justify-content:center; overflow:hidden; backface-visibility:hidden; border:1.5px solid rgba(200,160,82,.45); background:var(--navy2); }
+.lc-f img { width:100%; height:100%; object-fit:cover; }
+.lc-front  { transform:translateZ(36px); }
+.lc-back   { transform:translateZ(-36px) rotateY(180deg); }
+.lc-right  { transform:translateX(36px) rotateY(90deg); }
+.lc-left   { transform:translateX(-36px) rotateY(-90deg); }
+.lc-top    { transform:translateY(-36px) rotateX(90deg); background:linear-gradient(135deg,var(--gold-dim),var(--navy3)); }
+.lc-bottom { transform:translateY(36px) rotateX(-90deg); background:linear-gradient(135deg,var(--navy3),var(--gold-dim)); }
+.logo-text-wrap { display:flex; flex-direction:column; line-height:1; }
+.logo-main { font-family:var(--fd); font-size:22px; font-weight:700; letter-spacing:3px; color:var(--white); }
+.logo-main em { color:var(--gold); font-style:normal; }
+.logo-tagline { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); margin-top:5px; }
 
-.box:hover {
-  transform: translateY(-5px);
-}
+/* NAV */
+#vt-nav { margin-left:auto; display:flex; align-items:center; gap:2px; }
+.nav-a { font-family:var(--fm); font-size:11px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); padding:10px 14px; text-decoration:none; background:none; border:none; cursor:pointer; transition:color .25s; position:relative; }
+.nav-a::after { content:''; position:absolute; bottom:5px; left:14px; right:14px; height:1px; background:var(--gold); transform:scaleX(0); transition:transform .3s var(--ease); }
+.nav-a:hover,.nav-a.active { color:var(--gold); }
+.nav-a:hover::after,.nav-a.active::after { transform:scaleX(1); }
+.nav-drop { position:relative; }
+.mega-panel { position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%) translateY(12px); width:min(1000px,95vw); background:rgba(8,15,30,.98); border:1px solid var(--border); border-top:2px solid var(--gold); backdrop-filter:blur(28px); padding:34px 38px 40px; opacity:0; visibility:hidden; transition:all .3s var(--ease); z-index:100; box-shadow:0 32px 80px rgba(0,0,0,.7); }
+.mega-panel.open { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+.mega-cols { display:grid; grid-template-columns:repeat(5,1fr); gap:28px; }
+.mega-head { font-family:var(--fm); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:8px; }
+.mega-col a { display:block; font-size:13px; color:var(--muted); padding:5px 0; transition:color .2s,padding-left .2s; }
+.mega-col a:hover { color:var(--gold2); padding-left:7px; }
+.hdr-cta { margin-left:10px; padding:10px 22px; font-size:11px; flex-shrink:0; }
+#mob-btn { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; margin-left:8px; }
+#mob-btn span { display:block; width:24px; height:1.5px; background:var(--white); transition:all .3s var(--ease); }
+#mob-btn.open span:nth-child(1){ transform:rotate(45deg) translate(5px,5px); }
+#mob-btn.open span:nth-child(2){ opacity:0; }
+#mob-btn.open span:nth-child(3){ transform:rotate(-45deg) translate(5px,-5px); }
 
-/* ===== CTA ===== */
-.cta {
-  background: #0d1b2a;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-}
+/* SCROLL REVEAL */
+[data-r] { opacity:0; transform:translateY(32px); transition:opacity .85s var(--ease),transform .85s var(--ease); }
+[data-r="right"] { transform:translateX(-32px); }
+[data-r="left"]  { transform:translateX(32px); }
+.vt-show { opacity:1 !important; transform:none !important; }
 
-/* ===== FOOTER ===== */
-footer {
-  background: #0b1220;
-  color: white;
-  text-align: center;
-  padding: 20px;
-}
+/* PAGE HERO */
+.page-hero { padding-top:calc(var(--tb) + var(--hh) + 80px); padding-bottom:100px; position:relative; overflow:hidden; background:var(--black); z-index:1; }
+.page-hero::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.04) 1px,transparent 1px); background-size:60px 60px; animation:gridDrift 20s linear infinite; }
+@keyframes gridDrift { 0%{background-position:0 0} 100%{background-position:60px 60px} }
+.page-hero::after { content:''; position:absolute; top:-200px; right:-100px; width:700px; height:700px; background:radial-gradient(circle,rgba(0,200,224,.05),transparent 60%); pointer-events:none; }
+.page-hero-inner { max-width:1360px; margin:auto; padding:0 48px; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; z-index:2; }
+.scanlines-hero { position:absolute; inset:0; z-index:1; pointer-events:none; background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.04) 2px,rgba(0,0,0,.04) 4px); }
 
-footer a {
-  color: #00c6ff;
-}
+.breadcrumb-nav { display:flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:24px; }
+.breadcrumb-nav a { color:var(--muted); transition:color .2s; }
+.breadcrumb-nav a:hover { color:var(--gold); }
+.breadcrumb-nav span { opacity:.4; }
+.breadcrumb-nav .bc-active { color:var(--teal); opacity:1; }
 
+.page-hero-badge { display:inline-flex; align-items:center; gap:10px; font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:22px; }
+.badge-dot { width:7px; height:7px; background:var(--teal); border-radius:50%; animation:tbPulse 2s ease infinite; }
+
+.page-hero-h1 { font-family:var(--fd); font-size:clamp(36px,5vw,68px); font-weight:900; letter-spacing:1.5px; line-height:1.05; color:var(--white); margin-bottom:22px; }
+.page-hero-h1 em { color:var(--gold); font-style:normal; }
+.page-hero-h1 span { color:var(--teal); }
+.page-hero-desc { font-size:16px; color:var(--muted); line-height:1.82; max-width:500px; margin-bottom:36px; }
+.hero-chips { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:32px; }
+.h-chip { display:flex; align-items:center; gap:7px; font-family:var(--fm); font-size:10px; letter-spacing:1.2px; text-transform:uppercase; color:var(--muted); padding:7px 14px; border:1px solid var(--border); border-radius:40px; }
+.h-chip i { color:var(--gold); font-size:10px; }
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* HERO RIGHT — Biometric Visual */
+.hero-visual-panel { display:flex; align-items:center; justify-content:center; }
+.bio-visual { background:rgba(10,22,40,.8); border:1px solid var(--border); border-top:2px solid var(--gold); padding:32px; width:360px; backdrop-filter:blur(14px); position:relative; }
+.bio-header { display:flex; align-items:center; gap:14px; margin-bottom:22px; padding-bottom:18px; border-bottom:1px solid var(--border); }
+.bio-icon-wrap { width:52px; height:52px; background:var(--gold-dim); border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.bio-icon-wrap i { color:var(--gold); font-size:22px; }
+.bio-title { font-family:var(--fd); font-size:13px; font-weight:700; color:var(--white); letter-spacing:1px; }
+.bio-sub { font-family:var(--fm); font-size:9px; letter-spacing:1.5px; color:var(--teal); margin-top:3px; }
+.bio-metrics { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:20px; }
+.b-metric { background:rgba(8,15,30,.7); border:1px solid var(--border); padding:14px 12px; border-radius:var(--r); text-align:center; }
+.b-metric-n { font-family:var(--fd); font-size:18px; font-weight:700; color:var(--gold); display:block; line-height:1; }
+.b-metric-n.teal { color:var(--teal); }
+.b-metric-l { font-family:var(--fm); font-size:8px; letter-spacing:1.5px; color:var(--muted); margin-top:4px; display:block; text-transform:uppercase; }
+
+/* Fingerprint scan animation */
+.fp-scan-wrap { position:relative; background:rgba(8,15,30,.8); border:1px solid var(--border); border-radius:var(--r); padding:18px; margin-bottom:16px; display:flex; flex-direction:column; align-items:center; gap:12px; }
+.fp-svg { width:80px; height:80px; }
+.fp-lines path { stroke:var(--gold); stroke-width:1.2; fill:none; opacity:.7; }
+.fp-scan-line { position:absolute; left:18px; right:18px; height:2px; background:linear-gradient(90deg,transparent,var(--teal),transparent); top:22px; animation:fpScan 2.4s ease-in-out infinite; }
+@keyframes fpScan { 0%,100%{top:22px;opacity:.9} 50%{top:88px;opacity:.6} }
+.fp-status { font-family:var(--fm); font-size:9px; letter-spacing:2px; color:var(--teal); text-transform:uppercase; }
+.fp-status .fp-dot { display:inline-block; width:6px; height:6px; background:var(--teal); border-radius:50%; margin-right:6px; animation:tbPulse 1.4s ease infinite; }
+
+.bio-layers { margin-bottom:8px; }
+.layer-row { display:flex; align-items:center; justify-content:space-between; padding:10px 0; border-bottom:1px solid rgba(200,160,82,.06); }
+.layer-row:last-child { border-bottom:none; }
+.layer-label { font-family:var(--fm); font-size:10px; letter-spacing:1px; color:var(--muted); display:flex; align-items:center; gap:8px; }
+.layer-label i { color:var(--teal); font-size:11px; }
+.layer-badge { font-family:var(--fm); font-size:9px; letter-spacing:1px; padding:3px 10px; border-radius:20px; }
+.layer-badge.ok { background:rgba(74,222,128,.1); color:#4ade80; border:1px solid rgba(74,222,128,.2); }
+.layer-badge.live { background:var(--teal-dim); color:var(--teal); border:1px solid var(--border2); }
+.layer-badge.warm { background:rgba(200,160,82,.1); color:var(--gold); border:1px solid var(--border); }
+
+.bio-float { position:absolute; top:-18px; right:-20px; background:rgba(200,160,82,.1); border:1px solid var(--border); padding:9px 14px; display:flex; align-items:center; gap:8px; border-radius:3px; animation:floatA 4s ease infinite; }
+@keyframes floatA { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.bio-float i { color:var(--gold); font-size:12px; }
+.bio-float span { font-family:var(--fm); font-size:9px; color:var(--gold); letter-spacing:1px; }
+
+/* VT CONTAINER */
+.vt-con { max-width:1360px; margin:auto; padding:0 48px; }
+
+/* SECTION TAGS */
+.sec-tag { display:block; font-family:var(--fm); font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--teal); margin-bottom:14px; }
+.sec-h2 { font-family:var(--fd); font-size:clamp(32px,4.5vw,56px); font-weight:700; letter-spacing:1px; line-height:1.05; color:var(--white); margin-bottom:14px; }
+.sec-h2 em { color:var(--gold); font-style:normal; }
+.sec-sub { font-size:15px; color:var(--muted); max-width:560px; margin:0 auto; line-height:1.82; }
+
+/* TYPES SECTION */
+.types-sec { padding:110px 0; background:var(--navy); position:relative; z-index:1; overflow:hidden; }
+.types-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.types-sec::after { content:''; position:absolute; bottom:-200px; right:-100px; width:600px; height:600px; background:radial-gradient(circle,rgba(0,200,224,.04),transparent 60%); pointer-events:none; }
+.types-head { text-align:center; margin-bottom:60px; }
+.types-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.type-card { background:var(--navy2); border:1px solid var(--border); padding:44px 34px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s,box-shadow .3s; }
+.type-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); transform:scaleX(0); transform-origin:left; transition:transform .45s var(--ease); }
+.type-card:hover { border-color:rgba(200,160,82,.35); transform:translateY(-6px); box-shadow:0 24px 56px rgba(0,0,0,.45); }
+.type-card:hover::before { transform:scaleX(1); }
+.type-num { font-family:var(--fd); font-size:52px; font-weight:700; color:rgba(200,160,82,.06); line-height:1; margin-bottom:16px; }
+.type-icon { width:58px; height:58px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--gold-dim); margin-bottom:22px; }
+.type-icon i { color:var(--gold); font-size:24px; }
+.type-h { font-family:var(--fb); font-size:20px; font-weight:700; color:var(--white); margin-bottom:12px; }
+.type-p { font-size:14px; color:var(--muted); line-height:1.8; margin-bottom:20px; }
+.type-features { display:flex; flex-direction:column; gap:8px; }
+.type-feat { display:flex; align-items:center; gap:9px; font-family:var(--fm); font-size:10px; letter-spacing:.8px; color:var(--muted); }
+.type-feat i { color:var(--teal); font-size:10px; flex-shrink:0; }
+
+/* CHALLENGES SECTION */
+.challenges-sec { padding:100px 0; background:var(--black); position:relative; z-index:1; overflow:hidden; }
+.challenges-sec::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+.challenges-head { text-align:center; margin-bottom:56px; }
+.challenges-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+.challenge-card { background:var(--navy2); padding:40px 32px; position:relative; overflow:hidden; transition:background .3s; }
+.challenge-card:hover { background:#0c1830; }
+.challenge-card::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); transition:width .5s var(--ease); }
+.challenge-card:hover::after { width:100%; }
+.cc-num { font-family:var(--fd); font-size:44px; font-weight:700; color:rgba(200,160,82,.07); line-height:1; margin-bottom:14px; }
+.cc-icon { width:52px; height:52px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--red-dim); margin-bottom:18px; }
+.cc-icon i { color:var(--red); font-size:22px; }
+.cc-h { font-family:var(--fb); font-size:18px; font-weight:700; color:var(--white); margin-bottom:10px; }
+.cc-p { font-size:14px; color:var(--muted); line-height:1.78; }
+
+/* SERVICES SECTION */
+.services-sec { padding:110px 0; background:var(--navy); position:relative; z-index:1; }
+.services-sec::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+.services-head { text-align:center; margin-bottom:64px; }
+.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.svc-card { background:var(--navy2); border:1px solid var(--border); padding:36px 30px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s,box-shadow .3s; }
+.svc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease); }
+.svc-card:hover { border-color:rgba(200,160,82,.35); transform:translateY(-5px); box-shadow:0 20px 48px rgba(0,0,0,.4); }
+.svc-card:hover::before { transform:scaleX(1); }
+.svc-icon { width:56px; height:56px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--gold-dim); margin-bottom:20px; }
+.svc-icon i { color:var(--gold); font-size:22px; }
+.svc-h { font-family:var(--fb); font-size:19px; font-weight:700; color:var(--white); margin-bottom:12px; }
+.svc-p { font-size:14px; color:var(--muted); line-height:1.8; margin-bottom:18px; }
+.svc-tags { display:flex; flex-wrap:wrap; gap:7px; }
+.svc-tag { font-family:var(--fm); font-size:9px; letter-spacing:1px; text-transform:uppercase; color:var(--teal); padding:4px 10px; border:1px solid var(--border2); border-radius:20px; }
+
+/* PROCESS STRIP */
+.process-strip { padding:100px 0; position:relative; z-index:1; background:var(--black); overflow:hidden; }
+.process-strip::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.03) 1px,transparent 1px); background-size:60px 60px; }
+.ps-head { text-align:center; margin-bottom:60px; }
+.ps-steps { display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border); border:1px solid var(--border); }
+.ps-step { background:var(--navy2); padding:36px 24px; position:relative; transition:background .3s; }
+.ps-step:hover { background:#0c1830; }
+.ps-step::after { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); transition:width .5s var(--ease); }
+.ps-step:hover::after { width:100%; }
+.ps-num { font-family:var(--fd); font-size:44px; font-weight:700; color:rgba(200,160,82,.07); line-height:1; margin-bottom:14px; }
+.ps-icon { width:46px; height:46px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--gold-dim); margin-bottom:14px; }
+.ps-icon i { color:var(--gold); font-size:18px; }
+.ps-h { font-family:var(--fb); font-size:15px; font-weight:700; color:var(--white); margin-bottom:8px; }
+.ps-p { font-size:13px; color:var(--muted); line-height:1.75; }
+
+/* WHY SECTION */
+.why-sec { padding:110px 0; background:var(--navy); position:relative; z-index:1; }
+.why-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.why-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.why-left .sec-sub { margin:0 0 40px; max-width:100%; }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); }
+.why-item { background:var(--navy2); padding:28px 24px; display:flex; align-items:flex-start; gap:14px; transition:background .3s; }
+.why-item:hover { background:#0c1830; }
+.why-item-icon { width:40px; height:40px; flex-shrink:0; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--teal-dim); }
+.why-item-icon i { color:var(--teal); font-size:16px; }
+.why-item-h { font-family:var(--fb); font-size:15px; font-weight:700; color:var(--white); margin-bottom:5px; }
+.why-item-p { font-size:13px; color:var(--muted); line-height:1.7; }
+
+/* STATS RIGHT */
+.why-right { display:flex; flex-direction:column; gap:24px; }
+.stats-card { background:var(--navy2); border:1px solid var(--border); border-top:2px solid var(--gold); padding:32px 28px; }
+.stats-card-h { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:22px; }
+.stats-grid-4 { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); }
+.smin { background:var(--navy2); padding:22px 18px; text-align:center; }
+.smin-n { font-family:var(--fd); font-size:28px; color:var(--gold); display:block; line-height:1; }
+.smin-n.teal { color:var(--teal); }
+.smin-l { font-family:var(--fm); font-size:8px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-top:5px; display:block; }
+.tech-card { background:var(--navy2); border:1px solid var(--border); padding:28px; }
+.tech-card-h { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--teal); margin-bottom:16px; }
+.tech-badges { display:flex; flex-wrap:wrap; gap:8px; }
+.tech-badge { font-family:var(--fm); font-size:10px; letter-spacing:1px; color:var(--muted); padding:7px 14px; border:1px solid var(--border); border-radius:3px; transition:all .2s; }
+.tech-badge:hover { border-color:var(--gold); color:var(--gold); }
+
+/* COMPARE TABLE */
+.compare-sec { padding:100px 0; background:var(--black); position:relative; z-index:1; }
+.compare-head { text-align:center; margin-bottom:56px; }
+.compare-table { width:100%; border-collapse:collapse; border:1px solid var(--border); }
+.compare-table th { background:var(--navy3); font-family:var(--fm); font-size:10px; letter-spacing:2.5px; text-transform:uppercase; color:var(--gold); padding:18px 22px; text-align:left; border-bottom:2px solid var(--gold); border-right:1px solid var(--border); }
+.compare-table th:first-child { color:var(--muted); }
+.compare-table td { padding:16px 22px; font-size:13.5px; color:var(--muted); border-bottom:1px solid rgba(200,160,82,.07); border-right:1px solid var(--border); transition:background .2s; }
+.compare-table tr:hover td { background:rgba(200,160,82,.03); }
+.compare-table td:first-child { font-family:var(--fm); font-size:11px; letter-spacing:1px; color:var(--white); background:rgba(8,15,30,.5); }
+.compare-table .check { color:#4ade80; font-size:14px; }
+.compare-table .cross { color:var(--red); font-size:14px; opacity:.5; }
+.compare-table .partial { color:var(--gold); font-size:11px; }
+
+/* BIG CTA */
+.big-cta { position:relative; z-index:1; padding:110px 48px; text-align:center; background:var(--navy); overflow:hidden; }
+.big-cta::before { content:''; position:absolute; top:-200px; left:50%; transform:translateX(-50%); width:700px; height:700px; background:radial-gradient(circle,rgba(200,160,82,.055),transparent 60%); pointer-events:none; }
+.big-cta::after { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.big-cta-inner { position:relative; z-index:1; max-width:680px; margin:auto; }
+.big-cta-h { font-family:var(--fd); font-size:clamp(36px,5.5vw,72px); font-weight:700; letter-spacing:1.5px; line-height:1.05; margin-bottom:16px; }
+.big-cta-h em { color:var(--gold); font-style:normal; }
+.big-cta-p { font-size:16px; color:var(--muted); line-height:1.82; margin-bottom:36px; }
+.big-cta-btns { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; margin-bottom:24px; }
+.big-cta-tel { display:flex; align-items:center; justify-content:center; gap:10px; font-family:var(--fm); font-size:12px; color:var(--muted); }
+.big-cta-tel i { color:var(--gold); }
+.big-cta-tel a { color:var(--gold2); font-size:15px; }
+
+/* MAP */
+.map-wrap { position:relative; border-top:1px solid var(--border); border-bottom:1px solid var(--border); z-index:1; }
+.map-wrap iframe { width:100%; height:400px; border:none; display:block; }
+.map-info { position:absolute; top:28px; left:60px; z-index:2; background:rgba(8,15,30,.96); border:1px solid var(--border); border-top:2px solid var(--gold); backdrop-filter:blur(18px); padding:28px 30px; min-width:264px; }
+.map-info-head { font-family:var(--fm); font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:16px; }
+.map-info p { font-size:13.5px; color:var(--muted); line-height:1.72; margin-bottom:9px; display:flex; align-items:center; gap:9px; }
+.map-info p i { color:var(--gold); font-size:12px; flex-shrink:0; }
+.map-info p a { color:var(--muted); }
+.map-info p a:hover { color:var(--gold); }
+
+/* FOOTER */
+#vt-footer { background:var(--navy); border-top:1px solid var(--border); position:relative; z-index:1; }
+#vt-footer::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.footer-body { padding:80px 0 60px; }
+.footer-grid { display:grid; grid-template-columns:1.7fr repeat(5,1fr); gap:40px; }
+.footer-brand { display:flex; flex-direction:column; }
+.fb-logo-wrap { display:flex; align-items:center; gap:12px; margin-bottom:16px; }
+.fb-logo-wrap img { width:50px; height:50px; border-radius:8px; object-fit:cover; border:1px solid var(--border); }
+.fb-name { font-family:var(--fd); font-size:20px; font-weight:700; letter-spacing:3px; color:var(--white); display:block; }
+.fb-name em { color:var(--gold); font-style:normal; }
+.fb-sub { font-family:var(--fm); font-size:8px; letter-spacing:2.5px; color:var(--muted); display:block; margin-top:3px; }
+.footer-brand p { font-size:13.5px; color:var(--muted); line-height:1.82; margin-bottom:20px; max-width:270px; }
+.f-soc { display:flex; gap:8px; margin-bottom:20px; }
+.f-soc a { width:36px; height:36px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; text-decoration:none; transition:all .3s; }
+.f-soc a:hover { border-color:var(--gold); color:var(--gold); }
+.f-contact { display:flex; flex-direction:column; gap:8px; }
+.f-contact a,.f-contact span { display:flex; align-items:center; gap:8px; font-family:var(--fm); font-size:11.5px; color:var(--muted); transition:color .2s; }
+.f-contact i { color:var(--gold); font-size:11px; }
+.f-contact a:hover { color:var(--gold); }
+.footer-col h5 { font-family:var(--fm); font-size:9px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.footer-col ul { list-style:none; }
+.footer-col ul li { margin-bottom:9px; }
+.footer-col ul li a { font-size:13.5px; color:var(--muted); text-decoration:none; display:block; transition:color .2s,padding-left .25s; }
+.footer-col ul li a:hover { color:var(--gold2); padding-left:5px; }
+.footer-base { border-top:1px solid var(--border); padding:18px 0; }
+.footer-base-inner { max-width:1360px; margin:auto; padding:0 48px; display:flex; justify-content:space-between; align-items:center; font-family:var(--fm); font-size:11px; color:var(--muted); gap:16px; flex-wrap:wrap; }
+.footer-base-inner a { color:var(--muted); transition:color .2s; }
+.footer-base-inner a:hover { color:var(--gold); }
+.footer-base-inner span { margin:0 6px; opacity:.4; }
+
+/* FIXED */
+#scroll-top { position:fixed; bottom:96px; right:28px; z-index:9990; width:44px; height:44px; background:var(--navy2); border:1px solid var(--border); border-radius:var(--r); color:var(--gold); font-size:17px; display:flex; align-items:center; justify-content:center; text-decoration:none; opacity:0; visibility:hidden; transition:all .3s; backdrop-filter:blur(10px); }
+#scroll-top.show { opacity:1; visibility:visible; }
+#scroll-top:hover { background:var(--gold); color:var(--navy2); border-color:var(--gold); transform:translateY(-3px); }
+#wa-btn { position:fixed; bottom:28px; right:28px; z-index:9990; display:flex; align-items:center; gap:8px; padding:13px 22px; background:#25D366; border-radius:50px; color:#fff; font-family:var(--fb); font-size:13px; font-weight:700; text-decoration:none; box-shadow:0 8px 28px rgba(37,211,102,.35); transition:transform .3s var(--ease),box-shadow .3s; }
+#wa-btn i { font-size:20px; }
+#wa-btn:hover { transform:translateY(-5px) scale(1.05); box-shadow:0 18px 44px rgba(37,211,102,.4); color:#fff; }
+#wa-btn::before { content:''; position:absolute; inset:-2px; border-radius:50px; border:1px solid rgba(37,211,102,.45); animation:tbPulse 2s ease infinite; }
+
+/* RESPONSIVE */
+@media(max-width:1199px){
+  .footer-grid{grid-template-columns:repeat(3,1fr);gap:28px;}
+  .mega-cols{grid-template-columns:repeat(3,1fr);}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .types-grid{grid-template-columns:1fr 1fr;}
+  .challenges-grid{grid-template-columns:1fr 1fr;}
+  .ps-steps{grid-template-columns:repeat(3,1fr);}
+  .why-layout{gap:48px;}
+}
+@media(max-width:991px){
+  #mob-btn{display:flex;}
+  .hdr-cta{display:none;}
+  #vt-nav{position:fixed;top:calc(var(--tb) + var(--hh));left:-100%;width:300px;height:calc(100vh - var(--tb) - var(--hh));background:rgba(8,15,30,.98);flex-direction:column;align-items:flex-start;padding:24px 20px;gap:0;transition:left .35s var(--ease);overflow-y:auto;border-right:1px solid var(--border);backdrop-filter:blur(24px);z-index:970;}
+  #vt-nav.nav-open{left:0;}
+  .nav-a{width:100%;padding:13px 8px;font-size:12px;border-bottom:1px solid rgba(200,160,82,.06);}
+  .nav-drop{width:100%;}
+  .mega-panel{position:static;transform:none;width:100%;max-width:100%;box-shadow:none;border:none;background:transparent;padding:10px 0 10px 14px;}
+  .mega-panel.open{opacity:1;visibility:visible;display:block;}
+  .mega-cols{grid-template-columns:1fr;gap:14px;}
+  .page-hero-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-visual-panel{display:none;}
+  .why-layout{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:repeat(2,1fr);}
+  .map-info{display:none;}
+  .ps-steps{grid-template-columns:1fr 1fr;}
+  .types-grid{grid-template-columns:1fr;}
+  .challenges-grid{grid-template-columns:1fr;}
+  .compare-table{font-size:12px;}
+  .compare-table th,.compare-table td{padding:12px 14px;}
+}
+@media(max-width:767px){
+  :root{--tb:52px;}
+  .tb-r{display:none;}
+  .vt-con,.ps-inner{padding:0 24px;}
+  .hdr-inner{padding:0 20px;}
+  .tb-inner{padding:0 16px;}
+  .page-hero-inner{padding:0 24px;}
+  .big-cta{padding:80px 24px;}
+  .big-cta-btns{flex-direction:column;align-items:center;}
+  .logo-3d-wrap{width:52px;height:52px;}
+  .logo-cube{width:52px;height:52px;}
+  .lc-f{width:52px;height:52px;}
+  .lc-front{transform:translateZ(26px);}
+  .lc-back{transform:translateZ(-26px) rotateY(180deg);}
+  .lc-right{transform:translateX(26px) rotateY(90deg);}
+  .lc-left{transform:translateX(-26px) rotateY(-90deg);}
+  .lc-top{transform:translateY(-26px) rotateX(90deg);}
+  .lc-bottom{transform:translateY(26px) rotateX(-90deg);}
+  .ps-steps{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .challenges-grid{grid-template-columns:1fr;}
+  .types-grid{grid-template-columns:1fr;}
+  .hero-btns{flex-direction:column;}
+  .btn-primary,.btn-wa{width:100%;justify-content:center;}
+  .compare-table{display:block;overflow-x:auto;}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr;}
+  #wa-btn span{display:none;}
+  #wa-btn{padding:13px;border-radius:50%;}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+
+
+/* OVERVIEW (image + text) */
+.ov-sec { padding:110px 0; background:var(--black); position:relative; z-index:1; overflow:hidden; }
+.ov-sec::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(200,160,82,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(200,160,82,.03) 1px,transparent 1px); background-size:60px 60px; pointer-events:none; }
+.ov-layout { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; position:relative; z-index:1; }
+.ov-text .sec-h2 { font-size:clamp(28px,3.6vw,44px); }
+.ov-text p { font-size:15.5px; color:var(--muted); line-height:1.85; margin-bottom:16px; }
+.ov-text p a, .art-body a, .faq-a-inner a { color:var(--gold); border-bottom:1px solid var(--border); }
+.ov-text p a:hover, .art-body a:hover, .faq-a-inner a:hover { color:var(--gold2); border-color:var(--gold); }
+.ov-frame { position:relative; border:1px solid var(--border); border-top:2px solid var(--gold); background:var(--navy2); padding:10px; }
+.ov-frame img { width:100%; height:auto; display:block; }
+.ov-frame figcaption { font-family:var(--fm); font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--teal); padding:12px 6px 4px; }
+/* FAQ (same accordion as faq.html) */
+.pfaq-sec { padding:100px 0; position:relative; z-index:1; background:var(--black); overflow:hidden; }
+.pfaq-head { text-align:center; margin-bottom:56px; }
+.faq-cats { max-width:860px; margin:0 auto; }
+.faq-list { border:1px solid var(--border); border-radius:var(--r); overflow:hidden; }
+.faq-item { border-bottom:1px solid var(--border); position:relative; overflow:hidden; }
+.faq-item:last-child { border-bottom:none; }
+.faq-item::before { content:''; position:absolute; bottom:0; left:0; width:0; height:2px; background:linear-gradient(90deg,var(--teal),var(--gold)); transition:width .4s var(--ease); }
+.faq-item:hover::before, .faq-item.open::before { width:100%; }
+.faq-q { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:22px 24px; cursor:pointer; background:var(--navy2); transition:background .2s; user-select:none; }
+.faq-q:hover { background:#0c1830; }
+.faq-item.open .faq-q { background:#0c1830; }
+.faq-q-text { font-family:var(--fb); font-size:16px; font-weight:600; color:var(--white); line-height:1.4; margin:0; }
+.faq-q-icon { color:var(--gold); font-size:14px; flex-shrink:0; transition:transform .35s var(--ease); }
+.faq-item.open .faq-q-icon { transform:rotate(45deg); color:var(--teal); }
+.faq-a { max-height:0; overflow:hidden; transition:max-height .5s var(--ease); }
+.faq-item.open .faq-a { max-height:700px; }
+.faq-a-inner { padding:18px 24px 22px; font-size:14.5px; color:var(--muted); line-height:1.85; border-top:1px solid var(--border2); }
+.faq-a-inner strong { color:var(--white); }
+/* RELATED SERVICES */
+.rel-sec { padding:100px 0; background:var(--navy); position:relative; z-index:1; }
+.rel-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.rel-head { text-align:center; margin-bottom:56px; }
+.rel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+a.rel-card { display:block; background:var(--navy2); border:1px solid var(--border); padding:32px 28px; position:relative; overflow:hidden; transition:border-color .3s,transform .3s,box-shadow .3s; }
+a.rel-card::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--gold),var(--teal)); transform:scaleX(0); transform-origin:left; transition:transform .4s var(--ease); }
+a.rel-card:hover { border-color:rgba(200,160,82,.35); transform:translateY(-5px); box-shadow:0 20px 48px rgba(0,0,0,.4); }
+a.rel-card:hover::before { transform:scaleX(1); }
+.rel-icon { width:56px; height:56px; border:1px solid var(--border); border-radius:var(--r); display:flex; align-items:center; justify-content:center; background:var(--gold-dim); margin-bottom:16px; }
+.rel-icon i { color:var(--gold); font-size:22px; }
+.rel-h { font-family:var(--fb); font-size:18px; font-weight:700; color:var(--white); margin-bottom:8px; }
+.rel-p { font-size:13.5px; color:var(--muted); line-height:1.75; margin-bottom:14px; }
+.rel-link { font-family:var(--fm); font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); display:inline-flex; align-items:center; gap:7px; }
+/* ARTICLE */
+.art-hero .page-hero-inner { grid-template-columns:1fr; max-width:960px; }
+.art-hero .page-hero-h1 { font-size:clamp(30px,4.2vw,52px); }
+.art-hero .page-hero-desc { max-width:760px; }
+.art-meta { display:flex; align-items:center; gap:20px; flex-wrap:wrap; font-family:var(--fm); font-size:10px; letter-spacing:1px; color:var(--muted); }
+.art-meta span { display:flex; align-items:center; gap:6px; }
+.art-meta i { color:var(--gold); }
+.art-sec { padding:90px 0 100px; background:var(--navy); position:relative; z-index:1; }
+.art-sec::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,transparent,var(--gold),var(--teal),transparent); }
+.art-body { max-width:860px; margin:0 auto; padding:0 48px; }
+.art-body h2 { font-family:var(--fd); font-size:clamp(22px,2.6vw,30px); font-weight:700; letter-spacing:.5px; line-height:1.2; color:var(--white); margin:48px 0 16px; }
+.art-body h2:first-child { margin-top:0; }
+.art-body h3 { font-family:var(--fb); font-size:20px; font-weight:700; color:var(--gold2); margin:28px 0 10px; }
+.art-body p { font-size:16px; color:var(--muted); line-height:1.9; margin-bottom:16px; }
+.art-body strong { color:var(--white); }
+.art-body ul, .art-body ol { margin:0 0 20px 0; padding:0; list-style:none; }
+.art-body li { position:relative; padding:0 0 10px 26px; font-size:15.5px; color:var(--muted); line-height:1.8; }
+.art-body li::before { content:''; position:absolute; left:4px; top:11px; width:7px; height:7px; background:var(--teal); border-radius:50%; }
+.art-body figure { margin:0 0 36px; }
+.art-note { background:var(--navy2); border:1px solid var(--border); border-left:3px solid var(--teal); padding:22px 24px; margin:28px 0; font-size:15px; color:var(--muted); line-height:1.8; }
+@media(max-width:1199px){ .rel-grid{grid-template-columns:repeat(2,1fr);} .ov-layout{gap:48px;} }
+@media(max-width:991px){ .ov-layout{grid-template-columns:1fr;} }
+@media(max-width:767px){ .rel-grid{grid-template-columns:1fr;} .art-body{padding:0 24px;} .ov-sec,.pfaq-sec,.rel-sec{padding:80px 0;} }
 </style>
-
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Load Balancer Deployment","serviceType":"Load Balancer Deployment","description":"Load balancer solutions for UAE businesses: traffic distribution across servers, health checks, automatic failover and TLS offload deployed by VOWTECH.","url":"https://vow-tech.com/load-balancers","provider":{"@type":"LocalBusiness","@id":"https://vow-tech.com/#business","name":"VOWTECH","url":"https://vow-tech.com","telephone":"+971581816887","address":{"@type":"PostalAddress","streetAddress":"Navy Gate - Al Zahiyah - E16 02","addressLocality":"Abu Dhabi","addressCountry":"AE"}},"areaServed":[{"@type":"City","name":"Abu Dhabi"},{"@type":"City","name":"Dubai"},{"@type":"Country","name":"United Arab Emirates"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://vow-tech.com/"},{"@type":"ListItem","position":2,"name":"Services","item":"https://vow-tech.com/#services"},{"@type":"ListItem","position":3,"name":"Load Balancers","item":"https://vow-tech.com/load-balancers"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do small and mid-sized businesses need a load balancer?","acceptedAnswer":{"@type":"Answer","text":"Only if they run an application on more than one server, or need to. A typical office with file sharing and cloud email does not. A company hosting its own customer portal, ERP web front end or remote desktop farm often does, because those services are expected to stay available during maintenance and busy periods."}},{"@type":"Question","name":"Is a load balancer a hardware device or software?","acceptedAnswer":{"@type":"Answer","text":"It can be either. Hardware appliances suit high traffic volumes and data centre deployments. Virtual appliances run on your existing virtualization platform and suit most mid-sized needs. Cloud platforms offer load balancing as a built-in service. We recommend the form that fits where your servers actually run."}},{"@type":"Question","name":"What is the difference between Layer 4 and Layer 7 load balancing?","acceptedAnswer":{"@type":"Answer","text":"Layer 4 balancing forwards connections based on IP address and port, which is fast and works for almost any protocol. Layer 7 balancing understands the application traffic itself, so it can route by web address, inspect headers and manage cookies. Web applications usually benefit from Layer 7; other services often need only Layer 4."}},{"@type":"Question","name":"Does a load balancer replace backups or disaster recovery?","acceptedAnswer":{"@type":"Answer","text":"No. It protects against the failure of an individual server, not against data loss, corruption or the loss of a whole site. Replicated data, tested backups and a recovery plan are still needed. Our disaster recovery solutions explain how these pieces work together."}}]}
+</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TCD7199Q60"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-TCD7199Q60');</script>
+<style id="vt-mega-fix">@media(min-width:992px){.mega-panel{max-height:calc(100vh - var(--tb,42px) - var(--hh,88px) - 28px);overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#c8a052 transparent;}.mega-panel::-webkit-scrollbar{width:6px;}.mega-panel::-webkit-scrollbar-thumb{background:#c8a052;border-radius:3px;}}</style>
 </head>
-
 <body>
+<div id="vt-dot" aria-hidden="true"></div>
+<div id="vt-ring" aria-hidden="true"></div>
+<div id="vt-noise" aria-hidden="true"></div>
+
+<!-- TOPBAR -->
+<div id="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-l"><span class="tb-pulse" aria-hidden="true"></span><span>LIVE SUPPORT — ABU DHABI &amp; UAE — 24/7</span></div>
+    <div class="tb-r">
+      <a href="tel:+971581816887"><i class="bi bi-telephone-fill"></i> +971 58 181 6887</a>
+      <span>|</span>
+      <a href="mailto:info@vow-tech.com"><i class="bi bi-envelope-fill"></i> info@vow-tech.com</a>
+      <span>|</span>
+      <span><i class="bi bi-geo-alt-fill"></i> Abu Dhabi, UAE</span>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
-<header class="sticky-top">
-  <div class="container d-flex align-items-center">
-    <a href="index.html">
-      <img src="assets/img/logo.jpeg" width="100" height="65" alt="VOWTECH">
+<header id="vt-header" role="banner">
+  <div class="hdr-inner">
+    <a href="index.html" class="vt-logo" aria-label="VOWTECH Home">
+      <div class="logo-3d-wrap" aria-hidden="true">
+        <div class="logo-cube">
+          <div class="lc-f lc-front"><img src="assets/img/logo.jpeg" alt="" width="72" height="72"></div>
+          <div class="lc-f lc-back"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy" decoding="async"></div>
+          <div class="lc-f lc-right"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy" decoding="async"></div>
+          <div class="lc-f lc-left"><img src="assets/img/logo.jpeg" alt="" width="72" height="72" loading="lazy" decoding="async"></div>
+          <div class="lc-f lc-top"></div>
+          <div class="lc-f lc-bottom"></div>
+        </div>
+      </div>
+      <div class="logo-text-wrap">
+        <span class="logo-main">VOW<em>TECHNOLOGIES</em></span>
+        <span class="logo-tagline">IT SOLUTIONS — ABU DHABI</span>
+      </div>
     </a>
+
+    <nav id="vt-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav-a">Home</a>
+      <a href="index.html#about" class="nav-a">About</a>
+      <div class="nav-drop" id="navDrop">
+        <button class="nav-a nav-drop-btn" aria-haspopup="true" aria-expanded="false" id="navDropBtn">
+          Services <i class="bi bi-chevron-down"></i>
+        </button>
+        <div class="mega-panel" id="megaPanel" role="menu">
+          <div class="mega-cols">
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-headset" aria-hidden="true"></i> IT Support</div>
+              <a href="amc-support.html" role="menuitem">Annual Maintenance Contract</a>
+              <a href="cctv-services.html" role="menuitem">CCTV Services</a>
+              <a href="cctv-amc-abu-dhabi.html" role="menuitem">CCTV AMC &amp; Maintenance</a>
+              <a href="attendance-system-installation-abu-dhabi.html" role="menuitem">Attendance System Installation</a>
+              <a href="punch-in-punch-out-machine-abu-dhabi.html" role="menuitem">Punch-In / Punch-Out Machines</a>
+              <a href="ip-cameras.html" role="menuitem">IP Cameras</a>
+              <a href="ptz-cameras.html" role="menuitem">PTZ Cameras</a>
+              <a href="rfid-access-control.html" role="menuitem">RFID Access Control</a>
+              <a href="office-it-setup-relocation.html" role="menuitem">Office IT Setup &amp; Relocation</a>
+              <a href="emergency-it-support.html" role="menuitem">Emergency IT Support</a>
+              <a href="remote-technical-support.html" role="menuitem">Remote Technical Support</a>
+              <a href="on-site-it-support.html" role="menuitem">On-Site Support</a>
+              <a href="it-outsourcing.html" role="menuitem">IT Outsourcing</a>
+              <a href="helpdesk-support.html" role="menuitem">Helpdesk Support</a>
+              <a href="application-support.html" role="menuitem">Application Support</a>
+              <a href="data-recovery.html" role="menuitem">Data Recovery</a>
+              <a href="dvr-systems.html" role="menuitem">DVR Systems</a>
+              <a href="itil-model.html" role="menuitem">ITIL Model</a>
+              <a href="nvr-systems.html" role="menuitem">NVR Systems</a>
+              <a href="load-balancers.html" role="menuitem">Load Balancers</a>
+              <a href="secure-internet-gateway-assessment.html" role="menuitem">Secure Internet Gateway Assessment</a>
+              <a href="face-recognition-systems.html" role="menuitem">Face Recognition Systems</a>
+              <a href="ups-systems.html" role="menuitem">UPS Systems</a>
+              <a href="vulnerability-assessment.html" role="menuitem">Vulnerability Assessment</a>
+              <a href="wireless-access-point.html" role="menuitem">Wireless Access Point</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-network-wired" aria-hidden="true"></i> Networking</div>
+              <a href="structured-cabling.html" role="menuitem">Structured Cabling</a>
+              <a href="server-room-setup.html" role="menuitem">Server Room Setup</a>
+              <a href="network-server-migration.html" role="menuitem">Network &amp; Server Migration</a>
+              <a href="network-security-services.html" role="menuitem">Network Security Services</a>
+              <a href="network-planning-design.html" role="menuitem">Network Planning &amp; Design</a>
+              <a href="network-installation-troubleshooting.html" role="menuitem">Network Installation</a>
+              <a href="telephone-systems-implementation.html" role="menuitem">Telephone Systems</a>
+              <a href="office-migration.html" role="menuitem">Office Migration</a>
+              <a href="nas-storage.html" role="menuitem">NAS Storage</a>
+              <a href="san-storage.html" role="menuitem">SAN Storage</a>
+              <a href="sase-solutions.html" role="menuitem">SASE Solutions</a>
+              <a href="network-switch.html" role="menuitem">Network Switch</a>
+              <a href="router.html" role="menuitem">Router</a>
+              <a href="network-security-policy-setup-maintenance.html" role="menuitem">Network Security Policy Setup &amp; Maintenance</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-shield-virus" aria-hidden="true"></i> Cybersecurity</div>
+              <a href="firewall-systems.html" role="menuitem">Firewall Systems</a>
+              <a href="firewall-appliances.html" role="menuitem">Firewall Appliances</a>
+              <a href="soc-security-operations-center.html" role="menuitem">SOC</a>
+              <a href="information-security-consultancy.html" role="menuitem">Information Security Consultancy</a>
+              <a href="siem-solution.html" role="menuitem">SIEM Solution</a>
+              <a href="siem-systems.html" role="menuitem">SIEM Systems</a>
+              <a href="soar-solution.html" role="menuitem">SOAR Solution</a>
+              <a href="soc-infrastructure.html" role="menuitem">SOC Infrastructure</a>
+              <a href="cloud-network-security.html" role="menuitem">Cloud &amp; Network Security</a>
+              <a href="anti-virus-anti-spam-solutions.html" role="menuitem">Anti-Virus &amp; Anti-SPAM Solutions</a>
+              <a href="anti-phishing-protection.html" role="menuitem">Anti-Phishing</a>
+              <a href="penetration-testing.html" role="menuitem">Penetration Testing</a>
+              <a href="web-application-firewall.html" role="menuitem">WAF</a>
+              <a href="mobile-device-management.html" role="menuitem">MDM</a>
+              <a href="pam-pim-solutions.html" role="menuitem">PAM / PIM Solutions</a>
+              <a href="data-protection-systems.html" role="menuitem">Data Protection Systems</a>
+              <a href="data-security-theft-prevention.html" role="menuitem">Data Security &amp; Theft Prevention</a>
+              <a href="endpoint-security.html" role="menuitem">Endpoint Security</a>
+              <a href="managed-security.html" role="menuitem">Managed Security</a>
+              <a href="unified-threat-management.html" role="menuitem">Unified Threat Management</a>
+              <a href="security-risk-assessment.html" role="menuitem">Security Risk Assessment</a>
+              <a href="wireless-equipment-management.html" role="menuitem">Wireless Equipment Management</a>
+              <a href="wireless-security.html" role="menuitem">Wireless Security</a>
+              <a href="sophos-firewall.html" role="menuitem">Sophos Firewall</a>
+              <a href="threat-detection-response.html" role="menuitem">Threat Detection &amp; Response</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-cloud" aria-hidden="true"></i> Cloud &amp; Managed</div>
+              <a href="office365-exchange-online.html" role="menuitem">Office 365 &amp; Exchange</a>
+              <a href="secure-email-s-mime.html" role="menuitem">Secure Email S/MIME</a>
+              <a href="google-apps-for-business.html" role="menuitem">Google Apps for Business</a>
+              <a href="private-cloud-services.html" role="menuitem">Private Cloud Services</a>
+              <a href="dedicated-vps-servers.html" role="menuitem">Dedicated &amp; VPS Servers</a>
+              <a href="veeam-backup-disaster-recovery.html" role="menuitem">Veeam Backup</a>
+              <a href="cloud-backup-disaster-recovery.html" role="menuitem">Cloud Backup</a>
+              <a href="backup-system.html" role="menuitem">Backup System</a>
+              <a href="virtualization.html" role="menuitem">Virtualization</a>
+              <a href="vpn-network-monitoring.html" role="menuitem">VPN Monitoring</a>
+              <a href="vpn-appliances.html" role="menuitem">VPN Appliances</a>
+              <a href="vpn-connectivity-solutions.html" role="menuitem">VPN Connectivity Solutions</a>
+              <a href="server-management.html" role="menuitem">Server Management</a>
+              <a href="acronis-cyber-protect-cloud.html" role="menuitem">Acronis Cyber Protect Cloud</a>
+            </div>
+            <div class="mega-col">
+              <div class="mega-head"><i class="fas fa-server" aria-hidden="true"></i> Infrastructure</div>
+              <a href="it-infrastructure-solutions.html" role="menuitem">IT Infrastructure</a>
+              <a href="data-center.html" role="menuitem">Data Center</a>
+              <a href="software-licensing.html" role="menuitem">Software Licensing</a>
+              <a href="managed-storage.html" role="menuitem">Managed Storage</a>
+              <a href="server-solutions.html" role="menuitem">Server Solutions</a>
+              <a href="network-solutions.html" role="menuitem">Network Solutions</a>
+              <a href="data-storage-solutions.html" role="menuitem">Data Storage Solutions</a>
+              <a href="backup-data-protection.html" role="menuitem">Backup &amp; Data Protection</a>
+              <a href="disaster-recovery-solutions.html" role="menuitem">Disaster Recovery</a>
+              <a href="biometric-devices.html" role="menuitem">Biometric Devices</a>
+              <a href="blade-servers.html" role="menuitem">Blade Servers</a>
+              <a href="business-continuity-strategy.html" role="menuitem">Business Continuity Strategy</a>
+              <a href="cost-management.html" role="menuitem">Cost Management</a>
+              <a href="rack-servers.html" role="menuitem">Rack Servers</a>
+              <a href="server-racks.html" role="menuitem">Server Racks</a>
+              <a href="tower-servers.html" role="menuitem">Tower Servers</a>
+              <a href="requirement-analysis.html" role="menuitem">Requirement Analysis</a>
+              <a href="quality-compliance-consulting.html" role="menuitem">Quality &amp; Compliance Consulting</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-a">Insights</a>
+      <a href="contact.html" class="nav-a">Contact</a>
+    </nav>
+
+    <a href="appointment.html" class="btn-primary hdr-cta" style="background:var(--teal);"><i class="fas fa-calendar-check"></i> Book Appointment</a>
+    <button id="mob-btn" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="vt-nav">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <h1>Load Balancer Solutions</h1>
-    <p>High availability, traffic optimization & zero downtime for enterprise applications</p>
-
-    <div class="mt-4">
-      <a href="contact.html" class="btn btn-light btn-lg">Get Quote</a>
-      <a href="tel:+971581816887" class="btn btn-outline-light btn-lg">Call Now</a>
+<!-- PAGE HERO -->
+<section class="page-hero" aria-label="Load Balancer Solutions">
+  <div class="scanlines-hero" aria-hidden="true"></div>
+  <div class="page-hero-inner">
+    <div class="hero-left">
+      <nav class="breadcrumb-nav" aria-label="Breadcrumb" data-r>
+        <a href="index.html">Home</a><span>/</span>
+        <a href="index.html#services">Services</a><span>/</span>
+        <span class="bc-active">Load Balancers</span>
+      </nav>
+      <div class="page-hero-badge" data-r data-d="60"><span class="badge-dot"></span>Traffic Distribution &amp; High Availability</div>
+      <h1 class="page-hero-h1" data-r data-d="100"><em>Load Balancer</em> <span>Solutions</span></h1>
+      <p class="page-hero-desc" data-r data-d="160">When one server can no longer carry an application alone, or the business cannot afford for it to stop, a load balancer shares the work across several. VOWTECH designs, deploys and supports load balancing for web applications, portals and internal systems for organisations in Abu Dhabi, Dubai and across the UAE.</p>
+      <div class="hero-chips" data-r data-d="200">
+        <div class="h-chip"><i class="fas fa-random" aria-hidden="true"></i><span>Traffic Distribution</span></div>
+        <div class="h-chip"><i class="fas fa-heartbeat" aria-hidden="true"></i><span>Health Checks</span></div>
+        <div class="h-chip"><i class="fas fa-sync-alt" aria-hidden="true"></i><span>Automatic Failover</span></div>
+        <div class="h-chip"><i class="fas fa-lock" aria-hidden="true"></i><span>TLS Offload</span></div>
+      </div>
+      <div class="hero-btns" data-r data-d="250">
+        <a href="appointment.html" class="btn-primary btn-lg"><i class="fas fa-calendar-check" aria-hidden="true"></i> Free Consultation</a>
+        <a href="https://wa.me/971581816887?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20load%20balancer%20solution%20for%20our%20applications" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg"><i class="bi bi-whatsapp" aria-hidden="true"></i> WhatsApp Us</a>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- PROBLEMS -->
-<section class="py-5">
-  <div class="container">
-
-    <h2 class="section-title">Why Load Balancers Are Important</h2>
-
-    <div class="row text-center g-4">
-
-      <div class="col-md-4">
-        <i class="bi bi-server fs-1 text-primary"></i>
-        <p>Server overload and downtime</p>
-      </div>
-
-      <div class="col-md-4">
-        <i class="bi bi-speedometer2 fs-1 text-primary"></i>
-        <p>Slow application performance</p>
-      </div>
-
-      <div class="col-md-4">
-        <i class="bi bi-exclamation-triangle fs-1 text-primary"></i>
-        <p>Traffic spikes causing failures</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- SOLUTIONS -->
-<section class="py-5 bg-light">
-
-  <div class="container">
-
-    <h2 class="section-title">Our Load Balancer Solutions</h2>
-
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="box text-center">
-          <i class="bi bi-diagram-3 fs-1 text-primary"></i>
-          <h5>Traffic Distribution</h5>
-          <p>Evenly distribute traffic across multiple servers to prevent overload.</p>
+    <div class="hero-visual-panel" data-r data-d="100" aria-hidden="true">
+      <div class="bio-visual">
+        <div class="bio-float"><i class="fas fa-balance-scale"></i><span>Abu Dhabi — UAE</span></div>
+        <div class="bio-header">
+          <div class="bio-icon-wrap"><i class="fas fa-balance-scale"></i></div>
+          <div><div class="bio-title">Load Balancing</div><div class="bio-sub">// DEPLOYMENT SCOPE</div></div>
+        </div>
+        <div class="bio-layers">
+          <div class="layer-row"><div class="layer-label"><i class="fas fa-random"></i> Server Load Balancing</div><div class="layer-badge ok">Included</div></div>
+          <div class="layer-row"><div class="layer-label"><i class="fas fa-heartbeat"></i> Health Monitoring</div><div class="layer-badge ok">Included</div></div>
+          <div class="layer-row"><div class="layer-label"><i class="fas fa-clone"></i> Redundant Pair</div><div class="layer-badge live">Available</div></div>
+          <div class="layer-row"><div class="layer-label"><i class="fas fa-lock"></i> TLS Offload</div><div class="layer-badge live">Available</div></div>
+          <div class="layer-row"><div class="layer-label"><i class="fas fa-globe"></i> Multi-Site Balancing</div><div class="layer-badge warm">On Request</div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="col-md-4">
-        <div class="box text-center">
-          <i class="bi bi-shield-check fs-1 text-primary"></i>
-          <h5>High Availability</h5>
-          <p>Ensure continuous uptime with automatic failover and redundancy systems.</p>
+<!-- OVERVIEW -->
+<section class="ov-sec" aria-label="Overview">
+  <div class="vt-con">
+    <div class="ov-layout">
+      <div class="ov-text" data-r>
+        <span class="sec-tag">// OVERVIEW</span>
+        <h2 class="sec-h2">One Address for Users, <em>Several Servers Behind It</em></h2>
+        <p>A load balancer sits in front of a group of servers running the same application. Users connect to a single address; the load balancer passes each request to a server that is healthy and not overloaded. If a server fails or is taken down for maintenance, requests simply go to the others.</p>
+        <p>That solves two separate problems. The first is capacity: an application that struggles at peak times can be scaled by adding servers instead of replacing one with an ever larger machine. The second is availability: patching, restarts and hardware faults no longer mean the application is offline, because no single server is essential.</p>
+        <p>Load balancing only works if the layers beneath it are sound. VOWTECH plans it together with the <a href="server-solutions.html">server platform</a>, <a href="virtualization.html">virtualization</a> and network design, and places a <a href="web-application-firewall.html">web application firewall</a> alongside it where applications face the internet.</p>
+      </div>
+      <div data-r="left" data-d="80">
+        <figure class="ov-frame">
+          <img src="assets/img/seo/load-balancer-network-uae.webp" alt="Load balancer solutions for business applications in the UAE" width="1200" height="800" loading="lazy" decoding="async">
+          <figcaption>// Load balancing that spreads application traffic across multiple servers</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TYPES -->
+<section class="types-sec" aria-label="Three Outcomes from One Device">
+  <div class="vt-con">
+    <div class="types-head" data-r>
+      <span class="sec-tag">// WHAT LOAD BALANCING DOES</span>
+      <h2 class="sec-h2">Three Outcomes <em>from One Device</em></h2>
+      <p class="sec-sub">Organisations usually come to load balancing for one of these reasons and gain the other two along the way.</p>
+    </div>
+    <div class="types-grid" data-r data-d="60">
+      <div class="type-card">
+        <div class="type-num" aria-hidden="true">01</div>
+        <div class="type-icon"><i class="fas fa-random" aria-hidden="true"></i></div>
+        <h3 class="type-h">Traffic Distribution</h3>
+        <p class="type-p">Requests are spread across servers using a method suited to the application: simple rotation, fewest active connections, or weighting towards more powerful machines. No server is swamped while another sits idle.</p>
+        <div class="type-features">
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Round-robin and least-connection methods</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Weighted distribution</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Session persistence where needed</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Add servers without changing the address</div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="box text-center">
-          <i class="bi bi-graph-up fs-1 text-primary"></i>
-          <h5>Performance Optimization</h5>
-          <p>Improve application speed and server efficiency under heavy load.</p>
+      <div class="type-card">
+        <div class="type-num" aria-hidden="true">02</div>
+        <div class="type-icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div>
+        <h3 class="type-h">High Availability</h3>
+        <p class="type-p">The load balancer tests each server continuously and stops sending traffic to any that fails. Deployed as a redundant pair, the load balancer itself is no longer a single point of failure either.</p>
+        <div class="type-features">
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Application-level health checks</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Automatic removal of failed servers</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Active-standby load balancer pairs</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Maintenance without taking the service down</div>
         </div>
       </div>
-
+      <div class="type-card">
+        <div class="type-num" aria-hidden="true">03</div>
+        <div class="type-icon"><i class="fas fa-chart-line" aria-hidden="true"></i></div>
+        <h3 class="type-h">Performance Optimisation</h3>
+        <p class="type-p">Work that burdens application servers, such as encryption, compression and connection handling, can be moved to the load balancer, freeing the servers to do what they are for.</p>
+        <div class="type-features">
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> TLS termination and offload</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Connection reuse</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Compression and caching</div>
+          <div class="type-feat"><i class="fas fa-check-circle" aria-hidden="true"></i> Central place for certificates</div>
+        </div>
+      </div>
     </div>
-
   </div>
-
 </section>
 
-<!-- BENEFITS -->
-<section class="py-5">
-
-  <div class="container">
-
-    <h2 class="section-title">Why Choose VOWTECH Load Balancers</h2>
-
-    <div class="row text-center g-4">
-
-      <div class="col-md-3">
-        <i class="bi bi-lightning fs-2 text-primary"></i>
-        <p>Fast Application Response</p>
-      </div>
-
-      <div class="col-md-3">
-        <i class="bi bi-shield-lock fs-2 text-primary"></i>
-        <p>Secure Traffic Control</p>
-      </div>
-
-      <div class="col-md-3">
-        <i class="bi bi-server fs-2 text-primary"></i>
-        <p>Zero Downtime Setup</p>
-      </div>
-
-      <div class="col-md-3">
-        <i class="bi bi-headset fs-2 text-primary"></i>
-        <p>24/7 Expert Support</p>
-      </div>
-
+<!-- SERVICES -->
+<section class="services-sec" aria-label="How We Deploy Load Balancing">
+  <div class="vt-con">
+    <div class="services-head" data-r>
+      <span class="sec-tag">// LOAD BALANCER SERVICES</span>
+      <h2 class="sec-h2">How We <em>Deploy Load Balancing</em></h2>
+      <p class="sec-sub">Hardware appliance, virtual appliance or cloud service: the form changes, the design questions stay the same.</p>
     </div>
-
-  </div>
-
-</section>
-
-<!-- CTA -->
-<section class="cta">
-
-  <div class="container">
-
-    <h2>Ensure Zero Downtime for Your Business</h2>
-    <p>Contact VOWTECH for enterprise Load Balancer solutions in UAE</p>
-
-    <a href="contact.html" class="btn btn-light btn-lg">Request Quote</a>
-    <a href="https://wa.me/971581816887" class="btn btn-outline-light btn-lg">WhatsApp</a>
-
-  </div>
-
-</section>
-
-
-<!-- ═══ AREAS WE SERVE (VOWTECH SEO) ═══ -->
-<section class="py-5" style="background:#0f172a;color:#fff;">
-  <div class="container text-center">
-    <h2 class="section-title" style="color:#fff;">Serving Businesses Across the UAE</h2>
-    <p style="max-width:700px;margin:0 auto 30px;color:rgba(255,255,255,.75);">
-      VOWTECH delivers load balancer solutions to companies throughout the UAE, including:
-    </p>
-    <div class="row g-3 justify-content-center">
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Abu Dhabi</span></div>
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Dubai</span></div>
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Sharjah</span></div>
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Ajman</span></div>
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Al Ain</span></div>
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Ras Al Khaimah</span></div>
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Fujairah</span></div>
-      <div class="col-auto"><span style="display:inline-block;padding:10px 18px;border:1px solid rgba(255,255,255,.2);border-radius:30px;font-size:14px;">Umm Al Quwain</span></div>
+    <div class="services-grid" data-r data-d="60">
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-server" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Server Load Balancing</h3>
+        <p class="svc-p">We configure virtual services, server pools and distribution methods for web applications, portals, remote desktop farms and internal line-of-business systems.</p>
+        <div class="svc-tags"><span class="svc-tag">Virtual Services</span><span class="svc-tag">Server Pools</span><span class="svc-tag">Methods</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-heartbeat" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Health Checks &amp; Failover</h3>
+        <p class="svc-p">Checks are written to test that the application really answers, not merely that the server responds to a ping, so failures are caught accurately.</p>
+        <div class="svc-tags"><span class="svc-tag">App Checks</span><span class="svc-tag">Failover</span><span class="svc-tag">Alerts</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-lock" aria-hidden="true"></i></div>
+        <h3 class="svc-h">TLS Offload &amp; Certificates</h3>
+        <p class="svc-p">Encryption is terminated on the load balancer, certificates are managed in one place and older insecure protocols are disabled consistently.</p>
+        <div class="svc-tags"><span class="svc-tag">TLS</span><span class="svc-tag">Certificates</span><span class="svc-tag">Protocols</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-user-friends" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Session Persistence</h3>
+        <p class="svc-p">For applications that keep a user session on one server, persistence rules keep each user on the same server for the life of their session.</p>
+        <div class="svc-tags"><span class="svc-tag">Sticky Sessions</span><span class="svc-tag">Cookies</span><span class="svc-tag">Source IP</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-globe" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Internet Link Balancing</h3>
+        <p class="svc-p">Outbound traffic can be shared across two or more internet connections, with automatic failover if one provider has an outage.</p>
+        <div class="svc-tags"><span class="svc-tag">Multi-WAN</span><span class="svc-tag">Link Failover</span><span class="svc-tag">Outbound</span></div>
+      </div>
+      <div class="svc-card">
+        <div class="svc-icon"><i class="fas fa-cloud" aria-hidden="true"></i></div>
+        <h3 class="svc-h">Multi-Site &amp; Cloud Balancing</h3>
+        <p class="svc-p">Where an application runs in more than one location or partly in the cloud, users are directed to the site that is available and closest.</p>
+        <div class="svc-tags"><span class="svc-tag">Multi-Site</span><span class="svc-tag">Hybrid Cloud</span><span class="svc-tag">DR Site</span></div>
+      </div>
     </div>
-    <p style="margin-top:28px;color:rgba(255,255,255,.6);font-size:14px;">
-      Based in Abu Dhabi, VOWTECH's engineers provide rapid on-site response across all seven Emirates, backed by 24/7 remote support.
-    </p>
   </div>
 </section>
 
+<!-- PROCESS STRIP -->
+<section class="process-strip" aria-label="Putting a Load Balancer in Front of a Live Application">
+  <div class="vt-con ps-inner">
+    <div class="ps-head" data-r>
+      <span class="sec-tag">// DEPLOYMENT PROCESS</span>
+      <h2 class="sec-h2">Putting a Load Balancer <em>in Front of a Live Application</em></h2>
+      <p class="sec-sub">The application is usually already in use, so the deployment is staged and reversible.</p>
+    </div>
+    <div class="ps-steps" data-r data-d="60">
+      <div class="ps-step">
+        <div class="ps-num" aria-hidden="true">01</div>
+        <div class="ps-icon"><i class="fas fa-search" aria-hidden="true"></i></div>
+        <h3 class="ps-h">Application Review</h3>
+        <p class="ps-p">We establish how the application handles sessions, encryption and logins, with its vendor if required.</p>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num" aria-hidden="true">02</div>
+        <div class="ps-icon"><i class="fas fa-drafting-compass" aria-hidden="true"></i></div>
+        <h3 class="ps-h">Design</h3>
+        <p class="ps-p">Network placement, server pools, health checks and redundancy are set out in a short design.</p>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num" aria-hidden="true">03</div>
+        <div class="ps-icon"><i class="fas fa-cogs" aria-hidden="true"></i></div>
+        <h3 class="ps-h">Build &amp; Configure</h3>
+        <p class="ps-p">The load balancer is installed and configured alongside the live service without disturbing it.</p>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num" aria-hidden="true">04</div>
+        <div class="ps-icon"><i class="fas fa-vial" aria-hidden="true"></i></div>
+        <h3 class="ps-h">Failover Testing</h3>
+        <p class="ps-p">Servers are deliberately taken out of service to prove that users are not affected.</p>
+      </div>
+      <div class="ps-step">
+        <div class="ps-num" aria-hidden="true">05</div>
+        <div class="ps-icon"><i class="fas fa-check-double" aria-hidden="true"></i></div>
+        <h3 class="ps-h">Cutover &amp; Handover</h3>
+        <p class="ps-p">Traffic is moved to the new address at an agreed time and the setup is documented.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SECTION -->
+<section class="why-sec" aria-label="Why VOWTECH">
+  <div class="vt-con">
+    <div class="why-layout">
+      <div class="why-left" data-r>
+        <span class="sec-tag">// WHY VOWTECH</span>
+        <h2 class="sec-h2">When a Business <em>Needs a Load Balancer</em></h2>
+        <p class="sec-sub">Not every organisation does. These are the situations where it earns its place.</p>
+        <div class="why-grid">
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+            <div><h3 class="why-item-h">Peak-Time Slowdowns</h3><p class="why-item-p">An application that is fine for most of the day but struggles at month-end, shift change or campaign launches.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fas fa-business-time" aria-hidden="true"></i></div>
+            <div><h3 class="why-item-h">Applications That Must Stay Up</h3><p class="why-item-p">Customer portals, booking systems and internal tools whose outage stops revenue or operations.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fas fa-wrench" aria-hidden="true"></i></div>
+            <div><h3 class="why-item-h">Maintenance Without Outages</h3><p class="why-item-p">Servers can be patched one at a time during the working day while the others carry the load.</p></div>
+          </div>
+          <div class="why-item">
+            <div class="why-item-icon"><i class="fas fa-life-ring" aria-hidden="true"></i></div>
+            <div><h3 class="why-item-h">Disaster Recovery</h3><p class="why-item-p">Traffic can be redirected to a secondary site when the primary site is unavailable.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="why-right" data-r data-d="80">
+        <div class="tech-card">
+          <div class="tech-card-h">// Load Balancing Capabilities</div>
+          <div class="tech-badges"><span class="tech-badge">Layer 4 Balancing</span><span class="tech-badge">Layer 7 Balancing</span><span class="tech-badge">Health Monitoring</span><span class="tech-badge">Session Persistence</span><span class="tech-badge">TLS Offload</span><span class="tech-badge">Redundant Pairs</span><span class="tech-badge">Link Balancing</span><span class="tech-badge">Multi-Site Failover</span></div>
+        </div>
+        <div class="tech-card">
+          <div class="tech-card-h">// Areas We Serve</div>
+          <div class="tech-badges"><span class="tech-badge">Abu Dhabi</span><span class="tech-badge">Dubai</span><span class="tech-badge">Across the UAE</span></div>
+        </div>
+        <a href="appointment.html" class="btn-primary" style="justify-content:center;font-size:13px;padding:18px;display:flex;"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book a Free Site Assessment</a>
+        <a href="https://wa.me/971581816887?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20load%20balancer%20solution%20for%20our%20applications" target="_blank" rel="noopener noreferrer" class="btn-wa" style="justify-content:center;font-size:13px;padding:18px;"><i class="bi bi-whatsapp" style="font-size:18px;" aria-hidden="true"></i> Instant WhatsApp Enquiry</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="pfaq-sec" aria-label="Frequently asked questions">
+  <div class="vt-con">
+    <div class="pfaq-head" data-r>
+      <span class="sec-tag">// FAQ</span>
+      <h2 class="sec-h2">Load Balancer <em>Questions</em></h2>
+      
+    </div>
+    <div class="faq-cats" data-r data-d="60">
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <h3 class="faq-q-text">Do small and mid-sized businesses need a load balancer?</h3>
+            <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Only if they run an application on more than one server, or need to. A typical office with file sharing and cloud email does not. A company hosting its own customer portal, ERP web front end or remote desktop farm often does, because those services are expected to stay available during maintenance and busy periods.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <h3 class="faq-q-text">Is a load balancer a hardware device or software?</h3>
+            <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">It can be either. Hardware appliances suit high traffic volumes and data centre deployments. Virtual appliances run on your existing virtualization platform and suit most mid-sized needs. Cloud platforms offer load balancing as a built-in service. We recommend the form that fits where your servers actually run.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <h3 class="faq-q-text">What is the difference between Layer 4 and Layer 7 load balancing?</h3>
+            <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">Layer 4 balancing forwards connections based on IP address and port, which is fast and works for almost any protocol. Layer 7 balancing understands the application traffic itself, so it can route by web address, inspect headers and manage cookies. Web applications usually benefit from Layer 7; other services often need only Layer 4.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <h3 class="faq-q-text">Does a load balancer replace backups or disaster recovery?</h3>
+            <i class="fas fa-plus faq-q-icon" aria-hidden="true"></i>
+          </div>
+          <div class="faq-a" role="region"><div class="faq-a-inner">No. It protects against the failure of an individual server, not against data loss, corruption or the loss of a whole site. Replicated data, tested backups and a recovery plan are still needed. Our <a href="disaster-recovery-solutions.html">disaster recovery solutions</a> explain how these pieces work together.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RELATED -->
+<section class="rel-sec" aria-label="Related services">
+  <div class="vt-con">
+    <div class="rel-head" data-r>
+      <span class="sec-tag">// RELATED SERVICES</span>
+      <h2 class="sec-h2">Related <em>Services</em></h2>
+      
+    </div>
+    <div class="rel-grid" data-r data-d="60">
+      <a class="rel-card" href="server-solutions.html">
+        <div class="rel-icon"><i class="fas fa-server" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Server Solutions</h3>
+        <p class="rel-p">Server platforms sized and built for the applications you run.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="rel-card" href="web-application-firewall.html">
+        <div class="rel-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Web Application Firewall</h3>
+        <p class="rel-p">Protection for internet-facing applications, often deployed with load balancing.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="rel-card" href="virtualization.html">
+        <div class="rel-icon"><i class="fas fa-clone" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Virtualization</h3>
+        <p class="rel-p">Run several application servers on shared, resilient hardware.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="rel-card" href="data-center.html">
+        <div class="rel-icon"><i class="fas fa-database" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Data Centre Services</h3>
+        <p class="rel-p">Infrastructure for organisations hosting their own critical systems.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="rel-card" href="router.html">
+        <div class="rel-icon"><i class="fas fa-route" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Router Solutions</h3>
+        <p class="rel-p">Dual-WAN routing and internet failover for offices and branches.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+      <a class="rel-card" href="networking-infrastructure-uae.html">
+        <div class="rel-icon"><i class="fas fa-network-wired" aria-hidden="true"></i></div>
+        <h3 class="rel-h">Networking Infrastructure in the UAE</h3>
+        <p class="rel-p">Network design and delivery for companies across the Emirates.</p>
+        <span class="rel-link">Learn more <i class="fas fa-arrow-right" aria-hidden="true"></i></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BIG CTA -->
+<section class="big-cta" aria-label="Contact VOWTECH">
+  <div class="big-cta-inner" data-r>
+    <span class="sec-tag">// DISCUSS YOUR APPLICATION</span>
+    <h2 class="big-cta-h">An Application That<br><em>Cannot Afford to Stop?</em></h2>
+    <p class="big-cta-p">Tell us what the application is, where it runs and when it struggles. We will advise whether load balancing is the right answer and how to deploy it safely.</p>
+    <div class="big-cta-btns">
+      <a href="appointment.html" class="btn-primary btn-lg"><i class="fas fa-calendar-check" aria-hidden="true"></i> Book Free Consultation</a>
+      <a href="https://wa.me/971581816887?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20load%20balancer%20solution%20for%20our%20applications" target="_blank" rel="noopener noreferrer" class="btn-wa btn-lg"><i class="bi bi-whatsapp" aria-hidden="true"></i> Chat on WhatsApp</a>
+    </div>
+    <div class="big-cta-tel">
+      <i class="fas fa-phone-alt" aria-hidden="true"></i>
+      <a href="tel:+971581816887">+971 58 181 6887</a>
+      <span>— Available 24/7</span>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-wrap">
+  <div class="map-info">
+    <div class="map-info-head"><i class="fas fa-map-marker-alt"></i> Our Office</div>
+    <p><strong>Navy Gate – Al Zahiyah</strong><br>Abu Dhabi, UAE</p>
+    <p><i class="fas fa-phone"></i> <a href="tel:+971581816887">+971 58 181 6887</a></p>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:info@vow-tech.com">info@vow-tech.com</a></p>
+    <p><i class="fas fa-clock"></i> Open 24/7 Every Day</p>
+    <a href="contact.html" class="btn-primary" style="display:inline-flex;margin-top:18px">Contact Us</a>
+  </div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3630.8793697365027!2d54.379450975139584!3d24.48963617817316!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6728e25e3a4f%3A0xeaf394fdc432796f!2sVOW%20Technologies!5e0!3m2!1sen!2sae!4v1777982384576!5m2!1sen!2sae"
+    loading="lazy" title="VOWTECH office location" aria-label="Map showing VOWTECH office in Abu Dhabi UAE"></iframe>
+</div>
 
 <!-- FOOTER -->
-<footer>
-
-  <p>© VOWTECH IT Solutions UAE</p>
-  <p><a href="https://vow-tech.com">www.vow-tech.com</a></p>
-
+<footer id="vt-footer">
+  <div class="footer-body">
+    <div class="vt-con">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="fb-logo-wrap">
+            <img src="assets/img/logo.jpeg" alt="VOWTECH" width="52" height="52" loading="lazy" decoding="async">
+            <div><span class="fb-name">VOW<em>TECH</em></span><span class="fb-sub">Enterprise IT — UAE</span></div>
+          </div>
+          <p>Your reliable IT support partner in Abu Dhabi &amp; Dubai. Fast, professional, and always on — so your business never stops.</p>
+          <div class="f-soc">
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div class="f-contact">
+            <a href="tel:+971581816887"><i class="fas fa-phone-alt"></i> +971 58 181 6887</a>
+            <a href="mailto:info@vow-tech.com"><i class="fas fa-envelope"></i> info@vow-tech.com</a>
+            <span><i class="fas fa-map-marker-alt"></i> Navy Gate, Al Zahiyah, Abu Dhabi</span>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>IT Support</h5>
+          <ul>
+            <li><a href="amc-support.html">Annual Maintenance Contract</a></li>
+            <li><a href="emergency-it-support.html">Emergency IT Support</a></li>
+            <li><a href="remote-technical-support.html">Remote Support</a></li>
+            <li><a href="on-site-it-support.html">On-Site Support</a></li>
+            <li><a href="helpdesk-support.html">Helpdesk Support</a></li>
+            <li><a href="it-outsourcing.html">IT Outsourcing</a></li>
+            <li><a href="cctv-services.html">CCTV Services</a></li>
+            <li><a href="cctv-amc-abu-dhabi.html">CCTV AMC</a></li>
+            <li><a href="attendance-system-installation-abu-dhabi.html">Attendance Systems</a></li>
+            <li><a href="punch-in-punch-out-machine-abu-dhabi.html">Punch-In / Punch-Out</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cybersecurity</h5>
+          <ul>
+            <li><a href="sophos-firewall.html">Sophos Firewall</a></li>
+            <li><a href="soc-security-operations-center.html">SOC</a></li>
+            <li><a href="siem-solution.html">SIEM Solution</a></li>
+            <li><a href="penetration-testing.html">Penetration Testing</a></li>
+            <li><a href="anti-phishing-protection.html">Anti-Phishing</a></li>
+            <li><a href="web-application-firewall.html">WAF</a></li>
+            <li><a href="acronis-cyber-protect-cloud.html">Acronis Cyber Protect</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Cloud &amp; Infrastructure</h5>
+          <ul>
+            <li><a href="office365-exchange-online.html">Office 365 &amp; Exchange</a></li>
+            <li><a href="veeam-backup-disaster-recovery.html">Veeam Backup</a></li>
+            <li><a href="virtualization.html">Virtualization</a></li>
+            <li><a href="data-center.html">Data Center</a></li>
+            <li><a href="private-cloud-services.html">Private Cloud</a></li>
+            <li><a href="disaster-recovery-solutions.html">Disaster Recovery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Networking</h5>
+          <ul>
+            <li><a href="structured-cabling.html">Structured Cabling</a></li>
+            <li><a href="server-room-setup.html">Server Room Setup</a></li>
+            <li><a href="network-security-services.html">Network Security</a></li>
+            <li><a href="network-planning-design.html">Network Planning</a></li>
+            <li><a href="telephone-systems-implementation.html">Telephone Systems</a></li>
+            <li><a href="firewall-systems.html">Firewall Solutions</a></li>
+            <li><a href="rfid-access-control.html">Access Control</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="index.html#about">About VOWTECH</a></li>
+            <li><a href="blog.html">Insights &amp; Blog</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="appointment.html">Free Consultation</a></li>
+            <li><a href="it-audit-health-check.html">IT Audit</a></li>
+            <li><a href="virtual-cio.html">Virtual CIO</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-conditions.html">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-base">
+    <div class="footer-base-inner">
+      <span>© 2026 VOWTECH — All Rights Reserved | Abu Dhabi, UAE</span>
+      <span><a href="privacy-policy.html">Privacy Policy</a><span>|</span><a href="terms-conditions.html">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
 </footer>
 
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<a href="#" id="scroll-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+<a href="https://wa.me/971581816887?text=Hi%2C%20I%20would%20like%20to%20discuss%20a%20load%20balancer%20solution%20for%20our%20applications" id="wa-btn" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="bi bi-whatsapp"></i><span>Chat</span>
+</a>
 
+<script>
+'use strict';
+(function(){
+
+/* CURSOR */
+var dot=document.getElementById('vt-dot'),ring=document.getElementById('vt-ring'),cx=0,cy=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){cx=e.clientX;cy=e.clientY;dot.style.left=cx+'px';dot.style.top=cy+'px';});
+(function loop(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){dot.classList.add('hover');ring.classList.add('hover');});
+  el.addEventListener('mouseleave',function(){dot.classList.remove('hover');ring.classList.remove('hover');});
+});
+
+/* SCROLL REVEAL */
+var items=document.querySelectorAll('[data-r]');
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){var d=parseInt(e.target.dataset.d||0);setTimeout(function(){e.target.classList.add('vt-show');},d);io.unobserve(e.target);}});},{threshold:0.1});
+items.forEach(function(el){io.observe(el);});
+
+/* HEADER SCROLL */
+var hdr=document.getElementById('vt-header'),stBtn=document.getElementById('scroll-top');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>60);if(stBtn)stBtn.classList.toggle('show',window.scrollY>400);});
+
+/* MEGA MENU */
+var dropBtn=document.getElementById('navDropBtn'),megaPanel=document.getElementById('megaPanel');
+if(dropBtn&&megaPanel){
+  dropBtn.addEventListener('click',function(e){e.stopPropagation();var open=megaPanel.classList.toggle('open');dropBtn.setAttribute('aria-expanded',open);});
+  document.addEventListener('click',function(){megaPanel.classList.remove('open');dropBtn.setAttribute('aria-expanded','false');});
+  megaPanel.addEventListener('click',function(e){e.stopPropagation();});
+}
+
+
+/* FAQ ACCORDION */
+document.querySelectorAll('.faq-q').forEach(function(q){
+  function toggle(){
+    var item=q.closest('.faq-item'),list=item.parentNode,isOpen=item.classList.contains('open');
+    list.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});
+    if(!isOpen){item.classList.add('open');q.setAttribute('aria-expanded','true');}
+  }
+  q.addEventListener('click',toggle);
+  q.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle();}});
+});
+
+/* MOBILE NAV */
+var mobBtn=document.getElementById('mob-btn'),nav=document.getElementById('vt-nav');
+if(mobBtn&&nav){mobBtn.addEventListener('click',function(){var open=nav.classList.toggle('nav-open');mobBtn.classList.toggle('open',open);mobBtn.setAttribute('aria-expanded',open);document.body.classList.toggle('body-lock',open);});}
+
+})();
+</script>
 </body>
 </html>
