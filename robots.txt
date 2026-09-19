@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /froms/
 Disallow: /csstest/
+Disallow: /api/
+Disallow: /netlify/
 
 Sitemap: https://vow-tech.com/sitemap.xml

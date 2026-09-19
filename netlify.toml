@@ -1,0 +1,14 @@
+# Netlify configuration — static site + one serverless function (AI assistant)
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Clean endpoint used by the chat widget and the Smart FAQ page
+[[redirects]]
+  from = "/api/chat"
+  to = "/.netlify/functions/chat"
+  status = 200
+  force = true

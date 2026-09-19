@@ -628,7 +628,7 @@ body.body-lock { overflow:hidden; }
           <div class="faq-answer-text" id="faqAnswerText"></div>
         </div>
         <div class="faq-answer-footer">
-          <span class="faq-answer-meta"><i class="fas fa-robot" aria-hidden="true"></i> Powered by Claude AI · VOWTECH Knowledge Base</span>
+          <span class="faq-answer-meta"><i class="fas fa-robot" aria-hidden="true"></i> VOWTECH AI Assistant · Knowledge Base</span>
           <div class="faq-answer-cta-row">
             <a href="contact.html" class="btn-primary" style="padding:9px 18px;font-size:10px;">
               <i class="fas fa-headset" aria-hidden="true"></i> Talk to an Expert
@@ -1131,20 +1131,15 @@ async function askAI(question){
 Answer the user's question helpfully and concisely — 3 to 6 sentences. Focus on VOWTECH's services. Be professional, clear, and specific to the UAE business context. Do not use markdown formatting. Write in plain paragraphs only. End by mentioning that VOWTECH can be contacted on +971 58 181 6887 or via WhatsApp for a free consultation if the question is about purchasing or getting a service.`;
 
   try {
-    var response = await fetch('https://api.anthropic.com/v1/messages',{
+    var response = await fetch('/api/chat',{
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:1000,
-        system:systemPrompt,
-        messages:[{role:'user',content:question}]
-      })
+      body:JSON.stringify({messages:[{role:'user',text:question}]})
     });
 
     var data = await response.json();
-    var answer = data.content && data.content[0] && data.content[0].text
-      ? data.content[0].text
+    var answer = data && data.reply
+      ? data.reply
       : 'Sorry, we could not retrieve an answer right now. Please call us on +971 58 181 6887 or send a WhatsApp message and our engineers will assist you directly.';
 
     faqThinking.style.display='none';
@@ -1163,5 +1158,6 @@ Answer the user's question helpfully and concisely — 3 to 6 sentences. Focus o
 
 })();
 </script>
+<script src="assets/js/vt-chat.js" defer></script>
 </body>
 </html>

@@ -12,3 +12,5 @@
 /data.center.html           /data-center             301
 /insights                   /blog                    301
 /services                   /#services               301
+/netlify/*                  /404.html                404!
+/netlify.toml               /404.html                404!

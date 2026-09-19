@@ -1035,7 +1035,7 @@ if(form){
 
     emailjs.send("service_pm0skbn","template_ef4yl7n",formData)
       .then(function(){
-        return emailjs.send("service_pm0skbn","template_o3rfw09",{name:formData.name,email:formData.email});
+        return emailjs.send("service_pm0skbn","template_o3rfw09",Object.assign({},formData,{name:formData.name,email:formData.email,reply_to:"info@vow-tech.com",year:new Date().getFullYear()}));
       })
       .then(function(){
         var waText="New Contact – VOWTECH\n"+
@@ -1060,5 +1060,6 @@ if(form){
 
 })();
 </script>
+<script src="assets/js/vt-chat.js" defer></script>
 </body>
 </html>
