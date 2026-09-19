@@ -59,11 +59,14 @@ exports.handler = async (event) => {
   while (contents.length && contents[0].role !== 'user') contents.shift(); // Gemini requires the first turn to be the user
   if (!contents.length || contents[contents.length - 1].role !== 'user') return json(400, { error: 'messages' }, origin);
 
-  const key = process.env.GEMINI_API_KEY;
+  const key = (process.env.GEMINI_API_KEY || '').trim();
   if (!key) return json(503, { error: 'not_configured' }, origin);
 
-  let lastErr = '';
-  for (const model of MODELS) {
+  // model order: the one that worked last time → configured defaults → whatever Google says this key can use
+  const discovered = await discoverModels(key);
+  const order = [...new Set([goodModel, ...MODELS, ...discovered].filter(Boolean))].slice(0, 6);
+  let lastErr = ''; const errs = [];
+  for (const model of order) {
     try {
       const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`, {
         method: 'POST',
@@ -71,16 +74,34 @@ exports.handler = async (event) => {
         body: JSON.stringify({
           systemInstruction: { parts: [{ text: SYSTEM_PROMPT }] },
           contents,
-          generationConfig: { temperature: 0.4, maxOutputTokens: 400 }
+          // generous limit: newer Gemini models spend part of this budget on internal "thinking" before the visible answer
+          generationConfig: { temperature: 0.4, maxOutputTokens: 2000 }
         })
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) { lastErr = `${model}: ${res.status} ${(data.error && data.error.message || '').slice(0, 160)}`; continue; }
-      const text = ((data.candidates || [])[0]?.content?.parts || []).map(p => p.text || '').join('').trim();
-      if (text) return json(200, { reply: text }, origin);
-      lastErr = `${model}: empty`;
-    } catch (e) { lastErr = `${model}: ${String(e).slice(0, 160)}`; }
+      if (!res.ok) { lastErr = `${model}: ${res.status} ${(data.error && data.error.message || '').slice(0, 160)}`; errs.push(lastErr); if (res.status === 400 && /API key/i.test(lastErr)) break; continue; }
+      const text = ((data.candidates || [])[0]?.content?.parts || []).filter(p => !p.thought).map(p => p.text || '').join('').trim();
+      if (text) { goodModel = model; return json(200, { reply: text }, origin); }
+      lastErr = `${model}: empty (${(data.candidates || [])[0]?.finishReason || 'no candidate'})`; errs.push(lastErr);
+    } catch (e) { lastErr = `${model}: ${String(e).slice(0, 160)}`; errs.push(lastErr); }
   }
-  console.error('chat upstream failed —', lastErr);
-  return json(502, { error: 'upstream' }, origin);
+  console.error('chat upstream failed —', errs.join(' | '));
+  // "detail" never contains the key — it is Google's own error text, shown so setup problems can be diagnosed
+  return json(502, { error: 'upstream', detail: errs.slice(0, 4) }, origin);
 };
+
+// Ask Google which models this key can use and pick the newest general-purpose "flash" model
+let goodModel = null, listed = null;
+async function discoverModels(key) {
+  if (listed) return listed;
+  try {
+    const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200', { headers: { 'x-goog-api-key': key } });
+    const d = await r.json();
+    listed = (d.models || [])
+      .filter(m => (m.supportedGenerationMethods || []).includes('generateContent'))
+      .map(m => m.name.replace('models/', ''))
+      .filter(n => /^gemini-[\d.]+-flash/.test(n) && !/image|tts|audio|live|embed|vision|thinking|exp|preview-0/.test(n))
+      .sort((a, b) => (parseFloat(b.split('-')[1]) - parseFloat(a.split('-')[1])) || (a.length - b.length));
+  } catch (e) { listed = []; }
+  return listed;
+}
