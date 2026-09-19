@@ -20,6 +20,12 @@
 /firewall-products.html     /firewall-appliances     301
 /zkteco-access-control      /rfid-access-control     301
 /zkteco-access-control.html /rfid-access-control     301
+/networking                 /networking-infrastructure 301
+/networking.html            /networking-infrastructure 301
+/cctv-surveillance          /cctv-services           301
+/cctv-surveillance.html     /cctv-services           301
+/storage-solutions          /data-storage-solutions  301
+/storage-solutions.html     /data-storage-solutions  301
 /about                      /#about                  301
 /about.html                 /#about                  301
 /services.html              /#services               301
