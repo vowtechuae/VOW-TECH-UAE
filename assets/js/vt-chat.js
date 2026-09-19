@@ -5,6 +5,10 @@
   if (window.__vtChat) return; window.__vtChat = true;
 
   var API = '/api/chat';
+  // site base path (works for pages at the root and for the 404 page served at any URL)
+  var me = document.currentScript || document.querySelector('script[src*="vt-chat.js"]');
+  var BASE = me && me.src ? me.src.replace(/assets\/js\/vt-chat\.js.*$/, '') : '/';
+  if (typeof window.vtLocalAnswer !== 'function') { var kb = document.createElement('script'); kb.src = BASE + 'assets/js/vt-kb.js'; kb.defer = true; document.head.appendChild(kb); }
   var WA = 'https://wa.me/971581816887?text=';
   var KEY = 'vt-chat-v1';
   var GREETING = 'Hello! I am the VOWTECH assistant. Ask me about IT support, IT AMC, CCTV AMC, attendance systems or any IT issue at your office — or choose a topic below.';
@@ -100,8 +104,21 @@
       .catch(function () { t.remove(); fail(); })
       .then(function () { busy = false; send.disabled = false; input.focus(); });
   }
+  // AI backend unavailable / not configured → answer instantly from the built-in knowledge base (assets/js/vt-kb.js)
   function fail() {
-    bubble('bot', 'Sorry — the assistant is not available right now. Our team can help you directly on WhatsApp or by phone on +971 58 181 6887.', waLink('Hi, I have a question: ' + lastUserText()));
+    var q = lastUserText();
+    if (typeof window.vtLocalAnswer !== 'function') {
+      bubble('bot', 'Our team can help you directly on WhatsApp or by phone on +971 58 181 6887.', waLink('Hi, I have a question: ' + q));
+      return;
+    }
+    var ans = window.vtLocalAnswer(q);
+    var extra = document.createElement('div');
+    var more = document.createElement('a');
+    more.href = BASE + ans.href; more.textContent = ans.label + ' →';
+    more.style.cssText = 'display:block;margin-top:9px;color:#c8a052;font-family:"Share Tech Mono",monospace;font-size:10.5px;letter-spacing:1px;text-transform:uppercase;text-decoration:none';
+    extra.appendChild(more); extra.appendChild(waLink('Hi, I have a question: ' + q));
+    history.push({ role: 'bot', text: ans.text }); save();
+    bubble('bot', ans.text, extra);
   }
   function toggle(open) {
     var isOpen = typeof open === 'boolean' ? open : !panel.classList.contains('open');
